@@ -18,7 +18,7 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App h-100">
+      <div className="App">
         <Navbar/>
         <Route exact path="/" component={props => <Home/>}/>
         <Route exact path="/whitepaper" component={props => <Whitepaper/>}/>

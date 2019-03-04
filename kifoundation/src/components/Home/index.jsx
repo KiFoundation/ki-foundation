@@ -10,7 +10,7 @@ class Home extends React.Component {
   }
   render() {
     return (
-      <div className="h-100">
+      <div>
         <Header />
       </div>
     );

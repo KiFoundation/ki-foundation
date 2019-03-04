@@ -86,8 +86,8 @@ class Header extends React.Component {
         const cardsData = [
             { name: "Ki Device", image: KiDevice, action: "test" },
             { name: "Ki Blockchain", image: KiBlockchain, action: "test" },
-            { name: "Ki Wallet", image: KiWallet, action: "test" },
-            { name: "Ki Ecosystem", image: KiEcosystem, action: "test" }            
+            // { name: "Ki Wallet", image: KiWallet, action: "test" },
+            // { name: "Ki Ecosystem", image: KiEcosystem, action: "test" }            
         ];
         let renderCardsData = cardsData.map(cd => {
             return (
@@ -107,35 +107,33 @@ class Header extends React.Component {
     render() {
         const { classes } = this.props;
         return (
-            <div className="h-100 vertical-align">
-                <div className="container">
-                    <div className="row justify-content-md-center">
-                        <div className="col-md-5">
-                            <Typography align="center" variant="h2" gutterBottom className={classes.headerTitle}>
-                                Privacy is Ki
-                            </Typography>
-                            <Typography align="center" variant="subtitle1" gutterBottom className={classes.headerTitleText}>
-                                Building an ecosystem for a truly decentralized internet, to protect your data and share value.
-                            </Typography>
-                        </div>
+            <div className="container pt-5 mt-5">
+                <div className="row justify-content-md-center">
+                    <div className="col-md-5">
+                        <Typography align="center" variant="h2" gutterBottom className={classes.headerTitle}>
+                            Privacy is Ki
+                        </Typography>
+                        <Typography align="center" variant="subtitle1" gutterBottom className={classes.headerTitleText}>
+                            Building an ecosystem for a truly decentralized internet, to protect your data and share value.
+                        </Typography>
                     </div>
-                    <div className="row mb-5">
-                        <div className="col-md-12 mb-2">
-                            {this.renderCards()}
-                        </div>
+                </div>
+                <div className="row mb-5">
+                    <div className="col-md-12 mb-2">
+                        {this.renderCards()}
                     </div>
-                    <div className="row">
-                        <div className="col-md-12">
-                            <Typography align="center" variant="h5" className={classes.cardTitle}>
-                                1984 should stay a book, not a reality.
-                            </Typography>
-                        </div>
-                        <div className="col-md-12 text-center">
-                            <div className="input-group mb-3 mt-3 vertical-align">
-                                <input type="text" className="form-control header-mail" style={{padding: "1.6rem", borderColor: "#0021f5", borderRadius: 0}} placeholder="Enter your email" aria-label="Enter your email" aria-describedby="basic-addon2" />
-                                <div className="input-group-append">
-                                    <span className="input-group-text primary-bg" style={{padding: "0.9rem", borderRadius: 0}} id="basic-addon2">Join the movement</span>
-                                </div>
+                </div>
+                <div className="row">
+                    <div className="col-md-12">
+                        <Typography align="center" variant="h5" className={classes.cardTitle}>
+                            1984 should stay a book, not a reality.
+                        </Typography>
+                    </div>
+                    <div className="col-md-12 text-center">
+                        <div className="input-group mb-3 mt-3 vertical-align">
+                            <input type="text" className="form-control header-mail" style={{padding: "1.6rem", borderColor: "#0021f5", borderRadius: 0}} placeholder="Enter your email" aria-label="Enter your email" aria-describedby="basic-addon2" />
+                            <div className="input-group-append">
+                                <span className="input-group-text primary-bg" style={{padding: "0.9rem", borderRadius: 0}} id="basic-addon2">Join the movement</span>
                             </div>
                         </div>
                     </div>

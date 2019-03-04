@@ -53,7 +53,7 @@ class Team extends Component {
   render() {
     return (
       <section id="team">
-        <Typography style={{zIndex: 1000}} variant="h2">Team</Typography>
+        <Typography style={{zIndex: 100}} variant="h2">Team</Typography>
         <div className="team-row row">
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
             <img src={reda} alt=""/>
