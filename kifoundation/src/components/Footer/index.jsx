@@ -8,14 +8,14 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 
 // Images
-import KiFoundationLogo from '../../assets/ki_foundation/logo_foundation.svg';
+import KiFoundationLogoShort from '../../assets/ki_foundation/ki_foundation_logo_short.png';
 
 const styles = {
     root: {
-        padding: "80px 0"
+        padding: "0 30px 60px 30px"
     },
     divider: {
-        margin: "50px 0"
+        margin: "0 0 50px 0"
     },
     title: {
         color: "#3b426c"
@@ -40,19 +40,18 @@ class Footer extends React.Component {
         return (
             <div className={classes.root}>
                 <div className="container">
-                    <div className="row">
-                        <div className="col-md-12">
-                            <img height="65" src={KiFoundationLogo} alt="Footer Ki Logo"/>
+                    <Divider className={classes.divider}/>
+                    <div className="row p-0 mb-5">
+                        <div className="col-md-12 p-0">
+                            <img height="65" src={KiFoundationLogoShort} alt="Footer Ki Logo"/>
                         </div>
                     </div>
-                    <Divider className={classes.divider}/>
                     <div className="row">
                         <div className="col-md-4">
                             <Typography className={classes.title} variant="h6"> The Ki Foundation </Typography>
-                            <a className={classes.link} href="/">Ki Device</a>
-                            <a className={classes.link} href="https://blockchain.ki">Ki Blockchain</a>
+                            <a className={classes.link} href="/device">Ki Device</a>
+                            <a className={classes.link} href="/blockchain">Ki Blockchain</a>
                             <a className={classes.link} href="https://wallet.ki">Ki Wallet</a>
-                            <a className={classes.link} href="/">Ki Ecosystem</a>
                             <a className={classes.link} href="/">Buy Ki</a>
 
                         </div>
@@ -63,12 +62,7 @@ class Footer extends React.Component {
                         </div>
                         <div className="col-md-4">
                             <Typography className={classes.title} variant="h6"> Find Us </Typography>
-                            <a className={classes.link} href="/">Contact</a>
-                            <a className={classes.link} href="/">Facebook</a>
-                            <a className={classes.link} href="/">Twitter</a>
-                            <a className={classes.link} href="/">Linkedin</a>
-                            <a className={classes.link} href="/">Discord</a>
-                            <a className={classes.link} href="/">Medium</a>
+                            <a className={classes.link} target="_blank" href="https://t.me/joinchat/DTzxkEh7OReR7MKXY7MGrw">Telegram</a>
                         </div>
                     </div>
                 </div>

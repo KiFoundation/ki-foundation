@@ -27,9 +27,9 @@ import fabrice from '../../assets/team/fabrice-epelboin.png';
 // import frederich from '../../assets/team/frederich.png';
 import lionel_brunie from '../../assets/team/lionel_brunie.png';
 import omar from '../../assets/team/omar.png';
-import tobias from '../../assets/team/tobias.png';
 import badr from '../../assets/team/badr.png';
 import teddy from '../../assets/team/teddy.png';
+import kk from '../../assets/team/kk.png';
 import twitter from '../../assets/other_brands/twitter.svg';
 // import github from '../../assets/github.svg';
 import linkedin from '../../assets/other_brands/linkedin.svg';
@@ -53,7 +53,7 @@ class Team extends Component {
   render() {
     return (
       <section id="team">
-        <Typography style={{zIndex: 100}} variant="h2">Team</Typography>
+        <Typography style={{zIndex: 100}} variant="h3">Team</Typography>
         <div className="team-row row">
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
             <img src={reda} alt=""/>
@@ -131,6 +131,14 @@ class Team extends Component {
             <span className="team-job">Fullstack Developer</span>
           </div>
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
+            <img src={kk} alt=""/>
+            <a id="home-team-linkedin-kheireddine" href="https://www.linkedin.com/in/kheireddine-kamal-18683a163/" target="_blank" rel="noopener noreferrer" className="second">
+              <img src={linkedin} alt="linkedin"/>
+            </a>
+            <span className="team-name">Kheireddine Kamal</span>
+            <span className="team-job">Chief Operating Officer</span>
+        </div>
+          <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
             <img src={medhi} alt=""/>
             <a id="home-team-linkedin-mmsabwat" href="https://www.linkedin.com/in/mmsabwat/" target="_blank" rel="noopener noreferrer" className="second">
               <img src={linkedin} alt="linkedin"/>
@@ -141,7 +149,7 @@ class Team extends Component {
         </div>
         <br/>
         <br/>
-        <Typography variant="h2">Investors & Advisors</Typography>
+        <Typography variant="h3">Investors & Advisors</Typography>
         {/* <div className="team-row">
           <div className="team-member">
             <img src={julien} alt=""/>
@@ -302,7 +310,7 @@ class Team extends Component {
             </div>
           </div> */}
         {/* </div> */}
-        <Typography variant="h2">Science Advisors</Typography>
+        <Typography variant="h3">Science Advisors</Typography>
         <div className="team-row row">
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">    
             <img src={lionel_brunie} alt=""/>
@@ -316,15 +324,6 @@ class Team extends Component {
             <img src={omar} alt=""/>
             <span className="team-name">Omar Hasan</span>
             <span className="team-job">Associate Professor at the INSA de Lyon</span>
-          </div>
-          <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">    
-            <img src={tobias} alt=""/>
-            <a id="home-team-linkedin-tobias" href="https://www.linkedin.com/in/tobias-mayer-b72b5653/" target="_blank" rel="noopener noreferrer" className="second">
-              <img src={linkedin} alt="linkedin"/>
-            </a>
-            <span className="team-name">Tobias Mayer</span>
-            <span className="team-job">Software architect & research engineer at
-the INSA de Lyon</span>
           </div>
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
             <img src={badr} alt=""/>

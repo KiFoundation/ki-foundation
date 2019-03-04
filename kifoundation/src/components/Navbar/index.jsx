@@ -44,7 +44,7 @@ const styles = {
   },
   link: {
     color: "#3b426c",
-    margin: "0 1.5rem 0 3rem",
+    margin: "0 1.5rem 0 2.5rem",
     position: "relative",
     background: 'none',
     border: 'none',
@@ -65,7 +65,8 @@ const styles = {
     }
   },
   menuIcon: {
-    cursor: 'pointer'
+    cursor: 'pointer',
+    marginRight: '7px'
   },
   fixedMenu: {
     position: 'absolute',
@@ -140,7 +141,7 @@ class Navbar extends React.Component {
                   {/* <Link className={classes.link} to="/whitepaper"><Button className={classes.button}>Whitepaper</Button></Link> */}
                   <NavLink className={classes.link} to="/" activeClassName="active-link">Home</NavLink>
                   <NavLink className={classes.link} to="/team" activeClassName="active-link">Team</NavLink>
-                  <NavLink className={classes.link} to="/contact" activeClassName="active-link">Contact Us</NavLink>
+                  <NavLink className={classes.link + ' mr-0'} to="/contact" activeClassName="active-link">Contact Us</NavLink>
                 </div>
               </Toolbar>
             </AppBar>

@@ -1,5 +1,5 @@
 .card-image {
-    height: 170px;
+    height: 150px;
     display: block;
     position: absolute;
     top: -25px;
@@ -8,4 +8,8 @@
 
 .header-mail {
     max-width: 300px;
+}
+
+.header-component {
+    margin-top: 7rem;
 }
