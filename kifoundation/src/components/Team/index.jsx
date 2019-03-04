@@ -53,7 +53,7 @@ class Team extends Component {
   render() {
     return (
       <section id="team">
-        <Typography style={{zIndex: 100}} variant="h3">Team</Typography>
+        <Typography variant="h3" style={{color: '#3b426c', zIndex: 100}}>Team</Typography>
         <div className="team-row row">
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
             <img src={reda} alt=""/>
@@ -149,7 +149,7 @@ class Team extends Component {
         </div>
         <br/>
         <br/>
-        <Typography variant="h3">Investors & Advisors</Typography>
+        <Typography variant="h3" style={{color: '#3b426c'}}>Investors & Advisors</Typography>
         {/* <div className="team-row">
           <div className="team-member">
             <img src={julien} alt=""/>
@@ -310,7 +310,7 @@ class Team extends Component {
             </div>
           </div> */}
         {/* </div> */}
-        <Typography variant="h3">Science Advisors</Typography>
+        <Typography variant="h3" style={{color: '#3b426c'}}>Science Advisors</Typography>
         <div className="team-row row">
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">    
             <img src={lionel_brunie} alt=""/>

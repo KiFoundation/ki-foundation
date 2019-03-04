@@ -1,7 +1,6 @@
 // Services
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
-import * as THREE from 'three'
+import { Route, Redirect } from 'react-router-dom';
 
 // Components
 import Navbar from './components/Navbar';
