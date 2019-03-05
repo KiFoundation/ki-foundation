@@ -1,12 +1,18 @@
+.device-component{
+    padding-top: 120px;
+}
+
 @media (max-width: 768px) {
     .device-component {
         height: auto;
+        padding-top: 72px;
     }
 }
 
-@media (max-height: 630px) {
+@media (max-height: 834px) {
     .device-component {
         height: auto;
+        /* padding-top: 72px; */
     }
 }
 

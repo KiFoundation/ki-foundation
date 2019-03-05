@@ -12,12 +12,21 @@ import Tab from '@material-ui/core/Tab';
 
 // Images
 import BlockchainLogo from '../../assets/ki_foundation/blockchain.png';
+import iconDecentralized from '../../assets/blockchain/icon-decentralized.svg';
+import iconFlash from '../../assets/blockchain/icon-flash.svg';
+import iconReputation from '../../assets/blockchain/icon-reputation.svg';
+import number1 from '../../assets/blockchain/number1.svg';
+import number2 from '../../assets/blockchain/number2.svg';
+import number3 from '../../assets/blockchain/number3.svg';
+import diagram0 from '../../assets/blockchain/diagram0.svg';
+import diagram1 from '../../assets/blockchain/diagram1.svg';
+import diagram2 from '../../assets/blockchain/diagram2.svg';
 
 import './style.css';
 
 const styles = {
     root: {
-        paddingBottom: 60
+        // paddingBottom: 60
     },
     button: {
         color: "#fff",
@@ -53,7 +62,7 @@ const styles = {
     title: {
         color: "#3b426c",
         position: "relative",
-        marginBottom: '1rem'
+        marginBottom: '0.6rem'
     },
     tabsRoot: {
         borderBottom: '1px solid #e8e8e8',
@@ -100,7 +109,7 @@ class Ecosystem extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: 0
+            value: 1
         };
     }
     handleTabChange = (event, value) => {
@@ -111,15 +120,15 @@ class Ecosystem extends React.Component {
         let content;
         if (value == 0) {
             content =
-                <div>
-                    <p>
+                <div style={{minHeight: 192}}>
+                    <p className="mb-4">
                         The Ki Network enables an open development ecosystem and decentralized marketplace for dApps leveraging the Ki networks distribution to reach end users in the home, while preserving the privacy of users personal data by processing everything locally.
                     </p>
                 </div>;
         } else if (value == 1) {
             content =
-                <div>
-                    <p>
+                <div style={{minHeight: 192}}>
+                    <p className="mb-4">
                         In the Ki decentralized dApp store, all fees go back to app developers and token holders participating as validators and delegators within the network.
                     </p>
                     <p>
@@ -128,8 +137,8 @@ class Ecosystem extends React.Component {
                 </div>;
         } else {
             content = 
-                <div>
-                    <p>
+                <div style={{minHeight: 192}}>
+                    <p className="mb-4">
                         In the Ki network, all value created is directed back to those who provide value and actively participate in the network.
                     </p>
                     <p>
@@ -145,15 +154,15 @@ class Ecosystem extends React.Component {
         return (
             <div className={classes.root + ' vh-100 ecosystem-component vertical-align'}>
                 <div className="container">
-                    <div className="row device-wrapper">
-                        <div className="d-block d-md-none col-md-4 text-center vertical-align">
-                            <div>
+                    <div className="row ecosystem-wrapper">
+                        <div className="d-block d-md-none col-md-12 text-center vertical-align">
+                            <div className="mt-6">
                                 <img height="350" src={BlockchainLogo} alt="The Ki Ecosystem"/>
                             </div>
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-md-6 pb-5">
                             <Typography className={classes.title} variant="h3">The Ki Ecosystem</Typography>
-                            {/* <Typography variant="h6" className={classes.subtitle}>Got a question ? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</Typography> */}
+                            {/* <Typography variant="h5" className={classes.subtitle}>A new scalable blockchain technology</Typography> */}
                             <Tabs
                                 value={value}
                                 onChange={this.handleTabChange}
@@ -178,8 +187,8 @@ class Ecosystem extends React.Component {
                             {this.renderTabContent()}
                         </div>
                         <div className="d-none d-md-block col-md-6 text-center vertical-align">
-                            <div className="mt-5">
-                                <img height="350" src={BlockchainLogo} alt="The Ki Ecosystem"/>
+                            <div>
+                                <img className="blockchain-img" src={BlockchainLogo} alt="The Ki Ecosystem"/>
                             </div>
                         </div>
                     </div>

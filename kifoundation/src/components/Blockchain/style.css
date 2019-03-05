@@ -1,17 +1,32 @@
 .blockchain-wrapper {
     height: auto;
-    /* margin-top: 120px; */
+    /* margin-top: 72px; */
+}
+
+.blockchain-component {
+  padding-top: 120px;
+}
+
+.blockchain-img{
+  width: 32vw;
+  max-width: 415px;
 }
 
 @media (max-width: 768px) {
     .blockchain-component {
         height: auto;
     }
+    .blockchain-component {
+      padding-top: 72px;
+    }
 }
 
-@media (max-height: 630px) {
+@media (max-height: 700px) {
     .blockchain-component {
         height: auto;
+    }
+    .blockchain-component {
+      /* padding-top: 120px; */
     }
 }
 

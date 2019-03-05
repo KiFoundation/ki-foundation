@@ -105,7 +105,7 @@ const styles = {
       },
 }
 
-class Ecosystem extends React.Component {
+class Blockchain extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -182,7 +182,7 @@ class Ecosystem extends React.Component {
             <div className={classes.root + ' vh-100 blockchain-component vertical-align'}>
                 <div className="container">
                     <div className="row blockchain-wrapper">
-                        <div className="d-block d-md-none col-md-4 text-center vertical-align">
+                        <div className="d-block d-md-none col-md-12 text-center vertical-align">
                             <div className="mt-6">
                                 <img height="350" src={BlockchainLogo} alt="The Ki Blockchain"/>
                             </div>
@@ -214,8 +214,8 @@ class Ecosystem extends React.Component {
                             {this.renderTabContent()}
                         </div>
                         <div className="d-none d-md-block col-md-4 text-center vertical-align">
-                            <div className="mt-5">
-                                <img height="350" src={BlockchainLogo} alt="The Ki Ecosystem"/>
+                            <div>
+                                <img className="blockchain-img" src={BlockchainLogo} alt="The Ki Ecosystem"/>
                             </div>
                         </div>
                     </div>
@@ -225,4 +225,4 @@ class Ecosystem extends React.Component {
     }
 }
 
-export default withStyles(styles)(Ecosystem);
+export default withStyles(styles)(Blockchain);
