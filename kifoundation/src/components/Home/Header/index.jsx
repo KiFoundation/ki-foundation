@@ -14,8 +14,9 @@ import { withStyles } from '@material-ui/core/styles';
 // Images
 import KiDevice from '../../../assets/ki_foundation/animated_octagon.png';
 import KiBlockchain from '../../../assets/ki_foundation/blockchain.png';
-import KiWallet from '../../../assets/home/launch_illustration_h.gif';
-import KiEcosystem from '../../../assets/home/solutions_illustration_h.gif';
+import KiEcosystem from '../../../assets/ki_foundation/ecosystem.png';
+// import KiWallet from '../../../assets/home/launch_illustration_h.gif';
+// import KiEcosystem from '../../../assets/home/solutions_illustration_h.gif';
 
 // Components
 import CustomMailChimpHome from '../../CustomComponent/CustomMailChimpHome';
@@ -46,6 +47,12 @@ const styles = {
         },
         '&:hover .ki-device-card': {
             top: '-70px !important'
+        },
+        '&:hover .ki-blockchain-card': {
+            top: '-85px !important'
+        },
+        '&:hover .ki-ecosystem-card': {
+            top: '-75px !important'
         }
     },
     cardContentRoot: {
@@ -121,13 +128,13 @@ class Header extends React.Component {
     renderCards = () => {
         const { classes } = this.props;
         const cardsData = [
-            { name: "Ki Device", image: KiDevice, href: '/device', style: {height: 200, top: -50}, customClass: 'ki-device-card' },
-            { name: "Ki Blockchain", image: KiBlockchain, href: '/blockchain', style: {}, customClass: '' },
-            { name: "Ki Ecosystem", image: KiBlockchain, href: '/ecosystem', style: {}, customClass: '' }
+            { name: "Ki Device", image: KiDevice, href: '/device', style: {height: 210, top: -60}, customClass: 'ki-device-card' },
+            { name: "Ki Blockchain", image: KiBlockchain, href: '/blockchain', style: {height: 250, top: -75}, customClass: 'ki-blockchain-card' },
+            { name: "Ki Ecosystem", image: KiEcosystem, href: '/ecosystem', style: {height: 250, top: -65}, customClass: 'ki-ecosystem-card' }
         ];
         let renderCardsData = cardsData.map(cd => {
             return (
-                <div className="col-md-4 my-4">
+                <div className="col-md-4 my-4" key={cd.name}>
                     <a className={classes.link} href={cd.href}>
                         <Card className={classes.card}>
                             <CardContent className={classes.cardContentRoot}>

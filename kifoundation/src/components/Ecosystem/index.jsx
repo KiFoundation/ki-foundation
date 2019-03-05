@@ -11,7 +11,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
 // Images
-import BlockchainLogo from '../../assets/ki_foundation/blockchain.png';
+import KiEcosystem from '../../assets/ki_foundation/ecosystem.png';
 import iconDecentralized from '../../assets/blockchain/icon-decentralized.svg';
 import iconFlash from '../../assets/blockchain/icon-flash.svg';
 import iconReputation from '../../assets/blockchain/icon-reputation.svg';
@@ -157,7 +157,7 @@ class Ecosystem extends React.Component {
                     <div className="row ecosystem-wrapper">
                         <div className="d-block d-md-none col-md-12 text-center vertical-align">
                             <div className="mt-6">
-                                <img height="350" src={BlockchainLogo} alt="The Ki Ecosystem"/>
+                                <img height="350" src={KiEcosystem} alt="The Ki Ecosystem"/>
                             </div>
                         </div>
                         <div className="col-md-6 pb-5">
@@ -188,7 +188,7 @@ class Ecosystem extends React.Component {
                         </div>
                         <div className="d-none d-md-block col-md-6 text-center vertical-align">
                             <div>
-                                <img className="blockchain-img" src={BlockchainLogo} alt="The Ki Ecosystem"/>
+                                <img className="blockchain-img" src={KiEcosystem} alt="The Ki Ecosystem"/>
                             </div>
                         </div>
                     </div>
