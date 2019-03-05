@@ -1,6 +1,7 @@
 // Services
 import React from 'react';
 import PropTypes from 'prop-types';
+import Slider from "react-slick";
 
 // Material
 import Divider from '@material-ui/core/Divider';
@@ -26,6 +27,12 @@ import Ports from './icon/ports.svg';
 import Power from './icon/power.svg';
 import Speaker from './icon/speaker.svg';
 import Wireless from './icon/wireless.svg';
+import BlackBack from '../../assets/ki_foundation/Black_Back.png';
+import BlackFront from '../../assets/ki_foundation/Black_Front.png';
+import BlackSide from '../../assets/ki_foundation/Black_Side.png';
+import WhiteBack from '../../assets/ki_foundation/White_Back.png';
+import WhiteFront from '../../assets/ki_foundation/White_Front.png';
+import WhiteSide from '../../assets/ki_foundation/White_Side.png';
 
 import './style.css';
 
@@ -125,7 +132,8 @@ class Device extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: 2
+            value: 2,
+            imageSelected: BlackFront
         };
     }
     handleTabChange = (event, value) => {
@@ -143,7 +151,7 @@ class Device extends React.Component {
         ];
         let capabilitiesContent = capabilities.map(cb => {
             return (
-                <div className="col-sm-4 col-md-4 my-3 text-center">
+                <div className="col-sm-4 col-md-4 my-3 text-center" key={cb.name}>
                     {cb.icon}
                     <span className={classes.capabilityName}>{cb.name}</span>
                 </div>
@@ -152,7 +160,6 @@ class Device extends React.Component {
         return capabilitiesContent;
     }
     renderSpecifications = () => {
-        const { classes } = this.props;
         const specifications = [
             { title: 'Dimensions & Weight', text: '100mm Diam ● 162.3 mm Height', icon: Dimension},
             { title: 'Colors', text: 'White ● Slate fabric', icon: Colors },
@@ -167,7 +174,7 @@ class Device extends React.Component {
         ];
         const specificationsContent = specifications.map(sp => {
             return (
-                <li className="sp-li">
+                <li className="sp-li" key={sp.title}>
                     <div className="sp-icon-wrapper list-icons--icon vertical-align">
                         <img className="sp-icon" src={sp.icon} alt={sp.title}/>
                     </div>
@@ -178,7 +185,7 @@ class Device extends React.Component {
         });
         const specifications2Content = specifications2.map(sp => {
             return (
-                <li className="sp-li">
+                <li className="sp-li" key={sp.title}>
                     <div className="sp-icon-wrapper list-icons--icon vertical-align">
                         <img className="sp-icon" src={sp.icon} alt={sp.title}/>
                     </div>
@@ -190,7 +197,7 @@ class Device extends React.Component {
         return (
             <div className="row">
                 <div className="col-md-6">
-                    <ul className="sp-ul boxshadow list-unstyled list-icons p-0">{specificationsContent}</ul>
+                    <ul className="sp-ul mb-0 boxshadow list-unstyled list-icons p-0">{specificationsContent}</ul>
                 </div>
                 <div className="col-md-6">
                     <ul className="sp-ul boxshadow list-unstyled list-icons p-0">{specifications2Content}</ul>
@@ -221,15 +228,25 @@ class Device extends React.Component {
         }
         return content;
     }
+    selectImage(imageSelected) {
+        this.setState({imageSelected});
+    }
     render() {
         const { classes } = this.props;
-        const { value } = this.state;
+        const { value, imageSelected } = this.state;
+        const settings = {
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 3,
+            slidesToScroll: 3
+        };
         return (
             <div className={classes.root + ' vh-100 device-component'}>
                 <div className="container">
                     <div className="row device-wrapper">
-                        <div class="d-block d-md-none col-md-4 text-center vertical-align">
-                            <div class="mt-5">
+                        <div className="d-block d-md-none col-md-4 text-center vertical-align">
+                            <div className="mt-5">
                                 <img height="350" src={BlockchainLogo} alt="The Ki Ecosystem"/>
                             </div>
                         </div>
@@ -259,9 +276,30 @@ class Device extends React.Component {
                             </Tabs>
                             {this.renderTabContent()}
                         </div>
-                        <div class="d-none d-md-block col-md-6 text-center vertical-align">
-                            <div class="mt-5">
-                                <img height="350" src={BlockchainLogo} alt="The Ki Ecosystem"/>
+                        <div className="d-none d-md-block col-md-6 text-center vertical-align">
+                            <div className="mt-5">
+                                <img src={imageSelected} alt="Selected image" height="300"/>
+                                <span className="small-divider"></span>
+                                <Slider {...settings}>
+                                    <div>
+                                        <img onClick={() => this.selectImage(BlackSide)} className="slider-img" src={BlackSide} alt="Black side"/>
+                                    </div>
+                                    <div>
+                                        <img onClick={() => this.selectImage(BlackFront)} className="slider-img" src={BlackFront} alt="Black front"/>
+                                    </div>
+                                    <div>
+                                        <img onClick={() => this.selectImage(BlackBack)} className="slider-img" src={BlackBack} alt="Black back"/>
+                                    </div>
+                                    <div>
+                                        <img onClick={() => this.selectImage(WhiteSide)} className="slider-img" src={WhiteSide} alt="White side"/>
+                                    </div>
+                                    <div>
+                                        <img  onClick={() => this.selectImage(WhiteFront)}className="slider-img" src={WhiteFront} alt="White front"/>
+                                    </div>
+                                    <div>
+                                        <img  onClick={() => this.selectImage(WhiteBack)}className="slider-img" src={WhiteBack} alt="White back"/>
+                                    </div>
+                                </Slider>
                             </div>
                         </div>
                     </div>
