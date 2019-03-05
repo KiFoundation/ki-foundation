@@ -1,0 +1,52 @@
+.cookie .privacy-big-title{
+    margin-bottom: 15px;
+    font-size: 35px;
+    font-weight: 700;
+}
+.cookie .privacy-subtitle{
+    display: block;
+    font-weight: 800;
+    padding: 10px 0;
+    font-family: Arial, sans-serif;
+}
+.cookie .privacy-title{
+    display: block;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 21px;
+    padding-top: 35px;
+    margin-bottom: 20px;
+}
+.cookie span{
+    /* font-weight: 300; */
+    display: block;
+}
+.cookie .privacy-link{
+    display: block;
+    color: #4b44c3;
+    text-transform: uppercase;
+    padding: 10px 0;
+    font-size: 15px;
+}
+.cookie ul{
+    list-style: disc;
+}
+.cookie ul li{
+    padding-bottom: 10px;
+}
+.cookie.container{
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* margin-bottom: 50px; */
+}
+.cookie table,.cookie th,.cookie td{
+    border: 1px solid black;
+    padding: 15px;
+}
+.cookie .th-title{
+    background: #f5f7fa;
+    font-weight: 600;
+}
+.cookie b{
+    font-weight: 600 !important;
+}
