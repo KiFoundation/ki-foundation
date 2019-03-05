@@ -56,8 +56,8 @@ class Footer extends React.Component {
                         </div>
                         <div className="col-md-4">
                             <Typography className={classes.title} variant="h6"> Legal </Typography>
-                            <a className={classes.link} href="/">Privacy Policy</a>
-                            <a className={classes.link} href="/">Terms of use</a>
+                            <a className={classes.link} href="/privacy">Privacy Policy</a>
+                            <a className={classes.link} href="/cookie">Cookie Policy</a>
                         </div>
                         <div className="col-md-4">
                             <Typography className={classes.title} variant="h6"> Find Us </Typography>

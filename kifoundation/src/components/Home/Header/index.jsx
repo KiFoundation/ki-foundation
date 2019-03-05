@@ -42,8 +42,7 @@ const styles = {
             top: -40
         },
         '&:hover .card-button':{
-            color: '#043bea',
-            textDecoration: 'underline'
+            color: '#043bea'
         },
         '&:hover .ki-device-card': {
             top: '-70px !important'
