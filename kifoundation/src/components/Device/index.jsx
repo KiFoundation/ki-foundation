@@ -245,9 +245,30 @@ class Device extends React.Component {
             <div className={classes.root + ' vh-100 device-component'}>
                 <div className="container">
                     <div className="row device-wrapper">
-                        <div className="d-block d-md-none col-md-4 text-center vertical-align">
-                            <div className="mt-5">
-                                <img height="350" src={BlockchainLogo} alt="The Ki Ecosystem"/>
+                        <div className="d-block d-md-none col-md-4 text-center vertical-align mb-7">
+                            <div>
+                                <img src={imageSelected} alt="Selected image" height="300"/>
+                                <span className="small-divider"></span>
+                                <Slider {...settings}>
+                                    <div>
+                                        <img onClick={() => this.selectImage(BlackSide)} className="slider-img" src={BlackSide} alt="Black side"/>
+                                    </div>
+                                    <div>
+                                        <img onClick={() => this.selectImage(BlackFront)} className="slider-img" src={BlackFront} alt="Black front"/>
+                                    </div>
+                                    <div>
+                                        <img onClick={() => this.selectImage(BlackBack)} className="slider-img" src={BlackBack} alt="Black back"/>
+                                    </div>
+                                    <div>
+                                        <img onClick={() => this.selectImage(WhiteSide)} className="slider-img" src={WhiteSide} alt="White side"/>
+                                    </div>
+                                    <div>
+                                        <img  onClick={() => this.selectImage(WhiteFront)}className="slider-img" src={WhiteFront} alt="White front"/>
+                                    </div>
+                                    <div>
+                                        <img  onClick={() => this.selectImage(WhiteBack)}className="slider-img" src={WhiteBack} alt="White back"/>
+                                    </div>
+                                </Slider>
                             </div>
                         </div>
                         <div className="col-md-6">
