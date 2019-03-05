@@ -33,6 +33,11 @@ const styles = {
         '&:hover': {
             boxShadow: "0 9px 50px rgba(0,0,0,0.2)",
         },
+        // '&:hover .card-image-wrapper': {
+            // background: 'linear-gradient(135deg, #043bea 0%, #043bea 100%)',
+            // background: '#043bea',
+            // transition: "all 0.5s ease-out"
+        // },
         '&:hover .card-image': {
             top: -40
         },
@@ -40,21 +45,28 @@ const styles = {
             top: '-70px !important'
         }
     },
+    cardContentRoot: {
+        paddingLeft: 0,
+        paddingRight: 0,
+        paddingTop: 0
+    },
     cardImageWrapper: {
-        height: 140,
+        height: 160,
+        // background: 'cornflowerblue',
         display: "flex",
         alignItems: "center",
         justifyContent: "center"
     },
     cardButton: {
         color: "#3b426c",
-        paddingLeft: 0,
+        // paddingLeft: 0,
         background: 'none',
         border: 'none',
         fontSize: '12px',
         fontWeight: 500,
         textTransform: 'uppercase',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        padding: '0 15px'
     },
     cardButtonArrow: {
         height: '18px',
@@ -62,11 +74,13 @@ const styles = {
         marginLeft: '0.2rem'
     },
     cardTitle: {
-        color: "#3b426c"
+        color: "#3b426c",
+        padding: '15px 15px 0 15px'
     },
     punchline: {
         color: "#3b426c",
-        fontWeight: 'normal'
+        fontWeight: 'normal',
+        fontWeight: 300
     },
     bullet: {
         display: 'inline-block',
@@ -82,21 +96,12 @@ const styles = {
         width: 'fit-content',
         marginLeft: 'auto',
         marginRight: 'auto',
-        position: "relative",
-        '&::before': {
-            content: `'_'`,
-            position: 'absolute',
-            width: '1.2rem',
-            height: '0',
-            top: "-6px",
-            left: "-40px",
-            color: '#0021f5'
-        }
+        position: "relative"
     },
     headerTitleText: {
         color: "#3b426c",
-        marginBottom: "3rem",
-        fontWeight: 400
+        marginBottom: "2.5rem",
+        fontWeight: 300
     },
     title: {
         fontSize: 14,
@@ -114,15 +119,16 @@ class Header extends React.Component {
         const { classes } = this.props;
         const cardsData = [
             { name: "Ki Device", image: KiDevice, href: '/device', style: {height: 200, top: -50}, customClass: 'ki-device-card' },
-            { name: "Ki Blockchain", image: KiBlockchain, href: '/blockchain', style: {}, customClass: '' }
+            { name: "Ki Blockchain", image: KiBlockchain, href: '/blockchain', style: {}, customClass: '' },
+            { name: "Ki Ecosystem", image: KiBlockchain, href: '/ecosystem', style: {}, customClass: '' }
         ];
         let renderCardsData = cardsData.map(cd => {
             return (
                 <div className="col-md-4 my-4">
                     <a className={classes.link} href={cd.href}>
                         <Card className={classes.card}>
-                            <CardContent>
-                                <div className={classes.cardImageWrapper}>
+                            <CardContent className={classes.cardContentRoot}>
+                                <div className={classes.cardImageWrapper + ' card-image-wrapper'}>
                                     <img style={cd.style} className={cd.customClass + ' card-image'} src={cd.image} alt={cd.image} />
                                 </div>
                                 <Typography className={classes.cardTitle} variant="h6"> {cd.name} </Typography>
@@ -139,8 +145,8 @@ class Header extends React.Component {
         const { classes } = this.props;
         const url = "https://gen.us17.list-manage.com/subscribe/post?u=3865106d3d479f1d2e1ec8400&amp;id=86a02d162a";
         return (
-            <div className="header-compontent h-100" id="header-component">
-                <div className="container mt-5" style={{paddingTop: '4rem'}}>
+            <div className="header-component vh-100" id="header-component">
+                <div className="container mt-5">
                     <div className="row justify-content-md-center">
                         <div className="col-md-5 text-center">
                             <Typography align="center" variant="h3" gutterBottom className={classes.headerTitle}>
@@ -162,7 +168,7 @@ class Header extends React.Component {
                                 1984 should stay a book, not a reality.
                             </Typography>
                         </div>
-                        <div className="col-md-12 text-center pt-4 mb-5">
+                        <div className="col-md-12 text-center pt-4 mb-6">
                             <MailchimpSubscribe 
                                 url={url}
                                 render={({ subscribe, status, message }) => (

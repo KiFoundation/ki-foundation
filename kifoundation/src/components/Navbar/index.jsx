@@ -18,7 +18,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 
 // Images
-import KiFoundationLogo from '../../assets/ki_foundation/logo_foundation.svg';
+import KiFoundationLogo from '../../assets/ki_foundation/logo_foundation.png';
 import KiFoundationLogoShort from '../../assets/ki_foundation/ki_foundation_logo_short.png';
 
 import './style.css';
@@ -46,22 +46,14 @@ const styles = {
     color: "#3b426c",
     margin: "0 1.5rem 0 2.5rem",
     position: "relative",
+    // textTransform: 'uppercase',
+    fontSize: 14,
     background: 'none',
     border: 'none',
     '&:hover': {
       backgroundColor: "inherit",
       textDecoration: 'none',
       color: '#3b426c'
-    },
-    '&::before': {
-      content: `'__'`,
-      position: 'absolute',
-      width: '1rem',
-      height: '0',
-      border: '1px solid transparent',
-      left: -25,
-      top: -6,
-      color: '#0021f5'
     }
   },
   menuIcon: {
@@ -136,7 +128,7 @@ class Navbar extends React.Component {
           <div className="col d-none d-md-block d-lg-block d-xl-block">
             <AppBar position="absolute" color="default" className={classes.navbar}>
               <Toolbar>
-                <Link to="/"><img height="30" src={KiFoundationLogo} alt="Ki Foundation"/></Link>
+                <Link to="/"><img height="12" src={KiFoundationLogo} alt="Ki Foundation"/></Link>
                 <div className={classes.growRight}>
                   {/* <Link className={classes.link} to="/whitepaper"><Button className={classes.button}>Whitepaper</Button></Link> */}
                   <NavLink className={classes.link} to="/" activeClassName="active-link">Home</NavLink>

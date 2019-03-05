@@ -5,9 +5,13 @@ import { Route, Redirect } from 'react-router-dom';
 // Components
 import Navbar from './components/Navbar';
 import Home from './components/Home';
-import Whitepaper from './components/Whitepaper';
+// import Whitepaper from './components/Whitepaper';
 import Footer from './components/Footer';
 import Team from './components/Team';
+import Contact from './components/Contact';
+import Device from './components/Device';
+import Ecosystem from './components/Ecosystem';
+import Blockchain from './components/Blockchain';
 
 import './App.css';
 
@@ -20,7 +24,11 @@ class App extends Component {
       <div className="App">
         <Navbar/>
         <Route exact path="/" component={props => <Home/>}/>
-        <Route exact path="/whitepaper" component={props => <Whitepaper/>}/>
+        <Route exact path="/contact" component={props => <Contact/>}/>
+        <Route exact path="/device" component={props => <Device/>}/>
+        <Route exact path="/ecosystem" component={props => <Ecosystem/>}/>
+        <Route exact path="/blockchain" component={props => <Blockchain/>}/>
+        {/* <Route exact path="/whitepaper" component={props => <Whitepaper/>}/> */}
         <Route exact path="/team" component={props => <Team/>}/>
         <Footer/>
       </div>

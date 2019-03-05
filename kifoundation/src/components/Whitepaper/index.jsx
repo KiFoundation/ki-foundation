@@ -21,7 +21,7 @@ const styles = {
     },
     button: {
         margin: "35px 0 0 0",
-        backgroundColor: "#0021f5",
+        backgroundColor: "#043bea",
         '&:hover': {
           backgroundColor: "#011DD0"
         }

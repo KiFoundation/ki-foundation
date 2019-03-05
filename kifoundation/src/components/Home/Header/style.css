@@ -13,3 +13,15 @@
 .header-component {
     margin-top: 7rem;
 }
+
+@media (max-width: 768px) {
+    .header-component {
+        height: auto;
+    }
+}
+
+@media (max-height: 630px) {
+    .header-component {
+        height: auto;
+    }
+}

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 
 // Material
 import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
 
 // Images
 import reda from '../../assets/team/reda.png';
@@ -49,11 +50,22 @@ import serge from '../../assets/team/serge_alleyne.png';
 
 import './style.css';
 
+const styles = {
+  text: {
+    color: "#3b426c",
+    width: 'fit-content',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    position: "relative"
+  }
+}
+
 class Team extends Component {
   render() {
+    const { classes } = this.props;
     return (
       <section id="team">
-        <Typography variant="h3" style={{color: '#3b426c', zIndex: 100}}>Team</Typography>
+        <Typography className={classes.text} variant="h3" style={{color: '#3b426c', zIndex: 100}}>Team</Typography>
         <div className="team-row row">
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
             <img src={reda} alt=""/>
@@ -149,7 +161,7 @@ class Team extends Component {
         </div>
         <br/>
         <br/>
-        <Typography variant="h3" style={{color: '#3b426c'}}>Investors & Advisors</Typography>
+        <Typography className={classes.text} variant="h3" style={{color: '#3b426c'}}>Investors & Advisors</Typography>
         {/* <div className="team-row">
           <div className="team-member">
             <img src={julien} alt=""/>
@@ -310,7 +322,7 @@ class Team extends Component {
             </div>
           </div> */}
         {/* </div> */}
-        <Typography variant="h3" style={{color: '#3b426c'}}>Science Advisors</Typography>
+        <Typography className={classes.text} variant="h3" style={{color: '#3b426c'}}>Science Advisors</Typography>
         <div className="team-row row">
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">    
             <img src={lionel_brunie} alt=""/>
@@ -339,4 +351,4 @@ class Team extends Component {
   }
 }
 
-export default Team;
+export default withStyles(styles)(Team);

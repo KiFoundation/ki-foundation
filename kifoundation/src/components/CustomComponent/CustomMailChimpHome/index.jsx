@@ -17,9 +17,9 @@ const CustomMailChimpHome = ({ status, message, onValidated }) => {
     if (status === "sending") {
         formRendered = 
             <div className="input-group vertical-align">
-                <input className="mobile-width" style={{ outline: "none", border: "2px solid rgb(0, 33, 245)", padding: "5px 15px" }} ref={node => (email = node)} type="email" placeholder="Your email"/>
+                <input className="mobile-width" style={{ outline: "none", border: "2px solid #043bea", padding: "5px 15px" }} ref={node => (email = node)} type="email" placeholder="Your email"/>
                 <br />
-                <button className="mobile-btn-width" style={{ outline: "none",minWidth: 120, cursor: "pointer", border: "1px solid rgb(0, 33, 245)", padding: "6px 15px", backgroundColor: "rgb(0, 33, 245)", color: "#fff"}} onClick={submit}>
+                <button className="mobile-btn-width" style={{ outline: "none",minWidth: 120, cursor: "pointer", border: "1px solid #043bea", padding: "6px 15px", backgroundColor: "#043bea", color: "#fff"}} onClick={submit}>
                     <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
                 </button>
             </div>;
@@ -44,9 +44,9 @@ const CustomMailChimpHome = ({ status, message, onValidated }) => {
     } else {
         formRendered = 
             <div className="input-group vertical-align">
-                <input className="mobile-width" style={{ outline: "none", border: "2px solid rgb(0, 33, 245)", padding: "5px 15px" }} ref={node => (email = node)} type="email" placeholder="Your email"/>
+                <input className="mobile-width" style={{ outline: "none", border: "2px solid #043bea", padding: "5px 15px" }} ref={node => (email = node)} type="email" placeholder="Your email"/>
                 <br />
-                <button className="mobile-btn-width" style={{ outline: "none",minWidth: 120, cursor: "pointer", border: "1px solid rgb(0, 33, 245)", padding: "6px 15px", backgroundColor: "rgb(0, 33, 245)", color: "#fff"}} onClick={submit}>
+                <button className="mobile-btn-width" style={{ outline: "none",minWidth: 120, cursor: "pointer", border: "1px solid #043bea", padding: "6px 15px", backgroundColor: "#043bea", color: "#fff"}} onClick={submit}>
                     Join the movement
                 </button>
             </div>;
