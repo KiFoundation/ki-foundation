@@ -1,6 +1,6 @@
 .blockchain-wrapper {
     height: auto;
-    margin-top: 120px;
+    /* margin-top: 120px; */
 }
 
 @media (max-width: 768px) {

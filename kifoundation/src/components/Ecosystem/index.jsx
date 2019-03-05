@@ -143,15 +143,15 @@ class Ecosystem extends React.Component {
         const { classes } = this.props;
         const { value } = this.state;
         return (
-            <div className={classes.root + ' vh-100 ecosystem-component'}>
+            <div className={classes.root + ' vh-100 ecosystem-component vertical-align'}>
                 <div className="container">
                     <div className="row device-wrapper">
-                        <div class="d-block d-md-none col-md-4 text-center vertical-align">
-                            <div class="mt-5">
+                        <div className="d-block d-md-none col-md-4 text-center vertical-align">
+                            <div>
                                 <img height="350" src={BlockchainLogo} alt="The Ki Ecosystem"/>
                             </div>
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-md-6">
                             <Typography className={classes.title} variant="h3">The Ki Ecosystem</Typography>
                             {/* <Typography variant="h6" className={classes.subtitle}>Got a question ? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</Typography> */}
                             <Tabs
@@ -162,7 +162,7 @@ class Ecosystem extends React.Component {
                             <Tab
                                 disableRipple
                                 classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
-                                label="The Ki Ecosystem"
+                                label="About"
                             />
                             <Tab
                                 disableRipple
@@ -177,8 +177,8 @@ class Ecosystem extends React.Component {
                             </Tabs>
                             {this.renderTabContent()}
                         </div>
-                        <div class="d-none d-md-block col-md-4 text-center vertical-align">
-                            <div class="mt-5">
+                        <div className="d-none d-md-block col-md-6 text-center vertical-align">
+                            <div className="mt-5">
                                 <img height="350" src={BlockchainLogo} alt="The Ki Ecosystem"/>
                             </div>
                         </div>

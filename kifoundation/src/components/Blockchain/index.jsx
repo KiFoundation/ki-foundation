@@ -26,7 +26,7 @@ import './style.css';
 
 const styles = {
     root: {
-        paddingBottom: 60
+        // paddingBottom: 60
     },
     button: {
         color: "#fff",
@@ -120,7 +120,7 @@ class Ecosystem extends React.Component {
         let content;
         if (value == 0) {
             content =
-                <div>
+                <div style={{minHeight: 192}}>
                     <p className="mb-4">
                         The Ki Foundation is building a new blockchain that fulfils its objectives of enabling both (1) an open development ecosystem and decentralized marketplace for dApps as well as (2) a new resource sharing paradigm, where, anything with computational power, storage and connectivity can be monetized and leased in real-time with minimal effort from both the resource providers and the users, while maintaining its principles of privacy, security and fairness.
                     </p>
@@ -130,7 +130,7 @@ class Ecosystem extends React.Component {
                 </div>;
         } else if (value == 1) {
             content =
-                <div className="items">
+                <div className="items" style={{minHeight: 208}}>
                     <div className="item col-md-4 mt-0">
                         <div className="text-center">
                             <img height="60" src={iconDecentralized} alt="Number 1"/>
@@ -169,7 +169,7 @@ class Ecosystem extends React.Component {
                 </div>;
         } else {
             content = 
-                <div>
+                <div style={{minHeight: 192}}>
                     Soon
                 </div>;
         }
@@ -179,15 +179,15 @@ class Ecosystem extends React.Component {
         const { classes } = this.props;
         const { value } = this.state;
         return (
-            <div className={classes.root + ' vh-100 blockchain-component'}>
+            <div className={classes.root + ' vh-100 blockchain-component vertical-align'}>
                 <div className="container">
                     <div className="row blockchain-wrapper">
                         <div className="d-block d-md-none col-md-4 text-center vertical-align">
-                            <div>
+                            <div className="mt-6">
                                 <img height="350" src={BlockchainLogo} alt="The Ki Blockchain"/>
                             </div>
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-md-8 pb-5">
                             <Typography className={classes.title} variant="h3">The Ki Blockchain</Typography>
                             <Typography variant="h5" className={classes.subtitle}>A new scalable blockchain technology</Typography>
                             <Tabs
