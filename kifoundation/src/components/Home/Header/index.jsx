@@ -14,7 +14,7 @@ import { withStyles } from '@material-ui/core/styles';
 // Images
 import KiDevice from '../../../assets/ki_foundation/animated_octagon.png';
 import KiBlockchain from '../../../assets/ki_foundation/blockchain.png';
-import KiEcosystem from '../../../assets/ki_foundation/ecosystem.png';
+import KiEcosystem from '../../../assets/ki_foundation/ecosystem.gif';
 // import KiWallet from '../../../assets/home/launch_illustration_h.gif';
 // import KiEcosystem from '../../../assets/home/solutions_illustration_h.gif';
 

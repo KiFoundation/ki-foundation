@@ -11,7 +11,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
 // Images
-import KiEcosystem from '../../assets/ki_foundation/ecosystem.png';
+import KiEcosystem from '../../assets/ki_foundation/ecosystem.gif';
 import iconDecentralized from '../../assets/blockchain/icon-decentralized.svg';
 import iconFlash from '../../assets/blockchain/icon-flash.svg';
 import iconReputation from '../../assets/blockchain/icon-reputation.svg';
