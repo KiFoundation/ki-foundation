@@ -53,6 +53,7 @@ const styles = {
     '&:hover': {
       backgroundColor: "inherit",
       textDecoration: 'none',
+      fontWeight: 600,
       color: '#3b426c'
     }
   },
@@ -95,13 +96,16 @@ class Navbar extends React.Component {
       body.style.overflow = 'visible';
     }
   }
+  closeNavbar = () => {
+    this.setState({isOpened: false});
+  }
   renderMenu = () => {
     const { classes } = this.props;
     const { isOpened } = this.state;
     let menu = null;
     if (isOpened) {
       menu = 
-        <div className={classes.fixedMenu}>
+        <div className={classes.fixedMenu + ' d-block d-md-none'}>
           <List component="nav" className={classes.fixedMenuContent}>
             <ListItemLink href="/">
               <ListItemText primary="Home" />
@@ -131,9 +135,9 @@ class Navbar extends React.Component {
                 <Link to="/"><img height="12" src={KiFoundationLogo} alt="Ki Foundation"/></Link>
                 <div className={classes.growRight}>
                   {/* <Link className={classes.link} to="/whitepaper"><Button className={classes.button}>Whitepaper</Button></Link> */}
-                  <NavLink className={classes.link} to="/" activeClassName="active-link">Home</NavLink>
-                  <NavLink className={classes.link} to="/team" activeClassName="active-link">Team</NavLink>
-                  <NavLink className={classes.link + ' mr-0'} to="/contact" activeClassName="active-link">Contact Us</NavLink>
+                  <NavLink exact className={classes.link} to="/" activeClassName="active-link">Home</NavLink>
+                  <NavLink exact className={classes.link} to="/team" activeClassName="active-link">Team</NavLink>
+                  <NavLink exact className={classes.link + ' mr-0'} to="/contact" activeClassName="active-link">Contact Us</NavLink>
                 </div>
               </Toolbar>
             </AppBar>
@@ -141,7 +145,7 @@ class Navbar extends React.Component {
           <div className="col d-block d-md-none">
             <AppBar position="absolute" color="default" className={classes.navbar}>
               <Toolbar>
-                <Link to="/"><img height="30" src={KiFoundationLogoShort} alt="Ki Foundation"/></Link>
+                <Link to="/" onClick={this.closeNavbar}><img height="30" src={KiFoundationLogoShort} alt="Ki Foundation"/></Link>
                 <div className={classes.growRight}>
                   <MenuIcon hidden={isOpened} className={classes.menuIcon} onClick={this.toggleNavbar}/>
                   <MenuClose hidden={!isOpened} className={classes.menuIcon} onClick={this.toggleNavbar}/>

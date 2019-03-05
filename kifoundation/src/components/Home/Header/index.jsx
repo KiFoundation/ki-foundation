@@ -41,6 +41,10 @@ const styles = {
         '&:hover .card-image': {
             top: -40
         },
+        '&:hover .card-button':{
+            color: '#043bea',
+            textDecoration: 'underline'
+        },
         '&:hover .ki-device-card': {
             top: '-70px !important'
         }
@@ -132,7 +136,7 @@ class Header extends React.Component {
                                     <img style={cd.style} className={cd.customClass + ' card-image'} src={cd.image} alt={cd.image} />
                                 </div>
                                 <Typography className={classes.cardTitle} variant="h6"> {cd.name} </Typography>
-                                <button className={classes.cardButton} size="small">Learn More <ArrowRightAlt className={classes.cardButtonArrow}/></button>
+                                <button className={classes.cardButton + ' card-button'} size="small">Learn More <ArrowRightAlt className={classes.cardButtonArrow}/></button>
                             </CardContent>
                         </Card>
                     </a>
