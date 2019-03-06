@@ -65,7 +65,7 @@ class Team extends Component {
     const { classes } = this.props;
     return (
       <section id="team">
-        <Typography className={classes.text} variant="h3" style={{color: '#3b426c', zIndex: 100}}>Team</Typography>
+        <Typography className={classes.text} align="center" variant="h3" style={{color: '#3b426c', zIndex: 100}}>Team</Typography>
         <div className="team-row row">
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
             <img src={reda} alt=""/>
@@ -161,7 +161,7 @@ class Team extends Component {
         </div>
         <br/>
         <br/>
-        <Typography className={classes.text} variant="h3" style={{color: '#3b426c'}}>Investors & Advisors</Typography>
+        <Typography align="center" className={classes.text} variant="h3" style={{color: '#3b426c'}}>Investors & Advisors</Typography>
         {/* <div className="team-row">
           <div className="team-member">
             <img src={julien} alt=""/>
@@ -322,7 +322,7 @@ class Team extends Component {
             </div>
           </div> */}
         {/* </div> */}
-        <Typography className={classes.text} variant="h3" style={{color: '#3b426c'}}>Science Advisors</Typography>
+        <Typography align="center" className={classes.text} variant="h3" style={{color: '#3b426c'}}>Science Advisors</Typography>
         <div className="team-row row">
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">    
             <img src={lionel_brunie} alt=""/>

@@ -109,7 +109,7 @@ class Blockchain extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: 1
+            value: 0
         };
     }
     handleTabChange = (event, value) => {
@@ -135,7 +135,7 @@ class Blockchain extends React.Component {
                         <div className="text-center">
                             <img height="60" src={iconDecentralized} alt="Number 1"/>
                             <div className="text">
-                                <h6 className="jss86 jss105 jss129">
+                                <h6 className="blockchain-txt">
                                     Energy efficiency by eliminating expensive hashing puzzles.
                                 </h6>
                             </div>
@@ -148,7 +148,7 @@ class Blockchain extends React.Component {
                         <div className="text-center">
                             <img height="60" src={iconFlash} alt="Number 2"/>
                             <div className="text">
-                                <h6 className="jss86 jss105 jss129">Prevention of stake-grinding and 51% attacks by reputation-based accountability.</h6>
+                                <h6 className="blockchain-txt">Prevention of stake-grinding and 51% attacks by reputation-based accountability.</h6>
                             </div>
                             <div className="number">
                                 <img src={number2} alt="Number 2 Background"/>
@@ -159,7 +159,7 @@ class Blockchain extends React.Component {
                         <div className="text-center">
                             <img height="60" src={iconReputation} alt="Number 3"/>
                             <div className="text">
-                                <h6 className="jss86 jss105 jss129">No centralization by using a normalized reputation score.</h6>
+                                <h6 className="blockchain-txt">No centralization by using a normalized reputation score.</h6>
                             </div>
                             <div className="number">
                                 <img src={number3} alt="Number 3 Background"/>

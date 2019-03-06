@@ -97,6 +97,8 @@ class Navbar extends React.Component {
     }
   }
   closeNavbar = () => {
+    const body = document.getElementsByTagName('body')[0];
+    body.style.overflow = 'visible';
     this.setState({isOpened: false});
   }
   renderMenu = () => {

@@ -37,6 +37,7 @@ const styles = {
         // '&:hover .card-image-wrapper': {
             // background: 'linear-gradient(135deg, #043bea 0%, #043bea 100%)',
             // background: '#043bea',
+            // background: 'radial-gradient(#29abe2, #043bea)',
             // transition: "all 0.5s ease-out"
         // },
         '&:hover .card-image': {

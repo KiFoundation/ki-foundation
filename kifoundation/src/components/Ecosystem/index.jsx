@@ -109,7 +109,7 @@ class Ecosystem extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: 1
+            value: 0
         };
     }
     handleTabChange = (event, value) => {

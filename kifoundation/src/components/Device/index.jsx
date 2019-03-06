@@ -132,7 +132,7 @@ class Device extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: 2,
+            value: 0,
             imageSelected: BlackFront
         };
     }
