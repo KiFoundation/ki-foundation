@@ -161,7 +161,7 @@ class Ecosystem extends React.Component {
                             </div>
                         </div>
                         <div className="col-md-6 pb-5">
-                            <Typography className={classes.title} variant="h3">The Ki Ecosystem</Typography>
+                            <Typography className={classes.title + ' animated fadeInDown'} variant="h3">The Ki Ecosystem</Typography>
                             {/* <Typography variant="h5" className={classes.subtitle}>A new scalable blockchain technology</Typography> */}
                             <Tabs
                                 value={value}

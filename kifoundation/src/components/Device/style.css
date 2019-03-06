@@ -60,6 +60,7 @@
     height: 80px;
     padding: 10px 20px;
     margin: 3rem auto 1rem;
+    cursor: pointer;
 }
 
 .small-divider{

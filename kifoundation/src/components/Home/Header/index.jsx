@@ -129,13 +129,13 @@ class Header extends React.Component {
     renderCards = () => {
         const { classes } = this.props;
         const cardsData = [
-            { name: "Ki Device", image: KiDevice, href: '/device', style: {height: 210, top: -60}, customClass: 'ki-device-card' },
-            { name: "Ki Blockchain", image: KiBlockchain, href: '/blockchain', style: {height: 250, top: -75}, customClass: 'ki-blockchain-card' },
-            { name: "Ki Ecosystem", image: KiEcosystem, href: '/ecosystem', style: {height: 250, top: -65}, customClass: 'ki-ecosystem-card' }
+            { name: "Ki Device", image: KiDevice, href: '/device', style: {height: 210, top: -60}, customClass: 'ki-device-card', customAnimationTime: 'delay-0-7s' },
+            { name: "Ki Blockchain", image: KiBlockchain, href: '/blockchain', style: {height: 250, top: -75}, customClass: 'ki-blockchain-card', customAnimationTime: 'delay-0-5s' },
+            { name: "Ki Ecosystem", image: KiEcosystem, href: '/ecosystem', style: {height: 250, top: -65}, customClass: 'ki-ecosystem-card', customAnimationTime: 'delay-0-3s' }
         ];
         let renderCardsData = cardsData.map(cd => {
             return (
-                <div className="col-md-4 my-4" key={cd.name}>
+                <div className={cd.customAnimationTime + ' col-md-4 my-4 animated fadeInLeft'} key={cd.name}>
                     <a className={classes.link} href={cd.href}>
                         <Card className={classes.card}>
                             <CardContent className={classes.cardContentRoot}>
@@ -160,10 +160,10 @@ class Header extends React.Component {
                 <div className="container mt-5">
                     <div className="row justify-content-md-center">
                         <div className="col-md-5 text-center">
-                            <Typography align="center" variant="h3" gutterBottom className={classes.headerTitle}>
+                            <Typography align="center" variant="h3" gutterBottom className={classes.headerTitle + ' animated fadeInDown'}>
                                 Privacy is Ki
                             </Typography>
-                            <Typography align="center" variant="h6" gutterBottom className={classes.headerTitleText}>
+                            <Typography align="center" variant="h6" gutterBottom className={classes.headerTitleText + ' animated fadeIn'}>
                                 Building an ecosystem for a truly decentralized internet, to protect your data and share value.
                             </Typography>
                         </div>
@@ -173,7 +173,7 @@ class Header extends React.Component {
                             {this.renderCards()}
                         </div>
                     </div>
-                    <div className="row">
+                    <div className="row animated fadeIn">
                         <div className="col-md-12">
                             <Typography align="center" variant="h6" className={classes.punchline}>
                                 1984 should stay a book, not a reality.

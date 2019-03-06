@@ -61,3 +61,15 @@ a, button{
 .mt-7{
   margin-top: 5rem !important;
 }
+
+.delay-0-7s{
+  animation-delay: 0.7s;
+}
+
+.delay-0-5s{
+  animation-delay: 0.5s;
+}
+
+.delay-0-3s{
+  animation-delay: 0.3s;
+}

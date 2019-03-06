@@ -44,7 +44,7 @@ const styles = {
   },
   link: {
     color: "#3b426c",
-    margin: "0 1.5rem 0 2.5rem",
+    margin: "0 1.5rem 0 3rem",
     position: "relative",
     // textTransform: 'uppercase',
     fontSize: 14,
@@ -55,6 +55,15 @@ const styles = {
       textDecoration: 'none',
       fontWeight: 600,
       color: '#3b426c'
+    },
+    '&:before': {
+      content: "'__'",
+      fontSize: 14,
+      fontWeight: 600,
+      position: 'absolute',
+      left: -21,
+      color: 'rgb(4, 59, 234)',
+      top: -4
     }
   },
   menuIcon: {

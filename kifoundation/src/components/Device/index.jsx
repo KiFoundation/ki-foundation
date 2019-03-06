@@ -272,7 +272,7 @@ class Device extends React.Component {
                             </div>
                         </div>
                         <div className="col-md-6">
-                            <Typography className={classes.title} variant="h3">The Ki Device</Typography>
+                            <Typography className={classes.title + ' animated fadeInDown'} variant="h3">The Ki Device</Typography>
                             <Typography variant="h5" className={classes.subtitle}>A decentralized smart Homepod</Typography>
                             <Tabs
                                 value={value}
