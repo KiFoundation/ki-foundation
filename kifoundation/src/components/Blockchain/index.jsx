@@ -187,7 +187,7 @@ class Blockchain extends React.Component {
                                 <img height="350" src={BlockchainLogo} alt="The Ki Blockchain"/>
                             </div>
                         </div>
-                        <div className="col-md-8 pb-5">
+                        <div className="col-md-8">
                             <Typography className={classes.title + ' animated fadeInDown'} variant="h3">The Ki Blockchain</Typography>
                             <Typography variant="h5" className={classes.subtitle}>A new scalable blockchain technology</Typography>
                             <Tabs

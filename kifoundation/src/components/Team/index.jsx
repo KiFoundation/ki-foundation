@@ -7,46 +7,36 @@ import { withStyles } from '@material-ui/core/styles';
 
 // Images
 import reda from '../../assets/team/reda.png';
-import alaa from '../../assets/team/alaa-eddine.png';
 import kenichi from '../../assets/team/kenichi.png';
-import zakaria from '../../assets/team/zakaria.png';
 import aymane from '../../assets/team/aymane.png';
 import samy from '../../assets/team/samy.png';
 import tarek from '../../assets/team/tarek.png';
 import matt from '../../assets/team/matt.png';
-// import julien from '../../assets/team/julien.png';
-// import javier from '../../assets/team/javier.png';
-// import kevin from '../../assets/team/kevin.png';
-// import nicholas from '../../assets/team/nicholas.png';
 import medhi from '../../assets/team/medhi.png';
 import tariq from '../../assets/team/tariq.png';
 import romain from '../../assets/team/romain.png';
 import yann from '../../assets/team/yann.png';
-// import taig from '../../assets/team/taig.png';
-// import jean from '../../assets/team/jean-marie.png';
 import fabrice from '../../assets/team/fabrice-epelboin.png';
-// import frederich from '../../assets/team/frederich.png';
 import lionel_brunie from '../../assets/team/lionel_brunie.png';
 import omar from '../../assets/team/omar.png';
 import badr from '../../assets/team/badr.png';
 import teddy from '../../assets/team/teddy.png';
 import kk from '../../assets/team/kk.png';
 import twitter from '../../assets/other_brands/twitter.svg';
-// import github from '../../assets/github.svg';
 import linkedin from '../../assets/other_brands/linkedin.svg';
 import netvibes from '../../assets/other_brands/netvibes.png';
 import jolicloud from '../../assets/other_brands/jolicloud-logo.png';
-// import overblog from '../../assets/other_brands/overblog.png';
 import teads from '../../assets/other_brands/teads.png';
-// import lgo from '../../assets/other_brands/lgo.png';
 import twitterLogo from '../../assets/other_brands/twitter-logo.png';
 import stripe from '../../assets/other_brands/stripe.png';
 import snips from '../../assets/other_brands/snips.png';
 import sciences from '../../assets/other_brands/sciences.png';
 import yogosha from '../../assets/other_brands/yogosha.png';
 import thefamily from '../../assets/other_brands/thefamily.svg';
-// import onoff from '../../assets/other_brands/onoff.svg';
 import serge from '../../assets/team/serge_alleyne.png';
+import dermot from '../../assets/team/dermot.png';
+import james from '../../assets/team/james.png';
+import thereserve from '../../assets/other_brands/thereserve.png';
 
 import './style.css';
 
@@ -79,14 +69,6 @@ class Team extends Component {
             <span className="team-job">Founder & CEO</span>
           </div>
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
-            <img src={alaa} alt=""/>
-            <a id="home-team-linkedin-alaaeddine" href="https://www.linkedin.com/in/alaaeddinekaddouri/" target="_blank" rel="noopener noreferrer" className="second">
-              <img src={linkedin} alt="linkedin"/>
-            </a>
-            <span className="team-name">Alaa-Eddine EL Kaddouri</span>
-            <span className="team-job">Chief Technology Officer</span>
-          </div>
-          <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
             <img src={kenichi} alt=""/>
             <a id="home-team-linkedin-kenichi" href="https://www.linkedin.com/in/kenichi-morita-61835533/" target="_blank" rel="noopener noreferrer" className="second">
               <img src={linkedin} alt="linkedin"/>
@@ -109,14 +91,6 @@ class Team extends Component {
             </a>
             <span className="team-name">Matthieu Petrella</span>
             <span className="team-job">Chief Marketing Officer</span>
-          </div>
-          <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
-            <img src={zakaria} alt=""/>
-            <a id="home-team-linkedin-zelqotbi" href="https://www.linkedin.com/in/zelqotbi/" target="_blank" rel="noopener noreferrer" className="second">
-              <img src={linkedin} alt="linkedin"/>
-            </a>
-            <span className="team-name">Zakaria El Qotbi</span>
-            <span className="team-job">VP Platform</span>
           </div>
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
             <img src={aymane} alt=""/>
@@ -143,6 +117,14 @@ class Team extends Component {
             <span className="team-job">Fullstack Developer</span>
           </div>
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
+            <img src={dermot} alt=""/>
+            <a id="home-team-linkedin-dermot" href="https://www.linkedin.com/in/oriordde/" target="_blank" rel="noopener noreferrer" className="second">
+              <img src={linkedin} alt="linkedin"/>
+            </a>
+            <span className="team-name">Dermot O’Riordan</span>
+            <span className="team-job">Investor Relations & Compliance</span>
+          </div>
+          <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
             <img src={kk} alt=""/>
             <a id="home-team-linkedin-kheireddine" href="https://www.linkedin.com/in/kheireddine-kamal-18683a163/" target="_blank" rel="noopener noreferrer" className="second">
               <img src={linkedin} alt="linkedin"/>
@@ -162,47 +144,6 @@ class Team extends Component {
         <br/>
         <br/>
         <Typography align="center" className={classes.text + ' animated fadeInDown'} variant="h3" style={{color: '#3b426c'}}>Investors & Advisors</Typography>
-        {/* <div className="team-row">
-          <div className="team-member">
-            <img src={julien} alt=""/>
-            <a href="https://twitter.com/jromanetto?lang=en" target="_blank" rel="noopener noreferrer" className="first">
-              <img src={twitter} alt="twitter"/>
-            </a>
-            <a href="https://www.linkedin.com/in/romanetto/" target="_blank" rel="noopener noreferrer" className="second">
-              <img src={linkedin} alt="linkedin"/>
-            </a>
-            <span className="team-name">Julien Romanetto</span>
-            <span className="team-job">Investor & Advisor</span>
-            <div className="team-logos">
-              <img src={overblog} alt="overblog"/>
-              <img src={teads} alt="teads"/>
-              <img src={lgo} alt="lgo"/>
-            </div>
-          </div>
-          <div className="team-member">
-            <img src={javier} alt=""/>
-            <a href="https://www.linkedin.com/in/javiercedilloespin/" target="_blank" rel="noopener noreferrer" className="second">
-              <img src={linkedin} alt="linkedin"/>
-            </a>
-            <span className="team-name">Javier Cedillo-Espin</span>
-          </div>
-          <div className="team-member">
-            <img src={kevin} alt=""/>
-            <a href="https://twitter.com/kevinabosch" target="_blank" rel="noopener noreferrer" className="first">
-              <img src={twitter} alt="twitter"/>
-            </a>
-            <span className="team-name">Kevin Abosch</span>
-            <span className="team-job">Artist, Product Advisor</span>
-          </div>
-          <div className="team-member">
-            <img className="small" src={nicholas} alt=""/>
-            <a href="https://www.linkedin.com/in/nicolas-chiquet-45aa552/" target="_blank" rel="noopener noreferrer" className="second">
-              <img src={linkedin} alt="linkedin"/>
-            </a>
-            <span className="team-name">Nicolas Chiquet</span>
-            <span className="team-job">Founder of LifePlus</span>
-          </div>
-        </div> */}
         <div className="team-row row">
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
             <img src={tariq} alt=""/>
@@ -261,6 +202,17 @@ class Team extends Component {
             <div className="team-logos">
               <img src={sciences} alt="sciences"/>
               <img src={yogosha} alt="yogosha"/>
+            </div>
+          </div>
+          <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
+            <img src={james} alt=""/>
+            <a id="home-team-linkedin-james" href="https://www.linkedin.com/in/jamesroypoulter/" target="_blank" rel="noopener noreferrer" className="second">
+              <img src={linkedin} alt="linkedin"/>
+            </a>
+            <span className="team-name">James Roy Poulter</span>
+            <span className="team-job">Investor Relations & Partnerships</span>
+            <div className="team-logos">
+              <img src={thereserve} alt="the reserve"/>
             </div>
           </div>
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">

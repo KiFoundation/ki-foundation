@@ -29,6 +29,7 @@ const styles = {
         cursor: 'pointer',
         margin: "0 auto",
         backgroundColor: "#f8fbfa",
+        // borderRadius: 0,
         boxShadow: "0 9px 50px rgba(0,0,0,0.1)",
         transition: "all 0.1s ease-out",
         '&:hover': {
@@ -157,7 +158,7 @@ class Header extends React.Component {
         const url = "https://gen.us17.list-manage.com/subscribe/post?u=3865106d3d479f1d2e1ec8400&amp;id=86a02d162a";
         return (
             <div className="header-component vh-100" id="header-component">
-                <div className="container mt-5">
+                <div className="container header-container">
                     <div className="row justify-content-md-center">
                         <div className="col-md-5 text-center">
                             <Typography align="center" variant="h3" gutterBottom className={classes.headerTitle + ' animated fadeInDown'}>
@@ -179,7 +180,7 @@ class Header extends React.Component {
                                 1984 should stay a book, not a reality.
                             </Typography>
                         </div>
-                        <div className="col-md-12 text-center pt-4 mb-6">
+                        <div className="col-md-12 text-center pt-4">
                             <MailchimpSubscribe 
                                 url={url}
                                 render={({ subscribe, status, message }) => (

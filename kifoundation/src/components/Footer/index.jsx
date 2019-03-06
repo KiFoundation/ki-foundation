@@ -12,7 +12,7 @@ import KiFoundationLogoShort from '../../assets/ki_foundation/ki_foundation_logo
 
 const styles = {
     root: {
-        padding: "0 30px 60px 30px"
+        padding: "60px 30px"
     },
     divider: {
         margin: "0 0 50px 0"

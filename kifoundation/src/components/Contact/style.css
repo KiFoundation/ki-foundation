@@ -1,11 +1,13 @@
 @media (max-width: 768px) {
     .contact-component {
         height: auto;
+        padding-top: 100px;
     }
 }
 
 @media (max-height: 630px) {
     .contact-component {
         height: auto;
+        padding-top: 100px;
     }
 }

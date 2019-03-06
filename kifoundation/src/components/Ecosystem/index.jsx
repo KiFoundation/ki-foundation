@@ -160,7 +160,7 @@ class Ecosystem extends React.Component {
                                 <img height="350" src={KiEcosystem} alt="The Ki Ecosystem"/>
                             </div>
                         </div>
-                        <div className="col-md-6 pb-5">
+                        <div className="col-md-6">
                             <Typography className={classes.title + ' animated fadeInDown'} variant="h3">The Ki Ecosystem</Typography>
                             {/* <Typography variant="h5" className={classes.subtitle}>A new scalable blockchain technology</Typography> */}
                             <Tabs

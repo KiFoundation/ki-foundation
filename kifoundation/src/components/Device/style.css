@@ -1,11 +1,13 @@
 .device-component{
     padding-top: 120px;
+    padding-bottom: 60px;
 }
 
 @media (max-width: 768px) {
     .device-component {
         height: auto;
         padding-top: 72px;
+        padding-bottom: 10px;
     }
 }
 
@@ -13,6 +15,7 @@
     .device-component {
         height: auto;
         /* padding-top: 72px; */
+        padding-bottom: 10px;
     }
 }
 

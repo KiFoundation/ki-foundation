@@ -38,7 +38,7 @@ import './style.css';
 
 const styles = {
     root: {
-        paddingBottom: 60
+        // paddingBottom: 60
     },
     icon: {
         marginBottom: 15,
@@ -242,7 +242,7 @@ class Device extends React.Component {
             slidesToScroll: 3
         };
         return (
-            <div className={classes.root + ' vh-100 device-component'}>
+            <div className={classes.root + ' vh-100 device-component vertical-align'}>
                 <div className="container">
                     <div className="row device-wrapper">
                         <div className="d-block d-md-none col-md-4 text-center vertical-align mb-7">
