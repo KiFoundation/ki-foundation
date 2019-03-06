@@ -61,13 +61,20 @@
       margin-right: 6px;
       filter: grayscale(0%);
       object-fit: scale-down;
-      height: 25px;
       width: 67px;
       max-height: 40px;
       margin-bottom: 0;
       z-index: 2; }
       .team-member .team-logos img:last-of-type {
         margin-right: 0; }
+
+.team-logos img{
+  height: 25px;
+}
+
+img.team-logo-big{
+  height: 40px;
+}
 
 .first, .second {
   position: absolute;

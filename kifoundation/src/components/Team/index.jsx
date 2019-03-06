@@ -212,7 +212,7 @@ class Team extends Component {
             <span className="team-name">James Roy Poulter</span>
             <span className="team-job">Investor Relations & Partnerships</span>
             <div className="team-logos">
-              <img src={thereserve} alt="the reserve"/>
+              <img className="team-logo-big" src={thereserve} alt="the reserve"/>
             </div>
           </div>
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
