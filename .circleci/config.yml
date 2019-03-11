@@ -44,6 +44,31 @@ jobs:
             export AWS_ACCESS_KEY_ID=${SANDBOX_AWS_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=${SANDBOX_AWS_SECRET_ACCESS_KEY}
             aws s3 sync . s3://${SANDBOX_S3_BUCKET_NAME}
             aws cloudfront create-invalidation --distribution-id ${SANDBOX_CLOUDFRONT_DISTRIBUTION_ID} --paths "/*"
+      - run:
+          name: Send Slack notification
+          command: |
+            curl -X POST --data-urlencode "payload={\"channel\": \"#dev\", \"username\": \"Staging Deploy\", \"text\": \"It's time to test! https://beta-website.sandbox.kifoundation.tech/ has been deployed to preprod successfully!\", \"icon_emoji\": \":airplane:\"}" ${SANDBOX_WEBHOOK_URL}
+
+  deploy_prod:
+    docker:
+      - image: circleci/python:3.7.0
+    working_directory: ~/project
+    steps:
+      - attach_workspace:
+          at: build
+      - run: sudo pip install awscli
+      - run:
+          name: Add robots.txt and Deploy to S3
+          command: |
+            cd build
+            echo -e 'User-Agent: *\nDisallow: /' > robots.txt
+            export AWS_ACCESS_KEY_ID=${PROD_AWS_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=${PROD_AWS_SECRET_ACCESS_KEY}
+            aws s3 sync . s3://${PROD_S3_BUCKET_NAME}
+            aws cloudfront create-invalidation --distribution-id ${PROD_CLOUDFRONT_DISTRIBUTION_ID} --paths "/*"
+      - run:
+          name: Send Slack notification
+          command: |
+            curl -X POST --data-urlencode "payload={\"channel\": \"#dev\", \"username\": \"PROD Deploy\", \"text\": \"Yeah! https://beta.foundation.ki has been deployed to production successfully!\", \"icon_emoji\": \":rocket:\"}" ${SANDBOX_WEBHOOK_URL}
 
 workflows:
   version: 2
@@ -51,6 +76,12 @@ workflows:
     jobs:
       - test_and_build
       - deploy_preprod:
+          requires:
+            - test_and_build
+          filters:
+            branches:
+              only: preprod
+      - deploy_prod:
           requires:
             - test_and_build
           filters:
