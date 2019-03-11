@@ -24,7 +24,7 @@ class Contact extends React.Component {
                             <Typography className={classes.title + ' animated fadeInDown'} variant="h3" align="center">Contact Us</Typography>
                             <Typography variant="h6" className={classes.subtitle} align="center">Got a question ? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</Typography>
                             <div className="vertical-align pt-3">
-                                <a className={classes.mailTo} href="mailto:contact@gen.ki"><Button className={classes.button}>Send an email</Button></a>
+                                <a id="contact-mailto" className={classes.mailTo} href="mailto:contact@gen.ki"><Button className={classes.button}>Send an email</Button></a>
                             </div>
                         </div>
                     </div>

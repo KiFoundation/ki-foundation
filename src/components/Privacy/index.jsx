@@ -42,34 +42,34 @@ export class Policy extends Component {
                     </div>
                     {/* SOMMAIRE */}
                     <div className="col-12 ml-5 mt-3">
-                        <a className="privacy-link" href="#privacy-1">
+                        <a className="privacy-link" href="#privacy-1" id="privacy-1-anchor">
                             1. Important information on who we are
                         </a>
-                        <a className="privacy-link" href="#privacy-2">
+                        <a className="privacy-link" href="#privacy-2" id="privacy-2-anchor">
                             2. THE DATA WE COLLECT ABOUT YOU
                         </a>
-                        <a className="privacy-link" href="#privacy-3">
+                        <a className="privacy-link" href="#privacy-3" id="privacy-3-anchor">
                             3. HOW IS YOUR PERSONAL DATA COLLECTED?
                         </a>
-                        <a className="privacy-link" href="#privacy-4">
+                        <a className="privacy-link" href="#privacy-4" id="privacy-4-anchor">
                             4. HOW WE USE YOUR PERSONAL DATA
                         </a>
-                        <a className="privacy-link" href="#privacy-5">
+                        <a className="privacy-link" href="#privacy-5" id="privacy-5-anchor">
                             5. DISCLOSURES OF YOUR PERSONAL DATA
                         </a>
-                        <a className="privacy-link" href="#privacy-6">
+                        <a className="privacy-link" href="#privacy-6" id="privacy-6-anchor">
                             6. INTERNATIONAL TRANSFERS
                         </a>
-                        <a className="privacy-link" href="#privacy-7">
+                        <a className="privacy-link" href="#privacy-7" id="privacy-7-anchor">
                             7. DATA SECURITY
                         </a>
-                        <a className="privacy-link" href="#privacy-8" id="privacy-1">
+                        <a className="privacy-link" href="#privacy-8" id="privacy-8-anchor">
                             8. DATA RETENTION
                         </a>
-                        <a className="privacy-link" href="#privacy-9">
+                        <a className="privacy-link" href="#privacy-9" id="privacy-9-anchor">
                             9. YOUR LEGAL RIGHTS
                         </a>
-                        <a className="privacy-link" href="#privacy-10">
+                        <a className="privacy-link" href="#privacy-10" id="privacy-10-anchor">
                             10. GLOSSARY
                         </a>
                     </div>
