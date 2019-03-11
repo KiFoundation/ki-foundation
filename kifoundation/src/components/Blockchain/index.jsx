@@ -1,12 +1,9 @@
 // Services
 import React from 'react';
-import PropTypes from 'prop-types';
 
 // Material
-import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
@@ -18,92 +15,10 @@ import iconReputation from '../../assets/blockchain/icon-reputation.svg';
 import number1 from '../../assets/blockchain/number1.svg';
 import number2 from '../../assets/blockchain/number2.svg';
 import number3 from '../../assets/blockchain/number3.svg';
-import diagram0 from '../../assets/blockchain/diagram0.svg';
-import diagram1 from '../../assets/blockchain/diagram1.svg';
-import diagram2 from '../../assets/blockchain/diagram2.svg';
 
+// Styles
+import styles from './materialStyle';
 import './style.css';
-
-const styles = {
-    root: {
-        // paddingBottom: 60
-    },
-    button: {
-        color: "#fff",
-        outline: "none",
-        whiteSpace: 'nowrap',
-        textTransform: 'initial',
-        padding: '5px 15px',
-        fontSize: '1rem',
-        fontWeight: 'normal',
-        '&:focus': {
-          outline: "none"
-        },
-        backgroundColor: "#043bea",
-        // margin: "0 1.5rem",
-        position: "relative",
-        borderRadius: 0,
-        minWidth: 250,
-        '&:hover': {
-          backgroundColor: "#043bea",
-          color: "#fff"
-        }
-    },
-    mailTo: {
-        '&:hover': {
-          textDecoration: "none"
-        }
-    },
-    subtitle: {
-        color: "#3b426c",
-        fontWeight: 'normal',
-        marginBottom: '1rem'
-    },
-    title: {
-        color: "#3b426c",
-        position: "relative",
-        marginBottom: '0.6rem'
-    },
-    tabsRoot: {
-        borderBottom: '1px solid #e8e8e8',
-        marginBottom: '2.5rem',
-        marginTop: '1rem'
-      },
-      tabsIndicator: {
-        backgroundColor: '#043bea',
-      },
-      tabRoot: {
-        textTransform: 'initial',
-        width: '33.333%',
-        // marginRight: theme.spacing.unit * 4,
-        fontFamily: [
-          '-apple-system',
-          'BlinkMacSystemFont',
-          '"Segoe UI"',
-          'Roboto',
-          '"Helvetica Neue"',
-          'Arial',
-          'sans-serif',
-          '"Apple Color Emoji"',
-          '"Segoe UI Emoji"',
-          '"Segoe UI Symbol"',
-        ].join(','),
-        '&:hover': {
-          color: '#043bea',
-          opacity: 1,
-        },
-        '&$tabSelected': {
-          color: '#043bea',
-        },
-        '&:focus': {
-          color: '#043bea',
-        },
-      },
-      tabSelected: {},
-      typography: {
-        // padding: theme.spacing.unit * 3,
-      },
-}
 
 class Blockchain extends React.Component {
     constructor(props) {
@@ -196,16 +111,19 @@ class Blockchain extends React.Component {
                                 classes={{ root: classes.tabsRoot, indicator: classes.tabsIndicator }}
                             >
                             <Tab
+                                id="blockchain-tab-about"
                                 disableRipple
                                 classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
                                 label="About"
                             />
                             <Tab
+                                id="blockchain-tab-proof"
                                 disableRipple
                                 classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
                                 label="Proof of Reputation"
                             />
                             <Tab
+                                id="blockchain-tab-mizuki"
                                 disabled={true}
                                 classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
                                 label="Mizuki Devnet (Soon)"

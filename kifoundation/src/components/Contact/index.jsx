@@ -1,60 +1,14 @@
 // Services
 import React from 'react';
-import PropTypes from 'prop-types';
 
 // Material
-import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
+// Styles
+import styles from './materialStyle';
 import './style.css';
-
-const styles = {
-    root: {
-        // padding: "100px 0 0 0"
-    },
-    button: {
-        color: "#fff",
-        outline: "none",
-        whiteSpace: 'nowrap',
-        textTransform: 'initial',
-        padding: '5px 15px',
-        fontSize: '1rem',
-        fontWeight: 'normal',
-        '&:focus': {
-          outline: "none"
-        },
-        backgroundColor: "#043bea",
-        // margin: "0 1.5rem",
-        position: "relative",
-        borderRadius: 0,
-        minWidth: 250,
-        '&:hover': {
-          backgroundColor: "#043bea",
-          color: "#fff"
-        }
-    },
-    mailTo: {
-        '&:hover': {
-          textDecoration: "none"
-        }
-    },
-    subtitle: {
-        color: "#3b426c",
-        fontWeight: 'normal',
-        marginBottom: '1.5rem',
-        fontWeight: 300
-    },
-    title: {
-        color: "#3b426c",
-        width: 'fit-content',
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        position: "relative",
-        marginBottom: '1.5rem'
-    }
-}
 
 class Contact extends React.Component {
     constructor(props) {

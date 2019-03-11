@@ -10,26 +10,8 @@ import { withStyles } from '@material-ui/core/styles';
 // Images
 import KiFoundationLogoShort from '../../assets/ki_foundation/ki_foundation_logo_short.png';
 
-const styles = {
-    root: {
-        padding: "60px 30px"
-    },
-    divider: {
-        margin: "0 0 50px 0"
-    },
-    title: {
-        color: "#3b426c"
-    },
-    link: {
-        color: "#3b426c",
-        display: "block",
-        margin: "1rem 0",
-        "&:hover": {
-            color: "#3b426c",
-            textDecoration: "none"
-        }
-    }
-}
+// Styles
+import styles from './materialStyle';
 
 class Footer extends React.Component {
     constructor(props) {
@@ -49,19 +31,19 @@ class Footer extends React.Component {
                     <div className="row">
                         <div className="col-md-4">
                             <Typography className={classes.title} variant="h6"> The Ki Foundation </Typography>
-                            <a className={classes.link} href="/device">Ki Device</a>
-                            <a className={classes.link} href="/blockchain">Ki Blockchain</a>
-                            <a className={classes.link} href="/contact">Buy Ki</a>
+                            <a id="footer-link-device" className={classes.link} href="/device">Ki Device</a>
+                            <a id="footer-link-blockchain" className={classes.link} href="/blockchain">Ki Blockchain</a>
+                            <a id="footer-link-buy" className={classes.link} href="/contact">Buy Ki</a>
 
                         </div>
                         <div className="col-md-4">
                             <Typography className={classes.title} variant="h6"> Legal </Typography>
-                            <a className={classes.link} href="/privacy">Privacy Policy</a>
-                            <a className={classes.link} href="/cookie">Cookie Policy</a>
+                            <a id="footer-link-privacy" className={classes.link} href="/privacy">Privacy Policy</a>
+                            <a id="footer-link-cookie" className={classes.link} href="/cookie">Cookie Policy</a>
                         </div>
                         <div className="col-md-4">
                             <Typography className={classes.title} variant="h6"> Find Us </Typography>
-                            <a className={classes.link} target="_blank" href="https://t.me/joinchat/DTzxkEh7OReR7MKXY7MGrw">Telegram</a>
+                            <a id="footer-link-telegram" className={classes.link} target="_blank" href="https://t.me/joinchat/DTzxkEh7OReR7MKXY7MGrw">Telegram</a>
                         </div>
                     </div>
                 </div>

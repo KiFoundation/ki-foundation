@@ -1,12 +1,9 @@
 // Services
 import React from 'react';
-import PropTypes from 'prop-types';
 import Slider from "react-slick";
 
 // Material
-import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import ProcessorIcon from '@material-ui/icons/Memory';
@@ -18,7 +15,6 @@ import ZigbeeIcon from '@material-ui/icons/DeviceHub';
 import { withStyles } from '@material-ui/core/styles';
 
 // Images
-import BlockchainLogo from '../../assets/ki_foundation/blockchain.png';
 import Audio from './icon/audio.svg';
 import Colors from './icon/colors.svg';
 import Dimension from './icon/dimension.svg';
@@ -34,99 +30,9 @@ import WhiteBack from '../../assets/ki_foundation/White_Back.png';
 import WhiteFront from '../../assets/ki_foundation/White_Front.png';
 import WhiteSide from '../../assets/ki_foundation/White_Side.png';
 
+// Styles
 import './style.css';
-
-const styles = {
-    root: {
-        // paddingBottom: 60
-    },
-    icon: {
-        marginBottom: 15,
-        marginRight: 'auto',
-        marginLeft: 'auto'
-    },
-    capabilityName: {
-        opacity: 0.8,
-        fontSize: 11,
-        letterSpacing: 2,
-        display: 'block'
-    },
-    button: {
-        color: "#fff",
-        outline: "none",
-        whiteSpace: 'nowrap',
-        textTransform: 'initial',
-        padding: '5px 15px',
-        fontSize: '1rem',
-        fontWeight: 'normal',
-        '&:focus': {
-          outline: "none"
-        },
-        backgroundColor: "#043bea",
-        // margin: "0 1.5rem",
-        position: "relative",
-        borderRadius: 0,
-        minWidth: 250,
-        '&:hover': {
-          backgroundColor: "#043bea",
-          color: "#fff"
-        }
-    },
-    mailTo: {
-        '&:hover': {
-          textDecoration: "none"
-        }
-    },
-    subtitle: {
-        color: "#3b426c",
-        fontWeight: 'normal',
-        marginBottom: '1rem'
-    },
-    title: {
-        color: "#3b426c",
-        position: "relative",
-        marginBottom: '1rem'
-    },
-    tabsRoot: {
-        borderBottom: '1px solid #e8e8e8',
-        marginBottom: '2.5rem',
-        marginTop: '1rem'
-      },
-      tabsIndicator: {
-        backgroundColor: '#043bea',
-      },
-      tabRoot: {
-        textTransform: 'initial',
-        width: '33.333%',
-        // marginRight: theme.spacing.unit * 4,
-        fontFamily: [
-          '-apple-system',
-          'BlinkMacSystemFont',
-          '"Segoe UI"',
-          'Roboto',
-          '"Helvetica Neue"',
-          'Arial',
-          'sans-serif',
-          '"Apple Color Emoji"',
-          '"Segoe UI Emoji"',
-          '"Segoe UI Symbol"',
-        ].join(','),
-        '&:hover': {
-          color: '#043bea',
-          opacity: 1,
-        },
-        '&$tabSelected': {
-          color: '#043bea',
-        },
-        '&:focus': {
-          color: '#043bea',
-        },
-      },
-      tabSelected: {},
-      typography: {
-        // padding: theme.spacing.unit * 3,
-      },
-}
+import styles from './materialStyle';
 
 class Device extends React.Component {
     constructor(props) {
@@ -251,22 +157,22 @@ class Device extends React.Component {
                                 <span className="small-divider"></span>
                                 <Slider {...settings}>
                                     <div>
-                                        <img onClick={() => this.selectImage(BlackSide)} className="slider-img" src={BlackSide} alt="Black side"/>
+                                        <img id="device-slider-blackside" onClick={() => this.selectImage(BlackSide)} className="slider-img" src={BlackSide} alt="Black side"/>
                                     </div>
                                     <div>
-                                        <img onClick={() => this.selectImage(BlackFront)} className="slider-img" src={BlackFront} alt="Black front"/>
+                                        <img id="device-slider-blackfront" onClick={() => this.selectImage(BlackFront)} className="slider-img" src={BlackFront} alt="Black front"/>
                                     </div>
                                     <div>
-                                        <img onClick={() => this.selectImage(BlackBack)} className="slider-img" src={BlackBack} alt="Black back"/>
+                                        <img id="device-slider-blackback" onClick={() => this.selectImage(BlackBack)} className="slider-img" src={BlackBack} alt="Black back"/>
                                     </div>
                                     <div>
-                                        <img onClick={() => this.selectImage(WhiteSide)} className="slider-img" src={WhiteSide} alt="White side"/>
+                                        <img id="device-slider-whiteside" onClick={() => this.selectImage(WhiteSide)} className="slider-img" src={WhiteSide} alt="White side"/>
                                     </div>
                                     <div>
-                                        <img  onClick={() => this.selectImage(WhiteFront)}className="slider-img" src={WhiteFront} alt="White front"/>
+                                        <img id="device-slider-whitefront" onClick={() => this.selectImage(WhiteFront)}className="slider-img" src={WhiteFront} alt="White front"/>
                                     </div>
                                     <div>
-                                        <img  onClick={() => this.selectImage(WhiteBack)}className="slider-img" src={WhiteBack} alt="White back"/>
+                                        <img id="device-slider-whiteback" onClick={() => this.selectImage(WhiteBack)}className="slider-img" src={WhiteBack} alt="White back"/>
                                     </div>
                                 </Slider>
                             </div>
@@ -280,16 +186,19 @@ class Device extends React.Component {
                                 classes={{ root: classes.tabsRoot, indicator: classes.tabsIndicator }}
                             >
                             <Tab
+                                id="device-tab-about"
                                 disableRipple
                                 classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
                                 label="About"
                             />
                             <Tab
+                                id="device-tab-capabilities"
                                 disableRipple
                                 classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
                                 label="Capabilities"
                             />
                             <Tab
+                                id="device-tab-specifications"
                                 disableRipple
                                 classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
                                 label="Specifications"
@@ -303,22 +212,22 @@ class Device extends React.Component {
                                 <span className="small-divider"></span>
                                 <Slider {...settings}>
                                     <div>
-                                        <img onClick={() => this.selectImage(BlackSide)} className="slider-img" src={BlackSide} alt="Black side"/>
+                                        <img id="mobile-device-slider-blackside" onClick={() => this.selectImage(BlackSide)} className="slider-img" src={BlackSide} alt="Black side"/>
                                     </div>
                                     <div>
-                                        <img onClick={() => this.selectImage(BlackFront)} className="slider-img" src={BlackFront} alt="Black front"/>
+                                        <img id="mobile-device-slider-blackfront" onClick={() => this.selectImage(BlackFront)} className="slider-img" src={BlackFront} alt="Black front"/>
                                     </div>
                                     <div>
-                                        <img onClick={() => this.selectImage(BlackBack)} className="slider-img" src={BlackBack} alt="Black back"/>
+                                        <img id="mobile-device-slider-blackback" onClick={() => this.selectImage(BlackBack)} className="slider-img" src={BlackBack} alt="Black back"/>
                                     </div>
                                     <div>
-                                        <img onClick={() => this.selectImage(WhiteSide)} className="slider-img" src={WhiteSide} alt="White side"/>
+                                        <img id="mobile-device-slider-whiteside" onClick={() => this.selectImage(WhiteSide)} className="slider-img" src={WhiteSide} alt="White side"/>
                                     </div>
                                     <div>
-                                        <img  onClick={() => this.selectImage(WhiteFront)}className="slider-img" src={WhiteFront} alt="White front"/>
+                                        <img id="mobile-device-slider-whitefront" onClick={() => this.selectImage(WhiteFront)}className="slider-img" src={WhiteFront} alt="White front"/>
                                     </div>
                                     <div>
-                                        <img  onClick={() => this.selectImage(WhiteBack)}className="slider-img" src={WhiteBack} alt="White back"/>
+                                        <img id="mobile-device-slider-whiteback" onClick={() => this.selectImage(WhiteBack)}className="slider-img" src={WhiteBack} alt="White back"/>
                                     </div>
                                 </Slider>
                             </div>

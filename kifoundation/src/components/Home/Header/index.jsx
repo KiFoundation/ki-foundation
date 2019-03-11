@@ -5,7 +5,6 @@ import MailchimpSubscribe from "react-mailchimp-subscribe";
 
 // Material
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import ArrowRightAlt from '@material-ui/icons/ArrowRightAlt'
@@ -15,129 +14,26 @@ import { withStyles } from '@material-ui/core/styles';
 import KiDevice from '../../../assets/ki_foundation/animated_octagon.png';
 import KiBlockchain from '../../../assets/ki_foundation/blockchain.png';
 import KiEcosystem from '../../../assets/ki_foundation/ecosystem.gif';
-// import KiWallet from '../../../assets/home/launch_illustration_h.gif';
-// import KiEcosystem from '../../../assets/home/solutions_illustration_h.gif';
 
 // Components
 import CustomMailChimpHome from '../../CustomComponent/CustomMailChimpHome';
 
-import "./style.css";
-
-const styles = {
-    card: {
-        maxWidth: 250,
-        cursor: 'pointer',
-        margin: "0 auto",
-        backgroundColor: "#f8fbfa",
-        // borderRadius: 0,
-        boxShadow: "0 9px 50px rgba(0,0,0,0.1)",
-        transition: "all 0.1s ease-out",
-        '&:hover': {
-            boxShadow: "0 9px 50px rgba(0,0,0,0.2)",
-        },
-        // '&:hover .card-image-wrapper': {
-            // background: 'linear-gradient(135deg, #043bea 0%, #043bea 100%)',
-            // background: '#043bea',
-            // background: 'radial-gradient(#29abe2, #043bea)',
-            // transition: "all 0.5s ease-out"
-        // },
-        '&:hover .card-image': {
-            top: -40
-        },
-        '&:hover .card-button':{
-            color: '#043bea'
-        },
-        '&:hover .ki-device-card': {
-            top: '-70px !important'
-        },
-        '&:hover .ki-blockchain-card': {
-            top: '-85px !important'
-        },
-        '&:hover .ki-ecosystem-card': {
-            top: '-75px !important'
-        }
-    },
-    cardContentRoot: {
-        paddingLeft: 0,
-        paddingRight: 0,
-        paddingTop: 0
-    },
-    cardImageWrapper: {
-        height: 160,
-        // background: 'cornflowerblue',
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center"
-    },
-    cardButton: {
-        color: "#3b426c",
-        // paddingLeft: 0,
-        background: 'none',
-        border: 'none',
-        fontSize: '12px',
-        fontWeight: 500,
-        textTransform: 'uppercase',
-        cursor: 'pointer',
-        padding: '0 15px'
-    },
-    cardButtonArrow: {
-        height: '18px',
-        opacity: 0.2,
-        marginLeft: '0.2rem'
-    },
-    cardTitle: {
-        color: "#3b426c",
-        padding: '15px 15px 0 15px'
-    },
-    punchline: {
-        color: "#3b426c",
-        fontWeight: 'normal',
-        fontWeight: 300
-    },
-    bullet: {
-        display: 'inline-block',
-        margin: '0 2px',
-        transform: 'scale(0.8)',
-    },
-    link: {
-        textDecoration: 'none !important',
-        backgroundColor: 'transparent !important'
-    },
-    headerTitle: {
-        color: "#3b426c",
-        width: 'fit-content',
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        position: "relative"
-    },
-    headerTitleText: {
-        color: "#3b426c",
-        marginBottom: "2.5rem",
-        fontWeight: 300
-    },
-    title: {
-        fontSize: 14,
-    },
-    pos: {
-        marginBottom: 12,
-    }
-};
+// Styles
+import './style.css';
+import styles from "./materialStyle";
 
 class Header extends React.Component {
-    constructor(props) {
-        super(props);
-    }
     renderCards = () => {
         const { classes } = this.props;
         const cardsData = [
-            { name: "Ki Device", image: KiDevice, href: '/device', style: {height: 210, top: -60}, customClass: 'ki-device-card', customAnimationTime: 'delay-0-7s' },
-            { name: "Ki Blockchain", image: KiBlockchain, href: '/blockchain', style: {height: 250, top: -75}, customClass: 'ki-blockchain-card', customAnimationTime: 'delay-0-5s' },
-            { name: "Ki Ecosystem", image: KiEcosystem, href: '/ecosystem', style: {height: 250, top: -65}, customClass: 'ki-ecosystem-card', customAnimationTime: 'delay-0-3s' }
+            { name: "Ki Device", image: KiDevice, href: '/device', style: {height: 210, top: -60}, id: "header-device", customClass: 'ki-device-card', customAnimationTime: 'delay-0-7s' },
+            { name: "Ki Blockchain", image: KiBlockchain, href: '/blockchain', style: {height: 250, top: -75}, id: "header-blockchain", customClass: 'ki-blockchain-card', customAnimationTime: 'delay-0-5s' },
+            { name: "Ki Ecosystem", image: KiEcosystem, href: '/ecosystem', style: {height: 250, top: -65}, id: "header-ecosystem", customClass: 'ki-ecosystem-card', customAnimationTime: 'delay-0-3s' }
         ];
         let renderCardsData = cardsData.map(cd => {
             return (
                 <div className={cd.customAnimationTime + ' col-md-4 my-4 animated fadeInLeft'} key={cd.name}>
-                    <a className={classes.link} href={cd.href}>
+                    <a className={classes.link} href={cd.href} id={cd.id}>
                         <Card className={classes.card}>
                             <CardContent className={classes.cardContentRoot}>
                                 <div className={classes.cardImageWrapper + ' card-image-wrapper'}>
@@ -155,7 +51,7 @@ class Header extends React.Component {
     }
     render() {
         const { classes } = this.props;
-        const url = "https://gen.us17.list-manage.com/subscribe/post?u=3865106d3d479f1d2e1ec8400&amp;id=86a02d162a";
+        const mailChimpUrl = "https://gen.us17.list-manage.com/subscribe/post?u=3865106d3d479f1d2e1ec8400&amp;id=86a02d162a";
         return (
             <div className="header-component vh-100" id="header-component">
                 <div className="container header-container">
@@ -182,7 +78,7 @@ class Header extends React.Component {
                         </div>
                         <div className="col-md-12 text-center pt-4">
                             <MailchimpSubscribe 
-                                url={url}
+                                url={mailChimpUrl}
                                 render={({ subscribe, status, message }) => (
                                     <CustomMailChimpHome
                                         status={status}

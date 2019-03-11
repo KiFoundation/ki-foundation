@@ -7,11 +7,8 @@ import { Link, NavLink } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import MenuClose from '@material-ui/icons/Close';
-import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -21,68 +18,9 @@ import Divider from '@material-ui/core/Divider';
 import KiFoundationLogo from '../../assets/ki_foundation/logo_foundation.png';
 import KiFoundationLogoShort from '../../assets/ki_foundation/ki_foundation_logo_short.png';
 
+// Styles
 import './style.css';
-
-const styles = {
-  root: {
-    flexGrow: 1
-  },
-  growRight: {
-    flexGrow: 1,
-    textAlign: "right"
-  },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
-  },
-  navbar: {
-    background: "transparent",
-    border: 0,
-    boxShadow: "none",
-    minHeight: 72,
-    paddingTop: '0.5rem'
-  },
-  link: {
-    color: "#3b426c",
-    margin: "0 1.5rem 0 3rem",
-    position: "relative",
-    // textTransform: 'uppercase',
-    fontSize: 14,
-    background: 'none',
-    border: 'none',
-    '&:hover': {
-      backgroundColor: "inherit",
-      textDecoration: 'none',
-      fontWeight: 600,
-      color: '#3b426c'
-    },
-    '&:before': {
-      content: "'__'",
-      fontSize: 14,
-      fontWeight: 600,
-      position: 'absolute',
-      left: -21,
-      color: 'rgb(4, 59, 234)',
-      top: -4
-    }
-  },
-  menuIcon: {
-    cursor: 'pointer',
-    marginRight: '7px'
-  },
-  fixedMenu: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    background: '#fff',
-    zIndex: 1000,
-    width: '100%',
-    height: '100%',
-    paddingTop: 72
-  },
-  fixedMenuContent: {
-  }
-};
+import styles from './materialStyle';
 
 const ListItemLink = (props) => {
   return <ListItem className="text-center" button component="a" {...props} />;
@@ -118,15 +56,15 @@ class Navbar extends React.Component {
       menu = 
         <div className={classes.fixedMenu + ' d-block d-md-none'}>
           <List component="nav" className={classes.fixedMenuContent}>
-            <ListItemLink href="/">
+            <ListItemLink id="mobile-nav-link-home" href="/">
               <ListItemText primary="Home" />
             </ListItemLink>
             <Divider />
-            <ListItemLink href="/team">
+            <ListItemLink id="mobile-nav-link-team" href="/team">
               <ListItemText primary="Team" />
             </ListItemLink>
             <Divider />
-            <ListItemLink href="/contact">
+            <ListItemLink id="mobile-nav-link-contact" href="/contact">
               <ListItemText primary="Contact Us" />
             </ListItemLink>
           </List>
@@ -143,12 +81,12 @@ class Navbar extends React.Component {
           <div className="col d-none d-md-block d-lg-block d-xl-block">
             <AppBar position="absolute" color="default" className={classes.navbar}>
               <Toolbar>
-                <Link to="/"><img height="12" src={KiFoundationLogo} alt="Ki Foundation"/></Link>
+                <Link id="nav-link-logo" to="/"><img height="12" src={KiFoundationLogo} alt="Ki Foundation"/></Link>
                 <div className={classes.growRight}>
                   {/* <Link className={classes.link} to="/whitepaper"><Button className={classes.button}>Whitepaper</Button></Link> */}
-                  <NavLink exact className={classes.link} to="/" activeClassName="active-link">Home</NavLink>
-                  <NavLink exact className={classes.link} to="/team" activeClassName="active-link">Team</NavLink>
-                  <NavLink exact className={classes.link + ' mr-0'} to="/contact" activeClassName="active-link">Contact Us</NavLink>
+                  <NavLink id="nav-link-home" exact className={classes.link} to="/" activeClassName="active-link">Home</NavLink>
+                  <NavLink id="nav-link-team" exact className={classes.link} to="/team" activeClassName="active-link">Team</NavLink>
+                  <NavLink id="nav-link-contact" exact className={classes.link + ' mr-0'} to="/contact" activeClassName="active-link">Contact Us</NavLink>
                 </div>
               </Toolbar>
             </AppBar>
@@ -156,10 +94,10 @@ class Navbar extends React.Component {
           <div className="col d-block d-md-none">
             <AppBar position="absolute" color="default" className={classes.navbar}>
               <Toolbar>
-                <Link to="/" onClick={this.closeNavbar}><img height="30" src={KiFoundationLogoShort} alt="Ki Foundation"/></Link>
+                <Link id="mobile-nav-link-logo" to="/" onClick={this.closeNavbar}><img height="30" src={KiFoundationLogoShort} alt="Ki Foundation"/></Link>
                 <div className={classes.growRight}>
-                  <MenuIcon hidden={isOpened} className={classes.menuIcon} onClick={this.toggleNavbar}/>
-                  <MenuClose hidden={!isOpened} className={classes.menuIcon} onClick={this.toggleNavbar}/>
+                  <MenuIcon id="mobile-nav-link-open" hidden={isOpened} className={classes.menuIcon} onClick={this.toggleNavbar}/>
+                  <MenuClose id="mobile-nav-link-close" hidden={!isOpened} className={classes.menuIcon} onClick={this.toggleNavbar}/>
                 </div>
               </Toolbar>
             </AppBar>
