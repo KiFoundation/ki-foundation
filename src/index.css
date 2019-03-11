@@ -73,3 +73,7 @@ a, button{
 .delay-0-3s{
   animation-delay: 0.3s;
 }
+
+.is-visible.d-contents{
+  display: contents;
+}

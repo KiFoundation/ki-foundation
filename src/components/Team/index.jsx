@@ -1,5 +1,6 @@
 // Services
 import React, { Component } from 'react';
+import LazyLoad from 'react-lazy-load';
 
 // Material
 import Typography from '@material-ui/core/Typography';
@@ -77,65 +78,65 @@ class Team extends Component {
             <span className="team-job">Head of APAC</span>
           </div>
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
-            <img src={tarek} alt=""/>
+            <LazyLoad className="d-contents" height={150}><img src={tarek} alt=""/></LazyLoad>
             <a id="home-team-linkedin-tarek" href="https://www.linkedin.com/in/tarekawwad/" target="_blank" rel="noopener noreferrer" className="second">
-              <img src={linkedin} alt="linkedin"/>
+            <LazyLoad height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
             </a>
             <span className="team-name">Tarek Awwad</span>
             <span className="team-job">Chief Blockchain Architect</span>
           </div>
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
-            <img src={matt} alt=""/>
+            <LazyLoad className="d-contents" height={150}><img src={matt} alt=""/></LazyLoad>
             <a id="home-team-linkedin-matthieu" href="https://www.linkedin.com/in/matthieu-petrella-b0871845/" target="_blank" rel="noopener noreferrer" className="second">
-              <img src={linkedin} alt="linkedin"/>
+              <LazyLoad height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
             </a>
             <span className="team-name">Matthieu Petrella</span>
             <span className="team-job">Chief Marketing Officer</span>
           </div>
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
-            <img src={aymane} alt=""/>
+            <LazyLoad className="d-contents" height={150}><img src={aymane} alt=""/></LazyLoad>
             <a id="home-team-linkedin-fahmi" href="https://www.linkedin.com/in/fahmi-aymane-574b0a48/" target="_blank" rel="noopener noreferrer" className="second">
-              <img src={linkedin} alt="linkedin"/>
+              <LazyLoad height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
             </a>
             <span className="team-name">Aymane Fahmi</span>
             <span className="team-job">Hardware Lead</span>
           </div>
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
-            <img className="small" src={samy} alt=""/>
+            <LazyLoad className="d-contents" height={150}><img className="small" src={samy} alt=""/></LazyLoad>
             <a id="home-team-linkedin-samydelesparda" href="https://www.linkedin.com/in/samydelesparda/" target="_blank" rel="noopener noreferrer" className="second">
-                <img src={linkedin} alt="linkedin"/>
+              <LazyLoad height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
             </a>
             <span className="team-name">Samy de Lesparda</span>
             <span className="team-job"> Marketing Manager</span>
           </div>
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
-            <img src={teddy} alt=""/>
+            <LazyLoad className="d-contents" height={150}><img src={teddy} alt=""/></LazyLoad>
             <a id="home-team-linkedin-teddymeksavanh" href="https://www.linkedin.com/in/teddymeksavanh/" target="_blank" rel="noopener noreferrer" className="second">
-              <img src={linkedin} alt="linkedin"/>
+              <LazyLoad height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
             </a>
             <span className="team-name">Teddy Meksavanh</span>
             <span className="team-job">Fullstack Developer</span>
           </div>
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
-            <img src={dermot} alt=""/>
+            <LazyLoad className="d-contents" height={150}><img src={dermot} alt=""/></LazyLoad>
             <a id="home-team-linkedin-dermot" href="https://www.linkedin.com/in/oriordde/" target="_blank" rel="noopener noreferrer" className="second">
-              <img src={linkedin} alt="linkedin"/>
+              <LazyLoad height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
             </a>
             <span className="team-name">Dermot O’Riordan</span>
             <span className="team-job">Investor Relations & Compliance</span>
           </div>
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
-            <img src={kk} alt=""/>
+            <LazyLoad className="d-contents" height={150}><img src={kk} alt=""/></LazyLoad>
             <a id="home-team-linkedin-kheireddine" href="https://www.linkedin.com/in/kheireddine-kamal-18683a163/" target="_blank" rel="noopener noreferrer" className="second">
-              <img src={linkedin} alt="linkedin"/>
+              <LazyLoad height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
             </a>
             <span className="team-name">Kheireddine Kamal</span>
             <span className="team-job">Chief Operating Officer</span>
         </div>
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
-            <img src={medhi} alt=""/>
+            <LazyLoad className="d-contents" height={150}><img src={medhi} alt=""/></LazyLoad>
             <a id="home-team-linkedin-mmsabwat" href="https://www.linkedin.com/in/mmsabwat/" target="_blank" rel="noopener noreferrer" className="second">
-              <img src={linkedin} alt="linkedin"/>
+              <LazyLoad height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
             </a>
             <span className="team-name">Mehdi Sabwat</span>
             <span className="team-job">Embedded Software Developer</span>
@@ -146,88 +147,88 @@ class Team extends Component {
         <Typography align="center" className={classes.text + ' animated fadeInDown'} variant="h3" style={{color: '#3b426c'}}>Investors & Advisors</Typography>
         <div className="team-row row">
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
-            <img src={tariq} alt=""/>
+            <LazyLoad className="d-contents" height={150}><img src={tariq} alt=""/></LazyLoad>
             <a id="home-team-twitter-tariqkrim" href="https://twitter.com/tariqkrim" target="_blank" rel="noopener noreferrer" className="first">
-              <img src={twitter} alt="twitter"/>
+              <LazyLoad height={32}><img src={twitter} alt="twitter"/></LazyLoad>
             </a>
             <a id="home-team-linkedin-tariqkrim" href="https://www.linkedin.com/in/tariqkrim/" target="_blank" rel="noopener noreferrer" className="second">
-              <img src={linkedin} alt="linkedin"/>
+              <LazyLoad height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
             </a>
             <span className="team-name">Tariq Krim</span>
             <span className="team-job">Investor & Product Advisor</span>
             <div className="team-logos">
-              <img src={netvibes} alt="netvibes"/>
-              <img src={jolicloud} alt="jolicloud"/>
+              <LazyLoad height={25}><img src={netvibes} alt="netvibes"/></LazyLoad>
+              <LazyLoad height={25}><img src={jolicloud} alt="jolicloud"/></LazyLoad>
             </div>
           </div>
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
-            <img src={romain} alt=""/>
+            <LazyLoad className="d-contents" height={150}><img src={romain} alt=""/></LazyLoad>
             <a id="home-team-twitter-romainhuet" href="https://twitter.com/romainhuet" target="_blank" rel="noopener noreferrer" className="first">
-              <img src={twitter} alt="twitter"/>
+              <LazyLoad height={32}><img src={twitter} alt="twitter"/></LazyLoad>
             </a>
             <a id="home-team-linkedin-romainhuet" href="https://www.linkedin.com/in/romainhuet/" target="_blank" rel="noopener noreferrer" className="second">
-              <img src={linkedin} alt="linkedin"/>
+              <LazyLoad height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
             </a>
             <span className="team-name">Romain Huet</span>
             <span className="team-job">Technology Advisor</span>
             <div className="team-logos">
-              <img src={twitterLogo} alt="twitter"/>
-              <img src={stripe} alt="stripe"/>
+              <LazyLoad height={25}><img src={twitterLogo} alt="twitter"/></LazyLoad>
+              <LazyLoad height={25}><img src={stripe} alt="stripe"/></LazyLoad>
             </div>
           </div>
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
-            <img src={yann} alt=""/>
+            <LazyLoad className="d-contents" height={150}><img src={yann} alt=""/></LazyLoad>
             <a id="home-team-twitter-ylechelle" href="https://twitter.com/ylechelle" target="_blank" rel="noopener noreferrer" className="first">
-              <img src={twitter} alt="twitter"/>
+              <LazyLoad height={32}><img src={twitter} alt="twitter"/></LazyLoad>
             </a>
             <a id="home-team-linkedin-ylechelle" href="https://www.linkedin.com/in/ylechelle/" target="_blank" rel="noopener noreferrer" className="second">
-              <img src={linkedin} alt="linkedin"/>
+              <LazyLoad height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
             </a>
             <span className="team-name">Yann Lechell</span>
             <span className="team-job">Investor & Technology Advisor</span>
             <div className="team-logos">
-              <img src={snips} alt="snips"/>
+              <LazyLoad height={25}><img src={snips} alt="snips"/></LazyLoad>
             </div>
           </div>
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
-            <img src={fabrice} alt=""/>
+            <LazyLoad className="d-contents" height={150}><img src={fabrice} alt=""/></LazyLoad>
             <a id="home-team-twitter-epelboin" href="https://twitter.com/epelboin" target="_blank" rel="noopener noreferrer" className="first">
-              <img src={twitter} alt="twitter"/>
+              <LazyLoad height={32}><img src={twitter} alt="twitter"/></LazyLoad>
             </a>
             <a id="home-team-linkedin-epelboin" href="https://www.linkedin.com/in/epelboin/" target="_blank" rel="noopener noreferrer" className="second">
-              <img src={linkedin} alt="linkedin"/>
+              <LazyLoad height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
             </a>
             <span className="team-name">Fabrice Epelboin</span>
             <span className="team-job">Privacy Advisor</span>
             <div className="team-logos">
-              <img src={sciences} alt="sciences"/>
-              <img src={yogosha} alt="yogosha"/>
+              <LazyLoad height={25}><img src={sciences} alt="sciences"/></LazyLoad>
+              <LazyLoad height={25}><img src={yogosha} alt="yogosha"/></LazyLoad>
             </div>
           </div>
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
-            <img src={james} alt=""/>
+            <LazyLoad className="d-contents" height={150}><img src={james} alt=""/></LazyLoad>
             <a id="home-team-linkedin-james" href="https://www.linkedin.com/in/jamesroypoulter/" target="_blank" rel="noopener noreferrer" className="second">
-              <img src={linkedin} alt="linkedin"/>
+              <LazyLoad height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
             </a>
             <span className="team-name">James Roy Poulter</span>
             <span className="team-job">Investor Relations & Partnerships</span>
             <div className="team-logos">
-              <img className="team-logo-big" src={thereserve} alt="the reserve"/>
+              <LazyLoad height={40}><img className="team-logo-big" src={thereserve} alt="the reserve"/></LazyLoad>
             </div>
           </div>
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
-            <img src={serge} alt=""/>
+            <LazyLoad className="d-contents" height={150}><img src={serge} alt=""/></LazyLoad>
             <a id="home-team-twitter-salleyne" href="https://twitter.com/salleyne?lang=fr" target="_blank" rel="noopener noreferrer" className="first">
-              <img src={twitter} alt="twitter"/>
+              <LazyLoad height={32}><img src={twitter} alt="twitter"/></LazyLoad>
             </a>
             <a id="home-team-linkedin-sergealleyne" href="https://www.linkedin.com/in/sergealleyne/" target="_blank" rel="noopener noreferrer" className="second">
-              <img src={linkedin} alt="linkedin"/>
+              <LazyLoad height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
             </a>
             <span className="team-name">Serge Alleyne</span>
             <span className="team-job">Investor</span>
             <div className="team-logos">
-              <img src={teads} alt="teads"/>
-              <img src={thefamily} alt="thefamily"/>
+              <LazyLoad height={25}><img src={teads} alt="teads"/></LazyLoad>
+              <LazyLoad height={25}><img src={thefamily} alt="thefamily"/></LazyLoad>
             </div>
           </div>
           {/* <div className="team-member">
@@ -277,22 +278,22 @@ class Team extends Component {
         <Typography align="center" className={classes.text + ' animated fadeInDown'} variant="h3" style={{color: '#3b426c'}}>Science Advisors</Typography>
         <div className="team-row row">
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">    
-            <img src={lionel_brunie} alt=""/>
+            <LazyLoad className="d-contents" height={150}><img src={lionel_brunie} alt=""/></LazyLoad>
             <a id="home-team-linkedin-lionel" href="https://www.linkedin.com/in/lionel-brunie-2410026/" target="_blank" rel="noopener noreferrer" className="second">
-              <img src={linkedin} alt="linkedin"/>
+              <LazyLoad height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
             </a>
             <span className="team-name">Lionel Brunie</span>
             <span className="team-job">Professor at the INSA de Lyon, researcher at LIRIS</span>
           </div>
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
-            <img src={omar} alt=""/>
+            <LazyLoad className="d-contents" height={150}><img src={omar} alt=""/></LazyLoad>
             <span className="team-name">Omar Hasan</span>
             <span className="team-job">Associate Professor at the INSA de Lyon</span>
           </div>
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
-            <img src={badr} alt=""/>
+            <LazyLoad className="d-contents" height={150}><img src={badr} alt=""/></LazyLoad>
             <a id="home-team-linkedin-bellajbadr" href="https://www.linkedin.com/in/bellajbadr/" target="_blank" rel="noopener noreferrer" className="second">
-              <img src={linkedin} alt="linkedin"/>
+              <LazyLoad height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
             </a>
             <span className="team-name">Badr Bellaj</span>
             <span className="team-job">CTO and co-founder of Mchain</span>
