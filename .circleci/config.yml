@@ -22,7 +22,7 @@ jobs:
       - restore-cache: *restore-cache
       - run: yarn install
       - save-cache: *save-cache
-      - run: CI=false yarn build
+      - run: yarn build
       - persist_to_workspace:
           root: build
           paths:
