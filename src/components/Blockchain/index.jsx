@@ -33,7 +33,7 @@ class Blockchain extends React.Component {
     renderTabContent = () => {
         const { value } = this.state;
         let content;
-        if (value == 0) {
+        if (value === 0) {
             content =
                 <div style={{minHeight: 192}}>
                     <p className="mb-4">
@@ -43,7 +43,7 @@ class Blockchain extends React.Component {
                         The approach of the Ki Foundation’s R&D team will result in a scalable and secure protocol that can deal with thousands of transactions per second using very low computational power but without sacrificing on the organisation’s fairness ethos and commitment to decentralisation.
                     </p>
                 </div>;
-        } else if (value == 1) {
+        } else if (value === 1) {
             content =
                 <div className="items" style={{minHeight: 208}}>
                     <div className="item col-md-4 mt-0">

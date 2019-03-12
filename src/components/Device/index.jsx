@@ -114,7 +114,7 @@ class Device extends React.Component {
     renderTabContent = () => {
         const { value } = this.state;
         let content;
-        if (value == 0) {
+        if (value === 0) {
             content =
                 <div>
                     <p className="mb-4">
@@ -124,7 +124,7 @@ class Device extends React.Component {
                         Utilising Ki's new Proof of Reputation consensus mechanism and scalable new blockchain, control and governance of the Ki ecosystem and the value arising from it will be shared across all of the network’s participants.
                     </p>
                 </div>;
-        } else if (value == 1) {
+        } else if (value === 1) {
             content =
                 <div className="row">
                      {this.renderCapabilities()}
@@ -153,7 +153,7 @@ class Device extends React.Component {
                     <div className="row device-wrapper">
                         <div className="d-block d-md-none col-md-4 text-center vertical-align mb-7">
                             <div>
-                                <img src={imageSelected} alt="Selected image" height="300"/>
+                                <img src={imageSelected} alt="Selected Domo Octagon" height="300"/>
                                 <span className="small-divider"></span>
                                 <Slider {...settings}>
                                     <div>
@@ -208,7 +208,7 @@ class Device extends React.Component {
                         </div>
                         <div className="d-none d-md-block col-md-6 text-center vertical-align">
                             <div className="mt-5">
-                                <img src={imageSelected} alt="Selected image" height="300"/>
+                                <img src={imageSelected} alt="Selected Domo Octagon" height="300"/>
                                 <span className="small-divider"></span>
                                 <Slider {...settings}>
                                     <div>

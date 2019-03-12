@@ -22,9 +22,6 @@ import Page404 from './components/page404';
 import './App.css';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
   componentDidMount() {
     window.$crisp = [];
     window.CRISP_WEBSITE_ID = "d979622d-33b1-430e-a58c-e6f42f1cdc07";
