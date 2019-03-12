@@ -22,7 +22,7 @@ class Footer extends React.Component {
                     <Divider className={classes.divider}/>
                     <div className="row p-0 mb-5">
                         <div className="col-md-12 p-0">
-                        <LazyLoad height={65}>
+                        <LazyLoad offsetVertical={200} height={65}>
                             <img height="65" src={KiFoundationLogoShort} alt="Footer Ki Logo"/>
                         </LazyLoad>
                         </div>
