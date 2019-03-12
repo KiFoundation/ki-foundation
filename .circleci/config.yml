@@ -42,12 +42,13 @@ jobs:
             cd build
             echo -e 'User-Agent: *\nDisallow: /' > robots.txt
             export AWS_ACCESS_KEY_ID=${SANDBOX_AWS_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=${SANDBOX_AWS_SECRET_ACCESS_KEY}
-            aws s3 sync . s3://${SANDBOX_S3_BUCKET_NAME}
+            aws s3 sync static s3://${SANDBOX_S3_BUCKET_NAME}/static --cache-control max-age=31536000,public # 1y cache for static files
+            aws s3 sync . s3://${SANDBOX_S3_BUCKET_NAME} --exclude 'static/*' --cache-control max-age=60,public # 1min cache for others
             aws cloudfront create-invalidation --distribution-id ${SANDBOX_CLOUDFRONT_DISTRIBUTION_ID} --paths "/*"
       - run:
           name: Send Slack notification
           command: |
-            curl -X POST --data-urlencode "payload={\"channel\": \"#dev\", \"username\": \"Staging Deploy\", \"text\": \"It's time to test! https://beta-website.sandbox.kifoundation.tech/ has been deployed to preprod successfully!\", \"icon_emoji\": \":airplane:\"}" ${SLACK_WEBHOOK_URL}
+            curl -X POST --data-urlencode "payload={\"channel\": \"#dev\", \"username\": \"Staging Deploy\", \"text\": \"@here It's time to test! https://beta-website.sandbox.kifoundation.tech/ has been deployed to preprod successfully!\", \"icon_emoji\": \":airplane:\"}" ${SLACK_WEBHOOK_URL}
 
   deploy_prod:
     docker:
@@ -63,12 +64,13 @@ jobs:
             cd build
             echo -e 'User-Agent: *\nDisallow: /' > robots.txt
             export AWS_ACCESS_KEY_ID=${PROD_AWS_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=${PROD_AWS_SECRET_ACCESS_KEY}
-            aws s3 sync . s3://${PROD_S3_BUCKET_NAME}
+            aws s3 sync static s3://${PROD_S3_BUCKET_NAME}/static --cache-control max-age=31536000,public # 1y cache for static files
+            aws s3 sync . s3://${PROD_S3_BUCKET_NAME} --exclude 'static/*' --cache-control max-age=60,public # 1min cache for others
             aws cloudfront create-invalidation --distribution-id ${PROD_CLOUDFRONT_DISTRIBUTION_ID} --paths "/*"
       - run:
           name: Send Slack notification
           command: |
-            curl -X POST --data-urlencode "payload={\"channel\": \"#dev\", \"username\": \"PROD Deploy\", \"text\": \"Yeah! https://beta.foundation.ki has been deployed to production successfully!\", \"icon_emoji\": \":rocket:\"}" ${SLACK_WEBHOOK_URL}
+            curl -X POST --data-urlencode "payload={\"channel\": \"#dev\", \"username\": \"PROD Deploy\", \"text\": \"@here Yeah! https://beta.foundation.ki has been deployed to production successfully!\", \"icon_emoji\": \":rocket:\"}" ${SLACK_WEBHOOK_URL}
 
 workflows:
   version: 2
