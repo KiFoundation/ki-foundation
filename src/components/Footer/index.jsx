@@ -1,6 +1,5 @@
 // Services
 import React from 'react';
-import PropTypes from 'prop-types';
 import LazyLoad from 'react-lazy-load';
 
 // Material
@@ -15,9 +14,6 @@ import KiFoundationLogoShort from '../../assets/ki_foundation/ki_foundation_logo
 import styles from './materialStyle';
 
 class Footer extends React.Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
         const { classes } = this.props;
         return (
@@ -46,7 +42,7 @@ class Footer extends React.Component {
                         </div>
                         <div className="col-md-4">
                             <Typography className={classes.title} variant="h6"> Find Us </Typography>
-                            <a id="footer-link-telegram" className={classes.link} target="_blank" href="https://t.me/joinchat/DTzxkEh7OReR7MKXY7MGrw">Telegram</a>
+                            <a id="footer-link-telegram" rel="noopener noreferrer" className={classes.link} target="_blank" href="https://t.me/joinchat/DTzxkEh7OReR7MKXY7MGrw">Telegram</a>
                         </div>
                     </div>
                 </div>

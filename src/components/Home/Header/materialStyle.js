@@ -66,7 +66,6 @@ const styles = {
     },
     punchline: {
         color: "#3b426c",
-        fontWeight: 'normal',
         fontWeight: 300
     },
     bullet: {

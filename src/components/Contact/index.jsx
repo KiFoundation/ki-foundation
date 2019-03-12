@@ -11,9 +11,6 @@ import styles from './materialStyle';
 import './style.css';
 
 class Contact extends React.Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
         const { classes } = this.props;
         return (

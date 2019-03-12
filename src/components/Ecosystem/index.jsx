@@ -27,14 +27,14 @@ class Ecosystem extends React.Component {
     renderTabContent = () => {
         const { value } = this.state;
         let content;
-        if (value == 0) {
+        if (value === 0) {
             content =
                 <div style={{minHeight: 192}}>
                     <p className="mb-4">
                         The Ki Network enables an open development ecosystem and decentralized marketplace for dApps leveraging the Ki networks distribution to reach end users in the home, while preserving the privacy of users personal data by processing everything locally.
                     </p>
                 </div>;
-        } else if (value == 1) {
+        } else if (value === 1) {
             content =
                 <div style={{minHeight: 192}}>
                     <p className="mb-4">

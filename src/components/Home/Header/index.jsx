@@ -29,7 +29,7 @@ class Header extends React.Component {
         const cardsData = [
             { name: "Ki Device", image: KiDevice, href: '/device', style: {height: 210, top: -60}, id: "header-device", customClass: 'ki-device-card', customAnimationTime: 'delay-0-7s', lazyLoad: false },
             { name: "Ki Blockchain", image: KiBlockchain, href: '/blockchain', style: {height: 250, top: -75}, id: "header-blockchain", customClass: 'ki-blockchain-card', customAnimationTime: 'delay-0-5s', lazyLoad: false },
-            { name: "Ki Ecosystem", image: KiEcosystem, href: '/ecosystem', style: {height: 250, top: -65}, id: "header-ecosystem", customClass: 'ki-ecosystem-card', customAnimationTime: 'delay-0-3s', lazyLoad: true }
+            { name: "Ki Ecosystem", image: KiEcosystem, href: '/ecosystem', style: {height: 250, top: -65}, id: "header-ecosystem", customClass: 'ki-ecosystem-card', customAnimationTime: 'delay-0-3s', lazyLoad: false }
         ];
         let renderCardsData = cardsData.map(cd => {
             let renderLazyLoad = <img style={cd.style} className={cd.customClass + ' card-image'} src={cd.image} alt={cd.image} />

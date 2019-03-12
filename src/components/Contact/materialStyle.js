@@ -30,7 +30,6 @@ const styles = {
     },
     subtitle: {
         color: "#3b426c",
-        fontWeight: 'normal',
         marginBottom: '1.5rem',
         fontWeight: 300
     },
