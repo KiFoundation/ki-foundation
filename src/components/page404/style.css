@@ -63,7 +63,6 @@
 
 .page-404-container h1 {
     font-size: 30vh;
-    line-height: 22vh;   
     text-shadow: -10px 10px 0px #043bea;
                  /* -20px 20px 0px #002ec4; */
                  /* -30px 30px 0px #001a6e; */
@@ -72,6 +71,9 @@
 @media screen and (min-width: 1200px) {
     .page-404-container h1 {
         font-size: 12rem;
+    }
+    .page-404-container .page-not-found {
+        font-size: 3rem;
     }
 }
 
@@ -89,7 +91,6 @@
 @media screen and (max-width: 555px) {
     .page-404-container h1 {
         font-size: 18vh;
-        line-height: 15vh;
     }
 
     .page-404-container .page-not-found {
