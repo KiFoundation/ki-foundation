@@ -12,9 +12,9 @@ import ArrowRightAlt from '@material-ui/icons/ArrowRightAlt'
 import { withStyles } from '@material-ui/core/styles';
 
 // Images
-import KiDevice from '../../../assets/ki_foundation/animated_octagon.png';
-import KiBlockchain from '../../../assets/ki_foundation/blockchain.gif';
-import KiEcosystem from '../../../assets/ki_foundation/ecosystem.gif';
+import KiDevice from '../../../assets/ki_foundation/Device-min.png';
+import KiBlockchain from '../../../assets/ki_foundation/Blockchain-min.png';
+import KiEcosystem from '../../../assets/ki_foundation/Ecosystem-min.png';
 
 // Components
 import CustomMailChimpHome from '../../CustomComponent/CustomMailChimpHome';
@@ -27,9 +27,9 @@ class Header extends React.Component {
     renderCards = () => {
         const { classes } = this.props;
         const cardsData = [
-            { name: "Ki Device", image: KiDevice, href: '/device', style: {height: 210, top: -60}, id: "header-device", customClass: 'ki-device-card', customAnimationTime: 'delay-0-7s', lazyLoad: false },
-            { name: "Ki Blockchain", image: KiBlockchain, href: '/blockchain', style: {height: 250, top: -75}, id: "header-blockchain", customClass: 'ki-blockchain-card', customAnimationTime: 'delay-0-5s', lazyLoad: false },
-            { name: "Ki Ecosystem", image: KiEcosystem, href: '/ecosystem', style: {height: 250, top: -65}, id: "header-ecosystem", customClass: 'ki-ecosystem-card', customAnimationTime: 'delay-0-3s', lazyLoad: false }
+            { name: "Ki Device", image: KiDevice, href: '/device', style: {height: 210, top: -60, animationIterationount: 'infinite'}, id: "header-device", customClass: 'ki-device-card', customAnimationTime: 'delay-0-7s', lazyLoad: false },
+            { name: "Ki Blockchain", image: KiBlockchain, href: '/blockchain', style: {height: 250, top: -75, animationIterationount: 'infinite'}, id: "header-blockchain", customClass: 'ki-blockchain-card', customAnimationTime: 'delay-0-5s', lazyLoad: false },
+            { name: "Ki Ecosystem", image: KiEcosystem, href: '/ecosystem', style: {height: 250, top: -65, animationIterationount: 'infinite'}, id: "header-ecosystem", customClass: 'ki-ecosystem-card', customAnimationTime: 'delay-0-3s', lazyLoad: false }
         ];
         let renderCardsData = cardsData.map(cd => {
             let renderLazyLoad = <img style={cd.style} className={cd.customClass + ' card-image'} src={cd.image} alt={cd.image} />

@@ -8,7 +8,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
 // Images
-import BlockchainLogo from '../../assets/ki_foundation/blockchain.png';
+import BlockchainLogo from '../../assets/ki_foundation/Blockchain.png';
 import iconDecentralized from '../../assets/blockchain/icon-decentralized.svg';
 import iconFlash from '../../assets/blockchain/icon-flash.svg';
 import iconReputation from '../../assets/blockchain/icon-reputation.svg';
