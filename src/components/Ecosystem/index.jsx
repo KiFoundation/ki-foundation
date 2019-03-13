@@ -8,7 +8,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
 // Images
-import KiEcosystem from '../../assets/ki_foundation/ecosystem.gif';
+import KiEcosystem from '../../assets/ki_foundation/Ecosystem.png';
 
 // Styles
 import styles from './materialStyle';
