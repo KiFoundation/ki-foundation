@@ -59,10 +59,9 @@ jobs:
           at: build
       - run: sudo pip install awscli
       - run:
-          name: Add robots.txt and Deploy to S3
+          name: Deploy to S3
           command: |
             cd build
-            echo -e 'User-Agent: *\nDisallow: /' > robots.txt
             export AWS_ACCESS_KEY_ID=${PROD_AWS_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=${PROD_AWS_SECRET_ACCESS_KEY}
             aws s3 sync static s3://${PROD_S3_BUCKET_NAME}/static --cache-control max-age=31536000,public # 1y cache for static files
             aws s3 sync . s3://${PROD_S3_BUCKET_NAME} --exclude 'static/*' --cache-control max-age=60,public # 1min cache for others
