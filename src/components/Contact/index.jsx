@@ -65,14 +65,34 @@ class Contact extends React.Component {
         this.setState({[event.target.name]: event.target.value});
     }
     handleSubmit = (event) => {
+        const { job, email, fullname, message } = this.state;
+        event.preventDefault();
+        const contactEndpoint = "https://static-api.preprod.kifoundation.tech/1/foundation/contact";
+
         const errors = document.getElementsByClassName('form-text');
-        console.log('errors', errors);
         if (errors && errors.length > 0) {
             for (var i = 0; i < errors.length; i++) {
                 errors[i].classList.remove('d-none');
             }
         }
-        event.preventDefault();
+        fetch(contactEndpoint, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                type: job,
+                name: fullname,
+                from: email,
+                message: message
+            })
+        })
+        .then(res => {
+            if (res.ok) {
+                console.log('res', res);
+            }
+        });
     }
     formContent = () => {
         const { job, email, fullname, message } = this.state;
@@ -101,9 +121,9 @@ class Contact extends React.Component {
         const { classes } = this.props;
         const { job } = this.state;
         if ( job === 'cryptoenthusiast') {
-            return <a id="contact-mailto" className={classes.mailTo} href="mailto:contact@foundation.ki"><Button className={classes.button}>Join our Telegram</Button></a>;
+            return <div className="text-center"><a id="contact-link-telegram" rel="noopener noreferrer" className={classes.mailTo} target="_blank" href="https://t.me/KiFoundation"><Button className={classes.button}>Join our Telegram</Button></a></div>;
         } else {
-            return <input value="Send an email" type="submit" className={classes.button} />;
+            return <div className="text-center pt-2"><input value="Send an email" type="submit" className={classes.button} /></div>;
         }
     }
     render() {
