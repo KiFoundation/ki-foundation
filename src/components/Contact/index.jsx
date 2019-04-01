@@ -12,7 +12,6 @@ import { withStyles } from '@material-ui/core/styles';
 // Styles
 import styles from './materialStyle';
 import './style.css';
-import { element } from 'prop-types';
 
 const BootstrapInput = withStyles(theme => ({
     root: {
