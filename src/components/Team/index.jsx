@@ -8,7 +8,7 @@ import { withStyles } from '@material-ui/core/styles';
 
 // Images
 import reda from '../../assets/team/reda.png';
-import kenichi from '../../assets/team/kenichi.png';
+// import kenichi from '../../assets/team/kenichi.png';
 import aymane from '../../assets/team/aymane.png';
 import samy from '../../assets/team/samy.png';
 import tarek from '../../assets/team/tarek.png';
@@ -56,7 +56,7 @@ class Team extends Component {
     const { classes } = this.props;
     return (
       <section id="team">
-        <Typography className={classes.text + ' animated fadeInDown'} align="center" variant="h3" style={{color: '#3b426c', zIndex: 100}}>Team</Typography>
+        <Typography className={classes.text + ' animated fadeInDown'} align="center" variant="h3" style={{color: '#3b426c', zIndex: 100}}>Core Team</Typography>
         <div className="team-row row">
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
             <img src={reda} alt=""/>
@@ -70,13 +70,21 @@ class Team extends Component {
             <span className="team-job">Founder & CEO</span>
           </div>
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
+            <LazyLoad className="d-contents" offsetVertical={1100} height={166}><img src={kk} alt=""/></LazyLoad>
+            <a id="home-team-linkedin-kheireddine" href="https://www.linkedin.com/in/kheireddine-kamal-18683a163/" target="_blank" rel="noopener noreferrer" className="second">
+              <LazyLoad className="d-contents" offsetVertical={1100} height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
+            </a>
+            <span className="team-name">Kheireddine Kamal</span>
+            <span className="team-job">Chief Operating Officer</span>
+          </div>
+          {/* <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
             <img src={kenichi} alt=""/>
             <a id="home-team-linkedin-kenichi" href="https://www.linkedin.com/in/kenichi-morita-61835533/" target="_blank" rel="noopener noreferrer" className="second">
               <img src={linkedin} alt="linkedin"/>
             </a>
             <span className="team-name">Kenichi Morita</span>
             <span className="team-job">Head of APAC</span>
-          </div>
+          </div> */}
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
             <LazyLoad className="d-contents" offsetVertical={1100} height={166}><img src={tarek} alt=""/></LazyLoad>
             <a id="home-team-linkedin-tarek" href="https://www.linkedin.com/in/tarekawwad/" target="_blank" rel="noopener noreferrer" className="second">
@@ -94,6 +102,22 @@ class Team extends Component {
             <span className="team-job">Chief Marketing Officer</span>
           </div>
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
+            <LazyLoad className="d-contents" offsetVertical={1100} height={166}><img src={dermot} alt=""/></LazyLoad>
+            <a id="home-team-linkedin-dermot" href="https://www.linkedin.com/in/oriordde/" target="_blank" rel="noopener noreferrer" className="second">
+              <LazyLoad className="d-contents" offsetVertical={1100} height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
+            </a>
+            <span className="team-name">Dermot O’Riordan</span>
+            <span className="team-job">Investor Relations & Compliance</span>
+          </div>
+          <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
+            <LazyLoad className="d-contents" offsetVertical={1100} height={166}><img src={teddy} alt=""/></LazyLoad>
+            <a id="home-team-linkedin-teddymeksavanh" href="https://www.linkedin.com/in/teddymeksavanh/" target="_blank" rel="noopener noreferrer" className="second">
+              <LazyLoad className="d-contents" offsetVertical={1100} height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
+            </a>
+            <span className="team-name">Teddy Meksavanh</span>
+            <span className="team-job">Fullstack Developer</span>
+          </div>
+          <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
             <LazyLoad className="d-contents" offsetVertical={1100} height={166}><img src={aymane} alt=""/></LazyLoad>
             <a id="home-team-linkedin-fahmi" href="https://www.linkedin.com/in/fahmi-aymane-574b0a48/" target="_blank" rel="noopener noreferrer" className="second">
               <LazyLoad className="d-contents" offsetVertical={1100} height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
@@ -109,30 +133,6 @@ class Team extends Component {
             <span className="team-name">Samy de Lesparda</span>
             <span className="team-job"> Marketing Manager</span>
           </div>
-          <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
-            <LazyLoad className="d-contents" offsetVertical={1100} height={166}><img src={teddy} alt=""/></LazyLoad>
-            <a id="home-team-linkedin-teddymeksavanh" href="https://www.linkedin.com/in/teddymeksavanh/" target="_blank" rel="noopener noreferrer" className="second">
-              <LazyLoad className="d-contents" offsetVertical={1100} height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
-            </a>
-            <span className="team-name">Teddy Meksavanh</span>
-            <span className="team-job">Fullstack Developer</span>
-          </div>
-          <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
-            <LazyLoad className="d-contents" offsetVertical={1100} height={166}><img src={dermot} alt=""/></LazyLoad>
-            <a id="home-team-linkedin-dermot" href="https://www.linkedin.com/in/oriordde/" target="_blank" rel="noopener noreferrer" className="second">
-              <LazyLoad className="d-contents" offsetVertical={1100} height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
-            </a>
-            <span className="team-name">Dermot O’Riordan</span>
-            <span className="team-job">Investor Relations & Compliance</span>
-          </div>
-          <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
-            <LazyLoad className="d-contents" offsetVertical={1100} height={166}><img src={kk} alt=""/></LazyLoad>
-            <a id="home-team-linkedin-kheireddine" href="https://www.linkedin.com/in/kheireddine-kamal-18683a163/" target="_blank" rel="noopener noreferrer" className="second">
-              <LazyLoad className="d-contents" offsetVertical={1100} height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
-            </a>
-            <span className="team-name">Kheireddine Kamal</span>
-            <span className="team-job">Chief Operating Officer</span>
-        </div>
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
             <LazyLoad className="d-contents" offsetVertical={1100} height={166}><img src={medhi} alt=""/></LazyLoad>
             <a id="home-team-linkedin-mmsabwat" href="https://www.linkedin.com/in/mmsabwat/" target="_blank" rel="noopener noreferrer" className="second">
@@ -177,20 +177,6 @@ class Team extends Component {
             </div>
           </div>
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
-            <LazyLoad className="d-contents" offsetVertical={1100} height={166}><img src={yann} alt=""/></LazyLoad>
-            <a id="home-team-twitter-ylechelle" href="https://twitter.com/ylechelle" target="_blank" rel="noopener noreferrer" className="first">
-              <LazyLoad className="d-contents" offsetVertical={1100} height={32}><img src={twitter} alt="twitter"/></LazyLoad>
-            </a>
-            <a id="home-team-linkedin-ylechelle" href="https://www.linkedin.com/in/ylechelle/" target="_blank" rel="noopener noreferrer" className="second">
-              <LazyLoad className="d-contents" offsetVertical={1100} height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
-            </a>
-            <span className="team-name">Yann Lechell</span>
-            <span className="team-job">Investor & Technology Advisor</span>
-            <div className="team-logos">
-              <LazyLoad className="d-contents" offsetVertical={1100} height={25}><img src={snips} alt="snips"/></LazyLoad>
-            </div>
-          </div>
-          <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
             <LazyLoad className="d-contents" offsetVertical={1100} height={166}><img src={fabrice} alt=""/></LazyLoad>
             <a id="home-team-twitter-epelboin" href="https://twitter.com/epelboin" target="_blank" rel="noopener noreferrer" className="first">
               <LazyLoad className="d-contents" offsetVertical={1100} height={32}><img src={twitter} alt="twitter"/></LazyLoad>
@@ -203,6 +189,20 @@ class Team extends Component {
             <div className="team-logos">
               <LazyLoad className="d-contents" offsetVertical={1100} height={25}><img src={sciences} alt="sciences"/></LazyLoad>
               <LazyLoad className="d-contents" offsetVertical={1100} height={25}><img src={yogosha} alt="yogosha"/></LazyLoad>
+            </div>
+          </div>
+          <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
+            <LazyLoad className="d-contents" offsetVertical={1100} height={166}><img src={yann} alt=""/></LazyLoad>
+            <a id="home-team-twitter-ylechelle" href="https://twitter.com/ylechelle" target="_blank" rel="noopener noreferrer" className="first">
+              <LazyLoad className="d-contents" offsetVertical={1100} height={32}><img src={twitter} alt="twitter"/></LazyLoad>
+            </a>
+            <a id="home-team-linkedin-ylechelle" href="https://www.linkedin.com/in/ylechelle/" target="_blank" rel="noopener noreferrer" className="second">
+              <LazyLoad className="d-contents" offsetVertical={1100} height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
+            </a>
+            <span className="team-name">Yann Lechell</span>
+            <span className="team-job">Investor & Technology Advisor</span>
+            <div className="team-logos">
+              <LazyLoad className="d-contents" offsetVertical={1100} height={25}><img src={snips} alt="snips"/></LazyLoad>
             </div>
           </div>
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
