@@ -86,6 +86,7 @@ class Contact extends React.Component {
         .then(
             (res) => {
                 if (res && res.ok) {
+                    console.log('res', res);
                     this.setState({
                         job: 'empty',
                         email: '',
@@ -109,20 +110,20 @@ class Contact extends React.Component {
         );
     }
     formContent = () => {
-        const { job } = this.state;
+        const { job, email, fullname, message } = this.state;
         if ( job === 'cryptoenthusiast' ) {
             return;
         } else {
             return (
                 <div>
                     <div className="form-group mb-4">
-                        <input onChange={this.handleChange} name="email" type="email" className="form-control" placeholder="Enter email"/>
+                        <input onChange={this.handleChange} value={email} name="email" type="email" className="form-control" placeholder="Enter email"/>
                     </div>
                     <div className="form-group mb-4">
-                        <input onChange={this.handleChange} name="fullname" type="text" className="form-control" placeholder="Full name"/>
+                        <input onChange={this.handleChange} value={fullname} name="fullname" type="text" className="form-control" placeholder="Full name"/>
                     </div>
                     <div className="form-group">
-                        <textarea onChange={this.handleChange} name="message" className="form-control" rows="5" placeholder="Your message..."></textarea>
+                        <textarea onChange={this.handleChange} value={message} name="message" className="form-control" rows="5" placeholder="Your message..."></textarea>
                     </div>
                 </div>
             );
