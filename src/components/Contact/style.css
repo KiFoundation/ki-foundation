@@ -23,3 +23,8 @@
 .first-capitalize::first-letter{
     text-transform: capitalize;
 }
+
+.contact-telegram-icon{
+    position: absolute;
+    left: 15px;
+}
