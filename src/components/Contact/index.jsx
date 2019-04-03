@@ -73,7 +73,7 @@ class Contact extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
         const { job, email, fullname, message } = this.state;
-        const contactEndpoint = "https://static-api.preprod.kifoundation.tech/1/foundation/contact";
+        const contactEndpoint = "https://static-api.foundation.ki/1/foundation/contact";
 
         fetch(contactEndpoint, {
             method: 'POST',
@@ -91,7 +91,6 @@ class Contact extends React.Component {
         .then(
             (res) => {
                 if (res && res.ok) {
-                    console.log('res', res);
                     this.setState({
                         job: 'empty',
                         email: '',
@@ -153,7 +152,7 @@ class Contact extends React.Component {
         const { classes } = this.props;
         const { job } = this.state;
         if ( job === 'cryptoenthusiast') {
-            return <div className="text-center"><a id="contact-link-telegram" rel="noopener noreferrer" className={classes.mailTo} target="_blank" href="https://t.me/KiFoundation"><Button className={classes.button}><img src={TelegramLogo} alt="telegram logo" height="20" className="mr-1"/>Join our Telegram</Button></a></div>;
+            return <div className="text-center"><a id="contact-link-telegram" rel="noopener noreferrer" className={classes.mailTo} target="_blank" href="https://t.me/KiFoundation"><Button className={classes.button}><img src={TelegramLogo} alt="telegram logo" height="20" className="mr-1 contact-telegram-icon"/>Join our Telegram</Button></a></div>;
         } else {
             return <div className="text-center pt-2"><input value="Send an email" type="submit" className={classes.button} /></div>;
         }
