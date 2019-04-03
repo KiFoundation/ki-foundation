@@ -57,23 +57,19 @@ class Contact extends React.Component {
             job: 'empty',
             email: '',
             fullname: '',
-            message: ''
+            message: '',
+            fetchedErrors: null,
+            success: false
         };
     }
     handleChange = (event) => {
         this.setState({[event.target.name]: event.target.value});
     }
     handleSubmit = (event) => {
-        const { job, email, fullname, message } = this.state;
         event.preventDefault();
+        const { job, email, fullname, message } = this.state;
         const contactEndpoint = "https://static-api.preprod.kifoundation.tech/1/foundation/contact";
 
-        const errors = document.getElementsByClassName('form-text');
-        if (errors && errors.length > 0) {
-            for (var i = 0; i < errors.length; i++) {
-                errors[i].classList.remove('d-none');
-            }
-        }
         fetch(contactEndpoint, {
             method: 'POST',
             headers: {
@@ -87,11 +83,24 @@ class Contact extends React.Component {
                 message: message
             })
         })
-        .then(res => {
-            if (res.ok) {
-                console.log('res', res);
+        .then(
+            (res) => {
+                if (res && res.ok) {
+                    this.setState({
+                        job: 'empty',
+                        email: '',
+                        fullname: '',
+                        message: '',
+                        fetchedErrors: null,
+                        success: true
+                    });
+                } else {
+                    res.json().then(value => {
+                        this.setState({fetchedErrors: value && value.errors || []});
+                    });
+                }
             }
-        });
+        );
     }
     formContent = () => {
         const { job, email, fullname, message } = this.state;
@@ -102,18 +111,28 @@ class Contact extends React.Component {
                 <div>
                     <div className="form-group mb-4">
                         <input onChange={this.handleChange} name="email" type="email" className="form-control" placeholder="Enter email"/>
-                        <small hidden={email} className="form-text text-muted red d-none">Please enter your email with a valid format.</small>
                     </div>
                     <div className="form-group mb-4">
                         <input onChange={this.handleChange} name="fullname" type="text" className="form-control" placeholder="Full name"/>
-                        <small hidden={fullname} className="form-text text-muted red d-none">Please enter your full name.</small>
                     </div>
                     <div className="form-group">
                         <textarea onChange={this.handleChange} name="message" className="form-control" rows="5" placeholder="Your message..."></textarea>
-                        <small hidden={message} className="form-text text-muted red d-none">Please enter your message.</small>
                     </div>
                 </div>
             );
+        }
+    }
+    renderErrors = () => {
+        const { success, fetchedErrors } = this.state;
+        if (fetchedErrors) {
+            const fetchedErrorsRender = fetchedErrors.map(fe => {
+                return <div key={fe.message.slice(0, 5)} className="first-capitalize text-center mb-1 red">{fe.message}</div>;
+            });
+            return fetchedErrorsRender;
+        } else if (success) {
+            return <div className="first-capitalize text-center mb-1 green">Your email has been sent !</div>;
+        } else {
+            return;
         }
     }
     buttonContent = () => {
@@ -149,9 +168,9 @@ class Contact extends React.Component {
                                         <MenuItem value="cryptoenthusiast">Crypto enthusiast</MenuItem>
                                         <MenuItem value="other">Other</MenuItem>
                                     </Select>
-                                    <small hidden={job !== 'empty'} className="form-text text-muted red d-none">Please select this information.</small>
                                 </div>
                                 {this.formContent()}
+                                {this.renderErrors()}
                                 {this.buttonContent()}
                             </form>
                         </div>
