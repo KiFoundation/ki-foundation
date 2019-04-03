@@ -73,7 +73,7 @@ class Contact extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
         const { job, email, fullname, message } = this.state;
-        const contactEndpoint = "https://static-api.preprod.kifoundation.tech/1/foundation/contact";
+        const contactEndpoint = "https://static-api.foundation.ki/1/foundation/contact";
 
         fetch(contactEndpoint, {
             method: 'POST',
@@ -91,7 +91,6 @@ class Contact extends React.Component {
         .then(
             (res) => {
                 if (res && res.ok) {
-                    console.log('res', res);
                     this.setState({
                         job: 'empty',
                         email: '',
