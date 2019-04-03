@@ -15,3 +15,11 @@
 .red {
     color: red !important;
 }
+
+.green {
+    color: green;
+}
+
+.first-capitalize::first-letter{
+    text-transform: capitalize;
+}
