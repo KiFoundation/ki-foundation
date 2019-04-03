@@ -96,14 +96,20 @@ class Contact extends React.Component {
                     });
                 } else {
                     res.json().then(value => {
-                        this.setState({fetchedErrors: value && value.errors || []});
+                        let errorsArr;
+                        if (value && value.errors) {
+                            errorsArr = value.errors;
+                        } else {
+                            errorsArr = [];
+                        }
+                        this.setState({fetchedErrors: errorsArr});
                     });
                 }
             }
         );
     }
     formContent = () => {
-        const { job, email, fullname, message } = this.state;
+        const { job } = this.state;
         if ( job === 'cryptoenthusiast' ) {
             return;
         } else {
