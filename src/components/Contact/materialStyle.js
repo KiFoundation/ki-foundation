@@ -5,6 +5,7 @@ const styles = {
     button: {
         color: "#fff",
         outline: "none",
+        cursor: 'pointer',
         whiteSpace: 'nowrap',
         textTransform: 'initial',
         padding: '5px 15px',

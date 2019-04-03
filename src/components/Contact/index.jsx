@@ -9,6 +9,9 @@ import Select from '@material-ui/core/Select';
 import InputBase from '@material-ui/core/InputBase';
 import { withStyles } from '@material-ui/core/styles';
 
+// Images
+import TelegramLogo from '../../assets/other_brands/telegram.svg';
+
 // Styles
 import styles from './materialStyle';
 import './style.css';
@@ -59,11 +62,13 @@ class Contact extends React.Component {
             fullname: '',
             message: '',
             fetchedErrors: null,
-            success: false
+            success: false,
+            showSuccessMessage: false
         };
     }
     handleChange = (event) => {
         this.setState({[event.target.name]: event.target.value});
+        this.setState({showSuccessMessage: false});
     }
     handleSubmit = (event) => {
         event.preventDefault();
@@ -93,7 +98,8 @@ class Contact extends React.Component {
                         fullname: '',
                         message: '',
                         fetchedErrors: null,
-                        success: true
+                        success: true,
+                        showSuccessMessage: true
                     });
                 } else {
                     res.json().then(value => {
@@ -103,6 +109,7 @@ class Contact extends React.Component {
                         } else {
                             errorsArr = [];
                         }
+                        this.setState({showSuccessMessage: false});
                         this.setState({fetchedErrors: errorsArr});
                     });
                 }
@@ -130,13 +137,13 @@ class Contact extends React.Component {
         }
     }
     renderErrors = () => {
-        const { success, fetchedErrors } = this.state;
+        const { success, fetchedErrors, showSuccessMessage } = this.state;
         if (fetchedErrors) {
             const fetchedErrorsRender = fetchedErrors.map(fe => {
                 return <div key={fe.message.slice(0, 5)} className="first-capitalize text-center mb-1 red">{fe.message}</div>;
             });
             return fetchedErrorsRender;
-        } else if (success) {
+        } else if (success && showSuccessMessage) {
             return <div className="first-capitalize text-center mb-1 green">Your email has been sent !</div>;
         } else {
             return;
@@ -146,7 +153,7 @@ class Contact extends React.Component {
         const { classes } = this.props;
         const { job } = this.state;
         if ( job === 'cryptoenthusiast') {
-            return <div className="text-center"><a id="contact-link-telegram" rel="noopener noreferrer" className={classes.mailTo} target="_blank" href="https://t.me/KiFoundation"><Button className={classes.button}>Join our Telegram</Button></a></div>;
+            return <div className="text-center"><a id="contact-link-telegram" rel="noopener noreferrer" className={classes.mailTo} target="_blank" href="https://t.me/KiFoundation"><Button className={classes.button}><img src={TelegramLogo} alt="telegram logo" height="20" className="mr-1"/>Join our Telegram</Button></a></div>;
         } else {
             return <div className="text-center pt-2"><input value="Send an email" type="submit" className={classes.button} /></div>;
         }
@@ -155,7 +162,7 @@ class Contact extends React.Component {
         const { classes } = this.props;
         const { job } = this.state;
         return (
-            <div className={classes.root + ' vh-100 contact-component vertical-align'}>
+            <div className={classes.root + ' contact-component mt-7 pt-4'}>
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-md-6">
@@ -171,7 +178,7 @@ class Contact extends React.Component {
                                     >
                                         <MenuItem style={{ root: {color: 'red'} }} value="empty">Select...</MenuItem>
                                         <MenuItem value="investor">Investor</MenuItem>
-                                        <MenuItem value="buesinesspartner">Business partner</MenuItem>
+                                        <MenuItem value="business_partner">Business partner</MenuItem>
                                         <MenuItem value="cryptoenthusiast">Crypto enthusiast</MenuItem>
                                         <MenuItem value="other">Other</MenuItem>
                                     </Select>
