@@ -11,3 +11,20 @@
         padding-top: 100px;
     }
 }
+
+.red {
+    color: red !important;
+}
+
+.green {
+    color: green;
+}
+
+.first-capitalize::first-letter{
+    text-transform: capitalize;
+}
+
+.contact-telegram-icon{
+    position: absolute;
+    left: 15px;
+}
