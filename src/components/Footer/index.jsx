@@ -28,17 +28,22 @@ class Footer extends React.Component {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-md-4">
+                        <div className="col-md-3">
                             <Typography className={classes.title} variant="h6"> The Ki Foundation </Typography>
                             <a id="footer-link-device" className={classes.link} href="/device">Ki Device</a>
                             <a id="footer-link-blockchain" className={classes.link} href="/blockchain">Ki Blockchain</a>
                         </div>
-                        <div className="col-md-4">
+                        <div className="col-md-3">
+                            <Typography className={classes.title} variant="h6"> Documents </Typography>
+                            <a id="footer-link-whitepaper" className={classes.link} rel="noopener noreferrer" href="https://static.foundation.ki/documents/ki-whitepaper290319.pdf" target="_blank" download>White paper</a>
+                            <a id="footer-link-onepager" className={classes.link} rel="noopener noreferrer" href="https://static.foundation.ki/documents/onepager290319.pdf" target="_blank" download>One pager</a>
+                        </div>
+                        <div className="col-md-3">
                             <Typography className={classes.title} variant="h6"> Legal </Typography>
                             <a id="footer-link-privacy" className={classes.link} href="/privacy">Privacy Policy</a>
                             <a id="footer-link-cookie" className={classes.link} href="/cookie">Cookie Policy</a>
                         </div>
-                        <div className="col-md-4">
+                        <div className="col-md-3">
                             <Typography className={classes.title} variant="h6"> Find Us </Typography>
                             <a id="footer-link-telegram" rel="noopener noreferrer" className={classes.link} target="_blank" href="https://t.me/KiFoundation">Telegram</a>
                         </div>
