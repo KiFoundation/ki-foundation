@@ -46,6 +46,11 @@ class Footer extends React.Component {
                         <div className="col-md-3">
                             <Typography className={classes.title} variant="h6"> Find Us </Typography>
                             <a id="footer-link-telegram" rel="noopener noreferrer" className={classes.link} target="_blank" href="https://t.me/KiFoundation">Telegram</a>
+                            <a id="footer-link-telegram" rel="noopener noreferrer" className={classes.link} target="_blank" href="https://twitter.com/Ki_Foundation">Twitter</a>
+                            <a id="footer-link-telegram" rel="noopener noreferrer" className={classes.link} target="_blank" href="https://github.com/KiFoundation">Github</a>
+                            <a id="footer-link-telegram" rel="noopener noreferrer" className={classes.link} target="_blank" href="https://medium.com/@ki_foundation">Medium</a>
+                            <a id="footer-link-telegram" rel="noopener noreferrer" className={classes.link} target="_blank" href="https://www.reddit.com/user/Ki_Foundation">Reddit</a>
+                            <a id="footer-link-telegram" rel="noopener noreferrer" className={classes.link} target="_blank" href="https://www.linkedin.com/company/kifoundation/">Linkedin</a>
                         </div>
                     </div>
                 </div>
