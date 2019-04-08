@@ -35,8 +35,8 @@ class Footer extends React.Component {
                         </div>
                         <div className="col-md-3">
                             <Typography className={classes.title} variant="h6"> Documents </Typography>
-                            <a id="footer-link-whitepaper" className={classes.link} href="https://static.foundation.ki/documents/ki-whitepaper290319.pdf" target="_blank" download>White paper</a>
-                            <a id="footer-link-onepager" className={classes.link} href="https://static.foundation.ki/documents/onepager290319.pdf" target="_blank" download>One pager</a>
+                            <a id="footer-link-whitepaper" className={classes.link} rel="noopener noreferrer" href="https://static.foundation.ki/documents/ki-whitepaper290319.pdf" target="_blank" download>White paper</a>
+                            <a id="footer-link-onepager" className={classes.link} rel="noopener noreferrer" href="https://static.foundation.ki/documents/onepager290319.pdf" target="_blank" download>One pager</a>
                         </div>
                         <div className="col-md-3">
                             <Typography className={classes.title} variant="h6"> Legal </Typography>
