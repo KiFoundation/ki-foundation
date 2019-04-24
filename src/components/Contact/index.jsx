@@ -129,7 +129,7 @@ class Contact extends React.Component {
                         <input onChange={this.handleChange} value={fullname} name="fullname" type="text" className="form-control" placeholder="Full name"/>
                     </div>
                     <div className="form-group">
-                        <textarea onChange={this.handleChange} value={message} name="message" className="form-control form-control-textarea" rows="5" placeholder="Your message..."></textarea>
+                        <textarea onChange={this.handleChange} value={message} name="message" className="form-control" rows="5" placeholder="Your message..."></textarea>
                     </div>
                 </div>
             );
@@ -139,7 +139,14 @@ class Contact extends React.Component {
         const { success, fetchedErrors, showSuccessMessage } = this.state;
         if (fetchedErrors) {
             const fetchedErrorsRender = fetchedErrors.map(fe => {
-                return <div key={fe.message.slice(0, 5)} className="first-capitalize text-center mb-1 red">{fe.message}</div>;
+                let message = fe && fe.message ? fe.message : '';
+                if (message && message.match(/type must be either/gi)) {
+                    message = 'Select the section that describes you the best.';
+                }
+                if (message && message.match(/From is required/gi)) {
+                    message = 'Email is required.';
+                }
+                return <div key={fe.message.slice(0, 5)} className="first-capitalize text-center mb-1 red">{message}</div>;
             });
             return fetchedErrorsRender;
         } else if (success && showSuccessMessage) {
@@ -165,7 +172,7 @@ class Contact extends React.Component {
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-md-6">
-                            <Typography className={classes.title + ' animated fadeInDown'} variant="h3" align="center">Contact Us</Typography>
+                            <Typography className={classes.title + ' animated fadeInDown'} variant="h3" align="center">Contact us</Typography>
                             <Typography variant="h6" className={classes.subtitle} align="center">Choose the section that describes you the best:</Typography>
                             <form onSubmit={this.handleSubmit}>
                                 <div className="form-group mb-4">
