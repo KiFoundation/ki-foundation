@@ -46,11 +46,12 @@ class Footer extends React.Component {
                         <div className="col-md-3">
                             <Typography className={classes.title} variant="h6"> Find Us </Typography>
                             <a id="footer-link-telegram" rel="noopener noreferrer" className={classes.link} target="_blank" href="https://t.me/KiFoundation">Telegram</a>
-                            <a id="footer-link-telegram" rel="noopener noreferrer" className={classes.link} target="_blank" href="https://twitter.com/Ki_Foundation">Twitter</a>
-                            <a id="footer-link-telegram" rel="noopener noreferrer" className={classes.link} target="_blank" href="https://github.com/KiFoundation">Github</a>
-                            <a id="footer-link-telegram" rel="noopener noreferrer" className={classes.link} target="_blank" href="https://medium.com/@ki_foundation">Medium</a>
-                            <a id="footer-link-telegram" rel="noopener noreferrer" className={classes.link} target="_blank" href="https://www.reddit.com/user/Ki_Foundation">Reddit</a>
-                            <a id="footer-link-telegram" rel="noopener noreferrer" className={classes.link} target="_blank" href="https://www.linkedin.com/company/kifoundation/">Linkedin</a>
+                            <a id="footer-link-twitter" rel="noopener noreferrer" className={classes.link} target="_blank" href="https://twitter.com/Ki_Foundation">Twitter</a>
+                            <a id="footer-link-github" rel="noopener noreferrer" className={classes.link} target="_blank" href="https://github.com/KiFoundation">Github</a>
+                            <a id="footer-link-medium" rel="noopener noreferrer" className={classes.link} target="_blank" href="https://medium.com/@ki_foundation">Medium</a>
+                            <a id="footer-link-reddit" rel="noopener noreferrer" className={classes.link} target="_blank" href="https://www.reddit.com/user/Ki_Foundation">Reddit</a>
+                            <a id="footer-link-linkedin" rel="noopener noreferrer" className={classes.link} target="_blank" href="https://www.linkedin.com/company/kifoundation/">Linkedin</a>
+                            <a id="footer-link-bitcointalk" rel="noopener noreferrer" className={classes.link} target="_blank" href="https://bitcointalk.org/index.php?topic=5132784.0">Bitcointalk</a>
                         </div>
                     </div>
                 </div>
