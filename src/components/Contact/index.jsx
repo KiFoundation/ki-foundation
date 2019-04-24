@@ -129,7 +129,7 @@ class Contact extends React.Component {
                         <input onChange={this.handleChange} value={fullname} name="fullname" type="text" className="form-control" placeholder="Full name"/>
                     </div>
                     <div className="form-group">
-                        <textarea onChange={this.handleChange} value={message} name="message" className="form-control" rows="5" placeholder="Your message..."></textarea>
+                        <textarea onChange={this.handleChange} value={message} name="message" className="form-control form-control-textarea" rows="5" placeholder="Your message..."></textarea>
                     </div>
                 </div>
             );
