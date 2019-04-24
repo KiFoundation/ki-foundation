@@ -24,6 +24,10 @@
     text-transform: capitalize;
 }
 
+.form-control-textarea{
+    white-space: pre-line;
+}
+
 .contact-telegram-icon{
     position: absolute;
     left: 15px;
