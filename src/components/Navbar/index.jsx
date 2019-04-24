@@ -53,7 +53,7 @@ class Navbar extends React.Component {
     const { isOpened } = this.state;
     let menu = null;
     if (isOpened) {
-      menu = 
+      menu =
         <div className={classes.fixedMenu + ' d-block d-md-none'}>
           <List component="nav" className={classes.fixedMenuContent}>
             <ListItemLink id="mobile-nav-link-home" href="/">
@@ -86,7 +86,7 @@ class Navbar extends React.Component {
                   {/* <Link className={classes.link} to="/whitepaper"><Button className={classes.button}>Whitepaper</Button></Link> */}
                   <NavLink id="nav-link-home" exact className={classes.link} to="/" activeClassName="active-link">Home</NavLink>
                   <NavLink id="nav-link-team" exact className={classes.link} to="/team" activeClassName="active-link">Team</NavLink>
-                  <NavLink id="nav-link-contact" exact className={classes.link + ' mr-0'} to="/contact" activeClassName="active-link">Contact Us</NavLink>
+                  <NavLink id="nav-link-contact" exact className={classes.link + ' mr-0'} to="/contact" activeClassName="active-link">Contact us</NavLink>
                 </div>
               </Toolbar>
             </AppBar>
