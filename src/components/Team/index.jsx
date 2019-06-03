@@ -9,7 +9,10 @@ import { withStyles } from '@material-ui/core/styles';
 // Images
 import reda from '../../assets/team/reda.png';
 // import kenichi from '../../assets/team/kenichi.png';
+// import primavera from '../../assets/team/primavera.png';
 import aymane from '../../assets/team/aymane.png';
+import julienguyomard from '../../assets/team/julienguyomard.png';
+import arnaudpolette from '../../assets/team/arnaudpolette.png';
 import samy from '../../assets/team/samy.png';
 import tarek from '../../assets/team/tarek.png';
 import matt from '../../assets/team/matt.png';
@@ -75,7 +78,7 @@ class Team extends Component {
               <LazyLoad className="d-contents" offsetVertical={1100} height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
             </a>
             <span className="team-name">Kheireddine Kamal</span>
-            <span className="team-job">Chief Operating Officer</span>
+            <span className="team-job">Co-Founder & COO</span>
           </div>
           {/* <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
             <img src={kenichi} alt=""/>
@@ -91,7 +94,15 @@ class Team extends Component {
             <LazyLoad className="d-contents" offsetVertical={1100} height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
             </a>
             <span className="team-name">Tarek Awwad</span>
-            <span className="team-job">Chief Blockchain Architect</span>
+            <span className="team-job">Chief Technology Officer</span>
+          </div>
+          <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
+            <LazyLoad className="d-contents" offsetVertical={1100} height={166}><img src={julienguyomard} alt=""/></LazyLoad>
+            <a id="home-team-linkedin-julienguy" href="https://www.linkedin.com/in/julienguyomard/" target="_blank" rel="noopener noreferrer" className="second">
+              <LazyLoad className="d-contents" offsetVertical={1100} height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
+            </a>
+            <span className="team-name">Julien Guyomard</span>
+            <span className="team-job">Chief Marketing Officer</span>
           </div>
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
             <LazyLoad className="d-contents" offsetVertical={1100} height={166}><img src={matt} alt=""/></LazyLoad>
@@ -108,6 +119,17 @@ class Team extends Component {
             </a>
             <span className="team-name">Dermot O’Riordan</span>
             <span className="team-job">Investor Relations & Compliance</span>
+          </div>
+          <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
+            <LazyLoad className="d-contents" offsetVertical={1100} height={166}><img src={arnaudpolette} alt=""/></LazyLoad>
+            <a id="home-team-linkedin-arnaudpol" href="https://www.linkedin.com/in/arnaud-polette-0b302340/" target="_blank" rel="noopener noreferrer" className="second">
+              <LazyLoad className="d-contents" offsetVertical={1100} height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
+            </a>
+            <a id="home-team-twitter-arnaudpol" href="https://twitter.com/arnaudpolette" target="_blank" rel="noopener noreferrer" className="first">
+              <LazyLoad className="d-contents" offsetVertical={1100} height={32}><img src={twitter} alt="twitter"/></LazyLoad>
+            </a>
+            <span className="team-name">Arnaud Polette</span>
+            <span className="team-job">Lead Developer</span>
           </div>
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
             <LazyLoad className="d-contents" offsetVertical={1100} height={166}><img src={teddy} alt=""/></LazyLoad>
@@ -231,6 +253,21 @@ class Team extends Component {
               <LazyLoad className="d-contents" offsetVertical={1100} height={25}><img src={thefamily} alt="thefamily"/></LazyLoad>
             </div>
           </div>
+          {/* <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
+            <LazyLoad className="d-contents" offsetVertical={1100} height={166}><img src={primavera} alt=""/></LazyLoad>
+            <a id="home-team-twitter-primavera" href="https://twitter.com/yaoeo" target="_blank" rel="noopener noreferrer" className="first">
+              <LazyLoad className="d-contents" offsetVertical={1100} height={32}><img src={twitter} alt="twitter"/></LazyLoad>
+            </a>
+            <a id="home-team-linkedin-primavera" href="https://www.linkedin.com/in/primavera-de-filippi-07558536" target="_blank" rel="noopener noreferrer" className="second">
+              <LazyLoad className="d-contents" offsetVertical={1100} height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
+            </a>
+            <span className="team-name">Primavera De Filippi</span>
+            <span className="team-job">Titre ?</span>
+            <div className="team-logos">
+              <LazyLoad className="d-contents" offsetVertical={1100} height={25}><img src={teads} alt="teads"/></LazyLoad>
+              <LazyLoad className="d-contents" offsetVertical={1100} height={25}><img src={thefamily} alt="thefamily"/></LazyLoad>
+            </div>
+          </div> */}
           {/* <div className="team-member">
             <img src={taig} alt=""/>
             <a href="https://twitter.com/taigkhris?lang=en" target="_blank" rel="noopener noreferrer" className="first">
