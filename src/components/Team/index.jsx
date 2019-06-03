@@ -94,7 +94,7 @@ class Team extends Component {
             <LazyLoad className="d-contents" offsetVertical={1100} height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
             </a>
             <span className="team-name">Tarek Awwad</span>
-            <span className="team-job">Chief Technology Officer</span>
+            <span className="team-job">Chief Blockchain Architect</span>
           </div>
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
             <LazyLoad className="d-contents" offsetVertical={1100} height={166}><img src={julienguyomard} alt=""/></LazyLoad>
@@ -102,7 +102,7 @@ class Team extends Component {
               <LazyLoad className="d-contents" offsetVertical={1100} height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
             </a>
             <span className="team-name">Julien Guyomard</span>
-            <span className="team-job">Chief Marketing Officer</span>
+            <span className="team-job">Chief Technology Officer</span>
           </div>
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
             <LazyLoad className="d-contents" offsetVertical={1100} height={166}><img src={matt} alt=""/></LazyLoad>
