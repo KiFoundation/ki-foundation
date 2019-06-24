@@ -1,7 +1,9 @@
 .learn-img{
-    margin-right: 2rem;
+    margin-right: 6rem;
 }
 
-.learn-wrapper{
-    /* margin-right: 2rem; */
+@media (max-width: 768px) {
+    .learn-img{
+        margin-right: 2rem;
+    }
 }
