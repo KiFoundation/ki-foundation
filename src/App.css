@@ -19,7 +19,7 @@
     height: 32px;
 }
 
-@media (min-width: 560px) {
+@media (min-width: 560px) and (min-height: 560px) {
     .btn-telegram{
         height: 60px;
         width: 60px;

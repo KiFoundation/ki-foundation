@@ -46,6 +46,10 @@
 }
 
 @media (max-width: 768px) {
+    .blockchain-wrapper {
+        height: auto;
+        margin-top: 0;
+    }
     .blockchain-component {
         height: auto;
         padding-top: 72px;
