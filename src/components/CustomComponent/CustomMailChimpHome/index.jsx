@@ -47,7 +47,7 @@ const CustomMailChimpHome = ({ status, message, onValidated }) => {
                 <input className="mobile-width" style={{ borderRadius: 0, outline: "none", border: "2px solid #043bea", padding: "5px 15px" }} ref={node => (email = node)} type="email" placeholder="Your email"/>
                 <br />
                 <button id="header-join-btn" className="mobile-btn-width" style={{ outline: "none",minWidth: 120, cursor: "pointer", border: "1px solid #043bea", padding: "6px 15px", backgroundColor: "#043bea", color: "#fff"}} onClick={submit}>
-                    Join the movement
+                    Join the network
                 </button>
             </div>;
     }

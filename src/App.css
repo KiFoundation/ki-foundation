@@ -1,0 +1,34 @@
+.btn-telegram{
+    border-radius: 54px;
+    height: 54px;
+    width: 54px;
+    background: #0188cc;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,.04);
+    transform: .15s ease-in-out;
+    cursor: pointer;
+    position: fixed;
+    bottom: 14px;
+    right: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.btn-telegram img{
+    height: 32px;
+}
+
+@media (min-width: 560px) {
+    .btn-telegram{
+        height: 60px;
+        width: 60px;
+        border-radius: 60px;
+        right: 100px;
+        bottom: 20px;
+    }
+
+    .btn-telegram img{
+        height: 33px;
+    }
+}
