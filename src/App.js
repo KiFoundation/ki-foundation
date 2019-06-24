@@ -18,6 +18,7 @@ import Blockchain from './components/Blockchain';
 import Privacy from './components/Privacy';
 import Cookie from './components/Cookie';
 import Page404 from './components/page404';
+import Telegram from './assets/other_brands/telegram.svg';
 
 import './App.css';
 
@@ -49,6 +50,9 @@ class App extends Component {
             <Route exact path="/team" component={props => <Team/>}/>
             <Route component={props => <Page404 />} />
           </Switch>
+          <a className="btn-telegram" href="https://t.me/KiFoundation" target="_blank" rel="noopener noreferrer">
+            <img src={Telegram} alt="Telegram Icon" />
+          </a>
           <Footer/>
         </div>
       </Router>

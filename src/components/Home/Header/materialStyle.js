@@ -44,6 +44,9 @@ const styles = {
         alignItems: "center",
         justifyContent: "center"
     },
+    primaryColor: {
+        color: '#3b426c'
+    },
     cardButton: {
         color: "#3b426c",
         // paddingLeft: 0,
@@ -63,10 +66,6 @@ const styles = {
     cardTitle: {
         color: "#3b426c",
         padding: '15px 15px 0 15px'
-    },
-    punchline: {
-        color: "#3b426c",
-        fontWeight: 300
     },
     bullet: {
         display: 'inline-block',
