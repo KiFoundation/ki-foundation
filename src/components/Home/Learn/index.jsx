@@ -24,8 +24,8 @@ class Learn extends React.Component {
                         <LazyLoad offsetVertical={400} className="vertical-align" height="100"><img  className="learn-img" src={Whitepaper} alt="Whitepaper Logo" height="100"/></LazyLoad>
                         <div className="learn-wrapper">
                             <Typography className={classes.primaryColor} variant="h5">Learn more about KI</Typography>
-                            <span>Read our whitepaper v2.</span>
-                            <a id="header-link-whitepaper" className="btn btn-primary d-block mt-4" rel="noopener noreferrer" href="https://static.foundation.ki/documents/ki-whitepaper.pdf" target="_blank" download>Whitepaper v2 (.pdf)</a>
+                            <span>Read our whitepaper.</span>
+                            <a id="header-link-whitepaper" className="btn btn-primary d-block mt-4" rel="noopener noreferrer" href="https://static.foundation.ki/documents/ki-whitepaper.pdf" target="_blank" download>Whitepaper (.pdf)</a>
                         </div>
                     </div>
                 </div>
