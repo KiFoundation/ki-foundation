@@ -21,11 +21,11 @@ class Learn extends React.Component {
             <div className="container my-5 py-5">
                 <div className="row">
                     <div className="col-md-12 vertical-align">
-                        <LazyLoad offsetVertical={400} className="vertical-align" height="100"><img  className="learn-img mr-5 pr-5" src={Whitepaper} alt="Whitepaper Logo" height="100"/></LazyLoad>
+                        <LazyLoad offsetVertical={400} className="vertical-align" height="100"><img  className="learn-img" src={Whitepaper} alt="Whitepaper Logo" height="100"/></LazyLoad>
                         <div className="learn-wrapper">
                             <Typography className={classes.primaryColor} variant="h5">Learn more about KI</Typography>
                             <span>Read our whitepaper v2.</span>
-                            <button className="btn btn-primary d-block mt-4">Whitepaper v2 (.pdf)</button>
+                            <a id="header-link-whitepaper" className="btn btn-primary d-block mt-4" rel="noopener noreferrer" href="https://static.foundation.ki/documents/ki-whitepaper.pdf" target="_blank" download>Whitepaper v2 (.pdf)</a>
                         </div>
                     </div>
                 </div>
