@@ -41,6 +41,9 @@ import serge from '../../assets/team/serge_alleyne.png';
 import dermot from '../../assets/team/dermot.png';
 import james from '../../assets/team/james.png';
 import thereserve from '../../assets/other_brands/thereserve.png';
+import benliv from '../../assets/team/benliv.png';
+import brave from '../../assets/other_brands/brave.png';
+import microsoft from '../../assets/other_brands/microsoft.png';
 
 import './style.css';
 
@@ -168,6 +171,18 @@ class Team extends Component {
         <br/>
         <Typography align="center" className={classes.text + ' animated fadeInDown'} variant="h3" style={{color: '#3b426c'}}>Investors & Advisors</Typography>
         <div className="team-row row">
+          <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
+            <LazyLoad className="d-contents" offsetVertical={1100} height={166}><img src={benliv} alt=""/></LazyLoad> 
+            <a id="home-team-linkedin-benliv" href="https://www.linkedin.com/in/ben-livshits/?originalSubdomain=uk" target="_blank" rel="noopener noreferrer" className="second">
+              <LazyLoad className="d-contents" offsetVertical={1100} height={32}><img src={linkedin} alt="linkedin"/></LazyLoad>
+            </a>
+            <span className="team-name">Ben Livshits</span>
+            <span className="team-job">Technology Advisor</span>
+            <div className="team-logos">
+              <LazyLoad className="d-contents" offsetVertical={1100} height={25}><img src={brave} alt="brave" className="mr-2"/></LazyLoad>
+              <LazyLoad className="d-contents" offsetVertical={1100} height={25}><img src={microsoft} alt="microsoft"/></LazyLoad>
+            </div>
+          </div>
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
             <LazyLoad className="d-contents" offsetVertical={1100} height={166}><img src={tariq} alt=""/></LazyLoad>
             <a id="home-team-twitter-tariqkrim" href="https://twitter.com/tariqkrim" target="_blank" rel="noopener noreferrer" className="first">

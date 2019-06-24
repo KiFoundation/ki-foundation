@@ -77,3 +77,29 @@ a, button{
 .is-visible.d-contents{
   display: contents;
 }
+
+.btn-primary:focus, .btn-primary:visited, .btn-primary:focus-within, .btn-primary:active{
+  outline: none !important;
+  border: 1px solid #043bea;
+  box-shadow: none !important;
+}
+
+.btn-primary:hover{
+  background-color: #043bea !important;
+  color: #fff
+}
+
+.btn-primary{
+  color: #ffffff;
+  outline: none;
+  cursor: pointer;
+  white-space: nowrap;
+  text-transform: initial;
+  padding: 6px 15px;
+  font-size: 14px;
+  border: 1px solid #043bea;
+  background-color: #043bea !important;
+  position: relative;
+  border-radius: 0;
+  min-width: 250;
+}

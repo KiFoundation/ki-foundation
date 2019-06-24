@@ -58,12 +58,12 @@ class Header extends React.Component {
         const { classes } = this.props;
         const mailChimpUrl = "https://gen.us17.list-manage.com/subscribe/post?u=3865106d3d479f1d2e1ec8400&amp;id=86a02d162a";
         return (
-            <div className="header-component vh-100" id="header-component">
+            <div className="header-component" id="header-component">
                 <div className="container header-container">
                     <div className="row justify-content-md-center">
                         <div className="col-md-5 text-center">
                             <Typography align="center" variant="h3" gutterBottom className={classes.headerTitle + ' animated fadeInDown'}>
-                                Privacy is Ki
+                                Infrastructure is Ki
                             </Typography>
                             <Typography align="center" variant="h6" gutterBottom className={classes.headerTitleText + ' animated fadeIn'}>
                                 Building an ecosystem for a truly decentralized internet, to protect your data and share value.
@@ -76,11 +76,6 @@ class Header extends React.Component {
                         </div>
                     </div>
                     <div className="row animated fadeIn">
-                        <div className="col-md-12">
-                            <Typography align="center" variant="h6" className={classes.punchline}>
-                                1984 should stay a book, not a reality.
-                            </Typography>
-                        </div>
                         <div className="col-md-12 text-center pt-4">
                             <MailchimpSubscribe 
                                 url={mailChimpUrl}

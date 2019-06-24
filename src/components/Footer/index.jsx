@@ -17,7 +17,7 @@ class Footer extends React.Component {
     render() {
         const { classes } = this.props;
         return (
-            <div className={classes.root}>
+            <div className={classes.root + ' pt-4'}>
                 <div className="container">
                     <Divider className={classes.divider}/>
                     <div className="row p-0 mb-5">

@@ -1,5 +1,6 @@
 // Services
 import React from 'react';
+import Modal from 'react-modal';
 
 // Material
 import Typography from '@material-ui/core/Typography';
@@ -9,22 +10,50 @@ import Tab from '@material-ui/core/Tab';
 
 // Images
 import BlockchainLogo from '../../assets/ki_foundation/Blockchain.png';
+import GithubLogo from '../../assets/other_brands/github.svg';
 import iconDecentralized from '../../assets/blockchain/icon-decentralized.svg';
 import iconFlash from '../../assets/blockchain/icon-flash.svg';
 import iconReputation from '../../assets/blockchain/icon-reputation.svg';
 import number1 from '../../assets/blockchain/number1.svg';
 import number2 from '../../assets/blockchain/number2.svg';
 import number3 from '../../assets/blockchain/number3.svg';
+import diagram0 from '../../assets/blockchain/diagram0.svg';
+import diagram1 from '../../assets/blockchain/diagram1.svg';
+import diagram2 from '../../assets/blockchain/diagram2.svg';
+import iconClose from '@material-ui/icons/Close';
+
+// Components
+import Diagram from './Diagram';
 
 // Styles
 import styles from './materialStyle';
 import './style.css';
 
+const customStyles = {
+    content : {
+      top                   : '50%',
+      left                  : '50%',
+      right                 : 'auto',
+      bottom                : 'auto',
+      marginRight           : '-50%',
+      transform             : 'translate(-50%, -50%)',
+    }
+};
+
+const btnStyle = {
+    float: 'right',
+    background: 'none',
+    border: 'none',
+    cursor: 'pointer'
+}
+
 class Blockchain extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: 0
+            value: 0,
+            activeIndex: null,
+            modalIsOpen: false
         };
     }
     handleTabChange = (event, value) => {
@@ -90,11 +119,21 @@ class Blockchain extends React.Component {
         }
         return content;
     }
+    onClickDiagram = index => {
+        this.setState({ activeIndex: index });
+        this.openModal();
+    }
+    openModal = () => {
+        this.setState({modalIsOpen: true});
+    }
+    closeModal = () => {
+        this.setState({modalIsOpen: false});
+    }
     render() {
         const { classes } = this.props;
-        const { value } = this.state;
+        const { value, activeIndex } = this.state;
         return (
-            <div className={classes.root + ' vh-100 blockchain-component vertical-align'}>
+            <div className={classes.root + ' blockchain-component'}>
                 <div className="container">
                     <div className="row blockchain-wrapper">
                         <div className="d-block d-md-none col-md-12 text-center vertical-align">
@@ -138,6 +177,69 @@ class Blockchain extends React.Component {
                         </div>
                     </div>
                 </div>
+                <div className="container">
+                    <div className="row justify-content-center">
+                        <div className="col-12 mt-2">
+                            <Typography variant="h5" align="center" style={{color: '#3b426c'}}>The Proof of Reputation Process</Typography>
+                        </div>
+                        <div className="col-lg-9 col-md-9 col-sm-12 col-xs-12 text-center mt-5 diagram-wrapper">
+                            <Diagram onClickDiagram={this.onClickDiagram} />
+                        </div>
+                        <div className="col-12 text-center mt-5 mb-4">
+                            <a rel="noopener noreferrer" href="https://github.com/KiFoundation" target="_blank" style={{margin: '0 auto', width: '150px'}} className="vertical-align btn btn-primary my-4">
+                                <img height="20" src={GithubLogo} className="mr-2" alt="Github logo"/> Visit Github
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <Modal
+                    isOpen={this.state.modalIsOpen}
+                    overlayClassName="diagramOverlay"
+                    onRequestClose={this.closeModal}
+                    className="diagramModal"
+                    style={customStyles}
+                    contentLabel="Example Modal"
+                    >
+                    {
+                        activeIndex === 0 &&
+                        <div>
+                        <h3 className="text-left">
+                            Block proposal
+                            <button id="home-how-modalclose-blockproposal" onClick={this.closeModal} style={btnStyle}>
+                            <img src={iconClose} alt=""/>
+                            </button>
+                        </h3>
+                        <hr className="pb-3"/>
+                        <img src={diagram0} alt="Block proposal" className="w-100"/>
+                        </div>
+                    }
+                    {
+                        activeIndex === 1 &&
+                        <div>
+                        <h3 className="text-left">
+                            preCommit Block
+                            <button id="home-how-modalclose-precommit" onClick={this.closeModal} style={btnStyle}>
+                            <img src={iconClose} alt=""/>
+                            </button>
+                        </h3>
+                        <hr className="pb-3"/>
+                        <img src={diagram1} alt="preCommit Block" className="w-100"/>
+                        </div>
+                    }
+                    {
+                        activeIndex === 2 &&
+                        <div>
+                        <h3 className="left">
+                            Commit / New round
+                            <button id="home-how-modalclose-commit" onClick={this.closeModal} style={btnStyle}>
+                            <img src={iconClose} alt=""/>
+                            </button>
+                        </h3>
+                        <hr className="pb-3"/>
+                        <img src={diagram2} alt="Commit / New round" className="w-100"/>
+                        </div>
+                    }
+                    </Modal>
             </div>
         );
     }
