@@ -43,13 +43,12 @@ class App extends Component {
           <Navbar onLanguageChange={onLanguageChange}/>
           <Switch>
             <Route exact path={"/" + locale} component={props => <Home locale={locale}/>}/>
-            {/* <Route exact path={"/" + locale + "/contact"} component={props => <Contact/>}/> */}
-            {/* <Route exact path={"/" + locale + "/device"} component={props => <Device/>}/> */}
-            {/* <Route exact path={"/" + locale + "/ecosystem"} component={props => <Ecosystem/>}/> */}
-            {/* <Route exact path={"/" + locale + "/blockchain"} component={props => <Blockchain/>}/> */}
-            {/* <Route exact path={"/" + locale + "/privacy"} component={props => <Privacy/>}/> */}
-            {/* <Route exact path={"/" + locale + "/cookie"} component={props => <Cookie/>}/> */}
-            {/* <Route exact path={"/" + locale + "/team"} component={props => <Team/>}/> */}
+            <Route exact path={"/" + locale + "/contact"} component={props => <Contact/>}/>
+            <Route exact path={"/" + locale + "/device"} component={props => <Device/>}/>
+            <Route exact path={"/" + locale + "/token"} component={props => <Ecosystem/>}/>
+            <Route exact path={"/" + locale + "/blockchain"} component={props => <Blockchain/>}/>
+            <Route exact path={"/" + locale + "/contact"} component={props => <Blockchain/>}/>
+            <Route exact path={"/" + locale + "/team"} component={props => <Team/>}/>
             <Redirect from="/" to={"/" + locale} />
             <Route component={props => <Page404 />} />
           </Switch>

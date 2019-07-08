@@ -141,6 +141,12 @@ class Navbar extends React.Component {
               </ListItemText>
             </ListItemLink>
             <Divider />
+            <ListItemLink id="mobile-nav-link-contact" href="#contact" onClick={() => this.closeNavbar()}>
+              <ListItemText>
+                <FormattedMessage id="navbar.contact"/>
+              </ListItemText>
+            </ListItemLink>
+            <Divider />
             <ListItemLink id="mobile-nav-link-contact" onClick={() => {this.closeNavbar(); this.handleOpen()}}>
               <ListItemText>
                 <FormattedMessage id="btn.open.contact.form"/>
@@ -179,6 +185,7 @@ class Navbar extends React.Component {
                       <a id="nav-link-token" className="link" href="#token"><FormattedMessage id="navbar.token"/></a>
                       <a id="nav-link-device" className="link" href="#device"><FormattedMessage id="navbar.device"/></a>
                       <a id="nav-link-team" className="link" href="#team"><FormattedMessage id="navbar.team"/></a>
+                      <a id="nav-link-contact" className="link" href="#contact"><FormattedMessage id="navbar.contact"/></a>
                       {/* <NavLink id="nav-link-contact" exact className={classes.link + ' mr-0'} to="/contact" activeClassName="active-link">Tester Domo</NavLink> */}
                       <button className="btn btn-primary fs-11 ml-5 px-4" onClick={this.handleOpen} style={{fontWeight: 500, border: 0}}><FormattedMessage id="btn.open.contact.form"/></button>
                   </div>

@@ -18,7 +18,7 @@ import KiBlockchain from '../../../assets/ki_foundation/Blockchain-min.png';
 import KiEcosystem from '../../../assets/ki_foundation/Ecosystem-min.png';
 
 // Components
-import CustomMailChimpHome from '../../CustomComponent/CustomMailChimpHome';
+import CustomMailChimpContact from '../../CustomComponent/CustomMailChimpContact';
 
 // Styles
 import './style.css';
@@ -43,7 +43,7 @@ class Header extends React.Component {
                             </Typography>
                         </div>
                         <div className="col-md-6">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/7QwUCR1NHpg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/7QwUCR1NHpg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                     {/* <div className="row animated fadeIn">
@@ -51,7 +51,7 @@ class Header extends React.Component {
                             <MailchimpSubscribe 
                                 url={mailChimpUrl}
                                 render={({ subscribe, status, message }) => (
-                                    <CustomMailChimpHome
+                                    <CustomMailChimpContact
                                         status={status}
                                         message={message}
                                         onValidated={formData => subscribe(formData)}

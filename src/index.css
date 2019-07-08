@@ -103,3 +103,7 @@ a, button{
   border-radius: 0;
   min-width: 250;
 }
+
+.color-white, .color-white span{
+  color: #ffffff;
+}
