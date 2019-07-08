@@ -1,0 +1,14 @@
+{
+    "navbar.home": "Home",
+    "navbar.blockchain": "Ki Blockchain",
+    "navbar.token": "Ki Token",
+    "navbar.device": "Ki Device",
+    "navbar.team": "Team",
+    "btn.open.contact.form": "Invest now",
+    "header.title": "Infrastructure is Ki",
+    "header.subtitle.text": "Building an ecosystem of value through a truly decentralized fleet of devices",
+    "register.error.text": "Try again",
+    "register.success.text": "Thank you !",
+    "register.text": "Register now",
+    "register.first.text": "Be the first to be notified"
+}

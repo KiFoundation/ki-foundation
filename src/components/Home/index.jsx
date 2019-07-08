@@ -11,8 +11,8 @@ class Home extends React.Component {
     return (
       <div>
         <Header />
-        <Learn />
-        <Partners />
+        {/* <Learn /> */}
+        {/* <Partners /> */}
       </div>
     );
   }

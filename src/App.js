@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import {
   Switch,
   BrowserRouter as Router,
-  Route
+  Route,
+  Redirect
 } from 'react-router-dom';
 
 // Components
@@ -35,19 +36,21 @@ class App extends Component {
     })();
   }
   render() {
+    const { onLanguageChange, locale } = this.props;
     return (
       <Router>
-        <div className="App">
-          <Navbar/>
+        <div className="App scrollspy" id="home">
+          <Navbar onLanguageChange={onLanguageChange}/>
           <Switch>
-            <Route exact path="/" component={props => <Home/>}/>
-            <Route exact path="/contact" component={props => <Contact/>}/>
-            <Route exact path="/device" component={props => <Device/>}/>
-            <Route exact path="/ecosystem" component={props => <Ecosystem/>}/>
-            <Route exact path="/blockchain" component={props => <Blockchain/>}/>
-            <Route exact path="/privacy" component={props => <Privacy/>}/>
-            <Route exact path="/cookie" component={props => <Cookie/>}/>
-            <Route exact path="/team" component={props => <Team/>}/>
+            <Route exact path={"/" + locale} component={props => <Home locale={locale}/>}/>
+            {/* <Route exact path={"/" + locale + "/contact"} component={props => <Contact/>}/> */}
+            {/* <Route exact path={"/" + locale + "/device"} component={props => <Device/>}/> */}
+            {/* <Route exact path={"/" + locale + "/ecosystem"} component={props => <Ecosystem/>}/> */}
+            {/* <Route exact path={"/" + locale + "/blockchain"} component={props => <Blockchain/>}/> */}
+            {/* <Route exact path={"/" + locale + "/privacy"} component={props => <Privacy/>}/> */}
+            {/* <Route exact path={"/" + locale + "/cookie"} component={props => <Cookie/>}/> */}
+            {/* <Route exact path={"/" + locale + "/team"} component={props => <Team/>}/> */}
+            <Redirect from="/" to={"/" + locale} />
             <Route component={props => <Page404 />} />
           </Switch>
           <a className="btn-telegram" href="https://t.me/KiFoundation" target="_blank" rel="noopener noreferrer">
@@ -61,3 +64,4 @@ class App extends Component {
 }
 
 export default App;
+

@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 
 // Images
-import KiFoundationLogoShort from '../../assets/ki_foundation/ki_foundation_logo_short.png';
+import KiFoundationLogoShort from '../../assets/ki_foundation/ki_foundation_mobile.png';
 
 // Styles
 import styles from './materialStyle';

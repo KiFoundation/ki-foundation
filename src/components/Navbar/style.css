@@ -1,3 +1,58 @@
-.active-link {
-    font-weight: 700;
+.active-link{
+    border-bottom: 2px solid #043bea !important;
+    padding-bottom: 5px;
+    /* transition: border-bottom .5s ease-in; */
+}
+
+.link{
+    color: #000000;
+    margin: 0 1.5rem 0 3rem;
+    position: relative;
+    font-size: 14;
+    background: none;
+    border: none;
+}
+
+.link:hover{
+    background-color: inherit;
+    text-decoration: none;
+    color: #000000;
+    border-bottom: 2px solid #043bea !important;
+    padding-bottom: 5px;
+}
+
+.select{
+    width: 78px;
+    /* display: inline-block; */
+}
+
+.select .select__control{
+    min-height: 20px;
+    border: 0px;
+    width: 65px;
+    border-color: transparent !important;
+    box-shadow: 0 0 0 0 transparent !important;
+    cursor: pointer;
+}
+
+.select .select__control:hover{
+    border-color: transparent !important;
+    box-shadow: 0 0 0 0 transparent !important;
+}
+
+.select .select__dropdown-indicator{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.select .select__menu{
+    text-align: center;
+}
+
+.select .select__menu .select__option{
+    cursor: pointer;
+}
+
+.select__indicator-separator{
+    display: none;
 }

@@ -1,7 +1,13 @@
 // Services
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, NavLink } from 'react-router-dom';
+import Select from 'react-select';
+import { Link } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
+import LazyImage from '../CustomComponent/LazyImage';
+
+// Components
+import Contact from '../Contact';
 
 // Material
 import { withStyles } from '@material-ui/core/styles';
@@ -15,12 +21,32 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 
 // Images
-import KiFoundationLogo from '../../assets/ki_foundation/logo_foundation.png';
-import KiFoundationLogoShort from '../../assets/ki_foundation/ki_foundation_logo_short.png';
+import KiFoundationLogo from '../../assets/ki_foundation/ki_foundation.png';
+import KiFoundationLogoShort from '../../assets/ki_foundation/ki_foundation_mobile.png';
+import england from '../../assets/flags/england.jpg';
+import france from '../../assets/flags/france.jpg';
+// import korea from '../../assets/flags/korea.svg';
+// import china from '../../assets/flags/china.svg';
+// import japan from '../../assets/flags/japan.svg';
+// import russia from '../../assets/flags/russia.svg';
 
 // Styles
 import './style.css';
 import styles from './materialStyle';
+
+const options = [
+  { value: 'en', label: <span id="navbar-link-english"><LazyImage src={england} height="10" alt="England"/></span> },
+  { value: 'fr', label: <span id="navbar-link-french"><LazyImage src={france} height="10" alt="France"/></span> },
+  // { value: 'ko', label: <span id="navbar-link-korean"><img src={korea} alt="Korean"/>Korean</span> },
+  // { value: 'zh', label: <span id="navbar-link-chinese"><img src={china} alt="Chinese"/>Chinese</span> },
+  // { value: 'ja', label: <span id="navbar-link-japanese"><img src={japan} alt="Japanese"/>Japanese</span> },
+  // { value: 'ru', label: <span id="navbar-link-russian"><img src={russia} alt="Russian"/>Russian</span> }
+];
+
+const selectOption = () => {
+  const locale = localStorage.getItem('locale');
+  return locale && options.find(o => o.value === locale) || options[0];
+}
 
 const ListItemLink = (props) => {
   return <ListItem className="text-center" button component="a" {...props} />;
@@ -30,8 +56,37 @@ class Navbar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpened: false
+      isOpened: false,
+      open: false,
+      selectedOption: selectOption()
     }
+  }
+  componentDidMount() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+  
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+              behavior: 'smooth'
+          });
+      });
+    });
+  }
+  handleOpen = () => {
+    this.setState({ open: true });
+  }
+  handleClose = () => {
+      this.setState({ open: false });
+  }
+  handleChange = (selectedOption) => {
+    this.setState({ selectedOption });
+    // const currentLocale = localStorage.getItem('locale');
+    // if (currentLocale && currentLocale !== selectedOption) {
+    //   localStorage.removeItem('locale');
+    // }
+    localStorage.setItem('locale', selectedOption.value);
+    this.props.onLanguageChange(selectedOption.value);
+    // this.props.setActiveLanguage(selectedOption.value);
   }
   toggleNavbar = () => {
     const { isOpened } = this.state;
@@ -50,23 +105,56 @@ class Navbar extends React.Component {
   }
   renderMenu = () => {
     const { classes } = this.props;
-    const { isOpened } = this.state;
+    const { isOpened, selectedOption } = this.state;
     let menu = null;
     if (isOpened) {
-      menu =
-        <div className={classes.fixedMenu + ' d-block d-md-none'}>
+      menu = 
+        <div className={classes.fixedMenu + ' d-block d-lg-none d-xl-none'}>
           <List component="nav" className={classes.fixedMenuContent}>
-            <ListItemLink id="mobile-nav-link-home" href="/">
-              <ListItemText primary="Home" />
+            <ListItemLink id="mobile-nav-link-home" href="#home" onClick={() => this.closeNavbar()}>
+              <ListItemText>
+                <FormattedMessage id="navbar.home"/>
+              </ListItemText>
             </ListItemLink>
             <Divider />
-            <ListItemLink id="mobile-nav-link-team" href="/team">
-              <ListItemText primary="Team" />
+            <ListItemLink id="mobile-nav-link-blockchain" href="#blockchain" onClick={() => this.closeNavbar()}>
+              <ListItemText>
+                <FormattedMessage id="navbar.blockchain"/>
+              </ListItemText>
             </ListItemLink>
             <Divider />
-            <ListItemLink id="mobile-nav-link-contact" href="/contact">
-              <ListItemText primary="Contact Us" />
+            <ListItemLink id="mobile-nav-link-token" href="#token" onClick={() => this.closeNavbar()}>
+              <ListItemText>
+                <FormattedMessage id="navbar.token"/>
+              </ListItemText>
             </ListItemLink>
+            <Divider />
+            <ListItemLink id="mobile-nav-link-device" href="#device" onClick={() => this.closeNavbar()}>
+              <ListItemText>
+                <FormattedMessage id="navbar.device"/>
+              </ListItemText>
+            </ListItemLink>
+            <Divider />
+            <ListItemLink id="mobile-nav-link-team" href="#team" onClick={() => this.closeNavbar()}>
+              <ListItemText>
+                <FormattedMessage id="navbar.team"/>
+              </ListItemText>
+            </ListItemLink>
+            <Divider />
+            <ListItemLink id="mobile-nav-link-contact" onClick={() => {this.closeNavbar(); this.handleOpen()}}>
+              <ListItemText>
+                <FormattedMessage id="btn.open.contact.form"/>
+              </ListItemText>
+            </ListItemLink>
+            <Select
+              id="navbar-link-selectlang"
+              className="select mx-auto"
+              classNamePrefix="select"
+              value={selectedOption}
+              onChange={this.handleChange}
+              options={options}
+              isSearchable={false}
+            />
           </List>
         </div>
     }
@@ -74,35 +162,53 @@ class Navbar extends React.Component {
   }
   render() {
     const { classes } = this.props;
-    const { isOpened } = this.state;
+    const { isOpened, open, selectedOption } = this.state;
     return (
-      <div className={classes.root + ' container'}>
-        <div className="row">
-          <div className="col d-none d-md-block d-lg-block d-xl-block">
-            <AppBar position="absolute" color="default" className={classes.navbar}>
-              <Toolbar>
-                <Link id="nav-link-logo" to="/"><img height="12" src={KiFoundationLogo} alt="Ki Foundation"/></Link>
-                <div className={classes.growRight}>
-                  {/* <Link className={classes.link} to="/whitepaper"><Button className={classes.button}>Whitepaper</Button></Link> */}
-                  <NavLink id="nav-link-home" exact className={classes.link} to="/" activeClassName="active-link">Home</NavLink>
-                  <NavLink id="nav-link-team" exact className={classes.link} to="/team" activeClassName="active-link">Team</NavLink>
-                  <NavLink id="nav-link-contact" exact className={classes.link + ' mr-0'} to="/contact" activeClassName="active-link">Contact us</NavLink>
-                </div>
-              </Toolbar>
-            </AppBar>
+      <div className={classes.root}>
+        <div className="container" style={{maxWidth: '100%'}}>
+          <div className="row">
+            {/* <Contact open={open} onClose={this.handleClose}/> */}
+            <div className="col d-none d-lg-block d-xl-block">
+              <AppBar position="absolute" color="default" id="navbar" className={classes.navbar}>
+                <Toolbar className={classes.toolbar}>
+                  <LazyImage height="12" src={KiFoundationLogo} className="ml-4" alt="Ki Foundation"/>
+                  <div className={classes.growRight}>
+                    {/* <Link className={classes.link} to="/whitepaper"><Button className={classes.button}>Whitepaper</Button></Link> */}
+                      <a id="nav-link-home" className="active-link link" href="#home"><FormattedMessage id="navbar.home"/></a>
+                      <a id="nav-link-blockchain" className="link" href="#blockchain"><FormattedMessage id="navbar.blockchain"/></a>
+                      <a id="nav-link-token" className="link" href="#token"><FormattedMessage id="navbar.token"/></a>
+                      <a id="nav-link-device" className="link" href="#device"><FormattedMessage id="navbar.device"/></a>
+                      <a id="nav-link-team" className="link" href="#team"><FormattedMessage id="navbar.team"/></a>
+                      {/* <NavLink id="nav-link-contact" exact className={classes.link + ' mr-0'} to="/contact" activeClassName="active-link">Tester Domo</NavLink> */}
+                      <button className="btn btn-primary fs-11 ml-5 px-4" onClick={this.handleOpen} style={{fontWeight: 500, border: 0}}><FormattedMessage id="btn.open.contact.form"/></button>
+                  </div>
+                  <div>
+                    <Select
+                      id="navbar-link-selectlang"
+                      className="select ml-2"
+                      classNamePrefix="select"
+                      value={selectedOption}
+                      onChange={this.handleChange}
+                      options={options}
+                      isSearchable={false}
+                    />
+                  </div>
+                </Toolbar>
+              </AppBar>
+            </div>
+            <div className="col d-block d-lg-none d-xl-none">
+              <AppBar position="absolute" color="default" className={classes.navbar}>
+                <Toolbar className={classes.toolbar}>
+                  <Link id="mobile-nav-link-logo" to="/" onClick={this.closeNavbar}><img height="20" src={KiFoundationLogoShort} alt="Ki Foundation"/></Link>
+                  <div className={classes.growRight}>
+                    <MenuIcon id="mobile-nav-link-open" hidden={isOpened} className={classes.menuIcon} onClick={this.toggleNavbar}/>
+                    <MenuClose id="mobile-nav-link-close" hidden={!isOpened} className={classes.menuIcon} onClick={this.toggleNavbar}/>
+                  </div>
+                </Toolbar>
+              </AppBar>
+            </div>
+            {this.renderMenu()}
           </div>
-          <div className="col d-block d-md-none">
-            <AppBar position="absolute" color="default" className={classes.navbar}>
-              <Toolbar>
-                <Link id="mobile-nav-link-logo" to="/" onClick={this.closeNavbar}><img height="30" src={KiFoundationLogoShort} alt="Ki Foundation"/></Link>
-                <div className={classes.growRight}>
-                  <MenuIcon id="mobile-nav-link-open" hidden={isOpened} className={classes.menuIcon} onClick={this.toggleNavbar}/>
-                  <MenuClose id="mobile-nav-link-close" hidden={!isOpened} className={classes.menuIcon} onClick={this.toggleNavbar}/>
-                </div>
-              </Toolbar>
-            </AppBar>
-          </div>
-          {this.renderMenu()}
         </div>
       </div>
     );
