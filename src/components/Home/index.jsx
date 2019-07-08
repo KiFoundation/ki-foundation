@@ -3,6 +3,8 @@ import React from 'react';
 
 // Components
 import Header from './Header';
+import Discover from './Discover';
+import Proof from './Proof';
 import Partners from './Partners';
 import Learn from './Learn';
 import MailchimpSubscribe from "react-mailchimp-subscribe";
@@ -26,8 +28,21 @@ class Home extends React.Component {
                 />
               )}
             />
+          <Discover />
+          <Proof />
           {/* <Learn /> */}
-          {/* <Partners /> */}
+          <MailchimpSubscribe
+              url={mailChimpUrl}
+              render={({ subscribe, status, message }) => (
+                <CustomMailChimpInvest
+                  containerClassName="mt-5"
+                  status={status}
+                  message={message}
+                  onValidated={formData => subscribe(formData)}
+                />
+              )}
+            />
+          <Partners />
         </div>
       </div>
     );

@@ -32,7 +32,7 @@ class Header extends React.Component {
             <div className="header-component" id="header-component">
                 <div className="container header-container">
                     <div className="row">
-                        <div className="col-md-12">
+                        <div className="col-md-12 mb-4">
                             <Typography align="center" variant="h3" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient'}>
                                 <FormattedMessage id="header.title"/>
                             </Typography>

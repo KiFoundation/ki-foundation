@@ -77,7 +77,7 @@ const styles = {
         backgroundColor: 'transparent !important'
     },
     headerTitle: {
-        color: "#3b426c",
+        // color: "#3b426c",
         width: 'fit-content',
         marginLeft: 'auto',
         marginRight: 'auto',

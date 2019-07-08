@@ -104,6 +104,14 @@ a, button{
   min-width: 250;
 }
 
+.primary-gradient, .primary-gradient span{
+  background: -webkit-linear-gradient(to right, rgba(0, 0, 0, 0.87), #043bea);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.87), #043bea);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .color-white, .color-white span{
   color: #ffffff;
 }
