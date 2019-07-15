@@ -5,7 +5,7 @@ const styles = {
         fontWeight: 300
     },
     headerIconText: {
-        color: "#043bea"
+        // color: "#043bea"
     }
 };
 

@@ -54,15 +54,19 @@ const CustomMailChimpInvest = ({ status, message, onValidated, containerClassNam
             </div>;
     } else {
         formRendered =
-            <div className={`${containerClassName} input-group input-group-big`}>
-                 <Typography className="color-white vertical-align d-flex" align="center" variant="h5" component="h1">
-                    <FormattedMessage id="register.first.text"/>
-                </Typography>
-                <input className="mobile-width" style={{ borderRadius: '5px', outline: "none", border: "2px solid #043bea", padding: "5px 15px" }} ref={node => (email = node)} type="email" placeholder="Your email"/>
-                <br />
-                <button id="header-join-btn" className="mobile-btn-width" style={{ outline: "none", minWidth: 120, cursor: "pointer", border: "1px solid #ffffff", marginLeft: '1rem', borderRadius: '5px', padding: "6px 15px", backgroundColor: "#043bea", color: "#fff"}} onClick={submit}>
-                    <FormattedMessage id="register.text"/>
-                </button>
+            <div className={`${containerClassName} d-block input-group input-group-big`}>
+                <div className="px-0 d-flex" style={{float: 'left'}}>
+                    <Typography className="color-white center-formattedmsg proxima-light" align="left" variant="h6" component="h1">
+                        <FormattedMessage id="register.first.text"/>
+                    </Typography>
+                </div>
+                <div className="px-0 d-flex">
+                    <input className="mobile-width ml-3" style={{ borderRadius: '5px', outline: "none", border: "2px solid #043bea", padding: "5px 15px" }} ref={node => (email = node)} type="email" placeholder="Your email"/>
+                    <br />
+                    <button id="header-join-btn" className="mobile-btn-width proxima-light" style={{ outline: "none", minWidth: 120, cursor: "pointer", border: "1px solid #ffffff", marginLeft: '1rem', borderRadius: '5px', padding: "6px 15px", backgroundColor: "#043bea", color: "#fff"}} onClick={submit}>
+                        <FormattedMessage id="register.text"/>
+                    </button>
+                </div>
             </div>;
     }
     return formRendered;

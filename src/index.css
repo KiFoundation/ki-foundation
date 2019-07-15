@@ -62,6 +62,11 @@ a, button{
   margin-top: 5rem !important;
 }
 
+.mx-a{
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .delay-0-7s{
   animation-delay: 0.7s;
 }
@@ -76,6 +81,10 @@ a, button{
 
 .is-visible.d-contents{
   display: contents;
+}
+
+.whitespace-preline{
+  white-space: pre-line;
 }
 
 .btn-primary:focus, .btn-primary:visited, .btn-primary:focus-within, .btn-primary:active{
@@ -114,4 +123,46 @@ a, button{
 
 .color-white, .color-white span{
   color: #ffffff;
+}
+
+.center-formattedmsg span{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@font-face {
+  font-display: fallback;
+  font-family: ProximaBold;
+  src: url('./assets/fonts/proxima-bold.otf');
+}
+
+@font-face {
+  font-display: fallback;
+  font-family: ProximaThin;
+  src: url('./assets/fonts/proxima-thin.otf');
+}
+
+@font-face {
+  font-display: fallback;
+  font-family: ProximaLight;
+  src: url('./assets/fonts/proxima-light.otf');
+}
+
+@font-face {
+  font-display: fallback;
+  font-family: Roboto;
+  src: url('./assets/fonts/roboto.ttf');
+}
+
+.proxima-thin{
+  font-family: 'ProximaThin' !important;
+}
+
+.proxima-bold{
+  font-family: 'ProximaBold' !important;
+}
+
+.proxima-light{
+  font-family: 'ProximaLight' !important;
 }

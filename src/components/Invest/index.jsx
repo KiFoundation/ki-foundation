@@ -53,13 +53,19 @@ const BootstrapInput = withStyles(theme => ({
     },
 }))(InputBase);
 
-class Contact extends React.Component {
+class Invest extends React.Component {
+    meetingValues = ['Yes', 'No'];
+    investValues = ['0 < 1000$', '1000$ < 5000$', '> 5000$'];
     constructor(props) {
         super(props);
         this.state = {
             job: 'empty',
             email: '',
-            fullname: '',
+            firstname: '',
+            lastname: '',
+            invest: '',
+            meeting: 'No',
+            phone: '',
             message: '',
             fetchedErrors: null,
             success: false,
@@ -67,38 +73,54 @@ class Contact extends React.Component {
         };
     }
     handleChange = (event) => {
-        this.setState({[event.target.name]: event.target.value});
+        if (event && event.target && event.target.name) {
+            this.setState({[event.target.name]: event.target.value});
+        }
         this.setState({showSuccessMessage: false});
     }
     handleSubmit = (event) => {
         event.preventDefault();
-        const { job, email, fullname, message } = this.state;
-        const contactEndpoint = "https://static-api.foundation.ki/1/foundation/contact";
+        const { firstname, lastname, email, invest, phone, meeting, message } = this.state;
+        const investEndpoint = "http://localhost:3000/1/foundation/invest";
+        let newInvestor = {
+            firstname: firstname,
+            lastname: lastname,
+            from: email,
+            invest: invest,
+            meeting: meeting,
+            message: message
+        };
 
-        fetch(contactEndpoint, {
+        if (meeting && meeting === 'Yes' && phone) {
+            newInvestor['phone'] = phone;
+        }
+
+        console.log('newInvestor', newInvestor);
+
+        fetch(investEndpoint, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
-                type: job,
-                name: fullname,
-                from: email,
-                message: message
-            })
+            body: JSON.stringify(newInvestor)
         })
         .then(
             (res) => {
+                console.log('res', res);
                 if (res && res.ok) {
                     this.setState({
                         job: 'empty',
                         email: '',
-                        fullname: '',
+                        firstname: '',
+                        lastname: '',
+                        invest: '',
+                        meeting: 'No',
+                        phone: '',
                         message: '',
                         fetchedErrors: null,
-                        success: true,
-                        showSuccessMessage: true
+                        success: false,
+                        showSuccessMessage: false
                     });
                 } else {
                     res.json().then(value => {
@@ -115,22 +137,70 @@ class Contact extends React.Component {
             }
         );
     }
+    renderInvestValues = () => {
+        let renderInvestInput = this.investValues.map(iv => {
+            return (
+                <div className="form-check mb-4 vertical-align">
+                    <div>
+                        <input onChange={this.handleChange} value={iv} name="invest" type="radio" className="form-check-input"/>
+                        <label className="form-check-label" htmlFor="invest">
+                            {iv}
+                        </label>
+                    </div>
+                </div>
+            );
+        })
+        return renderInvestInput;
+    }
     formContent = () => {
-        const { job, email, fullname, message } = this.state;
+        const { classes } = this.props;
+        const { job, email, firstname, lastname, invest, phone, meeting, message } = this.state;
         if ( job === 'cryptoenthusiast' ) {
             return;
         } else {
             return (
                 <div>
                     <div className="form-group mb-4">
-                        <input onChange={this.handleChange} value={email} name="email" type="email" className="form-control" placeholder="Enter email"/>
+                        <input onChange={this.handleChange} value={firstname} name="firstname" type="text" className="form-control" placeholder="Firstname"/>
                     </div>
                     <div className="form-group mb-4">
-                        <input onChange={this.handleChange} value={fullname} name="fullname" type="text" className="form-control" placeholder="Full name"/>
+                        <input onChange={this.handleChange} value={lastname} name="lastname" type="text" className="form-control" placeholder="Lastname"/>
+                    </div>
+                    <div className="form-group mb-4">
+                        <input onChange={this.handleChange} value={email} name="email" type="email" className="form-control" placeholder="Email"/>
                     </div>
                     <div className="form-group">
                         <textarea onChange={this.handleChange} value={message} name="message" className="form-control" rows="5" placeholder="Your message..."></textarea>
                     </div>
+                    <div className="col-md-12 mb-4 px-0">
+                        <Typography variant="h6" className={classes.subtitle} align="center">Amount to invest</Typography>
+                    </div>
+                    {this.renderInvestValues()}                    
+                    <div className="col-md-12 mb-4 px-0">
+                        <Typography variant="h6" className={classes.subtitle} align="center">Get in touch with the CEO</Typography>
+                    </div>
+                    <div className="vertical-align">
+                        <div className="d-flex">
+                            <div className="form-check mb-4 d-flex">
+                                <input onChange={this.handleChange} value={'Yes'} name="meeting" type="radio" className="form-check-input"/>
+                                <label className="form-check-label" htmlFor="Yes">
+                                    {'Yes'}
+                                </label>
+                            </div>
+                            <div className="form-check mb-4 d-flex ml-4">
+                                <input onChange={this.handleChange} value={'No'} name="meeting" type="radio" className="form-check-input"/>
+                                <label className="form-check-label" htmlFor="No">
+                                    {'No'}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    { meeting === 'Yes' ? 
+                        <div className="form-group mb-4">
+                            <input onChange={this.handleChange} value={phone} name="phone" type="text" className="form-control" placeholder="Phone"/>
+                        </div> :
+                        null
+                    }
                 </div>
             );
         }
@@ -140,11 +210,11 @@ class Contact extends React.Component {
         if (fetchedErrors) {
             const fetchedErrorsRender = fetchedErrors.map(fe => {
                 let message = fe && fe.message ? fe.message : '';
-                if (message && message.match(/type must be either/gi)) {
-                    message = 'Select the section that describes you the best.';
-                }
                 if (message && message.match(/From is required/gi)) {
                     message = 'Email is required.';
+                }
+                if (message && message.match(/Invest is required/gi)) {
+                    message = 'The amount to invest is required.';
                 }
                 return <div key={fe.message.slice(0, 5)} className="first-capitalize text-center mb-1 red">{message}</div>;
             });
@@ -171,24 +241,10 @@ class Contact extends React.Component {
             <div className={classes.root + ' contact-component'}>
                 <div className="container">
                     <div className="row justify-content-center">
-                        <div className="col-md-6">
-                            <Typography className={classes.title + ' animated fadeInDown'} variant="h3" align="center">Contact us</Typography>
-                            <Typography variant="h6" className={classes.subtitle} align="center">Choose the section that describes you the best:</Typography>
+                        <div className="col-md-8">
+                            <Typography className={classes.title + ' animated fadeInDown'} variant="h3" align="center">Invest</Typography>
+                            <Typography variant="h6" className={classes.subtitle} align="center">Lorem ipsum dolor sit amet.</Typography>
                             <form onSubmit={this.handleSubmit}>
-                                <div className="form-group mb-4">
-                                    <Select
-                                        name="job"
-                                        value={job}
-                                        onChange={this.handleChange}
-                                        input={<BootstrapInput name="age" id="age-customized-select" />}
-                                    >
-                                        <MenuItem style={{ root: {color: 'red'} }} value="empty">Select...</MenuItem>
-                                        <MenuItem value="investor">Investor</MenuItem>
-                                        <MenuItem value="business_partner">Business partner</MenuItem>
-                                        <MenuItem value="cryptoenthusiast">Crypto enthusiast</MenuItem>
-                                        <MenuItem value="other">Other</MenuItem>
-                                    </Select>
-                                </div>
                                 {this.formContent()}
                                 {this.renderErrors()}
                                 {this.buttonContent()}
@@ -201,4 +257,4 @@ class Contact extends React.Component {
     }
 }
 
-export default withStyles(styles)(Contact);
+export default withStyles(styles)(Invest);

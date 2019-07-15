@@ -17,17 +17,6 @@ class Home extends React.Component {
       <div className="container">
         <div className="row">
           <Header />
-          <MailchimpSubscribe
-              url={mailChimpUrl}
-              render={({ subscribe, status, message }) => (
-                <CustomMailChimpInvest
-                  containerClassName="mt-5"
-                  status={status}
-                  message={message}
-                  onValidated={formData => subscribe(formData)}
-                />
-              )}
-            />
           <Discover />
           <Proof />
           {/* <Learn /> */}

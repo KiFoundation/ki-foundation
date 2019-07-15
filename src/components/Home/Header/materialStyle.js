@@ -81,7 +81,8 @@ const styles = {
         width: 'fit-content',
         marginLeft: 'auto',
         marginRight: 'auto',
-        position: "relative"
+        position: "relative",
+        fontWeight: 600
     },
     headerTitleText: {
         color: "#3b426c",

@@ -8,7 +8,7 @@ import LazyImage from '../../CustomComponent/LazyImage';
 
 // Material
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import Button from '../../CustomComponent/Button';
 import { withStyles } from '@material-ui/core/styles';
 
 // Images
@@ -34,10 +34,10 @@ class Proof extends React.Component {
         return (
             <React.Fragment>
                 <div className="col-md-12 mt-5">
-                    <Typography align="left" variant="h3" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient'}>
+                    <Typography align="left" variant="h3" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient proxima-bold'}>
                         <FormattedMessage id="proof.title"/>
                     </Typography>
-                    <Typography align="center" variant="h6" gutterBottom className={classes.headerTitleText + ' animated fadeIn'}>
+                    <Typography align="left" variant="h6" gutterBottom className={classes.headerTitleText + ' animated fadeIn'}>
                         <FormattedMessage id="proof.subtitle.text"/>
                     </Typography>
                 </div>
@@ -66,13 +66,13 @@ class Proof extends React.Component {
                     </Typography>
                 </div>
                 <div className="col-md-12 mt-4">
-                    <Typography align="center" variant="h6" gutterBottom className={classes.headerTitleText + ' animated fadeIn'}>
+                    <Typography align="left" variant="h6" gutterBottom className={classes.headerTitleText + ' animated fadeIn'}>
                         <FormattedMessage id="proof.subtitle.text2"/>
                     </Typography>
                 </div>
-                <div className="col-md-12 text-center mt-3">
+                <div className="col-md-12 text-center" style={{marginTop: '4rem', marginBottom: '6rem'}}>
                     <Button color="primary" variant="contained" className="fs-11 mx-2" onClick={this.handleOpen}><FormattedMessage id="btn.open.whitepaper.form"/></Button>
-                    <Button color="secondary" variant="outlined" className="fs-11 mx-2" onClick={this.handleOpen}><FormattedMessage id="btn.open.kitoken.form"/></Button>
+                    <Button variant="outlined" className="fs-11 mx-2" onClick={this.handleOpen}><FormattedMessage id="btn.open.kitoken.form"/></Button>
                 </div>
             </React.Fragment>
         );

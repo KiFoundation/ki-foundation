@@ -12,9 +12,11 @@
 
 .header-component {
     margin-top: 7rem;
+    margin-bottom: 5rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    /* height: 100vh; */
 }
 
 @media (max-width: 768px) {

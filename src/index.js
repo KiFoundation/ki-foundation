@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import './theme.css';
 import App from './App';
+import Modal from 'react-modal';
 import * as serviceWorker from './serviceWorker';
 import { addLocaleData, IntlProvider } from 'react-intl';
 // import { BrowserRouter } from 'react-router-dom';
@@ -24,6 +25,8 @@ const messages = {};
     // localeData[locale] = fs.readFileSync(path.join(__dirname, `../node_modules/react-intl/locale-data/${locale}.js`)).toString();
     messages[locale] = require(`./translations/${locale}.json`);
 });
+
+Modal.setAppElement('#root');
 
 class Index extends Component {
     constructor(props) {
