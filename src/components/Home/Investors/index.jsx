@@ -21,20 +21,20 @@ import OcpLogo from '../../../assets/other_brands/Ocp.png';
 import './style.css';
 import styles from "./materialStyle";
 
-class Partners extends React.Component {
+class Investors extends React.Component {
     render() {
         const { classes } = this.props;
         return (
             <div className="container my-5">
                 <div className="row">
-                    {/* <div className="col-md-12"> */}
-                        {/* <Typography align="left" variant="h3" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient proxima-bold'}>
+                    {/* <div className="col-md-12">
+                        <Typography align="left" variant="h3" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient proxima-bold'}>
                             <FormattedMessage id="trust.title"/>
                         </Typography>
                     </div> */}
                     <div className="col-md-12">
                         <Typography className={classes.primaryColor} align="center" variant="h5">
-                            <FormattedMessage id="trust.partners.title"/>
+                            <FormattedMessage id="trust.investors.title"/>
                         </Typography>
                     </div>
                     <div className="col-md-4 col-sm-4 partners-wrapper">
@@ -66,8 +66,8 @@ class Partners extends React.Component {
     } 
 }
 
-Partners.propTypes = {
+Investors.propTypes = {
     classes: PropTypes.object.isRequired,
 };  
 
-export default withStyles(styles)(Partners);
+export default withStyles(styles)(Investors);

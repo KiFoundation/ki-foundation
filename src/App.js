@@ -13,6 +13,7 @@ import Home from './components/Home';
 import Footer from './components/Footer';
 import Team from './components/Team';
 import Contact from './components/Contact';
+import KiToken from './components/KiToken';
 import Device from './components/Device';
 import Ecosystem from './components/Ecosystem';
 import Blockchain from './components/Blockchain';
@@ -40,10 +41,10 @@ class App extends Component {
     return (
       <Router>
         <div className="App scrollspy" id="home">
-          <Navbar onLanguageChange={onLanguageChange}/>
+          <Navbar onLanguageChange={onLanguageChange} locale={locale}/>
           <Switch>
             <Route exact path={"/" + locale} component={props => <Home locale={locale}/>}/>
-            <Route exact path={"/" + locale + "/contact"} component={props => <Contact/>}/>
+            <Route exact path={"/" + locale + "/kitoken"} component={props => <KiToken/>}/>
             <Route exact path={"/" + locale + "/device"} component={props => <Device/>}/>
             <Route exact path={"/" + locale + "/token"} component={props => <Ecosystem/>}/>
             <Route exact path={"/" + locale + "/blockchain"} component={props => <Blockchain/>}/>

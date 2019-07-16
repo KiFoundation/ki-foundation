@@ -30,5 +30,18 @@
     "trust.title": "They trust us",
     "trust.partners.title": "Partners",
     "trust.media.title": "Media",
-    "trust.investors.title": "Investors"
+    "trust.investors.title": "Investors",
+    "kitoken.header.title": "Token Overview",
+    "thekitoken.title": "The Ki Token",
+    "thekitoken.subtitle.text": "The network uses one unit of exchange: The Ki Token. It is the unique smart currency to pay for infrastructure and for sharing value in the ecosystem.",
+    "thekitoken.supply.text": "800M Ki initial supply",
+    "thekitoken.inflation.text": "2-5% yearly inflation",
+    "thekitoken.distribution.text": "Fairer distribution",
+    "btn.open.buyki": "Buy Ki Tokens",
+    "btn.open.validator": "Become Validator",
+    "btn.open.develop": "Develop for Ki",
+    "btn.open.readpaper": "Read Yellowpaper", 
+    "btn.open.marketplace": "Marketplace transactions",
+    "howtoken.title": "How to get Ki Tokens?",
+    "howtoken.subtitle.text": "The amount of Ki you earn depends on the ability of your node to help secure the Network and provide spare resources to the ecosystem. Ki validators earn Ki for providing and validating network resources. Each time minting occurs, validators get new Ki Tokens in addition to a portion of the transaction fees of real life transactions in the network. Customers in the Ki ecosystem are also offered Ki Tokens as a cashback of their fiat transaction and so does the service provider."
 }

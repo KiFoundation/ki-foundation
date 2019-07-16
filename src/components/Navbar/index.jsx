@@ -77,15 +77,15 @@ class Navbar extends React.Component {
     }
   }
   componentDidMount() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-          e.preventDefault();
+    // document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    //   anchor.addEventListener('click', function (e) {
+    //       e.preventDefault();
   
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-              behavior: 'smooth'
-          });
-      });
-    });
+    //       document.querySelector(this.getAttribute('href')).scrollIntoView({
+    //           behavior: 'smooth'
+    //       });
+    //   });
+    // });
   }
   openModal = () => {
     this.setState({modalIsOpen: true});
@@ -191,7 +191,7 @@ class Navbar extends React.Component {
     return menu;
   }
   render() {
-    const { classes } = this.props;
+    const { classes, locale } = this.props;
     const { isOpened, open, selectedOption } = this.state;
     return (
       <div className={classes.root}>
@@ -206,7 +206,7 @@ class Navbar extends React.Component {
                     {/* <Link className={classes.link} to="/whitepaper"><Button className={classes.button}>Whitepaper</Button></Link> */}
                       <a id="nav-link-home" className="active-link link" href="#home"><FormattedMessage id="navbar.home"/></a>
                       <a id="nav-link-blockchain" className="link" href="#blockchain"><FormattedMessage id="navbar.blockchain"/></a>
-                      <a id="nav-link-token" className="link" href="#token"><FormattedMessage id="navbar.token"/></a>
+                      <a id="nav-link-token" className="link" href={`/${locale}/kitoken`}><FormattedMessage id="navbar.token"/></a>
                       <a id="nav-link-device" className="link" href="#device"><FormattedMessage id="navbar.device"/></a>
                       <a id="nav-link-team" className="link" href="#team"><FormattedMessage id="navbar.team"/></a>
                       {/* <a id="nav-link-contact" className="link" href="#contact"><FormattedMessage id="navbar.contact"/></a> */}

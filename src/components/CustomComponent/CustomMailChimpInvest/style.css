@@ -74,6 +74,10 @@
   float: left;
 }
 
+.cmci-text-container h1{
+  margin-top: -10px;
+}
+
 @media (max-width: 768px) { 
   .cmci-input-container{
     width: 100%;

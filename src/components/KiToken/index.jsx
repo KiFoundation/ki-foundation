@@ -9,7 +9,8 @@ import Typography from '@material-ui/core/Typography';
 
 // Components
 import Header from './Header';
-import Discover from './Discover';
+import Section1 from './Section1';
+import Section2 from './Section2';
 import Proof from './Proof';
 import Partners from './Partners';
 import Investors from './Investors';
@@ -18,7 +19,7 @@ import MailchimpSubscribe from "react-mailchimp-subscribe";
 import CustomMailChimpInvest from '../CustomComponent/CustomMailChimpInvest';
 import styles from "./materialStyle";
 
-class Home extends React.Component {
+class KiToken extends React.Component {
   render() {
     const { classes } = this.props;
     const mailChimpUrl = "https://gen.us17.list-manage.com/subscribe/post?u=3865106d3d479f1d2e1ec8400&amp;id=86a02d162a";
@@ -26,9 +27,10 @@ class Home extends React.Component {
       <div className="container">
         <div className="row">
           <Header />
-          <Discover />
+          <Section1 />
+          <Section2 />
+          {/* <Discover />
           <Proof />
-          {/* <Learn /> */}
           <div className="container">
             <div className="row">
               <div className="col-md-12">
@@ -56,7 +58,7 @@ class Home extends React.Component {
               </div>
           </div>
           <Partners />
-          <Investors />
+          <Investors /> */}
         </div>
       </div>
     );
@@ -67,4 +69,4 @@ Partners.propTypes = {
   classes: PropTypes.object.isRequired,
 };  
 
-export default withStyles(styles)(Home);
+export default withStyles(styles)(KiToken);
