@@ -1,12 +1,12 @@
 @media (max-width: 768px) {
-    .contact-component {
+    .invest-component {
         height: auto;
         padding-top: 100px;
     }
 }
 
 @media (max-height: 630px) {
-    .contact-component {
+    .invest-component {
         height: auto;
         padding-top: 100px;
     }
@@ -27,6 +27,10 @@
 .contact-telegram-icon{
     position: absolute;
     left: 15px;
+}
+
+.invest-component .form-check-input{
+  margin-top: .2rem;
 }
 
 /** Modal **/

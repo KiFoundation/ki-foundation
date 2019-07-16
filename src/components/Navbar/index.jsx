@@ -8,9 +8,12 @@ import LazyImage from '../CustomComponent/LazyImage';
 
 // Components
 import Contact from '../Contact';
+import Invest from '../Invest';
+import Modal from 'react-modal';
 
 // Material
 import { withStyles } from '@material-ui/core/styles';
+import Button from '../CustomComponent/Button';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -43,6 +46,17 @@ const options = [
   // { value: 'ru', label: <span id="navbar-link-russian"><img src={russia} alt="Russian"/>Russian</span> }
 ];
 
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)',
+  }
+};
+
 const selectOption = () => {
   const locale = localStorage.getItem('locale');
   return locale && options.find(o => o.value === locale) || options[0];
@@ -58,6 +72,7 @@ class Navbar extends React.Component {
     this.state = {
       isOpened: false,
       open: false,
+      modalIsOpen: false,
       selectedOption: selectOption()
     }
   }
@@ -71,6 +86,15 @@ class Navbar extends React.Component {
           });
       });
     });
+  }
+  openModal = () => {
+    this.setState({modalIsOpen: true});
+  }
+  closeModal = () => {
+      this.setState({modalIsOpen: false});
+  }
+  openModal = () => {
+      this.setState({modalIsOpen: true});
   }
   handleOpen = () => {
     this.setState({ open: true });
@@ -185,9 +209,20 @@ class Navbar extends React.Component {
                       <a id="nav-link-token" className="link" href="#token"><FormattedMessage id="navbar.token"/></a>
                       <a id="nav-link-device" className="link" href="#device"><FormattedMessage id="navbar.device"/></a>
                       <a id="nav-link-team" className="link" href="#team"><FormattedMessage id="navbar.team"/></a>
-                      <a id="nav-link-contact" className="link" href="#contact"><FormattedMessage id="navbar.contact"/></a>
+                      {/* <a id="nav-link-contact" className="link" href="#contact"><FormattedMessage id="navbar.contact"/></a> */}
+                      <Button color="primary" variant="contained" className="fs-11 mx-2 px-4" onClick={this.openModal}><FormattedMessage id="btn.open.contact.form"/></Button>
+                      <Modal
+                        isOpen={this.state.modalIsOpen}
+                        overlayClassName="diagramOverlay"
+                        onRequestClose={this.closeModal}
+                        className="diagramModal"
+                        style={customStyles}
+                        contentLabel="Example Modal"
+                        >
+                            <Invest />
+                      </Modal>
                       {/* <NavLink id="nav-link-contact" exact className={classes.link + ' mr-0'} to="/contact" activeClassName="active-link">Tester Domo</NavLink> */}
-                      <button className="btn btn-primary fs-11 ml-5 px-4" onClick={this.handleOpen} style={{fontWeight: 500, border: 0}}><FormattedMessage id="btn.open.contact.form"/></button>
+                      {/* <button className="btn btn-primary fs-11 ml-5 px-4" onClick={this.handleOpen} style={{fontWeight: 500, border: 0}}><FormattedMessage id="btn.open.contact.form"/></button> */}
                   </div>
                   <div>
                     <Select

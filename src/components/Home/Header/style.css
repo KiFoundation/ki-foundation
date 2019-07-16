@@ -21,20 +21,20 @@
 
 @media (max-width: 768px) {
     .header-component {
-        height: auto;
-        display: initial;
+        /* height: auto; */
+        /* display: initial; */
     }
     .header-container{
-        margin-top: 7rem;
+        /* margin-top: 7rem; */
     }
 }
 
 @media (max-height: 790px) {
     .header-component {
-        height: auto;
-        display: initial;
+        /* height: auto; */
+        /* display: initial; */
     }
     .header-container{
-        margin-top: 7rem;
+        /* margin-top: 7rem; */
     }
 }

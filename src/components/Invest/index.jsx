@@ -59,7 +59,6 @@ class Invest extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            job: 'empty',
             email: '',
             firstname: '',
             lastname: '',
@@ -107,15 +106,13 @@ class Invest extends React.Component {
         })
         .then(
             (res) => {
-                console.log('res', res);
                 if (res && res.ok) {
                     this.setState({
-                        job: 'empty',
                         email: '',
                         firstname: '',
                         lastname: '',
                         invest: '',
-                        meeting: 'No',
+                        meeting: '',
                         phone: '',
                         message: '',
                         fetchedErrors: null,
@@ -140,13 +137,11 @@ class Invest extends React.Component {
     renderInvestValues = () => {
         let renderInvestInput = this.investValues.map(iv => {
             return (
-                <div className="form-check mb-4 vertical-align">
-                    <div>
-                        <input onChange={this.handleChange} value={iv} name="invest" type="radio" className="form-check-input"/>
-                        <label className="form-check-label" htmlFor="invest">
-                            {iv}
-                        </label>
-                    </div>
+                <div className="form-check mb-4 d-flex mx-3">
+                    <input onChange={this.handleChange} value={iv} name="invest" type="radio" className="form-check-input"/>
+                    <label className="form-check-label" htmlFor="invest">
+                        {iv}
+                    </label>
                 </div>
             );
         })
@@ -154,56 +149,56 @@ class Invest extends React.Component {
     }
     formContent = () => {
         const { classes } = this.props;
-        const { job, email, firstname, lastname, invest, phone, meeting, message } = this.state;
-        if ( job === 'cryptoenthusiast' ) {
-            return;
-        } else {
-            return (
-                <div>
-                    <div className="form-group mb-4">
-                        <input onChange={this.handleChange} value={firstname} name="firstname" type="text" className="form-control" placeholder="Firstname"/>
+        const { email, firstname, lastname, invest, phone, meeting, message } = this.state;
+        return (
+            <div>
+                <div className="form-group mb-4">
+                    <input onChange={this.handleChange} value={firstname} name="firstname" type="text" className="form-control" placeholder="Firstname"/>
+                </div>
+                <div className="form-group mb-4">
+                    <input onChange={this.handleChange} value={lastname} name="lastname" type="text" className="form-control" placeholder="Lastname"/>
+                </div>
+                <div className="form-group mb-4">
+                    <input onChange={this.handleChange} value={email} name="email" type="email" className="form-control" placeholder="Email"/>
+                </div>
+                <div className="form-group">
+                    <textarea onChange={this.handleChange} value={message} name="message" className="form-control" rows="5" placeholder="Your message..."></textarea>
+                </div>
+                <div className="col-md-12 mb-4 px-0">
+                    <Typography variant="h6" className={classes.subtitle} align="center">Amount to invest</Typography>
+                </div>
+                <div className="vertical-align">
+                    <div className="d-flex">
+                        {this.renderInvestValues()}                    
                     </div>
-                    <div className="form-group mb-4">
-                        <input onChange={this.handleChange} value={lastname} name="lastname" type="text" className="form-control" placeholder="Lastname"/>
-                    </div>
-                    <div className="form-group mb-4">
-                        <input onChange={this.handleChange} value={email} name="email" type="email" className="form-control" placeholder="Email"/>
-                    </div>
-                    <div className="form-group">
-                        <textarea onChange={this.handleChange} value={message} name="message" className="form-control" rows="5" placeholder="Your message..."></textarea>
-                    </div>
-                    <div className="col-md-12 mb-4 px-0">
-                        <Typography variant="h6" className={classes.subtitle} align="center">Amount to invest</Typography>
-                    </div>
-                    {this.renderInvestValues()}                    
-                    <div className="col-md-12 mb-4 px-0">
-                        <Typography variant="h6" className={classes.subtitle} align="center">Get in touch with the CEO</Typography>
-                    </div>
-                    <div className="vertical-align">
-                        <div className="d-flex">
-                            <div className="form-check mb-4 d-flex">
-                                <input onChange={this.handleChange} value={'Yes'} name="meeting" type="radio" className="form-check-input"/>
-                                <label className="form-check-label" htmlFor="Yes">
-                                    {'Yes'}
-                                </label>
-                            </div>
-                            <div className="form-check mb-4 d-flex ml-4">
-                                <input onChange={this.handleChange} value={'No'} name="meeting" type="radio" className="form-check-input"/>
-                                <label className="form-check-label" htmlFor="No">
-                                    {'No'}
-                                </label>
-                            </div>
+                </div>
+                <div className="col-md-12 mb-4 px-0">
+                    <Typography variant="h6" className={classes.subtitle} align="center">Get in touch with the CEO</Typography>
+                </div>
+                <div className="vertical-align">
+                    <div className="d-flex">
+                        <div className="form-check mb-4 d-flex">
+                            <input onChange={this.handleChange} value={'Yes'} name="meeting" type="radio" className="form-check-input"/>
+                            <label className="form-check-label" htmlFor="Yes">
+                                {'Yes'}
+                            </label>
+                        </div>
+                        <div className="form-check mb-4 d-flex ml-4">
+                            <input defaultChecked onChange={this.handleChange} value={'No'} name="meeting" type="radio" className="form-check-input"/>
+                            <label className="form-check-label" htmlFor="No">
+                                {'No'}
+                            </label>
                         </div>
                     </div>
-                    { meeting === 'Yes' ? 
-                        <div className="form-group mb-4">
-                            <input onChange={this.handleChange} value={phone} name="phone" type="text" className="form-control" placeholder="Phone"/>
-                        </div> :
-                        null
-                    }
                 </div>
-            );
-        }
+                { meeting === 'Yes' ? 
+                    <div className="form-group mb-4">
+                        <input onChange={this.handleChange} value={phone} name="phone" type="text" className="form-control" placeholder="Phone"/>
+                    </div> :
+                    null
+                }
+            </div>
+        );
     }
     renderErrors = () => {
         const { success, fetchedErrors, showSuccessMessage } = this.state;
@@ -227,18 +222,12 @@ class Invest extends React.Component {
     }
     buttonContent = () => {
         const { classes } = this.props;
-        const { job } = this.state;
-        if ( job === 'cryptoenthusiast') {
-            return <div className="text-center"><a id="contact-link-telegram" rel="noopener noreferrer" className={classes.mailTo} target="_blank" href="https://t.me/KiFoundation"><Button className={classes.button}><img src={TelegramLogo} alt="telegram logo" height="20" className="mr-1 contact-telegram-icon"/>Join our Telegram</Button></a></div>;
-        } else {
-            return <div className="text-center pt-2"><input value="Send an email" type="submit" className={classes.button} /></div>;
-        }
+        return <div className="text-center pt-2"><input value="Send an email" type="submit" className={classes.button} /></div>;
     }
     render() {
         const { classes } = this.props;
-        const { job } = this.state;
         return (
-            <div className={classes.root + ' contact-component'}>
+            <div className={classes.root + ' invest-component'}>
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-md-8">

@@ -52,6 +52,27 @@ class Discover extends React.Component {
     handleOpen = () => {
         this.setState({modalIsOpen: true});
     }
+    renderIconsSection = () => {
+        const { classes } = this.props;
+        const icons = [
+            { src: StorageIcon, name: 'Storage icon', text: 'discover.storage.text' },
+            { src: WifiIcon, name: 'Wifi icon', text: 'discover.wifi.text' },
+            { src: ProcessorIcon, name: 'Processor icon', text: 'discover.processor.text' },
+        ];
+        let renderIcons = icons.map(is => {
+            return (
+                <div className="col-md-4 mb-4">
+                    <div className="text-center">
+                        <img className="mx-a" src={is.src} height="120" alt={is.name}/>
+                        <Typography align="center" variant="h6" gutterBottom className={classes.headerIconText + ' vertical-align mb-0'}>
+                            <FormattedMessage id={is.text}/>
+                        </Typography>
+                    </div>
+                </div>
+            );
+        })
+        return renderIcons;
+    }
     render() {
         const { classes } = this.props;
         return (
@@ -64,33 +85,10 @@ class Discover extends React.Component {
                         <FormattedMessage id="discover.subtitle.text"/>
                     </Typography>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-6 vertical-align">
                     <img className="domo-device" src={DomoAnimated} height="650" alt="Domo animated" />
                 </div>
-                <div className="col-md-4">
-                    <div className="text-center">
-                        <img className="mx-a" src={StorageIcon} height="120" alt="Storage icon"/>
-                        <Typography align="center" variant="h6" gutterBottom className={classes.headerIconText + ' vertical-align mb-0'}>
-                            <FormattedMessage id="discover.storage.text"/>
-                        </Typography>
-                    </div>
-                </div>
-                <div className="col-md-4">
-                    <div className="text-center">
-                        <img className="mx-a" src={WifiIcon} height="120" alt="Wifi icon"/>
-                        <Typography align="center" variant="h6" gutterBottom className={classes.headerIconText + ' vertical-align mb-0'}>
-                            <FormattedMessage id="discover.wifi.text"/>
-                        </Typography>
-                    </div>
-                </div>
-                <div className="col-md-4">
-                    <div className="text-center">
-                        <img className="mx-a" src={ProcessorIcon} height="120" alt="Processor icon"/>
-                        <Typography align="center" variant="h6" gutterBottom className={classes.headerIconText + ' vertical-align mb-0'}>
-                            <FormattedMessage id="discover.processor.text"/>
-                        </Typography>
-                    </div>
-                </div>
+                {this.renderIconsSection()}
                 <div className="col-md-12 text-center" style={{marginTop: '4rem', marginBottom: '6rem'}}>
                     <Button color="primary" variant="contained" className="fs-11 mx-2 px-4" onClick={this.handleOpen}><FormattedMessage id="btn.open.contact.form"/></Button>
                     <Button color="primary" variant="outlined" className="fs-11 mx-2 px-4" onClick={this.handleOpen}><FormattedMessage id="btn.open.kiblockchain.form"/></Button>

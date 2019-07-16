@@ -29,6 +29,26 @@ class Proof extends React.Component {
             open: false,
         }
     }
+    renderIconsSection = () => {
+        const { classes } = this.props;
+        const icons = [
+            { icon: DecentralizedIcon, name: 'Decentralized icon', text: 'proof.decentralized.text' },
+            { icon: EnergyIcon, name: 'Energy icon', text: 'proof.energy.text' },
+            { icon: ScalableIcon, name: 'Scalable icon', text: 'proof.scalable.text' },
+            { icon: SecureIcon, name: 'Secure icon', text: 'proof.secure.text' },
+        ];
+        let renderIcons = icons.map(is => {
+            return (
+                <div className="col-md-3 text-center mb-4">
+                    <img src={is.icon} height="120" alt={is.name}/>
+                    <Typography align="center" variant="h5" gutterBottom className={classes.headerTitleText + ' vertical-align mb-0'}>
+                        <FormattedMessage id={is.text}/>
+                    </Typography>
+                </div>
+            );
+        });
+        return renderIcons;
+    }
     render() {
         const { classes } = this.props;
         return (
@@ -41,30 +61,7 @@ class Proof extends React.Component {
                         <FormattedMessage id="proof.subtitle.text"/>
                     </Typography>
                 </div>
-                <div className="col-md-3 text-center">
-                    <img src={DecentralizedIcon} height="120" alt="Decentralized icon"/>
-                    <Typography align="center" variant="h5" gutterBottom className={classes.headerTitleText + ' vertical-align mb-0'}>
-                        <FormattedMessage id="proof.decentralized.text"/>
-                    </Typography>
-                </div>
-                <div className="col-md-3 text-center">
-                    <img src={EnergyIcon} height="120" alt="Energy icon"/>
-                    <Typography align="center" variant="h5" gutterBottom className={classes.headerTitleText + ' vertical-align mb-0'}>
-                        <FormattedMessage id="proof.energy.text"/>
-                    </Typography>
-                </div>
-                <div className="col-md-3 text-center">
-                    <img src={ScalableIcon} height="120" alt="Scalable icon"/>
-                    <Typography align="center" variant="h5" gutterBottom className={classes.headerTitleText + ' vertical-align mb-0'}>
-                        <FormattedMessage id="proof.scalable.text"/>
-                    </Typography>
-                </div>
-                <div className="col-md-3 text-center">
-                    <img src={SecureIcon} height="120" alt="Secure icon"/>
-                    <Typography align="center" variant="h5" gutterBottom className={classes.headerTitleText + ' vertical-align mb-0'}>
-                        <FormattedMessage id="proof.secure.text"/>
-                    </Typography>
-                </div>
+                {this.renderIconsSection()}
                 <div className="col-md-12 mt-4">
                     <Typography align="left" variant="h6" gutterBottom className={classes.headerTitleText + ' animated fadeIn'}>
                         <FormattedMessage id="proof.subtitle.text2"/>
