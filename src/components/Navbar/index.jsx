@@ -128,54 +128,54 @@ class Navbar extends React.Component {
     this.setState({isOpened: false});
   }
   renderMenu = () => {
-    const { classes } = this.props;
+    const { classes, locale } = this.props;
     const { isOpened, selectedOption } = this.state;
     let menu = null;
     if (isOpened) {
       menu = 
         <div className={classes.fixedMenu + ' d-block d-lg-none d-xl-none'}>
           <List component="nav" className={classes.fixedMenuContent}>
-            <ListItemLink id="mobile-nav-link-home" href="#home" onClick={() => this.closeNavbar()}>
+            <ListItemLink id="mobile-nav-link-home" href={`/${locale}/home`} onClick={() => this.closeNavbar()}>
               <ListItemText>
                 <FormattedMessage id="navbar.home"/>
               </ListItemText>
             </ListItemLink>
-            <Divider />
-            <ListItemLink id="mobile-nav-link-blockchain" href="#blockchain" onClick={() => this.closeNavbar()}>
+            {/* <Divider /> */}
+            {/* <ListItemLink id="mobile-nav-link-blockchain" href="#blockchain" onClick={() => this.closeNavbar()}>
               <ListItemText>
                 <FormattedMessage id="navbar.blockchain"/>
               </ListItemText>
-            </ListItemLink>
+            </ListItemLink> */}
             <Divider />
-            <ListItemLink id="mobile-nav-link-token" href="#token" onClick={() => this.closeNavbar()}>
+            <ListItemLink id="mobile-nav-link-token" href={`/${locale}/kitoken`} onClick={() => this.closeNavbar()}>
               <ListItemText>
                 <FormattedMessage id="navbar.token"/>
               </ListItemText>
             </ListItemLink>
             <Divider />
-            <ListItemLink id="mobile-nav-link-device" href="#device" onClick={() => this.closeNavbar()}>
+            <ListItemLink id="mobile-nav-link-device" href={`/${locale}/device`} onClick={() => this.closeNavbar()}>
               <ListItemText>
                 <FormattedMessage id="navbar.device"/>
               </ListItemText>
             </ListItemLink>
             <Divider />
-            <ListItemLink id="mobile-nav-link-team" href="#team" onClick={() => this.closeNavbar()}>
+            {/* <ListItemLink id="mobile-nav-link-team" href="#team" onClick={() => this.closeNavbar()}>
               <ListItemText>
                 <FormattedMessage id="navbar.team"/>
               </ListItemText>
-            </ListItemLink>
-            <Divider />
-            <ListItemLink id="mobile-nav-link-contact" href="#contact" onClick={() => this.closeNavbar()}>
+            </ListItemLink> */}
+            {/* <Divider /> */}
+            {/* <ListItemLink id="mobile-nav-link-contact" href="#contact" onClick={() => this.closeNavbar()}>
               <ListItemText>
                 <FormattedMessage id="navbar.contact"/>
               </ListItemText>
-            </ListItemLink>
-            <Divider />
-            <ListItemLink id="mobile-nav-link-contact" onClick={() => {this.closeNavbar(); this.handleOpen()}}>
+            </ListItemLink> */}
+            {/* <Divider /> */}
+            {/* <ListItemLink id="mobile-nav-link-contact" onClick={() => {this.closeNavbar(); this.handleOpen()}}>
               <ListItemText>
                 <FormattedMessage id="btn.open.contact.form"/>
               </ListItemText>
-            </ListItemLink>
+            </ListItemLink> */}
             <Select
               id="navbar-link-selectlang"
               className="select mx-auto"
@@ -204,11 +204,12 @@ class Navbar extends React.Component {
                   <LazyImage height="12" src={KiFoundationLogo} className="ml-4" alt="Ki Foundation"/>
                   <div className={classes.growRight}>
                     {/* <Link className={classes.link} to="/whitepaper"><Button className={classes.button}>Whitepaper</Button></Link> */}
-                      <a id="nav-link-home" className="active-link link" href="#home"><FormattedMessage id="navbar.home"/></a>
-                      <a id="nav-link-blockchain" className="link" href="#blockchain"><FormattedMessage id="navbar.blockchain"/></a>
-                      <a id="nav-link-token" className="link" href={`/${locale}/kitoken`}><FormattedMessage id="navbar.token"/></a>
-                      <a id="nav-link-device" className="link" href="#device"><FormattedMessage id="navbar.device"/></a>
-                      <a id="nav-link-team" className="link" href="#team"><FormattedMessage id="navbar.team"/></a>
+                      <Link id="nav-link-home" className="active-link link" to={`/${locale}/home`}><FormattedMessage id="navbar.home"/></Link>
+                      {/* <a id="nav-link-blockchain" className="link" href="#blockchain"><FormattedMessage id="navbar.blockchain"/></a> */}
+                      {/* <a id="nav-link-token" className="link" href={`/${locale}/kitoken`}><FormattedMessage id="navbar.token"/></a> */}
+                      <Link id="nav-link-token" className="link" to={`/${locale}/kitoken`}><FormattedMessage id="navbar.token"/></Link>
+                      <Link id="nav-link-device" className="link" to={`/${locale}/device`}><FormattedMessage id="navbar.device"/></Link>
+                      {/* <a id="nav-link-team" className="link" href="#team"><FormattedMessage id="navbar.team"/></a> */}
                       {/* <a id="nav-link-contact" className="link" href="#contact"><FormattedMessage id="navbar.contact"/></a> */}
                       <Button color="primary" variant="contained" className="fs-11 mx-2 px-4" onClick={this.openModal}><FormattedMessage id="btn.open.contact.form"/></Button>
                       <Modal

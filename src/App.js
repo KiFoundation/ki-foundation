@@ -14,7 +14,7 @@ import Footer from './components/Footer';
 import Team from './components/Team';
 import Contact from './components/Contact';
 import KiToken from './components/KiToken';
-import Device from './components/Device';
+import Device from './components/KiDevice';
 import Ecosystem from './components/Ecosystem';
 import Blockchain from './components/Blockchain';
 import Privacy from './components/Privacy';

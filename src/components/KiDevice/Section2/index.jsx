@@ -6,7 +6,7 @@ import Modal from 'react-modal';
 
 // Components
 import {
-    PieChart, Pie, Sector, Cell, Legend
+    LineChart, XAxis, YAxis, CartesianGrid, Line 
 } from 'recharts';
 import Invest from '../../Invest';
 
@@ -36,7 +36,7 @@ const data = [
     { name: 'Group C', value: 300 },
     { name: 'Group D', value: 200 },
 ];
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+// const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
 class Section2 extends React.Component {
     constructor(props) {
@@ -61,50 +61,31 @@ class Section2 extends React.Component {
             <React.Fragment>
                 <div className="col-md-12 mt-5">
                     <Typography align="left" variant="h3" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient proxima-bold'}>
-                        <FormattedMessage id="howtoken.title"/>
+                        <FormattedMessage id="domohospitality.title"/>
                     </Typography>
                     <Typography align="left" variant="h6" gutterBottom className={classes.headerTitleText + ' animated fadeIn'}>
-                        <FormattedMessage id="howtoken.subtitle.text"/>
+                        <FormattedMessage id="domohospitality.subtitle.text"/>
+                    </Typography>
+                </div>
+                <div className="col-md-12 mt-5">
+                    <Typography align="left" variant="h3" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient proxima-bold'}>
+                        <FormattedMessage id="marketplace.title"/>
+                    </Typography>
+                    <Typography align="left" variant="h6" gutterBottom className={classes.headerTitleText + ' animated fadeIn'}>
+                        <FormattedMessage id="marketplace.subtitle.text"/>
                     </Typography>
                 </div>
                 <div className="col-md-12">
-                    <PieChart width={800} height={400} onMouseEnter={this.onPieEnter}>
-                        <Pie
-                        data={data}
-                        cx={120}
-                        cy={200}
-                        innerRadius={60}
-                        outerRadius={80}
-                        fill="#8884d8"
-                        paddingAngle={5}
-                        dataKey="value"
-                        >
-                            {
-                                data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
-                            }
-                        </Pie>
-                        <Pie
-                        data={data}
-                        cx={420}
-                        cy={200}
-                        startAngle={180}
-                        endAngle={0}
-                        innerRadius={60}
-                        outerRadius={80}
-                        fill="#8884d8"
-                        paddingAngle={5}
-                        dataKey="value"
-                        >
-                            {
-                                data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
-                            }
-                        </Pie>
-                    </PieChart>
+                    <LineChart width={500} height={300} data={data}>
+                        <XAxis dataKey="name"/>
+                        <YAxis/>
+                        <CartesianGrid stroke="#eee" strokeDasharray="5 5"/>
+                        <Line type="monotone" dataKey="uv" stroke="#8884d8" />
+                        <Line type="monotone" dataKey="pv" stroke="#82ca9d" />
+                    </LineChart>
                 </div>
                 <div className="col-md-12 text-center" style={{marginTop: '4rem', marginBottom: '6rem'}}>
-                    <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 mb-3" onClick={this.handleOpen}><FormattedMessage id="btn.open.buyki"/></Button>
-                    <Button color="primary" variant="outlined" className="fs-11 mx-2 px-4 mb-3" onClick={this.handleOpen}><FormattedMessage id="btn.open.validator"/></Button>
-                    <Button color="secondary" variant="outlined" className="fs-11 mx-2 px-4 mb-3" onClick={this.handleOpen}><FormattedMessage id="btn.open.develop"/></Button>
+                    <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 mb-3" onClick={this.handleOpen}><FormattedMessage id="btn.open.invest"/></Button>
                     <Modal
                         isOpen={this.state.modalIsOpen}
                         overlayClassName="diagramOverlay"

@@ -4,6 +4,9 @@ const styles = {
         marginBottom: "2.5rem",
         fontWeight: 300
     },
+    headerIconText: {
+        // color: "#043bea"
+    }
 };
 
 export default styles;

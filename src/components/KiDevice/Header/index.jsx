@@ -3,23 +3,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import { FormattedMessage } from 'react-intl';
-import LazyLoad from 'react-lazy-load';
 import YouTube from 'react-youtube';
 
 // Material
 import Typography from '@material-ui/core/Typography';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import ArrowRightAlt from '@material-ui/icons/ArrowRightAlt'
 import { withStyles } from '@material-ui/core/styles';
 
-// Images
-import KiDevice from '../../../assets/ki_foundation/Device-min.png';
-import KiBlockchain from '../../../assets/ki_foundation/Blockchain-min.png';
-import KiEcosystem from '../../../assets/ki_foundation/Ecosystem-min.png';
-
 // Components
-import CustomMailChimpContact from '../../CustomComponent/CustomMailChimpContact';
 import CustomMailChimpInvest from '../../CustomComponent/CustomMailChimpInvest';
 
 // Styles
@@ -46,20 +36,20 @@ class Header extends React.Component {
                     <div className="row">
                         <div className="col-md-12">
                             <Typography align="center" variant="h2" component="h1" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient mb-2 proxima-bold'}>
-                                <FormattedMessage id="kitoken.header.title"/>
+                                <FormattedMessage id="kidevice.header.title"/>
                             </Typography>
                         </div>
                         <div className="col-md-12 whitespace-preline">
                             <Typography align="center" variant="h6" component="h2" gutterBottom className={classes.headerTitleText + ' animated fadeIn proxima-light'}>
-                                <FormattedMessage id="kitoken.header.subtitle.text"/>
+                                <FormattedMessage id="kidevice.header.subtitle.text"/>
                             </Typography>
                         </div>
                         <div className="col-md-12 text-center">
-                            {/* <YouTube
+                            <YouTube
                                 videoId="KajXeq3fZEo"
                                 opts={opts}
                                 onReady={this.onReady}
-                            /> */}
+                            />
                         </div>
                         <div className="col-md-12">
                             <MailchimpSubscribe

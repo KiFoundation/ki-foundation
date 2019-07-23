@@ -5,7 +5,6 @@ import { FormattedMessage } from 'react-intl';
 import Modal from 'react-modal';
 
 // Components
-import LazyImage from '../../CustomComponent/LazyImage';
 import Invest from '../../Invest';
 
 // Material
@@ -54,9 +53,9 @@ class Section1 extends React.Component {
     renderIconsSection = () => {
         const { classes } = this.props;
         const icons = [
-            { src: SupplyIcon, name: 'Supply icon', text: 'thekitoken.supply.text' },
-            { src: InflationIcon, name: 'Inflation icon', text: 'thekitoken.inflation.text' },
-            { src: DistributionIcon, name: 'Distribution icon', text: 'thekitoken.distribution.text' },
+            { src: SupplyIcon, name: 'Computing icon', text: 'thekidevice.computing.text' },
+            { src: InflationIcon, name: 'Bandwidth icon', text: 'thekidevice.bandwidth.text' },
+            { src: DistributionIcon, name: 'Data icon', text: 'thekidevice.data.text' },
         ];
         let renderIcons = icons.map(is => {
             return (
@@ -80,16 +79,15 @@ class Section1 extends React.Component {
             <React.Fragment>
                 <div className="col-md-12 mt-5">
                     <Typography align="left" variant="h3" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient proxima-bold'}>
-                        <FormattedMessage id="thekitoken.title"/>
+                        <FormattedMessage id="thekidevice.title"/>
                     </Typography>
                     <Typography align="left" variant="h6" gutterBottom className={classes.headerTitleText + ' animated fadeIn'}>
-                        <FormattedMessage id="thekitoken.subtitle.text"/>
+                        <FormattedMessage id="thekidevice.subtitle.text"/>
                     </Typography>
                 </div>
                 {this.renderIconsSection()}
                 <div className="col-md-12 text-center" style={{marginTop: '4rem', marginBottom: '6rem'}}>
-                    <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 mb-3" onClick={this.handleOpen}><FormattedMessage id="btn.open.buyki"/></Button>
-                    <Button color="primary" variant="outlined" className="fs-11 mx-2 px-4 mb-3" onClick={this.handleOpen}><FormattedMessage id="btn.open.readpaper"/></Button>
+                    <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 mb-3" onClick={this.handleOpen}><FormattedMessage id="btn.open.invest"/></Button>
                     <Button color="secondary" variant="outlined" className="fs-11 mx-2 px-4 mb-3" onClick={this.handleOpen}><FormattedMessage id="btn.open.marketplace"/></Button>
                     <Modal
                         isOpen={this.state.modalIsOpen}
