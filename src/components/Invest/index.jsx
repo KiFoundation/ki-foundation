@@ -3,55 +3,12 @@ import React from 'react';
 
 // Material
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import MenuItem from '@material-ui/core/MenuItem';
-import Select from '@material-ui/core/Select';
 import InputBase from '@material-ui/core/InputBase';
 import { withStyles } from '@material-ui/core/styles';
-
-// Images
-import TelegramLogo from '../../assets/other_brands/telegram.svg';
 
 // Styles
 import styles from './materialStyle';
 import './style.css';
-
-const BootstrapInput = withStyles(theme => ({
-    root: {
-        'label + &': {
-        marginTop: theme.spacing.unit * 3,
-        },
-        width: '100%'
-    },
-    input: {
-        borderRadius: 4,
-        position: 'relative',
-        backgroundColor: theme.palette.background.paper,
-        border: '1px solid #ced4da',
-        fontSize: 16,
-        width: 'auto',
-        padding: '10px 26px 10px 12px',
-        transition: theme.transitions.create(['border-color', 'box-shadow']),
-        // Use the system font instead of the default Roboto font.
-        fontFamily: [
-        '-apple-system',
-        'BlinkMacSystemFont',
-        '"Segoe UI"',
-        'Roboto',
-        '"Helvetica Neue"',
-        'Arial',
-        'sans-serif',
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-        ].join(','),
-        '&:focus': {
-        borderRadius: 4,
-        borderColor: '#80bdff',
-        boxShadow: '0 0 0 0.2rem rgba(0,123,255,.25)',
-        },
-    },
-}))(InputBase);
 
 class Invest extends React.Component {
     meetingValues = ['Yes', 'No'];
@@ -149,7 +106,7 @@ class Invest extends React.Component {
     }
     formContent = () => {
         const { classes } = this.props;
-        const { email, firstname, lastname, invest, phone, meeting, message } = this.state;
+        const { email, firstname, lastname, phone, meeting, message } = this.state;
         return (
             <div>
                 <div className="form-group mb-4">

@@ -3,16 +3,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
-// Components
-import LazyImage from '../../CustomComponent/LazyImage';
-
 // Material
 import Typography from '@material-ui/core/Typography';
 import Button from '../../CustomComponent/Button';
 import { withStyles } from '@material-ui/core/styles';
 
 // Images
-import DomoAnimated from '../../../assets/ki_foundation/Device.png';
 import DecentralizedIcon from '../../../assets/icons/decentralized.png';
 import EnergyIcon from '../../../assets/icons/energy.png';
 import ScalableIcon from '../../../assets/icons/scalable.png';

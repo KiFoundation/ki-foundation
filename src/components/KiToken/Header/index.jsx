@@ -20,13 +20,13 @@ class Header extends React.Component {
         // event.target.pauseVideo();
     }
     render() {
-        const opts = {
-            height: '450',
-            width: '100%',
-            playerVars: { // https://developers.google.com/youtube/player_parameters
-              autoplay: 0
-            }
-        };
+        // const opts = {
+        //     height: '450',
+        //     width: '100%',
+        //     playerVars: { // https://developers.google.com/youtube/player_parameters
+        //       autoplay: 0
+        //     }
+        // };
         const { classes } = this.props;
         const mailChimpUrl = "https://gen.us17.list-manage.com/subscribe/post?u=3865106d3d479f1d2e1ec8400&amp;id=86a02d162a";
         return (

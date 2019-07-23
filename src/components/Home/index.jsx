@@ -13,7 +13,6 @@ import Discover from './Discover';
 import Proof from './Proof';
 import Partners from './Partners';
 import Investors from './Investors';
-import Learn from './Learn';
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import CustomMailChimpInvest from '../CustomComponent/CustomMailChimpInvest';
 import styles from "./materialStyle";
@@ -28,7 +27,6 @@ class Home extends React.Component {
           <Header />
           <Discover />
           <Proof />
-          {/* <Learn /> */}
           <div className="container">
             <div className="row">
               <div className="col-md-12">

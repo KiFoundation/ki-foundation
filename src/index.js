@@ -32,7 +32,11 @@ class Index extends Component {
     constructor(props) {
         super(props);
         let urlPath;
-        if (window && window.location && window.location.pathname && window.location.pathname.slice(1,3) === 'fr' || window.location.pathname.slice(1,3) === 'en') {
+        let slicedPath;
+        if (window && window.location && window.location.pathname && window.location.pathname.slice(1,3) === 'fr') {
+            slicedPath = window && window.location && window.location.pathname && window.location.pathname.slice(1,3) === 'fr';
+        }
+        if (slicedPath || window.location.pathname.slice(1,3) === 'en') {
             urlPath = window.location.pathname.slice(1,3);
         }
         if (urlPath) {

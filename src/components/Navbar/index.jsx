@@ -7,7 +7,6 @@ import { FormattedMessage } from 'react-intl';
 import LazyImage from '../CustomComponent/LazyImage';
 
 // Components
-import Contact from '../Contact';
 import Invest from '../Invest';
 import Modal from 'react-modal';
 
@@ -59,7 +58,13 @@ const customStyles = {
 
 const selectOption = () => {
   const locale = localStorage.getItem('locale');
-  return locale && options.find(o => o.value === locale) || options[0];
+  let opts;
+  if (options.find(o => o.value === locale)) {
+    opts = options.find(o => o.value === locale);
+  } else {
+    opts = options[0];
+  }
+  return locale && opts;
 }
 
 const ListItemLink = (props) => {
@@ -192,7 +197,7 @@ class Navbar extends React.Component {
   }
   render() {
     const { classes, locale } = this.props;
-    const { isOpened, open, selectedOption } = this.state;
+    const { isOpened, selectedOption } = this.state;
     return (
       <div className={classes.root}>
         <div className="container" style={{maxWidth: '100%'}}>

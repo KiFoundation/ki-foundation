@@ -5,7 +5,6 @@ import { FormattedMessage } from 'react-intl';
 import Modal from 'react-modal';
 
 // Components
-import LazyImage from '../../CustomComponent/LazyImage';
 import Invest from '../../Invest';
 
 // Material
