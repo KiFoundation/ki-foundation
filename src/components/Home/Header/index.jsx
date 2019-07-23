@@ -9,6 +9,8 @@ import YouTube from 'react-youtube';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 
+import CustomMailChimpInvest from '../../CustomComponent/CustomMailChimpInvest';
+
 // Styles
 import './style.css';
 import styles from "./materialStyle";
