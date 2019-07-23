@@ -85,7 +85,7 @@ class Section2 extends React.Component {
                     </LineChart>
                 </div>
                 <div className="col-md-12 text-center" style={{marginTop: '4rem', marginBottom: '6rem'}}>
-                    <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 mb-3" onClick={this.handleOpen}><FormattedMessage id="btn.open.invest"/></Button>
+                    <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 mb-3" onClick={this.handleOpen}><FormattedMessage id="btn.open.invest.form"/></Button>
                     <Modal
                         isOpen={this.state.modalIsOpen}
                         overlayClassName="diagramOverlay"

@@ -87,7 +87,7 @@ class Section1 extends React.Component {
                 </div>
                 {this.renderIconsSection()}
                 <div className="col-md-12 text-center" style={{marginTop: '4rem', marginBottom: '6rem'}}>
-                    <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 mb-3" onClick={this.handleOpen}><FormattedMessage id="btn.open.invest"/></Button>
+                    <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 mb-3" onClick={this.handleOpen}><FormattedMessage id="btn.open.invest.form"/></Button>
                     <Button color="secondary" variant="outlined" className="fs-11 mx-2 px-4 mb-3" onClick={this.handleOpen}><FormattedMessage id="btn.open.marketplace"/></Button>
                     <Modal
                         isOpen={this.state.modalIsOpen}

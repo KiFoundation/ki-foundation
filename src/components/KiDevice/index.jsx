@@ -9,7 +9,6 @@ import { withStyles } from '@material-ui/core/styles';
 import Header from './Header';
 import Section1 from './Section1';
 import Section2 from './Section2';
-import Partners from './Partners';
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import CustomMailChimpInvest from '../CustomComponent/CustomMailChimpInvest';
 import styles from "./materialStyle";
