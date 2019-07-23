@@ -13,7 +13,6 @@ import Button from '../../CustomComponent/Button';
 import { withStyles } from '@material-ui/core/styles';
 
 // Images
-import DomoAnimated from '../../../assets/ki_foundation/Device1.png';
 import SupplyIcon from '../../../assets/icons/supply.png';
 import InflationIcon from '../../../assets/icons/inflation.png';
 import DistributionIcon from '../../../assets/icons/distribution.png';

@@ -3,7 +3,6 @@ import React from 'react';
 
 // Material
 import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
 import { withStyles } from '@material-ui/core/styles';
 
 // Styles

@@ -12,13 +12,10 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Footer from './components/Footer';
 import Team from './components/Team';
-import Contact from './components/Contact';
 import KiToken from './components/KiToken';
 import Device from './components/KiDevice';
 import Ecosystem from './components/Ecosystem';
 import Blockchain from './components/Blockchain';
-import Privacy from './components/Privacy';
-import Cookie from './components/Cookie';
 import Page404 from './components/page404';
 import Telegram from './assets/other_brands/telegram.svg';
 
