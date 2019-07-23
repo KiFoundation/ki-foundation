@@ -6,7 +6,7 @@ import Modal from 'react-modal';
 
 // Components
 import {
-    PieChart, Pie, Sector, Cell, Legend
+    PieChart, Pie, Cell
 } from 'recharts';
 import Invest from '../../Invest';
 

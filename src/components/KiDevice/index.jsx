@@ -46,7 +46,7 @@ class Device extends React.Component {
   }
 }
 
-Partners.propTypes = {
+Device.propTypes = {
   classes: PropTypes.object.isRequired,
 };  
 

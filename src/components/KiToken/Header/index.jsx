@@ -3,23 +3,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import { FormattedMessage } from 'react-intl';
-import LazyLoad from 'react-lazy-load';
-import YouTube from 'react-youtube';
 
 // Material
 import Typography from '@material-ui/core/Typography';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import ArrowRightAlt from '@material-ui/icons/ArrowRightAlt'
 import { withStyles } from '@material-ui/core/styles';
 
-// Images
-import KiDevice from '../../../assets/ki_foundation/Device-min.png';
-import KiBlockchain from '../../../assets/ki_foundation/Blockchain-min.png';
-import KiEcosystem from '../../../assets/ki_foundation/Ecosystem-min.png';
-
 // Components
-import CustomMailChimpContact from '../../CustomComponent/CustomMailChimpContact';
 import CustomMailChimpInvest from '../../CustomComponent/CustomMailChimpInvest';
 
 // Styles

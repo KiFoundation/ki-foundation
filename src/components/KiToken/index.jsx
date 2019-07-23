@@ -1,11 +1,9 @@
 // Services
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
 
 // Material
 import { withStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
 
 // Components
 import Header from './Header';
@@ -18,7 +16,6 @@ import styles from "./materialStyle";
 
 class KiToken extends React.Component {
   render() {
-    const { classes } = this.props;
     const mailChimpUrl = "https://gen.us17.list-manage.com/subscribe/post?u=3865106d3d479f1d2e1ec8400&amp;id=86a02d162a";
     return (
       <div className="container">
@@ -49,7 +46,7 @@ class KiToken extends React.Component {
   }
 }
 
-Partners.propTypes = {
+KiToken.propTypes = {
   classes: PropTypes.object.isRequired,
 };  
 
