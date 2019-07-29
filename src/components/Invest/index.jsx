@@ -93,7 +93,7 @@ class Invest extends React.Component {
     renderInvestValues = () => {
         let renderInvestInput = this.investValues.map(iv => {
             return (
-                <div className="form-check mb-4 d-flex mx-3">
+                <div key={iv} className="form-check mb-4 d-flex mx-3">
                     <input onChange={this.handleChange} value={iv} name="invest" type="radio" className="form-check-input"/>
                     <label className="form-check-label" htmlFor="invest">
                         {iv}
