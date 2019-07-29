@@ -180,7 +180,7 @@ class Blockchain extends React.Component {
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-12 mt-2">
-                            <Typography variant="h5" align="center" style={{color: '#3b426c'}}>The Proof of Reputation Process</Typography>
+                            <Typography variant="h5" align="center" style={{color: '#000000'}}>The Proof of Reputation Process</Typography>
                         </div>
                         <div className="col-lg-9 col-md-9 col-sm-12 col-xs-12 text-center mt-5 diagram-wrapper">
                             <Diagram onClickDiagram={this.onClickDiagram} />

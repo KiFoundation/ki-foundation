@@ -24,7 +24,7 @@ class KiToken extends React.Component {
           <Section2 />
           <div className="container">
             <div className="row">
-              <div className="col-md-12">
+              <div className="col-md-12 mb-4">
                 <MailchimpSubscribe
                     url={mailChimpUrl}
                     render={({ subscribe, status, message }) => (

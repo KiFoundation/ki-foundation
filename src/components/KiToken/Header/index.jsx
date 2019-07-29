@@ -11,22 +11,15 @@ import { withStyles } from '@material-ui/core/styles';
 // Components
 import CustomMailChimpInvest from '../../CustomComponent/CustomMailChimpInvest';
 
+// Images
+import TokenImage from '../../../assets/ki_foundation/wallet.png';
+
 // Styles
 import './style.css';
 import styles from "./materialStyle";
 
 class Header extends React.Component {
-    onReady = (event) => {
-        // event.target.pauseVideo();
-    }
     render() {
-        // const opts = {
-        //     height: '450',
-        //     width: '100%',
-        //     playerVars: { // https://developers.google.com/youtube/player_parameters
-        //       autoplay: 0
-        //     }
-        // };
         const { classes } = this.props;
         const mailChimpUrl = "https://gen.us17.list-manage.com/subscribe/post?u=3865106d3d479f1d2e1ec8400&amp;id=86a02d162a";
         return (
@@ -44,11 +37,7 @@ class Header extends React.Component {
                             </Typography>
                         </div>
                         <div className="col-md-12 text-center">
-                            {/* <YouTube
-                                videoId="KajXeq3fZEo"
-                                opts={opts}
-                                onReady={this.onReady}
-                            /> */}
+                            <img src={TokenImage} alt="Token logo"/>
                         </div>
                         <div className="col-md-12">
                             <MailchimpSubscribe

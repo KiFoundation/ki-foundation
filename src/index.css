@@ -113,6 +113,62 @@ a, button{
   min-width: 250;
 }
 
+.color-white{
+  color: #ffffff !important;
+}
+
+button.btn-mwidth{
+  min-width: 150px;
+}
+
+button.btn-danger.outlined{
+  color: #ec5765;
+  border-color: #ec5765;
+  background-color: transparent;
+}
+
+button.btn-danger.outlined:hover{
+  color: #ec5765;
+  border-color: #ec5765;
+  background-color: transparent;
+}
+
+button.btn-danger{
+  color: #ffffff;
+  border-color: #ec5765;
+  background-color: #ec5765;
+}
+
+button.btn-danger:hover{
+  color: #ffffff;
+  border-color: #ec5765;
+  background-color: #ec5765;
+}
+
+button.btn-tertiary.outlined{
+  color: #22c103;
+  border-color: #22c103;
+  background-color: transparent;
+}
+
+button.btn-tertiary.outlined:hover{
+  color: #22c103;
+  border-color: #22c103;
+  background-color: transparent;
+}
+
+button.btn-tertiary{
+  color: #ffffff;
+  border-color: #22c103;
+  background-color: #22c103;
+}
+
+button.btn-tertiary:hover{
+  color: #ffffff;
+  border-color: #22c103;
+  background-color: #22c103;
+}
+
 .primary-gradient, .primary-gradient span{
   background: -webkit-linear-gradient(to right, rgba(0, 0, 0, 0.87), #043bea);
   background: linear-gradient(to right, rgba(0, 0, 0, 0.87), #043bea);

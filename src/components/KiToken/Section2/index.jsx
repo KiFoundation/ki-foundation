@@ -6,7 +6,7 @@ import Modal from 'react-modal';
 
 // Components
 import {
-    PieChart, Pie, Cell
+    PieChart, Pie, Cell, ResponsiveContainer, Legend
 } from 'recharts';
 import Invest from '../../Invest';
 
@@ -30,13 +30,17 @@ const customStyles = {
     }
 };
 
-const data = [
-    { name: 'Group A', value: 400 },
-    { name: 'Group B', value: 300 },
-    { name: 'Group C', value: 300 },
-    { name: 'Group D', value: 200 },
+const data1 = [
+    { name: 'Ecosystem commission', value: 300 },
+    { name: 'Service provider share', value: 700 },
 ];
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+const data2 = [
+    { name: 'Validators share', value: 400 },
+    { name: 'Service provider share', value: 400 },
+    { name: 'Customers share', value: 200 },
+];
+const colors1 = ['#043bea', '#9cc95b'];
+const colors2 = ['#f2da7e', '#ec5765', '#bf93f3'];
 
 class Section2 extends React.Component {
     constructor(props) {
@@ -55,6 +59,20 @@ class Section2 extends React.Component {
     handleOpen = () => {
         this.setState({modalIsOpen: true});
     }
+    renderLegend = ({payload}) => {
+        return (
+            <ul className="chart-legend vertical-align pt-4">
+                {
+                    payload.map((entry, index) => (
+                        <li className="mr-3" key={`item-${index}`}>
+                            <span style={{ backgroundColor: entry.color }} />
+                            {entry.value}
+                        </li>
+                    ))
+                }
+            </ul>
+        );
+    }
     render() {
         const { classes } = this.props;
         return (
@@ -64,47 +82,54 @@ class Section2 extends React.Component {
                         <FormattedMessage id="howtoken.title"/>
                     </Typography>
                     <Typography align="left" variant="h6" gutterBottom className={classes.headerTitleText + ' animated fadeIn'}>
-                        <FormattedMessage id="howtoken.subtitle.text"/>
+                        <FormattedMessage id="howtoken.subtitle.text1"/>
+                    </Typography>
+                    <Typography align="left" variant="h6" gutterBottom className={classes.headerTitleText + ' animated fadeIn'}>
+                        <FormattedMessage id="howtoken.subtitle.text2"/>
                     </Typography>
                 </div>
-                <div className="col-md-12">
-                    <PieChart width={800} height={400} onMouseEnter={this.onPieEnter}>
-                        <Pie
-                        data={data}
-                        cx={120}
-                        cy={200}
-                        innerRadius={60}
-                        outerRadius={80}
-                        fill="#8884d8"
-                        paddingAngle={5}
-                        dataKey="value"
-                        >
-                            {
-                                data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
-                            }
-                        </Pie>
-                        <Pie
-                        data={data}
-                        cx={420}
-                        cy={200}
-                        startAngle={180}
-                        endAngle={0}
-                        innerRadius={60}
-                        outerRadius={80}
-                        fill="#8884d8"
-                        paddingAngle={5}
-                        dataKey="value"
-                        >
-                            {
-                                data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
-                            }
-                        </Pie>
-                    </PieChart>
+                <div className="col-md-6 mb-4">
+                    <ResponsiveContainer height={475} width="100%">
+                        <PieChart onMouseEnter={this.onPieEnter}>
+                            <Legend verticalAlign={"bottom"} height={36} content={this.renderLegend} />
+                            <Pie
+                                data={data1}
+                                innerRadius="90%"
+                                outerRadius="100%"
+                                fill="#8884d8"
+                                paddingAngle={5}
+                                dataKey="value"
+                            >
+                                {
+                                    data1.map((entry, index) => <Cell key={`cell-${index}`} fill={colors1[index % colors1.length]} />)
+                                }
+                            </Pie>
+                        </PieChart>
+                    </ResponsiveContainer>
                 </div>
-                <div className="col-md-12 text-center" style={{marginTop: '4rem', marginBottom: '6rem'}}>
-                    <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 mb-3" onClick={this.handleOpen}><FormattedMessage id="btn.open.buyki"/></Button>
-                    <Button color="primary" variant="outlined" className="fs-11 mx-2 px-4 mb-3" onClick={this.handleOpen}><FormattedMessage id="btn.open.validator"/></Button>
-                    <Button color="secondary" variant="outlined" className="fs-11 mx-2 px-4 mb-3" onClick={this.handleOpen}><FormattedMessage id="btn.open.develop"/></Button>
+                <div className="col-md-6 mb-4">
+                    <ResponsiveContainer height={475} width="100%">
+                        <PieChart onMouseEnter={this.onPieEnter}>
+                        <Legend verticalAlign={"bottom"} height={36} content={this.renderLegend} />
+                            <Pie
+                                data={data2}
+                                innerRadius="90%"
+                                outerRadius="100%"
+                                fill="#8884d8"
+                                paddingAngle={5}
+                                dataKey="value"
+                            >
+                                {
+                                    data2.map((entry, index) => <Cell key={`cell-${index}`} fill={colors2[index % colors2.length]} />)
+                                }
+                            </Pie>
+                        </PieChart>
+                    </ResponsiveContainer>
+                </div>
+                <div className="col-md-12 text-center" style={{marginTop: '4rem', marginBottom: '4rem'}}>
+                    <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 mb-3" onClick={() => {}}><FormattedMessage id="btn.open.buyki"/></Button>
+                    <Button color="secondary" variant="contained" className="fs-11 mx-2 px-4 mb-3 color-white" onClick={() => {}}><FormattedMessage id="btn.open.validator"/></Button>
+                    <Button variant="contained" className="fs-11 mx-2 px-4 mb-3 color-white btn-danger" onClick={() => {}}><FormattedMessage id="btn.open.develop"/></Button>
                     <Modal
                         isOpen={this.state.modalIsOpen}
                         overlayClassName="diagramOverlay"

@@ -30,12 +30,12 @@ const styles = {
         }
     },
     subtitle: {
-        color: "#3b426c",
+        color: "#000000",
         marginBottom: '1.5rem',
         fontWeight: 300
     },
     title: {
-        color: "#3b426c",
+        color: "#000000",
         width: 'fit-content',
         marginLeft: 'auto',
         marginRight: 'auto',

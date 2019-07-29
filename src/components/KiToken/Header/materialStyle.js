@@ -45,10 +45,10 @@ const styles = {
         justifyContent: "center"
     },
     primaryColor: {
-        color: '#3b426c'
+        color: '#000000'
     },
     cardButton: {
-        color: "#3b426c",
+        color: "#000000",
         // paddingLeft: 0,
         background: 'none',
         border: 'none',
@@ -64,7 +64,7 @@ const styles = {
         marginLeft: '0.2rem'
     },
     cardTitle: {
-        color: "#3b426c",
+        color: "#000000",
         padding: '15px 15px 0 15px'
     },
     bullet: {
@@ -77,7 +77,7 @@ const styles = {
         backgroundColor: 'transparent !important'
     },
     headerTitle: {
-        // color: "#3b426c",
+        // color: "#000000",
         width: 'fit-content',
         marginLeft: 'auto',
         marginRight: 'auto',
@@ -85,7 +85,7 @@ const styles = {
         fontWeight: 600
     },
     headerTitleText: {
-        color: "#3b426c",
+        color: "#000000",
         marginBottom: "2.5rem",
         fontWeight: 300
     },

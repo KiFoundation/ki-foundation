@@ -16,7 +16,6 @@ import DomoLogo from '../../../assets/other_brands/domo_logo.svg';
 import CryptoValleyLogo from '../../../assets/other_brands/cryptovalley.png';
 import OcpLogo from '../../../assets/other_brands/Ocp.png';
 
-
 // Styles
 import './style.css';
 import styles from "./materialStyle";
@@ -32,8 +31,8 @@ class Partners extends React.Component {
                             <FormattedMessage id="trust.title"/>
                         </Typography>
                     </div> */}
-                    <div className="col-md-12">
-                        <Typography className={classes.primaryColor} align="center" variant="h5">
+                    <div className="col-md-12 mb-5">
+                        <Typography className={classes.primaryColor} align="center" variant="h4">
                             <FormattedMessage id="trust.partners.title"/>
                         </Typography>
                     </div>
@@ -54,11 +53,6 @@ class Partners extends React.Component {
                     </div>
                     <div className="col-md-4 col-sm-4 partners-wrapper">
                         <a rel="noopener noreferrer" href="http://www.ocpgroup.ma/fr/accueil" target="_blank" ><LazyLoad offsetVertical={400} className="vertical-align"><img className="partners-logo" src={OcpLogo} alt="Ocp logo" height="45"/></LazyLoad></a>
-                    </div>
-                    <div className="col-md-12">
-                        <Typography className={classes.primaryColor} align="center" variant="h5">
-                            <FormattedMessage id="trust.media.title"/>
-                        </Typography>
                     </div>
                 </div>
             </div>

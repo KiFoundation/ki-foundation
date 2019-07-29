@@ -8,7 +8,7 @@ import './style.css';
 
 const styles = {
     headerTitle: {
-        color: "#3b426c",
+        color: "#000000",
         width: 'fit-content',
         position: "relative",
         marginTop: '4rem',

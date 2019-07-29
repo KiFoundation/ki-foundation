@@ -12,6 +12,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Footer from './components/Footer';
 import Team from './components/Team';
+import Contact from './components/Contact';
 import KiToken from './components/KiToken';
 import Device from './components/KiDevice';
 import Ecosystem from './components/Ecosystem';
@@ -45,7 +46,7 @@ class App extends Component {
             <Route exact path={"/" + locale + "/device"} component={props => <Device/>}/>
             <Route exact path={"/" + locale + "/token"} component={props => <Ecosystem/>}/>
             <Route exact path={"/" + locale + "/blockchain"} component={props => <Blockchain/>}/>
-            <Route exact path={"/" + locale + "/contact"} component={props => <Blockchain/>}/>
+            <Route exact path={"/" + locale + "/contact"} component={props => <Contact/>}/>
             <Route exact path={"/" + locale + "/team"} component={props => <Team/>}/>
             <Redirect from="/" to={"/" + locale} />
             <Route component={props => <Page404 />} />

@@ -14,10 +14,10 @@ import WhitepaperDownload from '../../assets/whitepaper/whitepaper.svg';
 
 const styles = {
     title: {
-        color: "#3b426c"
+        color: "#000000"
     },
     subTitle: {
-        color: "#3b426c"
+        color: "#000000"
     },
     button: {
         margin: "35px 0 0 0",

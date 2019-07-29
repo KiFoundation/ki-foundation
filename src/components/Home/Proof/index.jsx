@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
+import { Link } from 'react-router-dom';
 
 // Material
 import Typography from '@material-ui/core/Typography';
@@ -35,9 +36,9 @@ class Proof extends React.Component {
         ];
         let renderIcons = icons.map(is => {
             return (
-                <div className="col-md-3 text-center mb-4">
+                <div key={is.name} className="col-md-3 text-center mb-4">
                     <img src={is.icon} height="120" alt={is.name}/>
-                    <Typography align="center" variant="h5" gutterBottom className={classes.headerTitleText + ' vertical-align mb-0'}>
+                    <Typography align="center" variant="h6" gutterBottom className={classes.headerIconText + ' vertical-align mb-0'}>
                         <FormattedMessage id={is.text}/>
                     </Typography>
                 </div>
@@ -46,7 +47,7 @@ class Proof extends React.Component {
         return renderIcons;
     }
     render() {
-        const { classes } = this.props;
+        const { classes, locale } = this.props;
         return (
             <React.Fragment>
                 <div className="col-md-12 mt-5">
@@ -64,8 +65,8 @@ class Proof extends React.Component {
                     </Typography>
                 </div>
                 <div className="col-md-12 text-center" style={{marginTop: '4rem', marginBottom: '6rem'}}>
-                    <Button color="primary" variant="contained" className="fs-11 mx-2" onClick={this.handleOpen}><FormattedMessage id="btn.open.whitepaper.form"/></Button>
-                    <Button variant="outlined" className="fs-11 mx-2" onClick={this.handleOpen}><FormattedMessage id="btn.open.kitoken.form"/></Button>
+                    <Button color="primary" variant="contained" className="fs-11 mx-2 btn-mwidth" onClick={() => {}}><FormattedMessage id="btn.open.whitepaper.form"/></Button>
+                    <Link className="empt-link" to={locale && `/${locale}/kitoken`}><Button color="secondary" variant="outlined" className="fs-11 mx-2 btn-mwidth" onClick={() => {}}><FormattedMessage id="btn.open.kitoken.form"/></Button></Link>
                 </div>
             </React.Fragment>
         );

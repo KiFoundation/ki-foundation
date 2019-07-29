@@ -140,7 +140,7 @@ class Navbar extends React.Component {
       menu = 
         <div className={classes.fixedMenu + ' d-block d-lg-none d-xl-none'}>
           <List component="nav" className={classes.fixedMenuContent}>
-            <ListItemLink id="mobile-nav-link-home" href={`/${locale}/home`} onClick={() => this.closeNavbar()}>
+            <ListItemLink id="mobile-nav-link-home" href={`/${locale}`} onClick={() => this.closeNavbar()}>
               <ListItemText>
                 <FormattedMessage id="navbar.home"/>
               </ListItemText>
@@ -164,26 +164,35 @@ class Navbar extends React.Component {
               </ListItemText>
             </ListItemLink>
             <Divider />
-            {/* <ListItemLink id="mobile-nav-link-team" href="#team" onClick={() => this.closeNavbar()}>
+            <ListItemLink id="mobile-nav-link-team" href={`/${locale}/team`} onClick={() => this.closeNavbar()}>
               <ListItemText>
                 <FormattedMessage id="navbar.team"/>
               </ListItemText>
-            </ListItemLink> */}
-            {/* <Divider /> */}
-            {/* <ListItemLink id="mobile-nav-link-contact" href="#contact" onClick={() => this.closeNavbar()}>
+            </ListItemLink>
+            <Divider />
+            <ListItemLink id="mobile-nav-link-contact" href={`/${locale}/contact`} onClick={() => this.closeNavbar()}>
               <ListItemText>
                 <FormattedMessage id="navbar.contact"/>
               </ListItemText>
-            </ListItemLink> */}
-            {/* <Divider /> */}
-            {/* <ListItemLink id="mobile-nav-link-contact" onClick={() => {this.closeNavbar(); this.handleOpen()}}>
-              <ListItemText>
-                <FormattedMessage id="btn.open.contact.form"/>
-              </ListItemText>
-            </ListItemLink> */}
+            </ListItemLink>
+            <Divider />
+            <div className="vertical-align py-2">
+              <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 btn-mwidth" onClick={() =>{this.openModal(); this.closeNavbar();}}><FormattedMessage id="btn.open.contact.form"/></Button>
+            </div>
+            <Divider />
+            {/* <Modal
+              isOpen={this.state.modalIsOpen}
+              overlayClassName="diagramOverlay"
+              onRequestClose={this.closeModal}
+              className="diagramModal"
+              style={customStyles}
+              contentLabel="Example Modal"
+              >
+                <Invest />
+            </Modal> */}
             <Select
               id="navbar-link-selectlang"
-              className="select mx-auto"
+              className="select mx-auto py-2"
               classNamePrefix="select"
               value={selectedOption}
               onChange={this.handleChange}
@@ -206,16 +215,16 @@ class Navbar extends React.Component {
             <div className="col d-none d-lg-block d-xl-block">
               <AppBar position="absolute" color="default" id="navbar" className={classes.navbar}>
                 <Toolbar className={classes.toolbar}>
-                  <LazyImage height="12" src={KiFoundationLogo} className="ml-4" alt="Ki Foundation"/>
+                  <Link id="nav-link-logo" to={`/${locale}`}><LazyImage height="12" src={KiFoundationLogo} className="ml-4" alt="Ki Foundation"/></Link>
                   <div className={classes.growRight}>
                     {/* <Link className={classes.link} to="/whitepaper"><Button className={classes.button}>Whitepaper</Button></Link> */}
-                      <Link id="nav-link-home" className="active-link link" to={`/${locale}/home`}><FormattedMessage id="navbar.home"/></Link>
+                      <Link id="nav-link-home" className="active-link link" to={`/${locale}`}><FormattedMessage id="navbar.home"/></Link>
                       {/* <a id="nav-link-blockchain" className="link" href="#blockchain"><FormattedMessage id="navbar.blockchain"/></a> */}
                       {/* <a id="nav-link-token" className="link" href={`/${locale}/kitoken`}><FormattedMessage id="navbar.token"/></a> */}
                       <Link id="nav-link-token" className="link" to={`/${locale}/kitoken`}><FormattedMessage id="navbar.token"/></Link>
                       <Link id="nav-link-device" className="link" to={`/${locale}/device`}><FormattedMessage id="navbar.device"/></Link>
-                      {/* <a id="nav-link-team" className="link" href="#team"><FormattedMessage id="navbar.team"/></a> */}
-                      {/* <a id="nav-link-contact" className="link" href="#contact"><FormattedMessage id="navbar.contact"/></a> */}
+                      <a id="nav-link-team" className="link" href={`/${locale}/team`}><FormattedMessage id="navbar.team"/></a>
+                      <a id="nav-link-contact" className="link" href={`/${locale}/contact`}><FormattedMessage id="navbar.contact"/></a>
                       <Button color="primary" variant="contained" className="fs-11 mx-2 px-4" onClick={this.openModal}><FormattedMessage id="btn.open.contact.form"/></Button>
                       <Modal
                         isOpen={this.state.modalIsOpen}
@@ -247,7 +256,7 @@ class Navbar extends React.Component {
             <div className="col d-block d-lg-none d-xl-none">
               <AppBar position="absolute" color="default" className={classes.navbar}>
                 <Toolbar className={classes.toolbar}>
-                  <Link id="mobile-nav-link-logo" to="/" onClick={this.closeNavbar}><img height="20" src={KiFoundationLogoShort} alt="Ki Foundation"/></Link>
+                  <Link id="mobile-nav-link-logo" to={`/${locale}`} onClick={this.closeNavbar}><img height="20" src={KiFoundationLogoShort} alt="Ki Foundation"/></Link>
                   <div className={classes.growRight}>
                     <MenuIcon id="mobile-nav-link-open" hidden={isOpened} className={classes.menuIcon} onClick={this.toggleNavbar}/>
                     <MenuClose id="mobile-nav-link-close" hidden={!isOpened} className={classes.menuIcon} onClick={this.toggleNavbar}/>

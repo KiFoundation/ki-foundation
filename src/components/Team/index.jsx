@@ -1,6 +1,7 @@
 // Services
 import React, { Component } from 'react';
 import LazyLoad from 'react-lazy-load';
+import { FormattedMessage } from 'react-intl';
 
 // Material
 import Typography from '@material-ui/core/Typography';
@@ -49,7 +50,7 @@ import './style.css';
 
 const styles = {
   text: {
-    color: "#3b426c",
+    color: "#000000",
     width: 'fit-content',
     marginLeft: 'auto',
     marginRight: 'auto',
@@ -62,7 +63,9 @@ class Team extends Component {
     const { classes } = this.props;
     return (
       <section id="team">
-        <Typography className={classes.text + ' animated fadeInDown'} align="center" variant="h3" style={{color: '#3b426c', zIndex: 100}}>Core Team</Typography>
+        <Typography align="center" variant="h3" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient proxima-bold'}>
+            <FormattedMessage id="team.core.title"/>
+        </Typography>
         <div className="team-row row">
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
             <img src={reda} alt=""/>
@@ -169,7 +172,9 @@ class Team extends Component {
         </div>
         <br/>
         <br/>
-        <Typography align="center" className={classes.text + ' animated fadeInDown'} variant="h3" style={{color: '#3b426c'}}>Investors & Advisors</Typography>
+        <Typography align="center" variant="h3" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient proxima-bold'}>
+            <FormattedMessage id="team.investors.title"/>
+        </Typography>
         <div className="team-row row">
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">
             <LazyLoad className="d-contents" offsetVertical={1100} height={166}><img src={benliv} alt=""/></LazyLoad> 
@@ -327,7 +332,9 @@ class Team extends Component {
             </div>
           </div> */}
         {/* </div> */}
-        <Typography align="center" className={classes.text + ' animated fadeInDown'} variant="h3" style={{color: '#3b426c'}}>Science Advisors</Typography>
+        <Typography align="center" variant="h3" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient proxima-bold'}>
+            <FormattedMessage id="team.science.title"/>
+        </Typography>
         <div className="team-row row">
           <div className="team-member col-xs-4 col-sm-4 col-md-3 col-lg-3">    
             <LazyLoad className="d-contents" offsetVertical={1100} height={166}><img src={lionel_brunie} alt=""/></LazyLoad>

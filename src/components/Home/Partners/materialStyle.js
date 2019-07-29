@@ -1,9 +1,9 @@
 const styles = {
     primaryColor: {
-        color: '#3b426c'
+        fontWeight: 600
     },
     headerTitleText: {
-        color: "#3b426c",
+        color: "#000000",
         marginBottom: "2.5rem",
         fontWeight: 300
     },

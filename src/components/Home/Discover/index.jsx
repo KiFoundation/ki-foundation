@@ -60,7 +60,7 @@ class Discover extends React.Component {
         ];
         let renderIcons = icons.map(is => {
             return (
-                <div className="col-md-4 mb-4">
+                <div key={is.name} className="col-md-4 mb-4">
                     <div className="text-center">
                         <img className="mx-a" src={is.src} height="120" alt={is.name}/>
                         <Typography align="center" variant="h6" gutterBottom className={classes.headerIconText + ' vertical-align mb-0'}>
@@ -85,12 +85,12 @@ class Discover extends React.Component {
                     </Typography>
                 </div>
                 <div className="col-md-6 vertical-align">
-                    <img className="domo-device" src={DomoAnimated} height="650" alt="Domo animated" />
+                    <img className="domo-device" src={DomoAnimated} alt="Domo animated" />
                 </div>
                 {this.renderIconsSection()}
                 <div className="col-md-12 text-center" style={{marginTop: '4rem', marginBottom: '6rem'}}>
-                    <Button color="primary" variant="contained" className="fs-11 mx-2 px-4" onClick={this.handleOpen}><FormattedMessage id="btn.open.contact.form"/></Button>
-                    <Button color="primary" variant="outlined" className="fs-11 mx-2 px-4" onClick={this.handleOpen}><FormattedMessage id="btn.open.kiblockchain.form"/></Button>
+                    <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 btn-mwidth" onClick={this.handleOpen}><FormattedMessage id="btn.open.contact.form"/></Button>
+                    <Button color="primary" variant="outlined" className="fs-11 mx-2 px-4 btn-mwidth" onClick={() => {}}><FormattedMessage id="btn.open.kiblockchain.form"/></Button>
                     <Modal
                         isOpen={this.state.modalIsOpen}
                         overlayClassName="diagramOverlay"

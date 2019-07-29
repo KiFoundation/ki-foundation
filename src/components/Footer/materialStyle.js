@@ -6,14 +6,14 @@ const styles = {
         margin: "0 0 50px 0"
     },
     title: {
-        color: "#3b426c"
+        color: "#000000"
     },
     link: {
-        color: "#3b426c",
+        color: "#000000",
         display: "block",
         margin: "1rem 0",
         "&:hover": {
-            color: "#3b426c",
+            color: "#000000",
             textDecoration: "none"
         }
     }

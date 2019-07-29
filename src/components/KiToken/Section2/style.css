@@ -1,3 +1,17 @@
-.domo-device{
-    height: 550px;
+.chart-legend {
+    padding: 0;
+    list-style: none;
+    text-align: left;
+}
+
+.chart-legend span{
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.chart-legend li{
+    margin-top: 5px;
 }
