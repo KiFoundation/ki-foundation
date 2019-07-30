@@ -99,6 +99,7 @@ class Section2 extends React.Component {
                                 fill="#8884d8"
                                 paddingAngle={5}
                                 dataKey="value"
+                                label
                             >
                                 {
                                     data1.map((entry, index) => <Cell key={`cell-${index}`} fill={colors1[index % colors1.length]} />)
@@ -110,7 +111,7 @@ class Section2 extends React.Component {
                 <div className="col-md-6 mb-4 pb-5">
                     <ResponsiveContainer height={475} width="100%">
                         <PieChart onMouseEnter={this.onPieEnter}>
-                        <Legend verticalAlign={"bottom"} height={36} content={this.renderLegend} />
+                            <Legend verticalAlign={"bottom"} height={36} content={this.renderLegend} />
                             <Pie
                                 data={data2}
                                 innerRadius="90%"
@@ -118,6 +119,7 @@ class Section2 extends React.Component {
                                 fill="#8884d8"
                                 paddingAngle={5}
                                 dataKey="value"
+                                label
                             >
                                 {
                                     data2.map((entry, index) => <Cell key={`cell-${index}`} fill={colors2[index % colors2.length]} />)
