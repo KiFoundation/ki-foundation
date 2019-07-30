@@ -62,6 +62,11 @@ a, button{
   margin-top: 5rem !important;
 }
 
+.mx-a{
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .delay-0-7s{
   animation-delay: 0.7s;
 }
@@ -76,6 +81,10 @@ a, button{
 
 .is-visible.d-contents{
   display: contents;
+}
+
+.whitespace-preline{
+  white-space: pre-line;
 }
 
 .btn-primary:focus, .btn-primary:visited, .btn-primary:focus-within, .btn-primary:active{
@@ -95,11 +104,124 @@ a, button{
   cursor: pointer;
   white-space: nowrap;
   text-transform: initial;
-  padding: 6px 15px;
-  font-size: 14px;
-  border: 1px solid #043bea;
+  padding: 6px 16px;
+  line-height: 1.75;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 0;
   background-color: #043bea !important;
   position: relative;
-  border-radius: 0;
+  border-radius: 4px;
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 3px 1px -2px rgba(0,0,0,0.12);
   min-width: 250;
+}
+
+.color-white{
+  color: #ffffff !important;
+}
+
+button.btn-mwidth{
+  min-width: 150px;
+}
+
+button.btn-danger.outlined{
+  color: #ec5765;
+  border-color: #ec5765;
+  background-color: transparent;
+}
+
+button.btn-danger.outlined:hover{
+  color: #ec5765;
+  border-color: #ec5765;
+  background-color: transparent;
+}
+
+button.btn-danger{
+  color: #ffffff;
+  border-color: #ec5765;
+  background-color: #ec5765;
+}
+
+button.btn-danger:hover{
+  color: #ffffff;
+  border-color: #ec5765;
+  background-color: #ec5765;
+}
+
+button.btn-tertiary.outlined{
+  color: #22c103;
+  border-color: #22c103;
+  background-color: transparent;
+}
+
+button.btn-tertiary.outlined:hover{
+  color: #22c103;
+  border-color: #22c103;
+  background-color: transparent;
+}
+
+button.btn-tertiary{
+  color: #ffffff;
+  border-color: #22c103;
+  background-color: #22c103;
+}
+
+button.btn-tertiary:hover{
+  color: #ffffff;
+  border-color: #22c103;
+  background-color: #22c103;
+}
+
+.primary-gradient, .primary-gradient span{
+  background: -webkit-linear-gradient(to right, rgba(0, 0, 0, 0.87), #043bea);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.87), #043bea);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.color-white, .color-white span{
+  color: #ffffff;
+}
+
+.center-formattedmsg span{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@font-face {
+  font-display: fallback;
+  font-family: ProximaBold;
+  src: url('./assets/fonts/proxima-bold.otf');
+}
+
+@font-face {
+  font-display: fallback;
+  font-family: ProximaThin;
+  src: url('./assets/fonts/proxima-thin.otf');
+}
+
+@font-face {
+  font-display: fallback;
+  font-family: ProximaLight;
+  src: url('./assets/fonts/proxima-light.otf');
+}
+
+@font-face {
+  font-display: fallback;
+  font-family: Roboto;
+  src: url('./assets/fonts/roboto.ttf');
+}
+
+.proxima-thin{
+  font-family: 'ProximaThin' !important;
+}
+
+.proxima-bold{
+  font-family: 'ProximaBold' !important;
+}
+
+.proxima-light{
+  font-family: 'ProximaLight' !important;
 }

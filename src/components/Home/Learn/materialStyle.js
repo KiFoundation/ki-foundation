@@ -1,6 +1,6 @@
 const styles = {
     primaryColor: {
-        color: '#3b426c'
+        color: '#000000'
     },
 };
 

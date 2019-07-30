@@ -3,7 +3,7 @@ import React from 'react';
 
 import './style.css';
 
-const CustomMailChimpHome = ({ status, message, onValidated }) => {
+const CustomMailChimpContact = ({ status, message, onValidated }) => {
     let email;
     const submit = () =>
       email &&
@@ -54,5 +54,5 @@ const CustomMailChimpHome = ({ status, message, onValidated }) => {
     return formRendered;
 };
 
-export default CustomMailChimpHome;
+export default CustomMailChimpContact;
   

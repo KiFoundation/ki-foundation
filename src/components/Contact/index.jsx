@@ -1,5 +1,6 @@
 // Services
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 
 // Material
 import Typography from '@material-ui/core/Typography';
@@ -159,20 +160,22 @@ class Contact extends React.Component {
         const { classes } = this.props;
         const { job } = this.state;
         if ( job === 'cryptoenthusiast') {
-            return <div className="text-center"><a id="contact-link-telegram" rel="noopener noreferrer" className={classes.mailTo} target="_blank" href="https://t.me/KiFoundation"><Button className={classes.button}><img src={TelegramLogo} alt="telegram logo" height="20" className="mr-1 contact-telegram-icon"/>Join our Telegram</Button></a></div>;
+            return <div className="text-center mb-4"><a id="contact-link-telegram" rel="noopener noreferrer" className={classes.mailTo} target="_blank" href="https://t.me/KiFoundation"><Button className={classes.button}><img src={TelegramLogo} alt="telegram logo" height="20" className="mr-1 contact-telegram-icon"/>Join our Telegram</Button></a></div>;
         } else {
-            return <div className="text-center pt-2"><input value="Send an email" type="submit" className={classes.button} /></div>;
+            return <div className="text-center pt-2 mb-4"><input value="Send an email" type="submit" className={classes.button} /></div>;
         }
     }
     render() {
         const { classes } = this.props;
         const { job } = this.state;
         return (
-            <div className={classes.root + ' contact-component mt-7 pt-4'}>
-                <div className="container">
+            <div className={classes.root + ' contact-component mt-5 pt-5 mb-4 pb-3'}>
+                <div className="container mt-4 pt-3">
                     <div className="row justify-content-center">
                         <div className="col-md-6">
-                            <Typography className={classes.title + ' animated fadeInDown'} variant="h3" align="center">Contact us</Typography>
+                            <Typography align="center" variant="h3" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient proxima-bold'}>
+                                <FormattedMessage id="contact.us.title"/>
+                            </Typography>
                             <Typography variant="h6" className={classes.subtitle} align="center">Choose the section that describes you the best:</Typography>
                             <form onSubmit={this.handleSubmit}>
                                 <div className="form-group mb-4">

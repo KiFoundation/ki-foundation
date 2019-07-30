@@ -40,12 +40,12 @@ const styles = {
         }
     },
     subtitle: {
-        color: "#3b426c",
+        color: "#000000",
         fontWeight: 'normal',
         marginBottom: '1rem'
     },
     title: {
-        color: "#3b426c",
+        color: "#000000",
         position: "relative",
         marginBottom: '1rem'
     },
