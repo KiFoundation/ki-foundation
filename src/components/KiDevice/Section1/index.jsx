@@ -40,6 +40,17 @@ class Section1 extends React.Component {
             modalIsOpen: false
         }        
     }
+    componentDidMount() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+              e.preventDefault();
+
+              document.querySelector(this.getAttribute('href')).scrollIntoView({
+                  behavior: 'smooth'
+              });
+          });
+        });
+    }
     openModal = () => {
         this.setState({modalIsOpen: true});
     }
@@ -73,7 +84,7 @@ class Section1 extends React.Component {
         return renderIcons;
     }
     render() {
-        const { classes } = this.props;
+        const { classes, locale } = this.props;
         return (
             <React.Fragment>
                 <div className="col-md-12 mt-5">
@@ -87,7 +98,7 @@ class Section1 extends React.Component {
                 {this.renderIconsSection()}
                 <div className="col-md-12 text-center mt-5 mb-5">
                     <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 mb-3" onClick={this.handleOpen}><FormattedMessage id="btn.open.invest.form"/></Button>
-                    <Button variant="outlined" className="fs-11 mx-2 px-4 mb-3 btn-tertiary outlined" onClick={() => {}}><FormattedMessage id="btn.open.marketplace"/></Button>
+                    <a href={`/${locale}/device#marketplace`} className="empt-link"><Button variant="outlined" className="fs-11 mx-2 px-4 mb-3 btn-tertiary outlined" onClick={() => {}}><FormattedMessage id="btn.open.marketplace"/></Button></a>
                     <Modal
                         isOpen={this.state.modalIsOpen}
                         overlayClassName="diagramOverlay"

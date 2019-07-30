@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import Modal from 'react-modal';
+import { Link } from 'react-router-dom';
 
 // Components
 import Invest from '../../Invest';
@@ -73,7 +74,7 @@ class Discover extends React.Component {
         return renderIcons;
     }
     render() {
-        const { classes } = this.props;
+        const { classes, locale } = this.props;
         return (
             <React.Fragment>
                 <div className="col-md-6 d-md-none vertical-align mt-5 mb-4">
@@ -95,7 +96,7 @@ class Discover extends React.Component {
                 {this.renderIconsSection()}
                 <div className="col-md-12 text-center my-5 pb-4">
                     <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 btn-mwidth" onClick={this.handleOpen}><FormattedMessage id="btn.open.contact.form"/></Button>
-                    <Button color="primary" variant="outlined" className="fs-11 mx-2 px-4 btn-mwidth" onClick={() => {}}><FormattedMessage id="btn.open.kiblockchain.form"/></Button>
+                    <Link className="empt-link" to={locale && `/${locale}/device`}><Button color="primary" variant="outlined" className="fs-11 mx-2 px-4 btn-mwidth" onClick={() => {}}><FormattedMessage id="btn.open.kidevice.form"/></Button></Link>
                     <Modal
                         isOpen={this.state.modalIsOpen}
                         overlayClassName="diagramOverlay"

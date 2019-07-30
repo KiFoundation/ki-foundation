@@ -81,17 +81,6 @@ class Navbar extends React.Component {
       selectedOption: selectOption()
     }
   }
-  componentDidMount() {
-    // document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    //   anchor.addEventListener('click', function (e) {
-    //       e.preventDefault();
-  
-    //       document.querySelector(this.getAttribute('href')).scrollIntoView({
-    //           behavior: 'smooth'
-    //       });
-    //   });
-    // });
-  }
   openModal = () => {
     this.setState({modalIsOpen: true});
   }

@@ -20,15 +20,15 @@ import styles from "./materialStyle";
 
 class Home extends React.Component {
   render() {
-    const { classes } = this.props;
+    const { classes, locale } = this.props;
     const mailChimpUrl = "https://gen.us17.list-manage.com/subscribe/post?u=3865106d3d479f1d2e1ec8400&amp;id=86a02d162a";
     return (
       <React.Fragment>
         <div className="container">
           <div className="row">
             <Header />
-            <Discover />
-            <Proof locale={this.props && this.props.locale}/>
+            <Discover locale={locale}/>
+            <Proof locale={locale}/>
             <div className="container mb-5">
               <div className="row">
                 <div className="col-md-12">
@@ -60,7 +60,7 @@ class Home extends React.Component {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <Partners classes={this && this.props.classes}/>
+              <Partners classes={classes}/>
             </div>
           </div>
         </div>

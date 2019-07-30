@@ -15,12 +15,13 @@ import styles from "./materialStyle";
 
 class Device extends React.Component {
   render() {
+    const { locale } = this.props;
     const mailChimpUrl = "https://gen.us17.list-manage.com/subscribe/post?u=3865106d3d479f1d2e1ec8400&amp;id=86a02d162a";
     return (
       <div className="container">
         <div className="row">
           <Header />
-          <Section1 />
+          <Section1 locale={locale}/>
           <Section2 />
           <div className="container mb-5 pb-4">
             <div className="row">

@@ -44,8 +44,8 @@ class App extends Component {
             <Navbar onLanguageChange={onLanguageChange} locale={locale}/>
             <Switch>
               <Route exact path={`/${locale}`} component={props => <Home locale={locale}/>}/>
-              <Route exact path={`/${locale}/kitoken`} component={props => <KiToken/>}/>
-              <Route exact path={`/${locale}/device`} component={props => <Device/>}/>
+              <Route exact path={`/${locale}/kitoken`} component={props => <KiToken locale={locale}/>}/>
+              <Route exact path={`/${locale}/device`} component={props => <Device locale={locale}/>}/>
               <Route exact path={`/${locale}/contact`} component={props => <Contact/>}/>
               <Route exact path={`/${locale}/team`} component={props => <Team/>}/>
               <Route exact path={`/${locale}/privacy`} component={props => <Privacy/>}/>
