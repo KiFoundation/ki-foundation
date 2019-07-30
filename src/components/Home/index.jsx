@@ -71,13 +71,13 @@ class Home extends React.Component {
             </div>
           </div>
         </div>
-        <div className="container">
+        {/* <div className="container">
           <div className="row">
             <div className="col-md-12">
               <Investors />
             </div>
           </div>
-        </div>
+        </div> */}
       </React.Fragment>
     );
   }
