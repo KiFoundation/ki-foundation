@@ -5,82 +5,65 @@ import { FormattedMessage } from 'react-intl';
 import './style.css';
 import { Typography } from '@material-ui/core';
 
-const CustomMailChimpInvest = ({ status, message, onValidated, containerClassName }) => {
-    let email;
-    const submit = () => email && email.value.indexOf("@") > -1 && onValidated({EMAIL: email.value});
-    const onRegister = () => {
-        console.log('status', status);
-        // status = 'error';
+class CustomMailChimpInvest extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: '',
+            customStatus: ''
+        }
     }
-    let formRendered;
-    
-    // Need refactoring with only one html
-    if (status === "sending") {
-        formRendered =
-            <div className={`${containerClassName} d-block input-group input-group-big`}>
-                <div className="cmci-text-container px-0 d-flex">
-                    <Typography className="color-white center-formattedmsg proxima-light" align="left" variant="h6" component="h1">
-                        <FormattedMessage id="register.first.text"/>
-                    </Typography>
-                </div>
-                <div className="cmci-input-container px-0 d-flex">
-                    <input className="mobile-width" style={{ borderRadius: '5px', outline: "none", border: "2px solid #e74c3c", padding: "5px 15px" }} ref={node => (email = node)} type="email" placeholder="Your email"/>
-                    <br />
-                    <button id="header-join-btn" className="mobile-btn-width proxima-light" style={{ outline: "none", minWidth: 120, cursor: "pointer", border: "1px solid #e74c3c", marginLeft: '1rem', borderRadius: '5px', padding: "6px 15px", backgroundColor: "#e74c3c", color: "#fff"}} onClick={() => {onRegister(); return submit;}}>
-                        <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-                    </button>
-                </div>
-            </div>;
-    } else if (status === "error") {
-        formRendered =
-            <div className={`${containerClassName} d-block input-group input-group-big`}>
-                <div className="cmci-text-container px-0 d-flex">
-                    <Typography className="color-white center-formattedmsg proxima-light" align="left" variant="h6" component="h1">
-                        <FormattedMessage id="register.first.text"/>
-                    </Typography>
-                </div>
-                <div className="cmci-input-container px-0 d-flex">
-                    <input className="mobile-width" style={{ borderRadius: '5px', outline: "none", border: "2px solid #e74c3c", padding: "5px 15px" }} ref={node => (email = node)} type="email" placeholder="Your email"/>
-                    <br />
-                    <button id="header-join-btn" className="mobile-btn-width proxima-light" style={{ outline: "none", minWidth: 120, cursor: "pointer", border: "1px solid #e74c3c", marginLeft: '1rem', borderRadius: '5px', padding: "6px 15px", backgroundColor: "#e74c3c", color: "#fff"}} onClick={() => {onRegister(); return submit;}}>
-                        <FormattedMessage id="register.error.text"/>
-                    </button>
-                </div>
-            </div>;
-    } else if (status === "success") {
-        formRendered =
-            <div className={`${containerClassName} d-block input-group input-group-big`}>
-                <div className="cmci-text-container px-0 d-flex">
-                    <Typography className="color-white center-formattedmsg proxima-light" align="left" variant="h6" component="h1">
-                        <FormattedMessage id="register.first.text"/>
-                    </Typography>
-                </div>
-                <div className="cmci-input-container px-0 d-flex">
-                    <input className="mobile-width" style={{ borderRadius: '5px', outline: "none", border: "2px solid #27ae60", padding: "5px 15px" }} ref={node => (email = node)} type="email" placeholder="Your email"/>
-                    <br />
-                    <button id="header-join-btn" className="mobile-btn-width proxima-light" style={{ outline: "none", minWidth: 120, cursor: "pointer", border: "1px solid #27ae60", marginLeft: '1rem', borderRadius: '5px', padding: "6px 15px", backgroundColor: "#27ae60", color: "#fff"}} onClick={() => {onRegister(); return submit;}}>
-                        <FormattedMessage id="register.success.text"/>
-                    </button>
-                </div>
-            </div>;
-    } else {
-        formRendered =
-            <div className={`${containerClassName} d-block input-group input-group-big`}>
-                <div className="cmci-text-container px-0 d-flex">
-                    <Typography className="color-white center-formattedmsg proxima-light" align="left" variant="h6" component="h1">
-                        <FormattedMessage id="register.first.text"/>
-                    </Typography>
-                </div>
-                <div className="cmci-input-container px-0 d-flex">
-                    <input className="mobile-width" style={{ borderRadius: '5px', outline: "none", border: "2px solid #043bea", padding: "5px 15px" }} ref={node => (email = node)} type="email" placeholder="Your email"/>
-                    <br />
-                    <button id="header-join-btn" className="mobile-btn-width proxima-light" style={{ outline: "none", minWidth: 120, cursor: "pointer", border: "1px solid #ffffff", marginLeft: '1rem', borderRadius: '5px', padding: "6px 15px", backgroundColor: "#043bea", color: "#fff"}} onClick={() => {onRegister(); return submit;}}>
-                        <FormattedMessage id="register.text"/>
-                    </button>
-                </div>
-            </div>;
+    submit = () => {
+        const { onValidated } = this.props;
+        const { email, customStatus } = this.state;
+        if (!email || !email.indexOf("@") > -1) {
+            this.setState({ customStatus: 'error' });
+        }
+        if (email && email.indexOf("@") > -1) {
+            this.setState({ customStatus: 'success' });
+        }
+        console.log('customS', email, customStatus, email.indexOf("@") > -1);
+        return email && email.indexOf("@") > -1 && onValidated({EMAIL: email});
     }
-    return formRendered;
+    onValueChange = (e) => {
+        this.setState({ email: e && e.target && e.target.value });
+    }
+    render() {
+        const { status, containerClassName } = this.props;
+        const { email, customStatus } = this.state;
+        let renderedBtnMessage, renderedApiMessage;
+        if (customStatus === 'error') {
+            renderedBtnMessage = 'Try Again.';
+            renderedApiMessage = <div className="d-block pt-3 text-center error-color"><FormattedMessage id="email.register.invalid"/></div>;
+        } else if (status === 'error') {
+            renderedBtnMessage = 'Try Again.';
+            renderedApiMessage = <div className="d-block pt-3 text-center error-color"><FormattedMessage id="email.register.error"/></div>;
+        } else if (status === 'success') {
+            renderedBtnMessage = 'Thank you !'
+            renderedApiMessage = <div className="d-block pt-3 text-center success-color"><FormattedMessage id="email.register.success"/></div>;
+        } else if (status === 'sending') {
+            renderedBtnMessage = <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>;
+        } else {
+            renderedBtnMessage = <FormattedMessage id="register.text"/>;
+        }
+        return (
+            <div className={`${containerClassName} d-block input-group input-group-big`}>
+                <div className="cmci-text-container px-0 d-flex">
+                    <Typography className="color-white center-formattedmsg proxima-light" align="left" variant="h6" component="h1">
+                        <FormattedMessage id="register.first.text"/>
+                    </Typography>
+                </div>
+                <div className="cmci-input-container px-0 d-flex">
+                    <input className={`status-${status} custom-mailchimp-input mobile-width`} onChange={this.onValueChange} value={email} type="email" placeholder="Your email"/>
+                    <br />
+                    <button id="header-join-btn" className={`btn-status-${status} mobile-btn-width proxima-light custom-mailchimp-btn`} onClick={() => this.submit()}>
+                        {renderedBtnMessage}
+                    </button>
+                </div>
+                {renderedApiMessage}
+            </div>
+        );
+    }
 };
 
 export default CustomMailChimpInvest;

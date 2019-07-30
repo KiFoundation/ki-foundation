@@ -70,7 +70,8 @@
     "contact.us.title": "Contact us",
     "team.core.title": "Core Team",
     "team.investors.title": "Investors & Advisors",
-    "team.science.title": "Science Advisors"
-
-
+    "team.science.title": "Science Advisors",
+    "email.register.invalid": "Please enter a valid email.",
+    "email.register.error": "Either you already subscribed or your email is invalid.",
+    "email.register.success": "You will now receive an email about your subscription details."
 }

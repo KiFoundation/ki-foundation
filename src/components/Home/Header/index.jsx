@@ -55,10 +55,10 @@ class Header extends React.Component {
                                 url={mailChimpUrl}
                                 render={({ subscribe, status, message }) => (
                                     <CustomMailChimpInvest
-                                    containerClassName="mt-5"
-                                    status={status}
-                                    message={message}
-                                    onValidated={formData => subscribe(formData)}
+                                        containerClassName="mt-5"
+                                        status={status}
+                                        message={message}
+                                        onValidated={formData => subscribe(formData)}
                                     />
                                 )}
                             />
