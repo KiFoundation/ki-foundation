@@ -18,9 +18,9 @@ class Media extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <section id="media" className="pb-5">
+      <section id="media" className="container pb-5">
         <div className="media-row cards row justify-content-md-center">
-          <div className="col-md-12 mb-5">
+          <div className="col-md-12 my-5 pb-2">
             <Typography className={classes.primaryColor} align="center" variant="h4">
                 <FormattedMessage id="trust.media.title"/>
             </Typography>

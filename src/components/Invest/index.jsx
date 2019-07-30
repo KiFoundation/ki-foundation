@@ -50,8 +50,6 @@ class Invest extends React.Component {
             newInvestor['phone'] = phone;
         }
 
-        console.log('newInvestor', newInvestor);
-
         fetch(investEndpoint, {
             method: 'POST',
             headers: {
@@ -187,7 +185,7 @@ class Invest extends React.Component {
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-md-8">
-                            <Typography className={classes.title + ' animated fadeInDown'} variant="h3" align="center">Invest</Typography>
+                            <Typography className={classes.title + ' animated fadeInDown primary-gradient proxima-bold'} variant="h3" align="center">Invest</Typography>
                             <Typography variant="h6" className={classes.subtitle} align="center">Lorem ipsum dolor sit amet.</Typography>
                             <form onSubmit={this.handleSubmit}>
                                 {this.formContent()}

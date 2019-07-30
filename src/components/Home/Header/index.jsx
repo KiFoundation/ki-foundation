@@ -21,10 +21,10 @@ class Header extends React.Component {
     }
     render() {
         const opts = {
-            height: '450',
-            width: '100%',
+            height: '400',
+            width: '60%',
             playerVars: { // https://developers.google.com/youtube/player_parameters
-              autoplay: 0
+              autoplay: 1
             }
         };
         const { classes } = this.props;
@@ -33,23 +33,25 @@ class Header extends React.Component {
             <div className="header-component" id="header-component">
                 <div className="container header-container">
                     <div className="row">
-                        <div className="col-md-12">
+                        <div className="col-md-12 mt-4">
+                        {/* <div className="col-md-12"> */}
                             <Typography align="center" variant="h2" component="h1" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient mb-2 proxima-bold'}>
                                 <FormattedMessage id="header.title"/>
                             </Typography>
                         </div>
                         <div className="col-md-12 whitespace-preline">
+                        {/* <div className="col-md-12 whitespace-preline mb-2"> */}
                             <Typography align="center" variant="h6" component="h2" gutterBottom className={classes.headerTitleText + ' animated fadeIn proxima-light'}>
                                 <FormattedMessage id="header.subtitle.text"/>
                             </Typography>
                         </div>
-                        <div className="col-md-12 text-center">
+                        {/* <div className="col-md-12 text-center mb-5">
                             <YouTube
                                 videoId="KajXeq3fZEo"
                                 opts={opts}
                                 onReady={this.onReady}
                             />
-                        </div>
+                        </div> */}
                         <div className="col-md-12">
                             <MailchimpSubscribe
                                 url={mailChimpUrl}

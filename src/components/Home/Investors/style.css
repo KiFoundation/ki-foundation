@@ -31,3 +31,27 @@
 .partners-logo:hover{
     filter: grayscale(0%);
 }
+
+@media (max-width: 576px) {
+    .partners-wrapper, .partners-wrapper:nth-child(n+5){
+        border-bottom: 1px solid rgb(234, 234, 234);
+    }
+    .partners-wrapper, .partners-wrapper:last-child, .partners-wrapper:nth-child(n+5){
+        border-right: 0;
+    }
+    .partners-wrapper:last-child{
+        border-bottom: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    
+}
+
+@media (max-width: 992px) {
+    
+}
+
+@media (max-width: 1200px) {
+    
+}

@@ -1,6 +1,5 @@
 // Services
 import React from 'react';
-import LazyLoad from 'react-lazy-load';
 
 // Material
 import Divider from '@material-ui/core/Divider';
@@ -22,9 +21,7 @@ class Footer extends React.Component {
                     <Divider className={classes.divider}/>
                     <div className="row p-0 mb-5">
                         <div className="col-md-12 p-0">
-                        <LazyLoad offsetVertical={200} height={65}>
                             <img height="65" src={KiFoundationLogoShort} alt="Footer Ki Logo"/>
-                        </LazyLoad>
                         </div>
                     </div>
                     <div className="row">

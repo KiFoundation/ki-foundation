@@ -76,19 +76,26 @@ class Discover extends React.Component {
         const { classes } = this.props;
         return (
             <React.Fragment>
-                <div className="col-md-6 mt-5">
-                    <Typography align="left" variant="h3" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient proxima-bold'}>
-                        <FormattedMessage id="discover.title"/> <img height="35" style={{marginBottom: 11}} src={DomoLogo} alt="Domo logo"/>
-                    </Typography>
-                    <Typography align="left" variant="h6" gutterBottom className={classes.headerTitleText + ' animated fadeIn'}>
-                        <FormattedMessage id="discover.subtitle.text"/>
-                    </Typography>
-                </div>
-                <div className="col-md-6 vertical-align">
+                <div className="col-md-6 d-md-none vertical-align mt-5 mb-4">
                     <img className="domo-device" src={DomoAnimated} alt="Domo animated" />
                 </div>
-                {this.renderIconsSection()}
-                <div className="col-md-12 text-center" style={{marginTop: '4rem', marginBottom: '6rem'}}>
+                <div className="col-md-6 vertical-align">
+                    <div>
+                        <Typography align="left" variant="h3" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient proxima-bold'}>
+                            <FormattedMessage id="discover.title"/> <img height="35" style={{marginBottom: 11}} src={DomoLogo} alt="Domo logo"/>
+                        </Typography>
+                        <Typography align="left" variant="h6" gutterBottom className={classes.headerTitleText + ' animated fadeIn'}>
+                            <FormattedMessage id="discover.subtitle.text"/>
+                        </Typography>
+                    </div>
+                </div>
+                <div className="col-md-6 d-none d-md-block vertical-align">
+                    <img className="domo-device" src={DomoAnimated} alt="Domo animated" />
+                </div>
+                <div className="vertical-align col-md-12">
+                    {this.renderIconsSection()}
+                </div>
+                <div className="col-md-12 text-center my-5 pb-4">
                     <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 btn-mwidth" onClick={this.handleOpen}><FormattedMessage id="btn.open.contact.form"/></Button>
                     <Button color="primary" variant="outlined" className="fs-11 mx-2 px-4 btn-mwidth" onClick={() => {}}><FormattedMessage id="btn.open.kiblockchain.form"/></Button>
                     <Modal
