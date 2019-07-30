@@ -169,8 +169,8 @@ class Contact extends React.Component {
         const { classes } = this.props;
         const { job } = this.state;
         return (
-            <div className={classes.root + ' contact-component mt-5 pt-5'}>
-                <div className="container">
+            <div className={classes.root + ' contact-component mt-5 pt-5 mb-4 pb-3'}>
+                <div className="container mt-4 pt-3">
                     <div className="row justify-content-center">
                         <div className="col-md-6">
                             <Typography align="center" variant="h3" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient proxima-bold'}>
