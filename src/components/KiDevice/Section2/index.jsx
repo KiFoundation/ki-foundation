@@ -71,7 +71,7 @@ class Section2 extends React.Component {
         this.state = {
             open: false,
             modalIsOpen: false
-        }        
+        }
     }
     openModal = () => {
         this.setState({modalIsOpen: true});
@@ -104,7 +104,7 @@ class Section2 extends React.Component {
                     <Typography align="left" variant="h3" gutterBottom className={classes.headerTitle + ' primary-gradient proxima-bold'}>
                         <FormattedMessage id="marketplace.title"/>
                     </Typography>
-                    <Typography align="left" variant="h6" gutterBottom className={classes.headerTitleText}>
+                    <Typography id="marketplace" align="left" variant="h6" gutterBottom className={classes.headerTitleText}>
                         <FormattedMessage id="marketplace.subtitle.text"/>
                     </Typography>
                 </div>
