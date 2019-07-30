@@ -22,7 +22,7 @@ class KiToken extends React.Component {
           <Header />
           <Section1 />
           <Section2 />
-          <div className="container">
+          <div className="container mb-5">
             <div className="row">
               <div className="col-md-12 mb-4">
                 <MailchimpSubscribe

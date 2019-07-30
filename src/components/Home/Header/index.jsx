@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import { FormattedMessage } from 'react-intl';
-import YouTube from 'react-youtube';
+// import YouTube from 'react-youtube';
 
 // Material
 import Typography from '@material-ui/core/Typography';
@@ -20,13 +20,13 @@ class Header extends React.Component {
         // event.target.pauseVideo();
     }
     render() {
-        const opts = {
-            height: '400',
-            width: '60%',
-            playerVars: { // https://developers.google.com/youtube/player_parameters
-              autoplay: 1
-            }
-        };
+        // const opts = {
+        //     height: '400',
+        //     width: '60%',
+        //     playerVars: { // https://developers.google.com/youtube/player_parameters
+        //       autoplay: 1
+        //     }
+        // };
         const { classes } = this.props;
         const mailChimpUrl = "https://gen.us17.list-manage.com/subscribe/post?u=3865106d3d479f1d2e1ec8400&amp;id=86a02d162a";
         return (

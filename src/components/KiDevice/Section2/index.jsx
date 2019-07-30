@@ -86,7 +86,7 @@ class Section2 extends React.Component {
         const { classes } = this.props;
         return (
             <React.Fragment>
-                <div className="col-md-12 mt-5">
+                <div className="col-md-12 mt-4">
                     <Typography align="left" variant="h3" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient proxima-bold'}>
                         <FormattedMessage id="domohospitality.title"/>
                     </Typography>
@@ -100,7 +100,7 @@ class Section2 extends React.Component {
                 <div className="col-md-12">
                     <Services />
                 </div>
-                <div className="col-md-12 mt-5">
+                <div className="col-md-12 mt-4 mb-3">
                     <Typography align="left" variant="h3" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient proxima-bold'}>
                         <FormattedMessage id="marketplace.title"/>
                     </Typography>
@@ -120,7 +120,7 @@ class Section2 extends React.Component {
                         </LineChart>
                     </ResponsiveContainer>
                 </div>
-                <div className="col-md-12 text-center" style={{marginTop: '4rem', marginBottom: '6rem'}}>
+                <div className="col-md-12 text-center my-5 pt-2">
                     <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 mb-3" onClick={this.handleOpen}><FormattedMessage id="btn.open.invest.form"/></Button>
                     <Modal
                         isOpen={this.state.modalIsOpen}

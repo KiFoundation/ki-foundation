@@ -26,7 +26,7 @@ class Header extends React.Component {
             <div className="header-component" id="header-component">
                 <div className="container header-container">
                     <div className="row">
-                        <div className="col-md-12">
+                        <div className="col-md-12 mt-4">
                             <Typography align="center" variant="h2" component="h1" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient mb-2 proxima-bold'}>
                                 <FormattedMessage id="kitoken.header.title"/>
                             </Typography>
@@ -36,7 +36,7 @@ class Header extends React.Component {
                                 <FormattedMessage id="kitoken.header.subtitle.text"/>
                             </Typography>
                         </div>
-                        <div className="col-md-12 text-center">
+                        <div className="col-md-12 text-center mb-5">
                             <img src={TokenImage} alt="Token logo"/>
                         </div>
                         <div className="col-md-12">

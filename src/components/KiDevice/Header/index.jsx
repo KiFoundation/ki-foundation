@@ -25,7 +25,7 @@ class Header extends React.Component {
             height: '450',
             width: '100%',
             playerVars: { // https://developers.google.com/youtube/player_parameters
-              autoplay: 0
+              autoplay: 1
             }
         };
         const { classes } = this.props;
@@ -34,19 +34,19 @@ class Header extends React.Component {
             <div className="header-component" id="header-component">
                 <div className="container header-container">
                     <div className="row">
-                        <div className="col-md-12">
+                        <div className="col-md-12 mt-4">
                             <Typography align="center" variant="h2" component="h1" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient mb-2 proxima-bold'}>
                                 <FormattedMessage id="kidevice.header.title"/>
                             </Typography>
                         </div>
-                        <div className="col-md-12 whitespace-preline">
+                        <div className="col-md-12 whitespace-preline mb-3">
                             <Typography align="center" variant="h6" component="h2" gutterBottom className={classes.headerTitleText + ' animated fadeIn proxima-light'}>
                                 <FormattedMessage id="kidevice.header.subtitle.text"/>
                             </Typography>
                         </div>
-                        <div className="col-md-12 text-center">
+                        <div className="col-md-12 text-center mb-5">
                             <YouTube
-                                videoId="KajXeq3fZEo"
+                                videoId="HchUMyJSJkg"
                                 opts={opts}
                                 onReady={this.onReady}
                             />

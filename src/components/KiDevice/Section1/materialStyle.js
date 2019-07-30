@@ -6,6 +6,7 @@ const styles = {
     },
     headerIconText: {
         // color: "#043bea"
+        fontWeight: 600
     }
 };
 

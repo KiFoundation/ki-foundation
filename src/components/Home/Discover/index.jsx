@@ -92,9 +92,7 @@ class Discover extends React.Component {
                 <div className="col-md-6 d-none d-md-block vertical-align">
                     <img className="domo-device" src={DomoAnimated} alt="Domo animated" />
                 </div>
-                <div className="vertical-align col-md-12">
-                    {this.renderIconsSection()}
-                </div>
+                {this.renderIconsSection()}
                 <div className="col-md-12 text-center my-5 pb-4">
                     <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 btn-mwidth" onClick={this.handleOpen}><FormattedMessage id="btn.open.contact.form"/></Button>
                     <Button color="primary" variant="outlined" className="fs-11 mx-2 px-4 btn-mwidth" onClick={() => {}}><FormattedMessage id="btn.open.kiblockchain.form"/></Button>

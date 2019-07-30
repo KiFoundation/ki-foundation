@@ -58,9 +58,9 @@ class Section1 extends React.Component {
         ];
         let renderIcons = icons.map(is => {
             return (
-                <div key={is.name} className="col-md-4 mb-4">
+                <div key={is.name} className="col-md-4 mb-5">
                     <div className="text-center">
-                        <div className="mx-a vertical-align mb-3" style={{border: '1px solid #000000', borderRadius: '50% 50%', height: 70, width: 70}} >
+                        <div className="mx-a vertical-align my-3" style={{border: '3px solid #000000', borderRadius: '50% 50%', height: 70, width: 70}} >
                             <img className="mx-a" height="30" src={is.src} alt={is.name}/>
                         </div>
                         <Typography align="center" variant="h6" gutterBottom className={classes.headerIconText + ' vertical-align mb-0'}>
@@ -85,7 +85,7 @@ class Section1 extends React.Component {
                     </Typography>
                 </div>
                 {this.renderIconsSection()}
-                <div className="col-md-12 text-center" style={{marginTop: '4rem', marginBottom: '6rem'}}>
+                <div className="col-md-12 text-center mt-4 mb-5">
                     <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 mb-3" onClick={() => {}}><FormattedMessage id="btn.open.buyki"/></Button>
                     <Button color="primary" variant="outlined" className="fs-11 mx-2 px-4 mb-3" onClick={() => {}}><FormattedMessage id="btn.open.readpaper"/></Button>
                     <Button variant="outlined" className="fs-11 mx-2 px-4 mb-3 btn-tertiary outlined" onClick={() => {}}><FormattedMessage id="btn.open.marketplace"/></Button>

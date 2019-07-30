@@ -61,7 +61,7 @@ class Section2 extends React.Component {
     }
     renderLegend = ({payload}) => {
         return (
-            <ul className="chart-legend vertical-align pt-4">
+            <ul className="chart-legend vertical-align pt-5">
                 {
                     payload.map((entry, index) => (
                         <li className="mr-3" key={`item-${index}`}>
@@ -77,7 +77,7 @@ class Section2 extends React.Component {
         const { classes } = this.props;
         return (
             <React.Fragment>
-                <div className="col-md-12 mt-5">
+                <div className="col-md-12 mt-5 mb-4 pb-1">
                     <Typography align="left" variant="h3" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient proxima-bold'}>
                         <FormattedMessage id="howtoken.title"/>
                     </Typography>
@@ -88,7 +88,7 @@ class Section2 extends React.Component {
                         <FormattedMessage id="howtoken.subtitle.text2"/>
                     </Typography>
                 </div>
-                <div className="col-md-6 mb-4">
+                <div className="col-md-6 mb-4 pb-5">
                     <ResponsiveContainer height={475} width="100%">
                         <PieChart onMouseEnter={this.onPieEnter}>
                             <Legend verticalAlign={"bottom"} height={36} content={this.renderLegend} />
@@ -107,7 +107,7 @@ class Section2 extends React.Component {
                         </PieChart>
                     </ResponsiveContainer>
                 </div>
-                <div className="col-md-6 mb-4">
+                <div className="col-md-6 mb-4 pb-5">
                     <ResponsiveContainer height={475} width="100%">
                         <PieChart onMouseEnter={this.onPieEnter}>
                         <Legend verticalAlign={"bottom"} height={36} content={this.renderLegend} />
@@ -126,7 +126,7 @@ class Section2 extends React.Component {
                         </PieChart>
                     </ResponsiveContainer>
                 </div>
-                <div className="col-md-12 text-center" style={{marginTop: '4rem', marginBottom: '4rem'}}>
+                <div className="col-md-12 text-center mt-4 pt-2 mb-5 pb-2">
                     <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 mb-3" onClick={() => {}}><FormattedMessage id="btn.open.buyki"/></Button>
                     <Button color="secondary" variant="contained" className="fs-11 mx-2 px-4 mb-3 color-white" onClick={() => {}}><FormattedMessage id="btn.open.validator"/></Button>
                     <Button variant="contained" className="fs-11 mx-2 px-4 mb-3 color-white btn-danger" onClick={() => {}}><FormattedMessage id="btn.open.develop"/></Button>

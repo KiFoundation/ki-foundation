@@ -22,7 +22,7 @@ class Device extends React.Component {
           <Header />
           <Section1 />
           <Section2 />
-          <div className="container mb-5">
+          <div className="container mb-5 pb-4">
             <div className="row">
               <div className="col-md-12">
                 <MailchimpSubscribe
