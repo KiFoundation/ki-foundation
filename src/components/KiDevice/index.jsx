@@ -22,7 +22,7 @@ class Device extends React.Component {
         <div className="row">
           <Header />
           <Section1 locale={locale}/>
-          <Section2 />
+          <Section2/>
           <div className="container mb-5 pb-4">
             <div className="row">
               <div className="col-md-12">
