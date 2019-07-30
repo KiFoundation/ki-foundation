@@ -74,8 +74,10 @@ class Contact extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
         const { job, email, fullname, message } = this.state;
-        const contactEndpoint = "https://static-api.foundation.ki/1/foundation/contact";
-
+        let contactEndpoint = 'https://static-api.preprod.kifoundation.tech/1/foundation/contact';
+        if (process && process.env && process.env.REACT_APP_BRANCH && process.env.REACT_APP_BRANCH === 'master') {
+            contactEndpoint = 'https://static-api.foundation.ki/1/foundation/contact';
+        }
         fetch(contactEndpoint, {
             method: 'POST',
             headers: {
