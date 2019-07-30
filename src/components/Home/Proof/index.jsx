@@ -51,16 +51,16 @@ class Proof extends React.Component {
         return (
             <React.Fragment>
                 <div className="col-md-12 mt-5 mb-2">
-                    <Typography align="left" variant="h3" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient proxima-bold'}>
+                    <Typography align="left" variant="h3" gutterBottom className={classes.headerTitle + ' primary-gradient proxima-bold'}>
                         <FormattedMessage id="proof.title"/>
                     </Typography>
-                    <Typography align="left" variant="h6" gutterBottom className={classes.headerTitleText + ' animated fadeIn'}>
+                    <Typography align="left" variant="h6" gutterBottom className={classes.headerTitleText}>
                         <FormattedMessage id="proof.subtitle.text"/>
                     </Typography>
                 </div>
                 {this.renderIconsSection()}
                 <div className="col-md-12 mt-5">
-                    <Typography align="left" variant="h6" gutterBottom className={classes.headerTitleText + ' animated fadeIn'}>
+                    <Typography align="left" variant="h6" gutterBottom className={classes.headerTitleText}>
                         <FormattedMessage id="proof.subtitle.text2"/>
                     </Typography>
                 </div>

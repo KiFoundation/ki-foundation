@@ -20,11 +20,6 @@ class Investors extends React.Component {
         return (
             <div className="container my-5 pb-4">
                 <div className="row">
-                    {/* <div className="col-md-12">
-                        <Typography align="left" variant="h3" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient proxima-bold'}>
-                            <FormattedMessage id="trust.title"/>
-                        </Typography>
-                    </div> */}
                     <div className="col-md-12 my-5">
                         <Typography className={classes.primaryColor} align="center" variant="h4">
                             <FormattedMessage id="trust.investors.title"/>

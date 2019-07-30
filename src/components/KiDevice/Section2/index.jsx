@@ -87,13 +87,13 @@ class Section2 extends React.Component {
         return (
             <React.Fragment>
                 <div className="col-md-12 mt-4">
-                    <Typography align="left" variant="h3" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient proxima-bold'}>
+                    <Typography align="left" variant="h3" gutterBottom className={classes.headerTitle + ' primary-gradient proxima-bold'}>
                         <FormattedMessage id="domohospitality.title"/>
                     </Typography>
-                    <Typography align="left" variant="h6" gutterBottom className={classes.headerTitleText + ' animated fadeIn'}>
+                    <Typography align="left" variant="h6" gutterBottom className={classes.headerTitleText}>
                         <FormattedMessage id="domohospitality.subtitle.text1"/>
                     </Typography>
-                    <Typography align="left" variant="h6" gutterBottom className={classes.headerTitleText + ' animated fadeIn'}>
+                    <Typography align="left" variant="h6" gutterBottom className={classes.headerTitleText}>
                         <FormattedMessage id="domohospitality.subtitle.text2"/>
                     </Typography>
                 </div>
@@ -101,10 +101,10 @@ class Section2 extends React.Component {
                     <Services />
                 </div>
                 <div className="col-md-12 mt-4 mb-3">
-                    <Typography align="left" variant="h3" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient proxima-bold'}>
+                    <Typography align="left" variant="h3" gutterBottom className={classes.headerTitle + ' primary-gradient proxima-bold'}>
                         <FormattedMessage id="marketplace.title"/>
                     </Typography>
-                    <Typography align="left" variant="h6" gutterBottom className={classes.headerTitleText + ' animated fadeIn'}>
+                    <Typography align="left" variant="h6" gutterBottom className={classes.headerTitleText}>
                         <FormattedMessage id="marketplace.subtitle.text"/>
                     </Typography>
                 </div>
