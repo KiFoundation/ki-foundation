@@ -108,7 +108,7 @@ class Section2 extends React.Component {
                         <FormattedMessage id="marketplace.subtitle.text"/>
                     </Typography>
                 </div>
-                <div className="col-md-12">
+                <div className="col-md-12 device-recharts">
                     <ResponsiveContainer height={475} width="100%">
                         <LineChart data={data}>
                             <Legend verticalAlign={"top"} height={36} />
