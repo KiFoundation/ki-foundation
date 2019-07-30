@@ -24,7 +24,7 @@ export class Cookie extends Component {
             <div className="cookie container mb-5 mt-5 pt-4">
                 <div className="row">
                     <div className="col-12">
-                        <Typography align="center" variant="h3" gutterBottom className={classes.headerTitle}>
+                        <Typography align="center" variant="h3" gutterBottom className={classes.headerTitle + ' primary-gradient mb-2 proxima-bold'}>
                             Cookie Policy
                         </Typography>
                         <hr/>

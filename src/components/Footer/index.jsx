@@ -1,5 +1,6 @@
 // Services
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // Material
 import Divider from '@material-ui/core/Divider';
@@ -14,7 +15,7 @@ import styles from './materialStyle';
 
 class Footer extends React.Component {
     render() {
-        const { classes } = this.props;
+        const { classes, locale } = this.props;
         return (
             <div className={classes.root + ' pt-4'}>
                 <div className="container">
@@ -27,8 +28,8 @@ class Footer extends React.Component {
                     <div className="row">
                         <div className="col-md-3">
                             <Typography className={classes.title} variant="h6"> The Ki Foundation </Typography>
-                            <a id="footer-link-device" className={classes.link} href="/device">Ki Device</a>
-                            <a id="footer-link-blockchain" className={classes.link} href="/blockchain">Ki Blockchain</a>
+                            <Link id="footer-link-blockchain" className={classes.link} to={`/${locale}/kitoken`}>Ki Token</Link>
+                            <Link id="footer-link-device" className={classes.link} to={`/${locale}/device`}>Ki Device</Link>
                         </div>
                         <div className="col-md-3">
                             <Typography className={classes.title} variant="h6"> Documents </Typography>
@@ -37,8 +38,8 @@ class Footer extends React.Component {
                         </div>
                         <div className="col-md-3">
                             <Typography className={classes.title} variant="h6"> Legal </Typography>
-                            <a id="footer-link-privacy" className={classes.link} href="/privacy">Privacy Policy</a>
-                            <a id="footer-link-cookie" className={classes.link} href="/cookie">Cookie Policy</a>
+                            <Link id="footer-link-privacy" className={classes.link} to={`/${locale}/privacy`}>Privacy Policy</Link>
+                            <Link id="footer-link-cookie" className={classes.link} to={`/${locale}/cookie`}>Cookie Policy</Link>
                         </div>
                         <div className="col-md-3">
                             <Typography className={classes.title} variant="h6"> Find Us </Typography>

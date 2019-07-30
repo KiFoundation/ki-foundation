@@ -182,7 +182,7 @@ class Invest extends React.Component {
         const { classes } = this.props;
         return (
             <div className={classes.root + ' invest-component'}>
-                <div className="container">
+                <div className="container py-5">
                     <div className="row justify-content-center">
                         <div className="col-md-8">
                             <Typography className={classes.title + ' animated fadeInDown primary-gradient proxima-bold'} variant="h3" align="center">Invest</Typography>

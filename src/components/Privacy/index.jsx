@@ -24,7 +24,7 @@ export class Policy extends Component {
             <div className="container mb-5 policy mt-5 pt-4">
                 <div className="row">
                     <div className="col-12">
-                        <Typography align="center" variant="h3" gutterBottom className={classes.headerTitle}>
+                        <Typography align="center" variant="h3" gutterBottom className={classes.headerTitle + ' primary-gradient mb-2 proxima-bold'}>
                             Privacy Policy
                         </Typography>
                         <hr/>

@@ -104,12 +104,15 @@ a, button{
   cursor: pointer;
   white-space: nowrap;
   text-transform: initial;
-  padding: 6px 15px;
-  font-size: 14px;
-  border: 1px solid #043bea;
+  padding: 6px 16px;
+  line-height: 1.75;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 0;
   background-color: #043bea !important;
   position: relative;
-  border-radius: 0;
+  border-radius: 4px;
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 3px 1px -2px rgba(0,0,0,0.12);
   min-width: 250;
 }
 

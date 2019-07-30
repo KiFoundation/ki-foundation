@@ -6,6 +6,14 @@ const styles = {
     },
     headerIconText: {
         fontWeight: 600
+    },
+    link: {
+        // color: "#000000",
+        // margin: "1rem 0",
+        "&:hover": {
+            // color: "#000000",
+            textDecoration: "none"
+        }
     }
 };
 
