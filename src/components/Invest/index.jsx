@@ -36,7 +36,10 @@ class Invest extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
         const { firstname, lastname, email, invest, phone, meeting, message } = this.state;
-        const investEndpoint = "https://static-api.preprod.kifoundation.tech/1/foundation/invest";
+        let investEndpoint = 'https://static-api.preprod.kifoundation.tech/1/foundation/invest';
+        if (process && process.env && process.env.REACT_APP_BRANCH && process.env.REACT_APP_BRANCH === 'master') {
+            investEndpoint = 'https://static-api.foundation.ki/1/foundation/invest';
+        }
         let newInvestor = {
             firstname: firstname,
             lastname: lastname,

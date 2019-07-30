@@ -22,7 +22,7 @@ jobs:
       - restore-cache: *restore-cache
       - run: yarn install
       - save-cache: *save-cache
-      - run: yarn build
+      - run: REACT_APP_BRANCH=${CIRCLE_BRANCH} CI=false yarn build
       - persist_to_workspace:
           root: build
           paths:
