@@ -6,7 +6,7 @@ import Modal from 'react-modal';
 
 // Components
 import {
-    LineChart, XAxis, YAxis, CartesianGrid, Line, ResponsiveContainer, Legend
+    LineChart, XAxis, YAxis, CartesianGrid, Line, ResponsiveContainer, Legend, Tooltip
 } from 'recharts';
 import Invest from '../../Invest';
 import Services from '../Services';
@@ -33,35 +33,32 @@ const customStyles = {
 
 const data = [
     {
-        name: 'Year 1', device: 3644, pv: 12243840, amt: 612192,
+        name: 'Year 1', device: 3644, pv: 12243840, amt: 612192
     },
     {
-        name: 'Year 2', device: 33299, pv: 156638496, amt: 7831924,
+        name: 'Year 2', device: 33299, pv: 156638496, amt: 7831924
     },
     {
-        name: 'Year 3', device: 162330, pv: 1069040448, amt: 53452022,
+        name: 'Year 3', device: 162330, pv: 1069040448, amt: 53452022
     },
     {
-        name: 'Year 4', device: 524530, pv: 4836082608, amt: 241804130,
+        name: 'Year 4', device: 524530, pv: 4836082608, amt: 241804130
     },
     {
-        name: 'Year 5', device: 1126581, pv: 14541655296, amt: 727082764,
+        name: 'Year 5', device: 1126581, pv: 14541655296, amt: 727082764
     },
     {
-        name: 'Year 6', device: 2253162, pv: 36354137904, amt: 1817706895,
+        name: 'Year 6', device: 2253162, pv: 36354137904, amt: 1817706895
     },
     {
-        name: 'Year 7', device: 4506324, pv: 72708275808, amt: 3635413790,
+        name: 'Year 7', device: 4506324, pv: 72708275808, amt: 3635413790
     },
     {
-        name: 'Year 8', device: 9012648, pv: 145416551952, amt: 7270827597,
+        name: 'Year 8', device: 9012648, pv: 145416551952, amt: 7270827597
     },
     {
-        name: 'Year 9', device: 18025296, pv: 290833103904, amt: 14541655195,
-    },
-    {
-        name: 'Year 10', device: 36050592, pv: 581666207808, amt: 29083310390,
-    },
+        name: 'Year 9', device: 18025296, pv: 290833103904, amt: 14541655195
+    }
 ];
 // const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
@@ -111,12 +108,15 @@ class Section2 extends React.Component {
                 <div className="col-md-12 device-recharts">
                     <ResponsiveContainer height={475} width="100%">
                         <LineChart data={data}>
+                            <Tooltip />
                             <Legend verticalAlign={"top"} height={36} />
                             <XAxis dataKey="name"/>
-                            <YAxis/>
+                            <YAxis yAxisId="left" />
+                            <YAxis yAxisId="right" orientation="right" />
                             <CartesianGrid stroke="#eee" strokeDasharray="5 5"/>
-                            <Line name="Global value flow" type="monotone" dataKey="pv" stroke="#8884d8" />
-                            <Line name="Value for validators" type="monotone" dataKey="amt" stroke="#82ca9d" />
+                            <Line yAxisId="right" name="Number of devices" type="monotone" dataKey="device" stroke="#82ca9d" />
+                            <Line yAxisId="left" name="Global value flow" type="monotone" dataKey="pv" stroke="#8884d8" />
+                            <Line yAxisId="left" name="Value for validators" type="monotone" dataKey="amt" stroke="#043bea" />
                         </LineChart>
                     </ResponsiveContainer>
                 </div>
