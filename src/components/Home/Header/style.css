@@ -18,3 +18,9 @@
     justify-content: center;
     /* height: 100vh; */
 }
+
+@media (max-width: 576px) {
+    h1.big-header-title, h3.big-header-title{
+        font-size: 2.5rem;
+    }
+}

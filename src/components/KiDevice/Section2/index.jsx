@@ -49,15 +49,6 @@ const data = [
     },
     {
         name: 'Year 6', device: 2253162, pv: 36354137904, amt: 1817706895
-    },
-    {
-        name: 'Year 7', device: 4506324, pv: 72708275808, amt: 3635413790
-    },
-    {
-        name: 'Year 8', device: 9012648, pv: 145416551952, amt: 7270827597
-    },
-    {
-        name: 'Year 9', device: 18025296, pv: 290833103904, amt: 14541655195
     }
 ];
 // const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
@@ -98,7 +89,7 @@ class Section2 extends React.Component {
                     <Services />
                 </div>
                 <div className="col-md-12 mt-4 mb-3">
-                    <Typography align="left" variant="h3" gutterBottom className={classes.headerTitle + ' primary-gradient proxima-bold'}>
+                    <Typography align="left" variant="h3" gutterBottom className={classes.headerTitle + ' primary-gradient proxima-bold big-header-title'}>
                         <FormattedMessage id="marketplace.title"/>
                     </Typography>
                     <Typography id="marketplace" align="left" variant="h6" gutterBottom className={classes.headerTitleText}>

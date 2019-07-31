@@ -82,7 +82,7 @@ class Discover extends React.Component {
                 </div>
                 <div className="col-md-6 vertical-align">
                     <div>
-                        <Typography align="left" variant="h3" gutterBottom className={classes.headerTitle + ' primary-gradient proxima-bold'}>
+                        <Typography align="left" variant="h3" gutterBottom className={classes.headerTitle + ' primary-gradient proxima-bold big-header-title'}>
                             <FormattedMessage id="discover.title"/> <img height="35" style={{marginBottom: 11}} src={DomoLogo} alt="Domo logo"/>
                         </Typography>
                         <Typography align="left" variant="h6" gutterBottom className={classes.headerTitleText}>

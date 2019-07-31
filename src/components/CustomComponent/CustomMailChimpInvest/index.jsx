@@ -10,19 +10,18 @@ class CustomMailChimpInvest extends React.Component {
         super(props);
         this.state = {
             email: '',
-            customStatus: ''
+            customStatus: null
         }
     }
     submit = () => {
         const { onValidated } = this.props;
-        const { email, customStatus } = this.state;
+        const { email } = this.state;
         if (!email || !email.indexOf("@") > -1) {
             this.setState({ customStatus: 'error' });
         }
         if (email && email.indexOf("@") > -1) {
             this.setState({ customStatus: 'success' });
         }
-        console.log('customS', email, customStatus, email.indexOf("@") > -1);
         return email && email.indexOf("@") > -1 && onValidated({EMAIL: email});
     }
     onValueChange = (e) => {
@@ -32,6 +31,7 @@ class CustomMailChimpInvest extends React.Component {
         const { status, containerClassName } = this.props;
         const { email, customStatus } = this.state;
         let renderedBtnMessage, renderedApiMessage;
+        let checkStatus = customStatus && customStatus === 'error' ? customStatus : status; 
         if (customStatus === 'error') {
             renderedBtnMessage = 'Try Again.';
             renderedApiMessage = <div className="d-block pt-3 text-center error-color"><FormattedMessage id="email.register.invalid"/></div>;
@@ -44,7 +44,11 @@ class CustomMailChimpInvest extends React.Component {
         } else if (status === 'sending') {
             renderedBtnMessage = <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>;
         } else {
-            renderedBtnMessage = <FormattedMessage id="register.text"/>;
+            renderedBtnMessage =
+                <React.Fragment>
+                    <span className="d-none d-md-block"><FormattedMessage id="register.text"/></span>
+                    <span className="d-md-none"><FormattedMessage id="register.mobile.text"/></span>
+                </React.Fragment>
         }
         return (
             <div className={`${containerClassName} d-block input-group input-group-big`}>
@@ -54,9 +58,9 @@ class CustomMailChimpInvest extends React.Component {
                     </Typography>
                 </div>
                 <div className="cmci-input-container px-0 d-flex">
-                    <input className={`status-${status} custom-mailchimp-input mobile-width`} onChange={this.onValueChange} value={email} type="email" placeholder="Your email"/>
+                    <input className={`status-${checkStatus} custom-mailchimp-input mobile-width`} onChange={this.onValueChange} value={email} type="email" placeholder="Your email"/>
                     <br />
-                    <button id="header-join-btn" className={`btn-status-${status} mobile-btn-width proxima-light custom-mailchimp-btn`} onClick={() => this.submit()}>
+                    <button id="header-join-btn" className={`btn-status-${checkStatus} mobile-btn-width proxima-light custom-mailchimp-btn`} onClick={() => this.submit()}>
                         {renderedBtnMessage}
                     </button>
                 </div>

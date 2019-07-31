@@ -49,7 +49,7 @@ class Home extends React.Component {
             <div className="container mt-5">
               <div className="row">
                 <div className="col-md-12">
-                    <Typography align="left" variant="h3" gutterBottom className={classes.headerTitle + ' primary-gradient proxima-bold'}>
+                    <Typography align="left" variant="h3" gutterBottom className={classes.headerTitle + ' primary-gradient proxima-bold big-header-title'}>
                         <FormattedMessage id="trust.title"/>
                     </Typography>
                 </div>
