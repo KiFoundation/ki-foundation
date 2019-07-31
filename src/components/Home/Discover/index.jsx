@@ -14,6 +14,7 @@ import Button from '../../CustomComponent/Button';
 import { withStyles } from '@material-ui/core/styles';
 
 // Images
+import DomoMobileAnimated from '../../../assets/ki_foundation/Device.png';
 import DomoAnimated from '../../../assets/ki_foundation/Device1.png';
 import StorageIcon from '../../../assets/icons/storage.png';
 import WifiIcon from '../../../assets/icons/wifi.png';
@@ -77,12 +78,12 @@ class Discover extends React.Component {
         const { classes, locale } = this.props;
         return (
             <React.Fragment>
-                <div className="col-md-6 d-md-none vertical-align mt-5 mb-4">
-                    <img className="domo-device" src={DomoAnimated} alt="Domo animated" />
+                <div className="col-md-6 d-md-none vertical-align domo-device-container">
+                    <img className="domo-device" src={DomoMobileAnimated} alt="Domo animated" />
                 </div>
                 <div className="col-md-6 vertical-align">
                     <div>
-                        <Typography align="left" variant="h3" gutterBottom className={classes.headerTitle + ' primary-gradient proxima-bold'}>
+                        <Typography align="left" variant="h3" gutterBottom className={classes.headerTitle + ' primary-gradient proxima-bold big-header-title'}>
                             <FormattedMessage id="discover.title"/> <img height="35" style={{marginBottom: 11}} src={DomoLogo} alt="Domo logo"/>
                         </Typography>
                         <Typography align="left" variant="h6" gutterBottom className={classes.headerTitleText}>
@@ -90,13 +91,13 @@ class Discover extends React.Component {
                         </Typography>
                     </div>
                 </div>
-                <div className="col-md-6 d-none d-md-block vertical-align">
+                <div className="col-md-6 d-none d-md-block vertical-align domo-device-container">
                     <img className="domo-device" src={DomoAnimated} alt="Domo animated" />
                 </div>
                 {this.renderIconsSection()}
-                <div className="col-md-12 text-center my-5 pb-4">
-                    <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 btn-mwidth" onClick={this.handleOpen}><FormattedMessage id="btn.open.contact.form"/></Button>
-                    <Link className="empt-link" to={locale && `/${locale}/device`}><Button color="primary" variant="outlined" className="fs-11 mx-2 px-4 btn-mwidth" onClick={() => {}}><FormattedMessage id="btn.open.kidevice.form"/></Button></Link>
+                <div className="col-md-12 text-center my-5">
+                    <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 btn-mwidth mb-4" onClick={this.handleOpen}><FormattedMessage id="btn.open.contact.form"/></Button>
+                    <Link className="empt-link" to={locale && `/${locale}/device`}><Button color="primary" variant="outlined" className="fs-11 mx-2 px-4 btn-mwidth mb-4" onClick={() => {}}><FormattedMessage id="btn.open.kidevice.form"/></Button></Link>
                     <Modal
                         isOpen={this.state.modalIsOpen}
                         overlayClassName="diagramOverlay"

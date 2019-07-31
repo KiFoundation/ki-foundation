@@ -35,7 +35,7 @@ class Header extends React.Component {
                     <div className="row">
                         <div className="col-md-12 mt-4">
                         {/* <div className="col-md-12"> */}
-                            <Typography align="center" variant="h2" component="h1" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient mb-2 proxima-bold'}>
+                            <Typography align="center" variant="h2" component="h1" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient mb-2 proxima-bold big-header-title'}>
                                 <FormattedMessage id="header.title"/>
                             </Typography>
                         </div>

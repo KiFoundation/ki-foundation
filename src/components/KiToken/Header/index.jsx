@@ -27,7 +27,7 @@ class Header extends React.Component {
                 <div className="container header-container">
                     <div className="row">
                         <div className="col-md-12 mt-4">
-                            <Typography align="center" variant="h2" component="h1" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient mb-2 proxima-bold'}>
+                            <Typography align="center" variant="h2" component="h1" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient mb-2 proxima-bold big-header-title'}>
                                 <FormattedMessage id="kitoken.header.title"/>
                             </Typography>
                         </div>

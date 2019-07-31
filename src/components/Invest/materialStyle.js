@@ -8,7 +8,7 @@ const styles = {
         cursor: 'pointer',
         whiteSpace: 'nowrap',
         textTransform: 'initial',
-        padding: '5px 15px',
+        padding: '5px 16px',
         fontSize: '1rem',
         fontWeight: 'normal',
         '&:focus': {
@@ -17,7 +17,7 @@ const styles = {
         backgroundColor: "#043bea",
         // margin: "0 1.5rem",
         position: "relative",
-        borderRadius: 0,
+        borderRadius: 4,
         minWidth: 250,
         '&:hover': {
           backgroundColor: "#043bea",
