@@ -47,7 +47,7 @@ class Header extends React.Component {
     render() {
         const opts = {
             // height: '450',
-            // width: '100%',
+            width: '100%',
             playerVars: { // https://developers.google.com/youtube/player_parameters
                 autoplay: 1,
                 controls: 1,
@@ -77,7 +77,7 @@ class Header extends React.Component {
                                 <FormattedMessage id="kidevice.header.subtitle.text"/>
                             </Typography>
                         </div>
-                        <div className="col-md-12 text-center mb-5">
+                        <div className="col-md-12 text-center mb-5 youtube-container">
                             <YouTube
                                 videoId="HchUMyJSJkg"
                                 opts={opts}
