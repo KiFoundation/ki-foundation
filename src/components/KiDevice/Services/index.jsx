@@ -151,7 +151,7 @@ class Services extends React.Component {
         return (
             <div className="section4-component mt-4">
                 <div className="container" style={{maxWidth: '1250px'}}>
-                    <div className="row pb-5 mb-4">
+                    <div className="row">
                         {cardsRender}
                     </div>
                 </div>
