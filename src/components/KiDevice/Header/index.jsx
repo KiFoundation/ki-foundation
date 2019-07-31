@@ -46,15 +46,15 @@ class Header extends React.Component {
     }
     render() {
         const opts = {
-            height: '450',
-            width: '100%',
+            // height: '450',
+            // width: '100%',
             playerVars: { // https://developers.google.com/youtube/player_parameters
                 autoplay: 1,
-                controls: 0,
+                controls: 1,
                 disablekb: 1,
                 fs: 0,
                 loop: 1,
-                mute: 1,
+                mute: 0,
                 modestbranding: 1,
                 rel: 0,
                 showinfo: 0,
@@ -79,7 +79,6 @@ class Header extends React.Component {
                         </div>
                         <div className="col-md-12 text-center mb-5">
                             <YouTube
-                                videoId="KajXeq3fZEo"
                                 videoId="HchUMyJSJkg"
                                 opts={opts}
                                 onReady={this.onReady}
