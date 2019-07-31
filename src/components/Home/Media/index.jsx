@@ -78,12 +78,12 @@ class Media extends Component {
           </div>
 
           <div className="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-            <a id="home-media-maddyness" href="https://www.maddyness.com/2018/11/27/maddypitch-genki/" className="media-box-custom media-box card vertical-align" target="_blank">
-            {/* <span id="home-media-maddyness" className="media-box-custom media-box card vertical-align"> */}
-              <div className="text-center">
-                <img src={maddyness} alt="" className="mt-0" height="35"/>
+              <a id="home-media-usinenouvelle" href="https://www.usinenouvelle.com/editorial/au-blockchain-day-paris-la-blockchain-passe-de-l-utopie-au-business.N753594" className="media-box-custom media-box card vertical-align" target="_blank">
+              {/* <span id="home-media-usinenouvelle" className="media-box-custom media-box card vertical-align"> */}
+                <div className="text-center">
+                <img src={usinenouvelle} alt="" className="mt-0" height="35"/>
                 <span className="media-date">
-                  "Genki designed an IoT, the Octagon, connected to the blockchain to improve hotel services while allowing customers to keep control of their data."
+                  "Genki develops a smart assistant that looks like a smartspeaker protecting users data."
                 </span>
               </div>
             {/* </span> */}
