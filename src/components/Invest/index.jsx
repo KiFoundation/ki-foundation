@@ -110,23 +110,23 @@ class Invest extends React.Component {
         return (
             <div>
                 <div className="form-group mb-4">
-                    <input onChange={this.handleChange} value={firstname} name="firstname" type="text" className="form-control" placeholder="Firstname"/>
+                    <input onChange={this.handleChange} value={firstname} name="firstname" type="text" className="form-control" placeholder="Firstname" required/>
                 </div>
                 <div className="form-group mb-4">
-                    <input onChange={this.handleChange} value={lastname} name="lastname" type="text" className="form-control" placeholder="Lastname"/>
+                    <input onChange={this.handleChange} value={lastname} name="lastname" type="text" className="form-control" placeholder="Lastname" required/>
                 </div>
                 <div className="form-group mb-4">
-                    <input onChange={this.handleChange} value={email} name="email" type="email" className="form-control" placeholder="Email"/>
+                    <input onChange={this.handleChange} value={email} name="email" type="email" className="form-control" placeholder="Email" required/>
                 </div>
                 <div className="form-group">
                     <textarea onChange={this.handleChange} value={message} name="message" className="form-control" rows="5" placeholder="Your message..."></textarea>
                 </div>
-                <div className="col-md-12 mb-4 px-0">
+                <div className="col-md-12 mb-4 px-0 mt-4">
                     <Typography variant="h6" className={classes.subtitle} align="center">Amount to invest</Typography>
                 </div>
                 <div className="vertical-align">
                     <div className="d-flex">
-                        {this.renderInvestValues()}                    
+                        {this.renderInvestValues()}             
                     </div>
                 </div>
                 <div className="col-md-12 mb-4 px-0">
@@ -179,7 +179,7 @@ class Invest extends React.Component {
     }
     buttonContent = () => {
         const { classes } = this.props;
-        return <div className="text-center pt-2"><input value="Send an email" type="submit" className={classes.button} /></div>;
+        return <div className="text-center pt-2"><input value="Send an email" type="submit" className={classes.button + ' btn btn-primary'} /></div>;
     }
     render() {
         const { classes } = this.props;

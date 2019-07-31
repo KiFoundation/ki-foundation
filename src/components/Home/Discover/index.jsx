@@ -14,6 +14,7 @@ import Button from '../../CustomComponent/Button';
 import { withStyles } from '@material-ui/core/styles';
 
 // Images
+import DomoMobileAnimated from '../../../assets/ki_foundation/Device.png';
 import DomoAnimated from '../../../assets/ki_foundation/Device1.png';
 import StorageIcon from '../../../assets/icons/storage.png';
 import WifiIcon from '../../../assets/icons/wifi.png';
@@ -77,8 +78,8 @@ class Discover extends React.Component {
         const { classes, locale } = this.props;
         return (
             <React.Fragment>
-                <div className="col-md-6 d-md-none vertical-align mt-5 mb-4">
-                    <img className="domo-device" src={DomoAnimated} alt="Domo animated" />
+                <div className="col-md-6 d-md-none vertical-align domo-device-container">
+                    <img className="domo-device" src={DomoMobileAnimated} alt="Domo animated" />
                 </div>
                 <div className="col-md-6 vertical-align">
                     <div>
@@ -90,7 +91,7 @@ class Discover extends React.Component {
                         </Typography>
                     </div>
                 </div>
-                <div className="col-md-6 d-none d-md-block vertical-align">
+                <div className="col-md-6 d-none d-md-block vertical-align domo-device-container">
                     <img className="domo-device" src={DomoAnimated} alt="Domo animated" />
                 </div>
                 {this.renderIconsSection()}
