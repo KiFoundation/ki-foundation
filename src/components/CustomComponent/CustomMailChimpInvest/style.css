@@ -146,3 +146,11 @@
     float: initial;
   }
 }
+
+@media (max-width: 576px) {
+  @-moz-document url-prefix() {
+    .cmci-input-container .mobile-width{
+      width: 58%;
+    }
+  }
+}
