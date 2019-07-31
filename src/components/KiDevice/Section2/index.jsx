@@ -61,6 +61,15 @@ class Section2 extends React.Component {
             modalIsOpen: false
         }
     }
+    componentDidMount() {
+        let locationHash = window && window.location && window.location.hash;
+        if (locationHash === '#marketplace') {
+            let marketplaceAnchor = document.getElementById('marketplace');
+            if (marketplaceAnchor) {
+                marketplaceAnchor.scrollIntoView();
+            }
+        }
+    }
     openModal = () => {
         this.setState({modalIsOpen: true});
     }
@@ -105,12 +114,13 @@ class Section2 extends React.Component {
                 </div>
                 <div className="col-md-12">
                     <Services />
+                    <div id="marketplace" className="pb-5 mb-4"></div>
                 </div>
                 <div className="col-md-12 mt-4 mb-3">
                     <Typography align="left" variant="h3" gutterBottom className={classes.headerTitle + ' primary-gradient proxima-bold big-header-title'}>
                         <FormattedMessage id="marketplace.title"/>
                     </Typography>
-                    <Typography id="marketplace" align="left" variant="h6" gutterBottom className={classes.headerTitleText}>
+                    <Typography align="left" variant="h6" gutterBottom className={classes.headerTitleText}>
                         <FormattedMessage id="marketplace.subtitle.text"/>
                     </Typography>
                 </div>
