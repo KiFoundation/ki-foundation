@@ -116,7 +116,7 @@ class Section2 extends React.Component {
                     <Services />
                     <div id="marketplace" className="pb-5 mb-4"></div>
                 </div>
-                <div className="col-md-12 mt-4 mb-3">
+                <div className="col-md-12 mt-4 mb-5">
                     <Typography align="left" variant="h3" gutterBottom className={classes.headerTitle + ' primary-gradient proxima-bold big-header-title'}>
                         <FormattedMessage id="marketplace.title"/>
                     </Typography>
