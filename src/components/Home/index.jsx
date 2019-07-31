@@ -13,7 +13,7 @@ import Discover from './Discover';
 import Proof from './Proof';
 import Media from './Media';
 import Partners from './Partners';
-import Investors from './Investors';
+// import Investors from './Investors';
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import CustomMailChimpInvest from '../CustomComponent/CustomMailChimpInvest';
 import styles from "./materialStyle";
