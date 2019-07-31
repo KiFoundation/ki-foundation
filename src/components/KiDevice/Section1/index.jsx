@@ -79,7 +79,7 @@ class Section1 extends React.Component {
         return renderIcons;
     }
     render() {
-        const { classes, locale } = this.props;
+        const { classes } = this.props;
         return (
             <React.Fragment>
                 <div className="col-md-12 mt-5">

@@ -75,5 +75,8 @@
     "team.science.title": "Science Advisors",
     "email.register.invalid": "Please enter a valid email.",
     "email.register.error": "Either you already subscribed or your email is invalid.",
-    "email.register.success": "You will now receive an email about your subscription details."
+    "email.register.success": "You will now receive an email about your subscription details.",
+    "invest.success.text1": "Thank you for your interest!",
+    "invest.success.text2": "We will get back to you very shortly with more details about the investment process.",
+    "invest.success.text3": "Ki Foundation Team"
 }

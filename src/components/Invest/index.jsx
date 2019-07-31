@@ -8,6 +8,7 @@ import { withStyles } from '@material-ui/core/styles';
 // Styles
 import styles from './materialStyle';
 import './style.css';
+import { FormattedMessage } from 'react-intl';
 
 class Invest extends React.Component {
     meetingValues = ['Yes', 'No'];
@@ -74,7 +75,7 @@ class Invest extends React.Component {
                         message: '',
                         fetchedErrors: null,
                         success: false,
-                        showSuccessMessage: false
+                        showSuccessMessage: true
                     });
                 } else {
                     res.json().then(value => {
@@ -110,13 +111,13 @@ class Invest extends React.Component {
         return (
             <div>
                 <div className="form-group mb-4">
-                    <input onChange={this.handleChange} value={firstname} name="firstname" type="text" className="form-control" placeholder="Firstname" required/>
+                    <input onChange={this.handleChange} value={firstname} name="firstname" type="text" className="form-control" placeholder="Firstname"/>
                 </div>
                 <div className="form-group mb-4">
-                    <input onChange={this.handleChange} value={lastname} name="lastname" type="text" className="form-control" placeholder="Lastname" required/>
+                    <input onChange={this.handleChange} value={lastname} name="lastname" type="text" className="form-control" placeholder="Lastname"/>
                 </div>
                 <div className="form-group mb-4">
-                    <input onChange={this.handleChange} value={email} name="email" type="email" className="form-control" placeholder="Email" required/>
+                    <input onChange={this.handleChange} value={email} name="email" type="email" className="form-control" placeholder="Email"/>
                 </div>
                 <div className="form-group">
                     <textarea onChange={this.handleChange} value={message} name="message" className="form-control" rows="5" placeholder="Your message..."></textarea>
@@ -158,7 +159,7 @@ class Invest extends React.Component {
         );
     }
     renderErrors = () => {
-        const { success, fetchedErrors, showSuccessMessage } = this.state;
+        const { fetchedErrors } = this.state;
         if (fetchedErrors) {
             const fetchedErrorsRender = fetchedErrors.map(fe => {
                 let message = fe && fe.message ? fe.message : '';
@@ -171,8 +172,6 @@ class Invest extends React.Component {
                 return <div key={fe.message.slice(0, 5)} className="first-capitalize text-center mb-1 red">{message}</div>;
             });
             return fetchedErrorsRender;
-        } else if (success && showSuccessMessage) {
-            return <div className="first-capitalize text-center mb-1 green">Your email has been sent !</div>;
         } else {
             return;
         }
@@ -183,6 +182,7 @@ class Invest extends React.Component {
     }
     render() {
         const { classes } = this.props;
+        const {  showSuccessMessage } = this.state;
         return (
             <div className={classes.root + ' invest-component'}>
                 <div className="container py-5">
@@ -190,6 +190,13 @@ class Invest extends React.Component {
                         <div className="col-md-8">
                             <Typography className={classes.title + ' animated fadeInDown primary-gradient proxima-bold'} variant="h3" align="center">Invest</Typography>
                             <Typography variant="h6" className={classes.subtitle} align="center">Lorem ipsum dolor sit amet.</Typography>
+                            { showSuccessMessage &&
+                                <div className="first-capitalize text-center mb-4 green">
+                                    <span className="d-block"><FormattedMessage id="invest.success.text1" /></span>
+                                    <span className="d-block"><FormattedMessage id="invest.success.text2" /></span>
+                                    <span className="d-block"><FormattedMessage id="invest.success.text3" /></span>
+                                </div>
+                            }
                             <form onSubmit={this.handleSubmit}>
                                 {this.formContent()}
                                 {this.renderErrors()}
