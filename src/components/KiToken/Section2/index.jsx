@@ -140,7 +140,7 @@ class Section2 extends React.Component {
                         style={customStyles}
                         contentLabel="Example Modal"
                         >
-                            <Invest />
+                            <Invest onClose={this.closeModal}/>
                     </Modal>
                 </div>
             </React.Fragment>

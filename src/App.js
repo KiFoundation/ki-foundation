@@ -25,15 +25,15 @@ import './App.css';
 
 class App extends Component {
   componentDidMount() {
-    window.$crisp = [];
-    window.CRISP_WEBSITE_ID = "d979622d-33b1-430e-a58c-e6f42f1cdc07";
-    (function() {
-        var d = document;
-        var s = d.createElement("script");
-        s.src = "https://client.crisp.chat/l.js";
-        s.async = 1;
-        d.getElementsByTagName("head")[0].appendChild(s);
-    })();
+    // window.$crisp = [];
+    // window.CRISP_WEBSITE_ID = "d979622d-33b1-430e-a58c-e6f42f1cdc07";
+    // (function() {
+    //     var d = document;
+    //     var s = d.createElement("script");
+    //     s.src = "https://client.crisp.chat/l.js";
+    //     s.async = 1;
+    //     d.getElementsByTagName("head")[0].appendChild(s);
+    // })();
   }
   render() {
     const { onLanguageChange, locale } = this.props;

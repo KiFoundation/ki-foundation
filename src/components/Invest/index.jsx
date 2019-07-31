@@ -3,6 +3,8 @@ import React from 'react';
 
 // Material
 import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import MenuClose from '@material-ui/icons/Close';
 import { withStyles } from '@material-ui/core/styles';
 
 // Styles
@@ -185,6 +187,11 @@ class Invest extends React.Component {
         const {  showSuccessMessage } = this.state;
         return (
             <div className={classes.root + ' invest-component'}>
+                <div className="modal-close-btn">
+                    <IconButton aria-label="close" onClick={this.props.onClose}>
+                        <MenuClose />
+                    </IconButton>
+                </div>
                 <div className="container py-5">
                     <div className="row justify-content-center">
                         <div className="col-md-8">
