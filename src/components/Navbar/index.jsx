@@ -223,7 +223,7 @@ class Navbar extends React.Component {
                         style={customStyles}
                         contentLabel="Example Modal"
                         >
-                            <Invest />
+                            <Invest onClose={this.closeModal}/>
                       </Modal>
                       {/* <NavLink id="nav-link-contact" exact className={classes.link + ' mr-0'} to="/contact" activeClassName="active-link">Tester Domo</NavLink> */}
                       {/* <button className="btn btn-primary fs-11 ml-5 px-4" onClick={this.handleOpen} style={{fontWeight: 500, border: 0}}><FormattedMessage id="btn.open.contact.form"/></button> */}
