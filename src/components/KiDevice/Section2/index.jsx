@@ -70,6 +70,24 @@ class Section2 extends React.Component {
     handleOpen = () => {
         this.setState({modalIsOpen: true});
     }
+    transformNumber = (labelValue) => {
+
+        // Nine Zeroes for Billions
+        return Math.abs(Number(labelValue)) >= 1.0e+9
+    
+        ? Math.abs(Number(labelValue)) / 1.0e+9 + "B USD"
+        // Six Zeroes for Millions
+        : Math.abs(Number(labelValue)) >= 1.0e+6
+    
+        ? Math.abs(Number(labelValue)) / 1.0e+6 + "M USD"
+        // Three Zeroes for Thousands
+        : Math.abs(Number(labelValue)) >= 1.0e+3
+    
+        ? Math.abs(Number(labelValue)) / 1.0e+3 + "K USD"
+    
+        : Math.abs(Number(labelValue));
+    
+    }
     render() {
         const { classes } = this.props;
         return (
@@ -102,8 +120,22 @@ class Section2 extends React.Component {
                             <Tooltip />
                             <Legend verticalAlign={"top"} height={36} />
                             <XAxis dataKey="name"/>
-                            <YAxis yAxisId="left" />
-                            <YAxis yAxisId="right" orientation="right" />
+                            <YAxis
+                                width={100}
+                                tickFormatter={tick => {
+                                    return this.transformNumber(tick)
+                                }}
+                                tick={{ display: 'flex' }}
+                                yAxisId="left" 
+                            />
+                            <YAxis
+                                width={150}
+                                tickFormatter={tick => {
+                                    return tick + ' devices'
+                                }}
+                                yAxisId="right"
+                                orientation="right"
+                            />
                             <CartesianGrid stroke="#eee" strokeDasharray="5 5"/>
                             <Line yAxisId="right" name="Number of devices" type="monotone" dataKey="device" stroke="#82ca9d" />
                             <Line yAxisId="left" name="Global value flow" type="monotone" dataKey="pv" stroke="#8884d8" />
