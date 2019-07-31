@@ -20,12 +20,45 @@ class Header extends React.Component {
     onReady = (event) => {
         // event.target.pauseVideo();
     }
+    componentDidMount() {
+        // if (window && window.YT) {
+        //     new window.YT.Player('tokenVideo', {
+        //         videoId: 'HchUMyJSJkg',
+        //         events: {
+        //             'onReady': this.onPlayerReady()
+        //         },
+        //         playerVars: {
+        //             'autoplay': 1,
+        //             'controls': 0,
+        //             'disablekb': 1,
+        //             'fs': 0,
+        //             'loop': 1,
+        //             'modestbranding': 1,
+        //             'rel': 0,
+        //             'showinfo': 0,
+        //             'autohide': 1,
+        //         }
+        //     });
+        // }
+    }
+    onPlayerReady = () => {
+
+    }
     render() {
         const opts = {
             height: '450',
             width: '100%',
             playerVars: { // https://developers.google.com/youtube/player_parameters
-              autoplay: 1
+                autoplay: 1,
+                controls: 0,
+                disablekb: 1,
+                fs: 0,
+                loop: 1,
+                mute: 1,
+                modestbranding: 1,
+                rel: 0,
+                showinfo: 0,
+                autohide: 1
             }
         };
         const { classes } = this.props;
@@ -46,10 +79,12 @@ class Header extends React.Component {
                         </div>
                         <div className="col-md-12 text-center mb-5">
                             <YouTube
+                                videoId="KajXeq3fZEo"
                                 videoId="HchUMyJSJkg"
                                 opts={opts}
                                 onReady={this.onReady}
                             />
+                            {/* <div id="tokenVideo"></div> */}
                         </div>
                         <div className="col-md-12">
                             <MailchimpSubscribe
@@ -68,7 +103,7 @@ class Header extends React.Component {
                 </div>
             </div>
         );
-    } 
+    }
 }
 
 Header.propTypes = {

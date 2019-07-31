@@ -150,7 +150,7 @@ class Invest extends React.Component {
                 </div>
                 { meeting === 'Yes' ? 
                     <div className="form-group mb-4">
-                        <input onChange={this.handleChange} value={phone} name="phone" type="text" className="form-control" placeholder="Phone"/>
+                        <input onChange={this.handleChange} value={phone} name="phone" type="text" className="form-control" placeholder="Your mobile phone"/>
                     </div> :
                     null
                 }

@@ -75,7 +75,7 @@ class Section2 extends React.Component {
         return (
             <React.Fragment>
                 <div className="col-md-12 mt-4">
-                    <Typography align="left" variant="h3" gutterBottom className={classes.headerTitle + ' primary-gradient proxima-bold'}>
+                    <Typography align="left" variant="h3" gutterBottom className={classes.headerTitle + ' primary-gradient proxima-bold big-header-title'}>
                         <FormattedMessage id="domohospitality.title"/>
                     </Typography>
                     <Typography align="left" variant="h6" gutterBottom className={classes.headerTitleText}>

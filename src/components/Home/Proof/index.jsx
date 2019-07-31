@@ -64,11 +64,11 @@ class Proof extends React.Component {
                         <FormattedMessage id="proof.subtitle.text2"/>
                     </Typography>
                 </div>
-                <div className="col-md-12 text-center mt-4 pt-2 mb-5 pb-4">
-                    <a id="footer-link-whitepaper" className={classes.link + ' btn btn-primary btn-mwidth'} rel="noopener noreferrer" href="https://static.foundation.ki/documents/ki-whitepaper.pdf" target="_blank" download>
+                <div className="col-md-12 text-center mt-4 pt-2 mb-5">
+                    <a id="footer-link-whitepaper" className={classes.link + ' btn btn-primary btn-mwidth mb-4'} rel="noopener noreferrer" href="https://static.foundation.ki/documents/ki-whitepaper.pdf" target="_blank" download>
                         <FormattedMessage id="btn.open.whitepaper.form"/>
                     </a>
-                    <Link className="empt-link" to={locale && `/${locale}/kitoken`}><Button color="secondary" variant="outlined" className="fs-11 mx-2 btn-mwidth" onClick={() => {}}><FormattedMessage id="btn.open.kitoken.form"/></Button></Link>
+                    <Link className="empt-link" to={locale && `/${locale}/kitoken`}><Button color="secondary" variant="outlined" className="fs-11 mx-2 btn-mwidth mb-4" onClick={() => {}}><FormattedMessage id="btn.open.kitoken.form"/></Button></Link>
                 </div>
             </React.Fragment>
         );
