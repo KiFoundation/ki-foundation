@@ -16,6 +16,7 @@
     "register.error.text": "Try again",
     "register.success.text": "Thank you!",
     "register.text": "Register now",
+    "register.mobile.text": "Register",
     "register.first.text": "Be the first to know about Ki",
     "proof.title": "Proof of Reputation & Blockchain",
     "proof.subtitle.text": "The idea of PoR is to assign weighted voting rights to validators based on their reputation, that is, based on their commitment to the network and behavior.",

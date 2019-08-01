@@ -104,6 +104,7 @@ class Navbar extends React.Component {
     // }
     localStorage.setItem('locale', selectedOption.value);
     this.props.onLanguageChange(selectedOption.value);
+    this.closeNavbar();
     // this.props.setActiveLanguage(selectedOption.value);
   }
   toggleNavbar = () => {

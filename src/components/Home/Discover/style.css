@@ -17,6 +17,6 @@
         overflow: hidden;
     }
     .domo-device{
-        position: absolute;
+        position: initial;
     }
 }
