@@ -37,8 +37,8 @@ import './style.css';
 import styles from './materialStyle';
 
 const options = [
-  { value: 'en', label: <span id="navbar-link-english"><LazyImage src={england} height="10" alt="England"/></span> },
-  { value: 'fr', label: <span id="navbar-link-french"><LazyImage src={france} height="10" alt="France"/></span> },
+  { value: 'en', label: <span id="navbar-link-english"><img src={england} height="10" alt="England"/></span> },
+  { value: 'fr', label: <span id="navbar-link-french"><img src={france} height="10" alt="France"/></span> },
   // { value: 'ko', label: <span id="navbar-link-korean"><img src={korea} alt="Korean"/>Korean</span> },
   // { value: 'zh', label: <span id="navbar-link-chinese"><img src={china} alt="Chinese"/>Chinese</span> },
   // { value: 'ja', label: <span id="navbar-link-japanese"><img src={japan} alt="Japanese"/>Japanese</span> },
