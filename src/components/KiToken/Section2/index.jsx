@@ -66,24 +66,24 @@ class Section2 extends React.Component {
         let data1, data2;
         if (locale === 'fr') {
             data1 = [
-                { name: 'Commission écosystème', value: 300 },
-                { name: 'Part du fournisseur de service', value: 700 },
+                { name: 'Commission écosystème', value: 15 },
+                { name: 'Part du fournisseur de service', value: 85 },
             ];
             data2 = [
-                { name: 'Part du validateur', value: 400 },
-                { name: 'Part du fournisseur de service', value: 400 },
-                { name: 'Part du client', value: 200 },
+                { name: 'Part du validateur', value: 5 },
+                { name: 'Part du fournisseur de service', value: 5 },
+                { name: 'Part du client', value: 5 },
             ];
         } 
         if (locale === 'en') {
             data1 = [
-                { name: 'Ecosystem commission', value: 300 },
-                { name: 'Service provider share', value: 700 },
+                { name: 'Ecosystem commission', value: 15 },
+                { name: 'Service provider share', value: 85 },
             ];
             data2 = [
-                { name: 'Validators share', value: 400 },
-                { name: 'Service provider share', value: 400 },
-                { name: 'Customers share', value: 200 },
+                { name: 'Validators share', value: 5 },
+                { name: 'Service provider share', value: 5 },
+                { name: 'Customers share', value: 5 },
             ];
         }
         const colors1 = ['#043bea', '#9cc95b'];
@@ -101,18 +101,46 @@ class Section2 extends React.Component {
                         <FormattedMessage id="howtoken.subtitle.text2"/>
                     </Typography>
                 </div>
-                <div className="col-md-6 mb-4 pb-5">
-                    <ResponsiveContainer height={475} width="100%">
+                <div className="col-md-6 mb-4 pb-5 d-flex justify-content-center">
+                    <ResponsiveContainer width={280} height={280}>
                         <PieChart onMouseEnter={this.onPieEnter}>
                             <Legend verticalAlign={"bottom"} height={36} content={this.renderLegend} />
                             <Pie
                                 data={data1}
-                                innerRadius="90%"
-                                outerRadius="100%"
+                                startAngle={100}
+                                endAngle={460}
+                                innerRadius="85%"
+                                outerRadius="95%"
                                 fill="#8884d8"
                                 paddingAngle={5}
                                 dataKey="value"
-                                label
+                                label={({
+                                    cx,
+                                    cy,
+                                    midAngle,
+                                    innerRadius,
+                                    outerRadius,
+                                    value,
+                                    index
+                                }) => {
+                                    const RADIAN = Math.PI / 180;
+                                    // eslint-disable-next-line
+                                    const radius = innerRadius + 21 + (outerRadius - innerRadius);
+                                    const x = cx + radius * Math.cos(-midAngle * RADIAN);
+                                    // eslint-disable-next-line
+                                    const y = cy + radius * Math.sin(-midAngle * RADIAN);
+                                    return (
+                                        <text
+                                            x={x}
+                                            y={y}
+                                            fill={colors1[index % colors1.length]}
+                                            textAnchor={"end"}
+                                            dominantBaseline="text-bottom"
+                                        >
+                                            {value}%
+                                        </text>
+                                    );
+                                }}
                             >
                                 {
                                     data1.map((entry, index) => <Cell key={`cell-${index}`} fill={colors1[index % colors1.length]} />)
@@ -121,18 +149,48 @@ class Section2 extends React.Component {
                         </PieChart>
                     </ResponsiveContainer>
                 </div>
-                <div className="col-md-6 mb-4 pb-5">
-                    <ResponsiveContainer height={475} width="100%">
-                        <PieChart onMouseEnter={this.onPieEnter}>
+                <div className="col-md-6 mb-4 pb-5 d-flex justify-content-center">
+                    <ResponsiveContainer width={280} height={280}>
+                        <PieChart onMouseEnter={this.onPieEnter} >
                             <Legend verticalAlign={"bottom"} height={36} content={this.renderLegend} />
                             <Pie
                                 data={data2}
-                                innerRadius="90%"
-                                outerRadius="100%"
+                                startAngle={100}
+                                endAngle={460}
+                                cx="50%"
+                                cy="50%"
+                                innerRadius="85%"
+                                outerRadius="95%"
                                 fill="#8884d8"
                                 paddingAngle={5}
                                 dataKey="value"
-                                label
+                                label={({
+                                    cx,
+                                    cy,
+                                    midAngle,
+                                    innerRadius,
+                                    outerRadius,
+                                    value,
+                                    index
+                                }) => {
+                                    const RADIAN = Math.PI / 180;
+                                    // eslint-disable-next-line
+                                    const radius = innerRadius + 21 + (outerRadius - innerRadius);
+                                    const x = cx + radius * Math.cos(-midAngle * RADIAN);
+                                    // eslint-disable-next-line
+                                    const y = cy + radius * Math.sin(-midAngle * RADIAN);
+                                    return (
+                                        <text
+                                            x={x}
+                                            y={y}
+                                            fill={colors2[index % colors2.length]}
+                                            textAnchor={"end"}
+                                            dominantBaseline="central"
+                                        >
+                                            {value}%
+                                        </text>
+                                    );
+                                }}
                             >
                                 {
                                     data2.map((entry, index) => <Cell key={`cell-${index}`} fill={colors2[index % colors2.length]} />)
