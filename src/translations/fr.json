@@ -104,5 +104,7 @@
     "cryptoenthusiast.title": "Crypto enthousiaste",
     "other.title": "Autre",
     "select.title": "Sélectionnez...",
-    "send.email.text": "Envoyer un email"
+    "send.email.text": "Envoyer un email",
+    "select.job.input": "Sélectionnez la section qui vous correspond le mieux :",
+    "email.sent.success": "Votre email a été envoyé avec succès !"
 }
