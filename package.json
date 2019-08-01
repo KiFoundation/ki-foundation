@@ -8,12 +8,18 @@
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-helmet": "^5.2.1",
+    "react-intl": "^2.9.0",
     "react-lazy-load": "^3.0.13",
     "react-mailchimp-subscribe": "^2.1.0",
     "react-modal": "^3.8.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.3",
-    "react-slick": "^0.23.2"
+    "react-select": "^3.0.4",
+    "react-slick": "^0.23.2",
+    "react-youtube": "^7.9.0",
+    "recharts": "^1.6.2",
+    "vanilla-lazyload": "^12.0.0"
   },
   "scripts": {
     "start": "PORT=3006 react-scripts start",

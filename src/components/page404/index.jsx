@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 // import logoSvg from '../../assets/images/logo-white.svg';
-import KiFoundation from '../../assets/ki_foundation/logo_foundation.png';
+import KiFoundation from '../../assets/ki_foundation/ki_foundation.png';
 
 import './style.css';
 

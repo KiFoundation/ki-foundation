@@ -12,27 +12,15 @@
 
 .header-component {
     margin-top: 7rem;
+    margin-bottom: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    /* height: 100vh; */
 }
 
-@media (max-width: 768px) {
-    .header-component {
-        height: auto;
-        display: initial;
-    }
-    .header-container{
-        margin-top: 7rem;
-    }
-}
-
-@media (max-height: 790px) {
-    .header-component {
-        height: auto;
-        display: initial;
-    }
-    .header-container{
-        margin-top: 7rem;
+@media (max-width: 576px) {
+    h1.big-header-title, h3.big-header-title{
+        font-size: 2.5rem;
     }
 }

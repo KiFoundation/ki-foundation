@@ -1,0 +1,8 @@
+#tokenVideo{ 
+    pointer-events: none;
+    cursor: default; 
+}
+
+.youtube-container iframe{
+    max-width: 640px;
+}
