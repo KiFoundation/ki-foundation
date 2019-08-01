@@ -33,13 +33,13 @@ class CustomMailChimpInvest extends React.Component {
         let renderedBtnMessage, renderedApiMessage;
         let checkStatus = customStatus && customStatus === 'error' ? customStatus : status; 
         if (customStatus === 'error') {
-            renderedBtnMessage = 'Try Again.';
+            renderedBtnMessage = <FormattedMessage id="register.error.text"/>;
             renderedApiMessage = <div className="d-block pt-3 text-center error-color"><FormattedMessage id="email.register.invalid"/></div>;
         } else if (status === 'error') {
-            renderedBtnMessage = 'Try Again.';
+            renderedBtnMessage = <FormattedMessage id="register.error.text"/>;
             renderedApiMessage = <div className="d-block pt-3 text-center error-color"><FormattedMessage id="email.register.error"/></div>;
         } else if (status === 'success') {
-            renderedBtnMessage = 'Thank you !'
+            renderedBtnMessage = <FormattedMessage id="register.success.text"/>;
             renderedApiMessage = <div className="d-block pt-3 text-center success-color"><FormattedMessage id="email.register.success"/></div>;
         } else if (status === 'sending') {
             renderedBtnMessage = <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>;
@@ -58,7 +58,11 @@ class CustomMailChimpInvest extends React.Component {
                     </Typography>
                 </div>
                 <div className="cmci-input-container px-0 d-flex">
-                    <input className={`status-${checkStatus} custom-mailchimp-input mobile-width`} onChange={this.onValueChange} value={email} type="email" placeholder="Your email"/>
+                    <FormattedMessage id="input.email.placeholder">
+                        {placeholder=>  
+                        <input className={`status-${checkStatus} custom-mailchimp-input mobile-width`} onChange={this.onValueChange} value={email} type="email" placeholder={placeholder}/>
+                        }
+                    </FormattedMessage>
                     <br />
                     <button id="header-join-btn" className={`btn-status-${checkStatus} mobile-btn-width proxima-light custom-mailchimp-btn`} onClick={() => this.submit()}>
                         {renderedBtnMessage}

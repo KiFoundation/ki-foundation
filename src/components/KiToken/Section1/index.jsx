@@ -98,7 +98,7 @@ class Section1 extends React.Component {
                         style={customStyles}
                         contentLabel="Example Modal"
                         >
-                            <Invest onClose={this.closeModal}/>
+                            <Invest locale={locale} onClose={this.closeModal}/>
                     </Modal>
                 </div>
             </React.Fragment>

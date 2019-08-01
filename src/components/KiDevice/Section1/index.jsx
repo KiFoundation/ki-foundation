@@ -79,7 +79,7 @@ class Section1 extends React.Component {
         return renderIcons;
     }
     render() {
-        const { classes } = this.props;
+        const { classes, locale } = this.props;
         return (
             <React.Fragment>
                 <div className="col-md-12 mt-5">
@@ -102,7 +102,7 @@ class Section1 extends React.Component {
                         style={customStyles}
                         contentLabel="Example Modal"
                         >
-                            <Invest onClose={this.closeModal}/>
+                            <Invest locale={locale} onClose={this.closeModal}/>
                     </Modal>
                 </div>
             </React.Fragment>

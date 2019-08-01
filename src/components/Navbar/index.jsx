@@ -104,6 +104,7 @@ class Navbar extends React.Component {
     // }
     localStorage.setItem('locale', selectedOption.value);
     this.props.onLanguageChange(selectedOption.value);
+    this.closeNavbar();
     // this.props.setActiveLanguage(selectedOption.value);
   }
   toggleNavbar = () => {
@@ -223,7 +224,7 @@ class Navbar extends React.Component {
                         style={customStyles}
                         contentLabel="Example Modal"
                         >
-                            <Invest onClose={this.closeModal}/>
+                            <Invest locale={locale} onClose={this.closeModal}/>
                       </Modal>
                       {/* <NavLink id="nav-link-contact" exact className={classes.link + ' mr-0'} to="/contact" activeClassName="active-link">Tester Domo</NavLink> */}
                       {/* <button className="btn btn-primary fs-11 ml-5 px-4" onClick={this.handleOpen} style={{fontWeight: 500, border: 0}}><FormattedMessage id="btn.open.contact.form"/></button> */}

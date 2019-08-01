@@ -31,26 +31,6 @@ const customStyles = {
     }
 };
 
-const data = [
-    {
-        name: 'Year 1', device: 3644, pv: 12243840, amt: 612192
-    },
-    {
-        name: 'Year 2', device: 33299, pv: 156638496, amt: 7831924
-    },
-    {
-        name: 'Year 3', device: 162330, pv: 1069040448, amt: 53452022
-    },
-    {
-        name: 'Year 4', device: 524530, pv: 4836082608, amt: 241804130
-    },
-    {
-        name: 'Year 5', device: 1126581, pv: 14541655296, amt: 727082764
-    },
-    {
-        name: 'Year 6', device: 2253162, pv: 36354137904, amt: 1817706895
-    }
-];
 // const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
 class Section2 extends React.Component {
@@ -98,7 +78,58 @@ class Section2 extends React.Component {
     
     }
     render() {
-        const { classes } = this.props;
+        const { classes, locale } = this.props;
+        let data, legend1, legend2, legend3;
+        if (locale === 'fr') {
+            legend1 = "Nombre de devices";
+            legend2 = "Flux de valeur globale";
+            legend3 = "Valeur pour validateurs";
+            data = [
+                {
+                    name: 'Année 1', device: 3644, pv: 12243840, amt: 612192
+                },
+                {
+                    name: 'Année 2', device: 33299, pv: 156638496, amt: 7831924
+                },
+                {
+                    name: 'Année 3', device: 162330, pv: 1069040448, amt: 53452022
+                },
+                {
+                    name: 'Année 4', device: 524530, pv: 4836082608, amt: 241804130
+                },
+                {
+                    name: 'Année 5', device: 1126581, pv: 14541655296, amt: 727082764
+                },
+                {
+                    name: 'Année 6', device: 2253162, pv: 36354137904, amt: 1817706895
+                }
+            ];
+        }
+        if (locale === 'en') {
+            legend1 = "Number of devices";
+            legend2 = "Global value flow";
+            legend3 = "Value for validators";
+            data = [
+                {
+                    name: 'Year 1', device: 3644, pv: 12243840, amt: 612192
+                },
+                {
+                    name: 'Year 2', device: 33299, pv: 156638496, amt: 7831924
+                },
+                {
+                    name: 'Year 3', device: 162330, pv: 1069040448, amt: 53452022
+                },
+                {
+                    name: 'Year 4', device: 524530, pv: 4836082608, amt: 241804130
+                },
+                {
+                    name: 'Year 5', device: 1126581, pv: 14541655296, amt: 727082764
+                },
+                {
+                    name: 'Year 6', device: 2253162, pv: 36354137904, amt: 1817706895
+                }
+            ];
+        }
         return (
             <React.Fragment>
                 <div className="col-md-12 mt-4">
@@ -147,9 +178,9 @@ class Section2 extends React.Component {
                                 orientation="right"
                             />
                             <CartesianGrid stroke="#eee" strokeDasharray="5 5"/>
-                            <Line yAxisId="right" name="Number of devices" type="monotone" dataKey="device" stroke="#82ca9d" />
-                            <Line yAxisId="left" name="Global value flow" type="monotone" dataKey="pv" stroke="#8884d8" />
-                            <Line yAxisId="left" name="Value for validators" type="monotone" dataKey="amt" stroke="#043bea" />
+                            <Line yAxisId="right" name={legend1} type="monotone" dataKey="device" stroke="#82ca9d" />
+                            <Line yAxisId="left" name={legend2} type="monotone" dataKey="pv" stroke="#8884d8" />
+                            <Line yAxisId="left" name={legend3} type="monotone" dataKey="amt" stroke="#043bea" />
                         </LineChart>
                     </ResponsiveContainer>
                 </div>
@@ -163,7 +194,7 @@ class Section2 extends React.Component {
                         style={customStyles}
                         contentLabel="Example Modal"
                         >
-                            <Invest onClose={this.closeModal}/>
+                            <Invest locale={locale} onClose={this.closeModal}/>
                     </Modal>
                 </div>
             </React.Fragment>

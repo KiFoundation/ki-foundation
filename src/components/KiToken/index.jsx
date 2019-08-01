@@ -22,7 +22,7 @@ class KiToken extends React.Component {
         <div className="row">
           <Header />
           <Section1 locale={locale} />
-          <Section2 />
+          <Section2 locale={locale} />
           <div className="container mb-5">
             <div className="row">
               <div className="col-md-12 mb-4">

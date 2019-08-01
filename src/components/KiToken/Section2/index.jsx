@@ -30,18 +30,6 @@ const customStyles = {
     }
 };
 
-const data1 = [
-    { name: 'Ecosystem commission', value: 300 },
-    { name: 'Service provider share', value: 700 },
-];
-const data2 = [
-    { name: 'Validators share', value: 400 },
-    { name: 'Service provider share', value: 400 },
-    { name: 'Customers share', value: 200 },
-];
-const colors1 = ['#043bea', '#9cc95b'];
-const colors2 = ['#f2da7e', '#ec5765', '#bf93f3'];
-
 class Section2 extends React.Component {
     constructor(props) {
         super(props);
@@ -74,7 +62,32 @@ class Section2 extends React.Component {
         );
     }
     render() {
-        const { classes } = this.props;
+        const { classes, locale } = this.props;
+        let data1, data2;
+        if (locale === 'fr') {
+            data1 = [
+                { name: 'Commission écosystème', value: 300 },
+                { name: 'Part du fournisseur de service', value: 700 },
+            ];
+            data2 = [
+                { name: 'Part du validateur', value: 400 },
+                { name: 'Part du fournisseur de service', value: 400 },
+                { name: 'Part du client', value: 200 },
+            ];
+        } 
+        if (locale === 'en') {
+            data1 = [
+                { name: 'Ecosystem commission', value: 300 },
+                { name: 'Service provider share', value: 700 },
+            ];
+            data2 = [
+                { name: 'Validators share', value: 400 },
+                { name: 'Service provider share', value: 400 },
+                { name: 'Customers share', value: 200 },
+            ];
+        }
+        const colors1 = ['#043bea', '#9cc95b'];
+        const colors2 = ['#f2da7e', '#ec5765', '#bf93f3'];
         return (
             <React.Fragment>
                 <div className="col-md-12 mt-5 mb-4 pb-1">
@@ -140,7 +153,7 @@ class Section2 extends React.Component {
                         style={customStyles}
                         contentLabel="Example Modal"
                         >
-                            <Invest onClose={this.closeModal}/>
+                            <Invest locale={locale} onClose={this.closeModal}/>
                     </Modal>
                 </div>
             </React.Fragment>
