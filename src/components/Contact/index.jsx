@@ -128,21 +128,21 @@ class Contact extends React.Component {
                     <div className="form-group mb-4">
                         <FormattedMessage id="input.email.placeholder">
                             {placeholder=>  
-                                <input onChange={this.handleChange} value={email} name="email" type="email" className="form-control" placeholder={placeholder}/>
+                                <input onChange={this.handleChange} value={email} name="email" type="email" className="form-control" placeholder={placeholder} required/>
                             }
                         </FormattedMessage>
                     </div>
                     <div className="form-group mb-4">
                         <FormattedMessage id="input.fullname.placeholder">
                             {placeholder=>  
-                                <input onChange={this.handleChange} value={fullname} name="fullname" type="text" className="form-control" placeholder={placeholder}/>
+                                <input onChange={this.handleChange} value={fullname} name="fullname" type="text" className="form-control" placeholder={placeholder} required/>
                             }
                         </FormattedMessage>
                     </div>
                     <div className="form-group">
                         <FormattedMessage id="input.message.placeholder">
                             {placeholder=>  
-                                <textarea onChange={this.handleChange} value={message} name="message" className="form-control" rows="5" placeholder={placeholder}></textarea>
+                                <textarea onChange={this.handleChange} value={message} name="message" className="form-control" rows="5" placeholder={placeholder} required></textarea>
                             }
                         </FormattedMessage>
                     </div>
@@ -165,7 +165,7 @@ class Contact extends React.Component {
             });
             return fetchedErrorsRender;
         } else if (success && showSuccessMessage) {
-            return <div className="first-capitalize text-center mb-1 green">Your email has been sent !</div>;
+            return <div className="first-capitalize text-center mb-1 green"><FormattedMessage id="email.sent.success" /></div>;
         } else {
             return;
         }
@@ -198,7 +198,9 @@ class Contact extends React.Component {
                             <Typography align="center" variant="h3" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient proxima-bold'}>
                                 <FormattedMessage id="contact.us.title"/>
                             </Typography>
-                            <Typography variant="h6" className={classes.subtitle} align="center">Choose the section that describes you the best:</Typography>
+                            <Typography variant="h6" className={classes.subtitle} align="center">
+                                <FormattedMessage id="select.job.input" />
+                            </Typography>
                             <form onSubmit={this.handleSubmit}>
                                 <div className="form-group mb-4">
                                     <Select
