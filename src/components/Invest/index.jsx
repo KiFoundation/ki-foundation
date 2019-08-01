@@ -22,7 +22,7 @@ class Invest extends React.Component {
             firstname: '',
             lastname: '',
             invest: '',
-            meeting: 'No',
+            meeting: props && props.locale && props.locale === 'fr' ? 'Non' : 'No',
             phone: '',
             message: '',
             fetchedErrors: null,
