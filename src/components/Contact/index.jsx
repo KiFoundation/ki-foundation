@@ -126,13 +126,25 @@ class Contact extends React.Component {
             return (
                 <div>
                     <div className="form-group mb-4">
-                        <input onChange={this.handleChange} value={email} name="email" type="email" className="form-control" placeholder="Enter email"/>
+                        <FormattedMessage id="input.email.placeholder">
+                            {placeholder=>  
+                                <input onChange={this.handleChange} value={email} name="email" type="email" className="form-control" placeholder={placeholder}/>
+                            }
+                        </FormattedMessage>
                     </div>
                     <div className="form-group mb-4">
-                        <input onChange={this.handleChange} value={fullname} name="fullname" type="text" className="form-control" placeholder="Full name"/>
+                        <FormattedMessage id="input.fullname.placeholder">
+                            {placeholder=>  
+                                <input onChange={this.handleChange} value={fullname} name="fullname" type="text" className="form-control" placeholder={placeholder}/>
+                            }
+                        </FormattedMessage>
                     </div>
                     <div className="form-group">
-                        <textarea onChange={this.handleChange} value={message} name="message" className="form-control" rows="5" placeholder="Your message..."></textarea>
+                        <FormattedMessage id="input.message.placeholder">
+                            {placeholder=>  
+                                <textarea onChange={this.handleChange} value={message} name="message" className="form-control" rows="5" placeholder={placeholder}></textarea>
+                            }
+                        </FormattedMessage>
                     </div>
                 </div>
             );
@@ -164,7 +176,15 @@ class Contact extends React.Component {
         if ( job === 'cryptoenthusiast') {
             return <div className="text-center mb-4"><a id="contact-link-telegram" rel="noopener noreferrer" className={classes.mailTo} target="_blank" href="https://t.me/KiFoundation"><Button className={classes.button}><img src={TelegramLogo} alt="telegram logo" height="20" className="mr-1 contact-telegram-icon"/>Join our Telegram</Button></a></div>;
         } else {
-            return <div className="text-center pt-2 mb-4"><input value="Send an email" type="submit" className={classes.button} /></div>;
+            return (
+                <div className="text-center pt-2 mb-4">
+                      <FormattedMessage id="send.email.text">
+                        {placeholder=>  
+                            <input value={placeholder} type="submit" className={classes.button} />
+                        }
+                    </FormattedMessage>
+                </div>
+            );
         }
     }
     render() {
@@ -187,11 +207,11 @@ class Contact extends React.Component {
                                         onChange={this.handleChange}
                                         input={<BootstrapInput name="age" id="age-customized-select" />}
                                     >
-                                        <MenuItem style={{ root: {color: 'red'} }} value="empty">Select...</MenuItem>
-                                        <MenuItem value="investor">Investor</MenuItem>
-                                        <MenuItem value="business_partner">Business partner</MenuItem>
-                                        <MenuItem value="cryptoenthusiast">Crypto enthusiast</MenuItem>
-                                        <MenuItem value="other">Other</MenuItem>
+                                        <MenuItem style={{ root: {color: 'red'} }} value="empty"><FormattedMessage id="select.title" /></MenuItem>
+                                        <MenuItem value="investor"><FormattedMessage id="investor.title" /></MenuItem>
+                                        <MenuItem value="business_partner"><FormattedMessage id="businesspartner.title" /></MenuItem>
+                                        <MenuItem value="cryptoenthusiast"><FormattedMessage id="cryptoenthusiast.title" /></MenuItem>
+                                        <MenuItem value="other"><FormattedMessage id="other.title" /></MenuItem>
                                     </Select>
                                 </div>
                                 {this.formContent()}

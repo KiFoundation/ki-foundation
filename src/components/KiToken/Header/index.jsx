@@ -36,7 +36,7 @@ class Header extends React.Component {
                                 <FormattedMessage id="kitoken.header.subtitle.text"/>
                             </Typography>
                         </div>
-                        <div className="col-md-12 text-center mb-5">
+                        <div className="col-md-12 text-center mb-2">
                             <img src={TokenImage} alt="Token logo"/>
                         </div>
                         <div className="col-md-12">
