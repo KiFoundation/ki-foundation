@@ -14,4 +14,15 @@
 
 .chart-legend li{
     margin-top: 5px;
+    
+}
+
+@media (max-width: 1024px) {
+    .chart-legend {
+        flex-direction: column;
+        padding-top: 1em!important;
+    }
+    .chart-container:last-child {
+        margin-top: 30px;
+    }
 }
