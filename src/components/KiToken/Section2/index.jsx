@@ -36,7 +36,7 @@ class Section2 extends React.Component {
         this.state = {
             open: false,
             modalIsOpen: false
-        }        
+        }
     }
     openModal = () => {
         this.setState({modalIsOpen: true});
@@ -88,6 +88,8 @@ class Section2 extends React.Component {
         }
         const colors1 = ['#043bea', '#9cc95b'];
         const colors2 = ['#f2da7e', '#ec5765', '#bf93f3'];
+        const RADIAN = Math.PI / 180;
+    
         return (
             <React.Fragment>
                 <div className="col-md-12 mt-5 mb-4 pb-1">
@@ -101,19 +103,18 @@ class Section2 extends React.Component {
                         <FormattedMessage id="howtoken.subtitle.text2"/>
                     </Typography>
                 </div>
-                <div className="col-md-6 mb-4 pb-5 d-flex justify-content-center">
-                    <ResponsiveContainer width={280} height={280}>
+                <div className="col-md-6 mb-4 pb-5 d-flex justify-content-center w-100 chart-container" style={{height: 300}}>
+                    <ResponsiveContainer>
                         <PieChart onMouseEnter={this.onPieEnter}>
                             <Legend verticalAlign={"bottom"} height={36} content={this.renderLegend} />
                             <Pie
                                 data={data1}
-                                startAngle={100}
-                                endAngle={460}
-                                innerRadius="85%"
-                                outerRadius="95%"
+                                innerRadius={90}
+                                outerRadius={100}
                                 fill="#8884d8"
                                 paddingAngle={5}
                                 dataKey="value"
+                                labelLine={false}
                                 label={({
                                     cx,
                                     cy,
@@ -123,19 +124,16 @@ class Section2 extends React.Component {
                                     value,
                                     index
                                 }) => {
-                                    const RADIAN = Math.PI / 180;
-                                    // eslint-disable-next-line
-                                    const radius = innerRadius + 21 + (outerRadius - innerRadius);
+                                    const radius = innerRadius + (outerRadius - innerRadius) * 1.5;
                                     const x = cx + radius * Math.cos(-midAngle * RADIAN);
-                                    // eslint-disable-next-line
                                     const y = cy + radius * Math.sin(-midAngle * RADIAN);
                                     return (
                                         <text
                                             x={x}
                                             y={y}
                                             fill={colors1[index % colors1.length]}
-                                            textAnchor={"end"}
-                                            dominantBaseline="text-bottom"
+                                            textAnchor={x > cx ? 'start' : 'end'}
+                                            dominantBaseline="central"
                                         >
                                             {value}%
                                         </text>
@@ -149,21 +147,18 @@ class Section2 extends React.Component {
                         </PieChart>
                     </ResponsiveContainer>
                 </div>
-                <div className="col-md-6 mb-4 pb-5 d-flex justify-content-center">
-                    <ResponsiveContainer width={280} height={280}>
+                <div className="col-md-6 mb-4 pb-5 d-flex justify-content-center w-100 chart-container" style={{height: 300}}>
+                    <ResponsiveContainer>
                         <PieChart onMouseEnter={this.onPieEnter} >
-                            <Legend verticalAlign={"bottom"} height={36} content={this.renderLegend} />
+                            <Legend verticalAlign="bottom" height={36} content={this.renderLegend} />
                             <Pie
                                 data={data2}
-                                startAngle={100}
-                                endAngle={460}
-                                cx="50%"
-                                cy="50%"
-                                innerRadius="85%"
-                                outerRadius="95%"
+                                innerRadius={90}
+                                outerRadius={100}
                                 fill="#8884d8"
                                 paddingAngle={5}
                                 dataKey="value"
+                                labelLine={false}
                                 label={({
                                     cx,
                                     cy,
@@ -173,18 +168,15 @@ class Section2 extends React.Component {
                                     value,
                                     index
                                 }) => {
-                                    const RADIAN = Math.PI / 180;
-                                    // eslint-disable-next-line
-                                    const radius = innerRadius + 21 + (outerRadius - innerRadius);
+                                    const radius = innerRadius + (outerRadius - innerRadius) * 1.5;
                                     const x = cx + radius * Math.cos(-midAngle * RADIAN);
-                                    // eslint-disable-next-line
                                     const y = cy + radius * Math.sin(-midAngle * RADIAN);
                                     return (
                                         <text
                                             x={x}
                                             y={y}
                                             fill={colors2[index % colors2.length]}
-                                            textAnchor={"end"}
+                                            textAnchor={x > cx ? 'start' : 'end'}
                                             dominantBaseline="central"
                                         >
                                             {value}%
