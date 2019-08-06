@@ -186,7 +186,7 @@ class Section2 extends React.Component {
                     </ResponsiveContainer>
                 </div>
                 <div className="col-md-12 text-center my-5 pt-2">
-                    <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 mb-3" onClick={this.handleOpen}><FormattedMessage id="btn.open.invest.form"/></Button>
+                    <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 mb-3 first-capitalize" onClick={this.handleOpen}><FormattedMessage id="btn.open.invest.form"/></Button>
                     <Modal
                         isOpen={this.state.modalIsOpen}
                         overlayClassName="diagramOverlay"
