@@ -215,7 +215,7 @@ class Navbar extends React.Component {
                       <Link id="nav-link-device" className="link" to={`/${locale}/device`}><FormattedMessage id="navbar.device"/></Link>
                       <Link id="nav-link-team" className="link" to={`/${locale}/team`}><FormattedMessage id="navbar.team"/></Link>
                       <Link id="nav-link-contact" className="link" to={`/${locale}/contact`}><FormattedMessage id="navbar.contact"/></Link>
-                      <Button color="primary" variant="contained" className="fs-11 mx-2 px-4" onClick={this.openModal}><FormattedMessage id="btn.open.contact.form"/></Button>
+                      <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 first-capitalize" onClick={this.openModal}><FormattedMessage id="btn.open.contact.form"/></Button>
                       <Modal
                         isOpen={this.state.modalIsOpen}
                         overlayClassName="diagramOverlay"

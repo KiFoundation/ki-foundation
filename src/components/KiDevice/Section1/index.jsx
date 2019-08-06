@@ -92,7 +92,7 @@ class Section1 extends React.Component {
                 </div>
                 {this.renderIconsSection()}
                 <div className="col-md-12 text-center mt-5 mb-5">
-                    <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 mb-3" onClick={this.handleOpen}><FormattedMessage id="btn.open.invest.form"/></Button>
+                    <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 mb-3 first-capitalize" onClick={this.handleOpen}><FormattedMessage id="btn.open.invest.form"/></Button>
                     <Button variant="outlined" className="fs-11 mx-2 px-4 mb-3 btn-tertiary outlined" onClick={() => this.scrollToMarket()}><FormattedMessage id="btn.open.marketplace"/></Button>
                     <Modal
                         isOpen={this.state.modalIsOpen}

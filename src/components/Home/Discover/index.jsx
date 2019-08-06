@@ -96,7 +96,7 @@ class Discover extends React.Component {
                 </div>
                 {this.renderIconsSection()}
                 <div className="col-md-12 text-center my-5">
-                    <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 btn-mwidth mb-4" onClick={this.handleOpen}><FormattedMessage id="btn.open.contact.form"/></Button>
+                    <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 btn-mwidth mb-4 first-capitalize" onClick={this.handleOpen}><FormattedMessage id="btn.open.contact.form"/></Button>
                     <Link className="empt-link" to={locale && `/${locale}/device`}><Button color="primary" variant="outlined" className="fs-11 mx-2 px-4 btn-mwidth mb-4" onClick={() => {}}><FormattedMessage id="btn.open.kidevice.form"/></Button></Link>
                     <Modal
                         isOpen={this.state.modalIsOpen}
