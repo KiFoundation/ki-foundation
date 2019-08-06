@@ -64,15 +64,15 @@ class Section2 extends React.Component {
         // Nine Zeroes for Billions
         return Math.abs(Number(labelValue)) >= 1.0e+9
     
-        ? Math.abs(Number(labelValue)) / 1.0e+9 + "B USD"
+        ? Math.abs(Number(labelValue)) / 1.0e+9 + "B"
         // Six Zeroes for Millions
         : Math.abs(Number(labelValue)) >= 1.0e+6
     
-        ? Math.abs(Number(labelValue)) / 1.0e+6 + "M USD"
+        ? Math.abs(Number(labelValue)) / 1.0e+6 + "M"
         // Three Zeroes for Thousands
         : Math.abs(Number(labelValue)) >= 1.0e+3
     
-        ? Math.abs(Number(labelValue)) / 1.0e+3 + "K USD"
+        ? Math.abs(Number(labelValue)) / 1.0e+3 + "K"
     
         : Math.abs(Number(labelValue));
     
@@ -164,16 +164,17 @@ class Section2 extends React.Component {
                             <YAxis
                                 width={100}
                                 tickFormatter={tick => {
-                                    return this.transformNumber(tick)
+                                    return this.transformNumber(tick) + ' USD'
                                 }}
                                 tick={{ display: 'flex' }}
                                 yAxisId="left" 
                             />
                             <YAxis
-                                width={150}
+                                width={110}
                                 tickFormatter={tick => {
-                                    return tick + ' devices'
+                                    return this.transformNumber(tick) + ' devices'
                                 }}
+                                tick={{ display: 'flex' }}
                                 yAxisId="right"
                                 orientation="right"
                             />
@@ -185,7 +186,7 @@ class Section2 extends React.Component {
                     </ResponsiveContainer>
                 </div>
                 <div className="col-md-12 text-center my-5 pt-2">
-                    <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 mb-3" onClick={this.handleOpen}><FormattedMessage id="btn.open.invest.form"/></Button>
+                    <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 mb-3 first-capitalize" onClick={this.handleOpen}><FormattedMessage id="btn.open.invest.form"/></Button>
                     <Modal
                         isOpen={this.state.modalIsOpen}
                         overlayClassName="diagramOverlay"

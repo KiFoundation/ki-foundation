@@ -225,3 +225,11 @@ button.btn-tertiary:hover{
 .proxima-light{
   font-family: 'ProximaLight' !important;
 }
+
+button.first-capitalize span{
+  text-transform: lowercase;
+}
+
+button.first-capitalize span::first-letter{
+  text-transform: uppercase;
+}
