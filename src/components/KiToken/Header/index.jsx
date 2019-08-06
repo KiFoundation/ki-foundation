@@ -1,7 +1,6 @@
 // Services
 import React from 'react';
 import PropTypes from 'prop-types';
-import MailchimpSubscribe from "react-mailchimp-subscribe";
 import { FormattedMessage } from 'react-intl';
 
 // Material
@@ -21,7 +20,6 @@ import styles from "./materialStyle";
 class Header extends React.Component {
     render() {
         const { classes } = this.props;
-        const mailChimpUrl = "https://gen.us17.list-manage.com/subscribe/post?u=3865106d3d479f1d2e1ec8400&amp;id=86a02d162a";
         return (
             <div className="header-component" id="header-component">
                 <div className="container header-container">
@@ -40,27 +38,17 @@ class Header extends React.Component {
                             <img src={TokenImage} className="token-image" alt="Token logo"/>
                         </div>
                         <div className="col-md-12">
-                            <MailchimpSubscribe
-                                url={mailChimpUrl}
-                                render={({ subscribe, status, message }) => (
-                                    <CustomMailChimpInvest
-                                    containerClassName="mt-5"
-                                    status={status}
-                                    message={message}
-                                    onValidated={formData => subscribe(formData)}
-                                    />
-                                )}
-                            />
+                            <CustomMailChimpInvest containerClassName="mt-5" />
                         </div>
                     </div>
                 </div>
             </div>
         );
-    } 
+    }
 }
 
 Header.propTypes = {
     classes: PropTypes.object.isRequired,
-};  
+};
 
 export default withStyles(styles)(Header);
