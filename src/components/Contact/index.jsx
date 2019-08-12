@@ -208,7 +208,7 @@ class Contact extends React.Component {
                 </div>
                 <div className="container mt-4 pt-3">
                     <div className="row justify-content-center">
-                        <div className="col-md-6">
+                        <div className="col-md-8">
                             <Typography align="center" variant="h3" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient proxima-bold'}>
                                 <FormattedMessage id="contact.us.title"/>
                             </Typography>
