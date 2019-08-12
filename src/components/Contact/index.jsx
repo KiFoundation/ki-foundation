@@ -57,6 +57,10 @@ const BootstrapInput = withStyles(theme => ({
 }))(InputBase);
 
 class Contact extends React.Component {
+    static defaultProps = {
+      size: 8,
+      className: "mb-4 py-4"
+    }
     constructor(props) {
         super(props);
         this.state = {
@@ -68,6 +72,14 @@ class Contact extends React.Component {
             success: false,
             showSuccessMessage: false
         };
+    }
+    componentDidMount() {
+        const body = document.getElementsByTagName('body')[0];
+        body.style.overflow = 'hidden';
+    }
+    componentWillUnmount() {
+        const body = document.getElementsByTagName('body')[0];
+        body.style.overflow = 'visible';
     }
     handleChange = (event) => {
         this.setState({[event.target.name]: event.target.value});
@@ -197,10 +209,10 @@ class Contact extends React.Component {
         }
     }
     render() {
-        const { classes } = this.props;
+        const { classes, className, size } = this.props;
         const { job } = this.state;
         return (
-            <div className={classes.root + ' contact-component mb-4 py-4'}>
+            <div className={classes.root + ` contact-component ${className}`}>
                 <div className="modal-close-btn">
                     <IconButton aria-label="close" onClick={this.props.onClose}>
                         <MenuClose />
@@ -208,8 +220,8 @@ class Contact extends React.Component {
                 </div>
                 <div className="container mt-4 pt-3">
                     <div className="row justify-content-center">
-                        <div className="col-md-8">
-                            <Typography align="center" variant="h3" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient proxima-bold'}>
+                        <div className={`col-md-${size}`} style={{ maxWidth: 550 }}>
+                            <Typography align="center" variant="h3" gutterBottom className={classes.headerTitle + ' animated fadeInDown primary-gradient proxima-bold big-header-title'}>
                                 <FormattedMessage id="contact.us.title"/>
                             </Typography>
                             <Typography variant="h6" className={classes.subtitle} align="center">

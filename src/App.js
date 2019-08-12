@@ -13,7 +13,7 @@ import ScrollToTop from './components/CustomComponent/ScrollToTop';
 import Home from './components/Home';
 import Footer from './components/Footer';
 import Team from './components/Team';
-// import Contact from './components/Contact';
+import Contact from './components/Contact';
 import KiToken from './components/KiToken';
 import Device from './components/KiDevice';
 import Privacy from './components/Privacy';
@@ -46,7 +46,7 @@ class App extends Component {
               <Route exact path={`/${locale}`} component={props => <Home locale={locale}/>}/>
               <Route exact path={`/${locale}/kitoken`} component={props => <KiToken locale={locale}/>}/>
               <Route exact path={`/${locale}/device`} component={props => <Device locale={locale}/>}/>
-              {/* <Route exact path={`/${locale}/contact`} component={props => <Contact/>}/> */}
+              <Route exact path={`/${locale}/contact`} component={props => <Contact className="my-5" size={7}/>}/>
               <Route exact path={`/${locale}/team`} component={props => <Team/>}/>
               <Route exact path={`/${locale}/privacy`} component={props => <Privacy/>}/>
               <Route exact path={`/${locale}/cookie`} component={props => <Cookie/>}/>
