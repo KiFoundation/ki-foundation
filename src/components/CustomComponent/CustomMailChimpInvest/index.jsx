@@ -1,5 +1,6 @@
 // Services
 import React from 'react';
+import axios from 'axios';
 import { FormattedMessage } from 'react-intl';
 
 import './style.css';
@@ -10,38 +11,57 @@ class CustomMailChimpInvest extends React.Component {
         super(props);
         this.state = {
             email: '',
-            customStatus: null
+            localStatus: null,
+            apiStatus: ''
         }
     }
-    submit = () => {
-        const { onValidated } = this.props;
+    async submit() {
         const { email } = this.state;
+        let newsletterEndpoint = 'https://static-api.preprod.kifoundation.tech/1/foundation/newsletter';
+        if (process && process.env && process.env.REACT_APP_BRANCH && process.env.REACT_APP_BRANCH === 'master') {
+            newsletterEndpoint = 'https://static-api.foundation.ki/1/foundation/newsletter';
+        }
         if (!email || !email.indexOf("@") > -1) {
-            this.setState({ customStatus: 'error' });
+            this.setState({ localStatus: 'error' });
         }
         if (email && email.indexOf("@") > -1) {
-            this.setState({ customStatus: 'success' });
+            this.setState({ localStatus: 'success' });
         }
-        return email && email.indexOf("@") > -1 && onValidated({EMAIL: email});
+
+        if (email && email.indexOf("@") > -1) {
+            try {
+                await axios.request({
+                    url: newsletterEndpoint,
+                    method: 'post',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    data: { email }
+                });
+                this.setState({ apiStatus: 'success' });
+            } catch (e) {
+                this.setState({ apiStatus: 'error' });
+            }
+        }
     }
     onValueChange = (e) => {
         this.setState({ email: e && e.target && e.target.value });
     }
     render() {
-        const { status, containerClassName } = this.props;
-        const { email, customStatus } = this.state;
+        const { containerClassName } = this.props;
+        const { email, localStatus, apiStatus } = this.state;
         let renderedBtnMessage, renderedApiMessage;
-        let checkStatus = customStatus && customStatus === 'error' ? customStatus : status; 
-        if (customStatus === 'error') {
+        let checkStatus = localStatus && localStatus === 'error' ? localStatus : apiStatus;
+        if (localStatus === 'error') {
             renderedBtnMessage = <FormattedMessage id="register.error.text"/>;
             renderedApiMessage = <div className="d-block pt-3 text-center error-color"><FormattedMessage id="email.register.invalid"/></div>;
-        } else if (status === 'error') {
+        } else if (apiStatus === 'error') {
             renderedBtnMessage = <FormattedMessage id="register.error.text"/>;
             renderedApiMessage = <div className="d-block pt-3 text-center error-color"><FormattedMessage id="email.register.error"/></div>;
-        } else if (status === 'success') {
+        } else if (apiStatus === 'success') {
             renderedBtnMessage = <FormattedMessage id="register.success.text"/>;
             renderedApiMessage = <div className="d-block pt-3 text-center success-color"><FormattedMessage id="email.register.success"/></div>;
-        } else if (status === 'sending') {
+        } else if (apiStatus === 'sending') {
             renderedBtnMessage = <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>;
         } else {
             renderedBtnMessage =
@@ -59,7 +79,7 @@ class CustomMailChimpInvest extends React.Component {
                 </div>
                 <div className="cmci-input-container px-0 d-flex">
                     <FormattedMessage id="input.email.placeholder">
-                        {placeholder=>  
+                        {placeholder=>
                         <input className={`status-${checkStatus} custom-mailchimp-input mobile-width`} onChange={this.onValueChange} value={email} type="email" placeholder={placeholder}/>
                         }
                     </FormattedMessage>
@@ -75,4 +95,3 @@ class CustomMailChimpInvest extends React.Component {
 };
 
 export default CustomMailChimpInvest;
-  

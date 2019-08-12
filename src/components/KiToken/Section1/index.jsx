@@ -6,7 +6,8 @@ import Modal from 'react-modal';
 import { Link } from 'react-router-dom';
 
 // Components
-import Invest from '../../Invest';
+// import Invest from '../../Invest';
+import Contact from '../../Contact';
 
 // Material
 import Typography from '@material-ui/core/Typography';
@@ -39,7 +40,7 @@ class Section1 extends React.Component {
         this.state = {
             open: false,
             modalIsOpen: false
-        }        
+        }
     }
     openModal = () => {
         this.setState({modalIsOpen: true});
@@ -87,7 +88,7 @@ class Section1 extends React.Component {
                 </div>
                 {this.renderIconsSection()}
                 <div className="col-md-12 text-center mt-4 mb-5">
-                    <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 mb-3" onClick={this.handleOpen}><FormattedMessage id="btn.open.buyki"/></Button>
+                    <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 mb-3 first-capitalize" onClick={this.handleOpen}><FormattedMessage id="btn.open.contact.form"/></Button>
                     {/* <Button color="primary" variant="outlined" className="fs-11 mx-2 px-4 mb-3" onClick={() => {}}><FormattedMessage id="btn.open.readpaper"/></Button> */}
                     <Link className="empt-link" to={`/${locale}/device#marketplace`}><Button variant="outlined" className="fs-11 mx-2 px-4 mb-3 btn-tertiary outlined" onClick={() => {}}><FormattedMessage id="btn.open.marketplace"/></Button></Link>
                     <Modal
@@ -98,16 +99,17 @@ class Section1 extends React.Component {
                         style={customStyles}
                         contentLabel="Example Modal"
                         >
-                            <Invest locale={locale} onClose={this.closeModal}/>
+                            <Contact locale={locale} onClose={this.closeModal}/>
+                            {/* <Invest locale={locale} onClose={this.closeModal}/> */}
                     </Modal>
                 </div>
             </React.Fragment>
         );
-    } 
+    }
 }
 
 Section1.propTypes = {
     classes: PropTypes.object.isRequired,
-};  
+};
 
 export default withStyles(styles)(Section1);
