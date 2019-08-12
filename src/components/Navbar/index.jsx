@@ -161,12 +161,12 @@ class Navbar extends React.Component {
               </ListItemText>
             </ListItemLink>
             <Divider />
-            <ListItemLink id="mobile-nav-link-contact" href={`/${locale}/contact`} onClick={() => this.closeNavbar()}>
+            {/* <ListItemLink id="mobile-nav-link-contact" href={`/${locale}/contact`} onClick={() => this.closeNavbar()}>
               <ListItemText>
                 <FormattedMessage id="navbar.contact"/>
               </ListItemText>
             </ListItemLink>
-            <Divider />
+            <Divider /> */}
             <div className="vertical-align py-2">
               <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 btn-mwidth" onClick={() =>{this.openModal(); this.closeNavbar();}}><FormattedMessage id="btn.open.contact.form"/></Button>
             </div>
