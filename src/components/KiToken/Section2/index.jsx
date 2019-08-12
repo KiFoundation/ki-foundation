@@ -8,7 +8,8 @@ import Modal from 'react-modal';
 import {
     PieChart, Pie, Cell, ResponsiveContainer, Legend
 } from 'recharts';
-import Invest from '../../Invest';
+// import Invest from '../../Invest';
+import Contact from '../../Contact';
 
 // Material
 import Typography from '@material-ui/core/Typography';
@@ -74,7 +75,7 @@ class Section2 extends React.Component {
                 { name: 'Part du fournisseur de service', value: 5 },
                 { name: 'Part du client', value: 5 },
             ];
-        } 
+        }
         if (locale === 'en') {
             data1 = [
                 { name: 'Ecosystem commission', value: 15 },
@@ -89,7 +90,7 @@ class Section2 extends React.Component {
         const colors1 = ['#043bea', '#9cc95b'];
         const colors2 = ['#f2da7e', '#ec5765', '#bf93f3'];
         const RADIAN = Math.PI / 180;
-    
+
         return (
             <React.Fragment>
                 <div className="col-md-12 mt-5 mb-4 pb-1">
@@ -192,7 +193,7 @@ class Section2 extends React.Component {
                     </ResponsiveContainer>
                 </div>
                 <div className="col-md-12 text-center mt-4 pt-2 mb-5 pb-2">
-                    <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 mb-3" onClick={this.handleOpen}><FormattedMessage id="btn.open.buyki"/></Button>
+                    <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 mb-3" onClick={this.handleOpen}><FormattedMessage id="btn.open.contact.form"/></Button>
                     {/* <Button color="secondary" variant="contained" className="fs-11 mx-2 px-4 mb-3 color-white" onClick={() => {}}><FormattedMessage id="btn.open.validator"/></Button> */}
                     {/* <Button variant="contained" className="fs-11 mx-2 px-4 mb-3 color-white btn-danger" onClick={() => {}}><FormattedMessage id="btn.open.develop"/></Button> */}
                     <Modal
@@ -203,16 +204,17 @@ class Section2 extends React.Component {
                         style={customStyles}
                         contentLabel="Example Modal"
                         >
-                            <Invest locale={locale} onClose={this.closeModal}/>
+                            <Contact locale={locale} onClose={this.closeModal}/>
+                            {/* <Invest locale={locale} onClose={this.closeModal}/> */}
                     </Modal>
                 </div>
             </React.Fragment>
         );
-    } 
+    }
 }
 
 Section2.propTypes = {
     classes: PropTypes.object.isRequired,
-};  
+};
 
 export default withStyles(styles)(Section2);

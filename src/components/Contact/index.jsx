@@ -5,6 +5,8 @@ import { FormattedMessage } from 'react-intl';
 // Material
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import MenuClose from '@material-ui/icons/Close';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 import InputBase from '@material-ui/core/InputBase';
@@ -71,6 +73,9 @@ class Contact extends React.Component {
         this.setState({[event.target.name]: event.target.value});
         this.setState({showSuccessMessage: false});
     }
+    handleOpen = (event) => {
+        console.log('event');
+    }
     handleSubmit = (event) => {
         event.preventDefault();
         const { job, email, fullname, message } = this.state;
@@ -127,21 +132,21 @@ class Contact extends React.Component {
                 <div>
                     <div className="form-group mb-4">
                         <FormattedMessage id="input.email.placeholder">
-                            {placeholder=>  
+                            {placeholder=>
                                 <input onChange={this.handleChange} value={email} name="email" type="email" className="form-control" placeholder={placeholder} required/>
                             }
                         </FormattedMessage>
                     </div>
                     <div className="form-group mb-4">
                         <FormattedMessage id="input.fullname.placeholder">
-                            {placeholder=>  
+                            {placeholder=>
                                 <input onChange={this.handleChange} value={fullname} name="fullname" type="text" className="form-control" placeholder={placeholder} required/>
                             }
                         </FormattedMessage>
                     </div>
                     <div className="form-group">
                         <FormattedMessage id="input.message.placeholder">
-                            {placeholder=>  
+                            {placeholder=>
                                 <textarea onChange={this.handleChange} value={message} name="message" className="form-control" rows="5" placeholder={placeholder} required></textarea>
                             }
                         </FormattedMessage>
@@ -151,15 +156,22 @@ class Contact extends React.Component {
         }
     }
     renderErrors = () => {
+        const { locale } = this.props;
         const { success, fetchedErrors, showSuccessMessage } = this.state;
         if (fetchedErrors) {
             const fetchedErrorsRender = fetchedErrors.map(fe => {
                 let message = fe && fe.message ? fe.message : '';
                 if (message && message.match(/type must be either/gi)) {
                     message = 'Select the section that describes you the best.';
+                    if (locale === 'fr') {
+                        message = 'Sélectionnez la section qui vous correspond le mieux.'
+                    }
                 }
                 if (message && message.match(/From is required/gi)) {
                     message = 'Email is required.';
+                    if (locale === 'fr') {
+                        message = "L'email est requis."
+                    }
                 }
                 return <div key={fe.message.slice(0, 5)} className="first-capitalize text-center mb-1 red">{message}</div>;
             });
@@ -179,7 +191,7 @@ class Contact extends React.Component {
             return (
                 <div className="text-center pt-2 mb-4">
                       <FormattedMessage id="send.email.text">
-                        {placeholder=>  
+                        {placeholder=>
                             <input value={placeholder} type="submit" className={classes.button} />
                         }
                     </FormattedMessage>
@@ -191,7 +203,12 @@ class Contact extends React.Component {
         const { classes } = this.props;
         const { job } = this.state;
         return (
-            <div className={classes.root + ' contact-component mt-5 pt-5 mb-4 pb-3'}>
+            <div className={classes.root + ' contact-component mb-4 py-4'}>
+                <div className="modal-close-btn">
+                    <IconButton aria-label="close" onClick={this.props.onClose}>
+                        <MenuClose />
+                    </IconButton>
+                </div>
                 <div className="container mt-4 pt-3">
                     <div className="row justify-content-center">
                         <div className="col-md-6">
@@ -204,6 +221,7 @@ class Contact extends React.Component {
                             <form onSubmit={this.handleSubmit}>
                                 <div className="form-group mb-4">
                                     <Select
+                                        onOpen={this.handleOpen}
                                         name="job"
                                         value={job}
                                         onChange={this.handleChange}

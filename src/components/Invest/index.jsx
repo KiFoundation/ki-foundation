@@ -123,28 +123,28 @@ class Invest extends React.Component {
             <div>
                 <div className="form-group mb-4">
                     <FormattedMessage id="input.firstname.placeholder">
-                        {placeholder=>  
+                        {placeholder=>
                             <input onChange={this.handleChange} value={firstname} name="firstname" type="text" className="form-control" placeholder={placeholder} required/>
                         }
                     </FormattedMessage>
                 </div>
                 <div className="form-group mb-4">
                     <FormattedMessage id="input.lastname.placeholder">
-                        {placeholder=>  
+                        {placeholder=>
                             <input onChange={this.handleChange} value={lastname} name="lastname" type="text" className="form-control" placeholder={placeholder} required/>
                         }
                     </FormattedMessage>
                 </div>
                 <div className="form-group mb-4">
                     <FormattedMessage id="input.email.placeholder">
-                        {placeholder=>  
+                        {placeholder=>
                             <input onChange={this.handleChange} value={email} name="email" type="email" className="form-control" placeholder={placeholder} required/>
                         }
                     </FormattedMessage>
                 </div>
                 <div className="form-group">
-                    <FormattedMessage id="input.email.placeholder">
-                        {placeholder=>  
+                    <FormattedMessage id="input.message.placeholder">
+                        {placeholder=>
                             <textarea onChange={this.handleChange} value={message} name="message" className="form-control" rows="5" placeholder={placeholder}></textarea>
                         }
                     </FormattedMessage>
@@ -154,7 +154,7 @@ class Invest extends React.Component {
                 </div>
                 <div className="vertical-align">
                     <div className="d-flex">
-                        {this.renderInvestValues()}             
+                        {this.renderInvestValues()}
                     </div>
                 </div>
                 <div className="col-md-12 mb-3 px-0">
@@ -176,10 +176,10 @@ class Invest extends React.Component {
                         </div>
                     </div>
                 </div>
-                { meeting === 'Yes' || meeting === 'Oui' ? 
+                { meeting === 'Yes' || meeting === 'Oui' ?
                     <div className="form-group mb-4 mt-3">
                         <FormattedMessage id="input.phone.placeholder">
-                            {placeholder=>  
+                            {placeholder=>
                                 <input onChange={this.handleChange} value={phone} name="phone" type="text" className="form-control" placeholder={placeholder}/>
                             }
                         </FormattedMessage>
@@ -212,7 +212,7 @@ class Invest extends React.Component {
         return (
             <div className="text-center pt-2">
                 <FormattedMessage id="send.email.text">
-                    {placeholder=>  
+                    {placeholder=>
                         <input value={placeholder} type="submit" className={classes.button + ' btn btn-primary'} />
                     }
                 </FormattedMessage>

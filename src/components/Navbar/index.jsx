@@ -7,8 +7,9 @@ import { FormattedMessage } from 'react-intl';
 import LazyImage from '../CustomComponent/LazyImage';
 
 // Components
-import Invest from '../Invest';
+// import Invest from '../Invest';
 import Modal from 'react-modal';
+import Contact from '../Contact';
 
 // Material
 import { withStyles } from '@material-ui/core/styles';
@@ -127,7 +128,7 @@ class Navbar extends React.Component {
     const { isOpened, selectedOption } = this.state;
     let menu = null;
     if (isOpened) {
-      menu = 
+      menu =
         <div className={classes.fixedMenu + ' d-block d-lg-none d-xl-none'}>
           <List component="nav" className={classes.fixedMenuContent}>
             <ListItemLink id="mobile-nav-link-home" href={`/${locale}`} onClick={() => this.closeNavbar()}>
@@ -170,16 +171,16 @@ class Navbar extends React.Component {
               <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 btn-mwidth" onClick={() =>{this.openModal(); this.closeNavbar();}}><FormattedMessage id="btn.open.contact.form"/></Button>
             </div>
             <Divider />
-            {/* <Modal
+            <Modal
               isOpen={this.state.modalIsOpen}
               overlayClassName="diagramOverlay"
               onRequestClose={this.closeModal}
               className="diagramModal"
               style={customStyles}
-              contentLabel="Example Modal"
-              >
-                <Invest />
-            </Modal> */}
+              contentLabel="Example Modal">
+              {/* <Invest /> */}
+              <Contact locale={locale} onClose={this.closeModal}/>
+            </Modal>
             <Select
               id="navbar-link-selectlang"
               className="select mx-auto py-2"
@@ -214,8 +215,9 @@ class Navbar extends React.Component {
                       <Link id="nav-link-token" className="link" to={`/${locale}/kitoken`}><FormattedMessage id="navbar.token"/></Link>
                       <Link id="nav-link-device" className="link" to={`/${locale}/device`}><FormattedMessage id="navbar.device"/></Link>
                       <Link id="nav-link-team" className="link" to={`/${locale}/team`}><FormattedMessage id="navbar.team"/></Link>
-                      <Link id="nav-link-contact" className="link" to={`/${locale}/contact`}><FormattedMessage id="navbar.contact"/></Link>
+                      {/* <Link id="nav-link-contact" className="link" to={`/${locale}/contact`}><FormattedMessage id="navbar.contact"/></Link> */}
                       <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 first-capitalize" onClick={this.openModal}><FormattedMessage id="btn.open.contact.form"/></Button>
+                      {/* <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 first-capitalize" onClick={this.openModal}><FormattedMessage id="btn.open.contact.form"/></Button> */}
                       <Modal
                         isOpen={this.state.modalIsOpen}
                         overlayClassName="diagramOverlay"
@@ -224,7 +226,8 @@ class Navbar extends React.Component {
                         style={customStyles}
                         contentLabel="Example Modal"
                         >
-                            <Invest locale={locale} onClose={this.closeModal}/>
+                            <Contact locale={locale} onClose={this.closeModal}/>
+                            {/* <Invest locale={locale} onClose={this.closeModal}/> */}
                       </Modal>
                       {/* <NavLink id="nav-link-contact" exact className={classes.link + ' mr-0'} to="/contact" activeClassName="active-link">Tester Domo</NavLink> */}
                       {/* <button className="btn btn-primary fs-11 ml-5 px-4" onClick={this.handleOpen} style={{fontWeight: 500, border: 0}}><FormattedMessage id="btn.open.contact.form"/></button> */}
