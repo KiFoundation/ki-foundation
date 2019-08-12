@@ -73,9 +73,6 @@ class Contact extends React.Component {
         this.setState({[event.target.name]: event.target.value});
         this.setState({showSuccessMessage: false});
     }
-    handleOpen = (event) => {
-        console.log('event');
-    }
     handleSubmit = (event) => {
         event.preventDefault();
         const { job, email, fullname, message } = this.state;
@@ -221,7 +218,6 @@ class Contact extends React.Component {
                             <form onSubmit={this.handleSubmit}>
                                 <div className="form-group mb-4">
                                     <Select
-                                        onOpen={this.handleOpen}
                                         name="job"
                                         value={job}
                                         onChange={this.handleChange}
