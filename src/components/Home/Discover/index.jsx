@@ -6,7 +6,8 @@ import Modal from 'react-modal';
 import { Link } from 'react-router-dom';
 
 // Components
-import Invest from '../../Invest';
+// import Invest from '../../Invest';
+import Contact from '../../Contact';
 
 // Material
 import Typography from '@material-ui/core/Typography';
@@ -42,7 +43,7 @@ class Discover extends React.Component {
         this.state = {
             open: false,
             modalIsOpen: false
-        }        
+        }
     }
     openModal = () => {
         this.setState({modalIsOpen: true});
@@ -106,16 +107,17 @@ class Discover extends React.Component {
                         style={customStyles}
                         contentLabel="Example Modal"
                         >
-                            <Invest locale={locale} onClose={this.closeModal}/>
+                            <Contact locale={locale} onClose={this.closeModal}/>
+                            {/* <Invest locale={locale} onClose={this.closeModal}/> */}
                     </Modal>
                 </div>
             </React.Fragment>
         );
-    } 
+    }
 }
 
 Discover.propTypes = {
     classes: PropTypes.object.isRequired,
-};  
+};
 
 export default withStyles(styles)(Discover);
