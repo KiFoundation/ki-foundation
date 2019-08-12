@@ -13,7 +13,7 @@ import ScrollToTop from './components/CustomComponent/ScrollToTop';
 import Home from './components/Home';
 import Footer from './components/Footer';
 import Team from './components/Team';
-import Contact from './components/Contact';
+// import Contact from './components/Contact';
 import KiToken from './components/KiToken';
 import Device from './components/KiDevice';
 import Privacy from './components/Privacy';

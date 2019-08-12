@@ -193,7 +193,7 @@ class Section2 extends React.Component {
                     </ResponsiveContainer>
                 </div>
                 <div className="col-md-12 text-center mt-4 pt-2 mb-5 pb-2">
-                    <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 mb-3" onClick={this.handleOpen}><FormattedMessage id="btn.open.contact.form"/></Button>
+                    <Button color="primary" variant="contained" className="fs-11 mx-2 px-4 mb-3 first-capitalize" onClick={this.handleOpen}><FormattedMessage id="btn.open.contact.form"/></Button>
                     {/* <Button color="secondary" variant="contained" className="fs-11 mx-2 px-4 mb-3 color-white" onClick={() => {}}><FormattedMessage id="btn.open.validator"/></Button> */}
                     {/* <Button variant="contained" className="fs-11 mx-2 px-4 mb-3 color-white btn-danger" onClick={() => {}}><FormattedMessage id="btn.open.develop"/></Button> */}
                     <Modal
