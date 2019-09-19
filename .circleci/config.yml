@@ -48,7 +48,7 @@ jobs:
       - run:
           name: Send Slack notification
           command: |
-            curl -X POST --data-urlencode "payload={\"channel\": \"#dev\", \"username\": \"Staging Deploy\", \"text\": \"It's time to test! https://website.preprod.kifoundation.tech/ has been deployed to preprod successfully!\", \"icon_emoji\": \":airplane:\"}" ${SLACK_WEBHOOK_URL}
+            curl -X POST --data-urlencode "payload={\"channel\": \"#dev\", \"username\": \"Staging Deploy\", \"text\": \"It's time to test! ${PREPROD_URL} has been deployed to preprod successfully!\", \"icon_emoji\": \":airplane:\"}" ${SLACK_WEBHOOK_URL}
 
   deploy_prod:
     docker:
@@ -69,7 +69,7 @@ jobs:
       - run:
           name: Send Slack notification
           command: |
-            curl -X POST --data-urlencode "payload={\"channel\": \"#dev\", \"username\": \"PROD Deploy\", \"text\": \"Yeah! https://foundation.ki has been deployed to production successfully!\", \"icon_emoji\": \":rocket:\"}" ${SLACK_WEBHOOK_URL}
+            curl -X POST --data-urlencode "payload={\"channel\": \"#dev\", \"username\": \"PROD Deploy\", \"text\": \"Yeah! ${PROD_URL} has been deployed to production successfully!\", \"icon_emoji\": \":rocket:\"}" ${SLACK_WEBHOOK_URL}
 
 workflows:
   version: 2

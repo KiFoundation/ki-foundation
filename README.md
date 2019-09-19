@@ -2,6 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/KiFoundation/ki-foundation.svg?style=svg)](https://circleci.com/gh/KiFoundation/ki-foundation)
 
+This is the [Ki Foundation](https://foundation.ki) website.
 
 ## Get Started
 
