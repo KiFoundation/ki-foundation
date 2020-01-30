@@ -1,6 +1,5 @@
 const styles = {
     root: {
-        padding: "60px 30px"
     },
     divider: {
         margin: "0 0 50px 0"
