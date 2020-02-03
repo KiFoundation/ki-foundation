@@ -124,28 +124,28 @@ class Home extends React.Component {
   renderPartners = () => (
     <>
       <Divider className={this.props.classes.partnersDivider} />
-      <div className={'row align-items-center justify-content-center row-cols-2 row-cols-md-5 py-0 py-md-5 ' + this.props.classes.partnersWrapper}>
-        <div className={'col ' + this.props.classes.partner}>
+      <div className={'row partners-wrapper align-items-center justify-content-center row-cols-2 row-cols-md-5 py-0 py-md-5 ' + this.props.classes.partnersWrapper}>
+        <div className={'col text-center text-md-left ' + this.props.classes.partner}>
           <a rel="noopener noreferrer" href="http://sifu.ventures/" target="_blank" >
             <img className={'img-fluid ' + this.props.classes.partnerImg} src={sifu} alt="Sifu Ventures Logo" />
           </a>
         </div>
-        <div className={'col ' + this.props.classes.partner}>
+        <div className={'col text-center text-md-right ' + this.props.classes.partner}>
           <a rel="noopener noreferrer" href="http://amnis-ventures.com/" target="_blank" >
             <img className={'img-fluid ' + this.props.classes.partnerImg} src={amnis} alt="Amnis Ventures Logo" />
           </a>
         </div>
-        <div className={'col mt-5 mt-md-0 ' + this.props.classes.partner}>
+        <div className={'col mt-5 mt-md-0 text-center text-md-right ' + this.props.classes.partner}>
           <a rel="noopener noreferrer" href="http://thegara.ge/" target="_blank" >
             <img className={'img-fluid ' + this.props.classes.partnerImg} src={garage} alt="The Garage Logo" style={{height: '1.3rem'}} />
           </a>
         </div>
-        <div className={'col mt-5 mt-md-0 ' + this.props.classes.partner}>
+        <div className={'col mt-5 mt-md-0 text-center text-md-right ' + this.props.classes.partner}>
           <a rel="noopener noreferrer" href="http://cosmos.network/" target="_blank" >
             <img className={'img-fluid ' + this.props.classes.partnerImg} src={cosmos} alt="Cosmos Logo" style={{height: '1.3rem'}} />
           </a>
         </div>
-        <div className={'col mt-5 mt-md-0 ' + this.props.classes.partner}>
+        <div className={'col mt-5 mt-md-0 text-center text-md-right ' + this.props.classes.partner}>
           <a rel="noopener noreferrer" href="https://liris.cnrs.fr/" target="_blank" >
             <img className={'img-fluid ' + this.props.classes.partnerImg} src={liris} alt="Liris Logo" style={{height: '2rem'}} />
           </a>
