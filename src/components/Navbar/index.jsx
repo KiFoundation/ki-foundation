@@ -206,7 +206,7 @@ class Navbar extends React.Component {
             <div className="col d-none d-lg-block d-xl-block">
               <AppBar position="absolute" color="default" id="navbar" className={classes.navbar + ' app-navbar'}>
                 <Toolbar className={classes.toolbar}>
-                  <Link id="nav-link-logo" to={`/${locale}`}><LazyImage height="12" src={KiFoundationLogo} className="ml-4" alt="Ki Foundation"/></Link>
+                <Link id="nav-link-logo" to={`/${locale}`}><LazyImage height="12" src={KiFoundationLogo} className="ml-4" alt="Ki Foundation"/></Link>
                   <div className={classes.growRight}>
                     {/* <Link className={classes.link} to="/whitepaper"><Button className={classes.button}>Whitepaper</Button></Link> */}
                       <Link id="nav-link-home" className="active-link link" to={`/${locale}`}><FormattedMessage id="navbar.home"/></Link>

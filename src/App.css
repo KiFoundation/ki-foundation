@@ -71,3 +71,7 @@
         height: 33px;
     }
 }
+
+.partners-wrapper.py-md-5 {
+  padding: 8rem 0!important;
+}
