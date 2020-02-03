@@ -2,7 +2,7 @@ const styles = {
     root: {
     },
     divider: {
-        margin: "0 0 50px 0"
+        margin: "0"
     },
     title: {
         color: "#000000"

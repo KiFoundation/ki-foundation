@@ -11,16 +11,15 @@ const styles = {
       margin: "50px 0 50px 0"
     },
     partnersDivider: {
-      margin: "50px 0 50px 0"
+      margin: "50px 0 0 0"
     },
     partnersWrapper: {
-      marginBottom: '1.2rem',
     },
     partner: {
-      textAlign: 'center'
+      textAlign: 'right'
     },
     partnerImg: {
-      // height: '2rem'
+      maxWidth: '80%'
     }
 };
 
