@@ -16,29 +16,30 @@ import styles from './materialStyle';
 
 class Footer extends React.Component {
     render() {
-        const { classes, locale } = this.props;
+        const { classes, locale } = this.props;
         return (
             <div className={classes.root + ' pb-5 pb-md-0'}>
                 <div className="container">
-                    <Divider className={classes.divider}/>
-                    <div className="row" style={{paddingTop: '8rem'}}>
+                    <Divider className={classes.divider} />
+                    <div className="row" style={{ paddingTop: '8rem' }}>
                         <div className="col-md-3 col-7">
-                            <Typography className={classes.title} variant="h6"> <FormattedMessage id="footer.title1"/> </Typography>
+                            <Typography className={classes.title} variant="h6"> <FormattedMessage id="footer.title1" /> </Typography>
                             <div className="col-md-12 p-0 mt-3">
-                                <img height="65" src={KiFoundationLogoShort} alt="Footer Ki Logo"/>
+                                <img height="65" src={KiFoundationLogoShort} alt="Footer Ki Logo" />
                             </div>
                         </div>
                         <div className="col-md-3 col-5">
-                            <Typography className={classes.title} variant="h6"> <FormattedMessage id="footer.title2"/> </Typography>
+                            <Typography className={classes.title} variant="h6"> <FormattedMessage id="footer.title2" /> </Typography>
                             <a id="footer-link-whitepaper" className={classes.link} rel="noopener noreferrer" href="https://static.foundation.ki/documents/ki-whitepaper.pdf" target="_blank" download>White paper</a>
+                            <Link id="footer-link-team" className={classes.link} to={`/${locale}/team`}>Team</Link>
                         </div>
                         <div className="col-md-3 d-none d-md-block">
-                            <Typography className={classes.title} variant="h6"> <FormattedMessage id="footer.title3"/> </Typography>
-                            <Link id="footer-link-privacy" className={classes.link} to={`/${locale}/privacy`}><FormattedMessage id="privacy.title"/></Link>
-                            <Link id="footer-link-cookie" className={classes.link} to={`/${locale}/cookie`}><FormattedMessage id="cookie.title"/></Link>
+                            <Typography className={classes.title} variant="h6"> <FormattedMessage id="footer.title3" /> </Typography>
+                            <Link id="footer-link-privacy" className={classes.link} to={`/${locale}/privacy`}><FormattedMessage id="privacy.title" /></Link>
+                            <Link id="footer-link-cookie" className={classes.link} to={`/${locale}/cookie`}><FormattedMessage id="cookie.title" /></Link>
                         </div>
                         <div className="col-md-3 d-none d-md-block">
-                            <Typography className={classes.title} variant="h6"> <FormattedMessage id="footer.title4"/> </Typography>
+                            <Typography className={classes.title} variant="h6"> <FormattedMessage id="footer.title4" /> </Typography>
                             <a id="footer-link-telegram" rel="noopener noreferrer" className={classes.link} target="_blank" href="https://t.me/KiFoundation">Telegram</a>
                             <a id="footer-link-twitter" rel="noopener noreferrer" className={classes.link} target="_blank" href="https://twitter.com/Ki_Foundation">Twitter</a>
                             <a id="footer-link-github" rel="noopener noreferrer" className={classes.link} target="_blank" href="https://github.com/KiFoundation">Github</a>
