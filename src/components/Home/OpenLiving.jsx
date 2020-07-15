@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../assets/ki_foundation/logo-openliving-black.png';
+import logo from '../../assets/ki_foundation/logo-klub-black.png';
 import backLogo from '../../assets/ki_foundation/back-openliving.png';
 
 export default function OpenLiving() {
@@ -12,12 +12,16 @@ export default function OpenLiving() {
                 display: 'flex',
                 alignItems: 'center',
             }}>
-                <a rel="noopener noreferrer" href="http://openliving.io/" target="_blank" >
-                    <img src={logo} alt="OpenLiving Logo" style={{paddingLeft: '1.4rem', height: 30}} />
+                <a rel="noopener noreferrer" href="http://klub.ki/" target="_blank" >
+                    <img src={logo} alt="Klub Logo" style={{paddingLeft: '1.4rem', height: 30}} />
                 </a>
             </header>
             <p style={{fontFamily: 'Avenir', fontSize: 15, textAlign: 'justify', letterSpacing: 1}}>
-                Open Living leverages Domo as a partner and Ki’s Operating System to provide a new way of living.
+                Klub is the financial and lifestyle companion for the achievers and builders aiming to grow their wealth
+                and mindset.
+            </p>
+            <p style={{fontFamily: 'Avenir', fontSize: 15, textAlign: 'justify', letterSpacing: 1}}>
+                Klub bases its reward system on the Ki token asset as a backbone.
             </p>
         </div>
     );
