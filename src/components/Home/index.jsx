@@ -177,11 +177,7 @@ class Home extends React.Component {
             this.props.classes.partner
           }
         >
-          <a
-            rel="noopener noreferrer"
-            href="http://sifu.ventures/"
-            target="_blank"
-          >
+          <a>
             <img
               className={"img-fluid " + this.props.classes.partnerImg}
               src={sifu}
@@ -230,7 +226,7 @@ class Home extends React.Component {
         >
           <a
             rel="noopener noreferrer"
-            href="http://thegara.ge/"
+            href="https://www.thegara.ge/"
             target="_blank"
           >
             <img
