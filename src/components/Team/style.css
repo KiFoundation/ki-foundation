@@ -38,6 +38,7 @@
     filter: grayscale(100%);
     object-fit: scale-down;
     width: 150px;
+    border-radius: 75px;
     margin-bottom: 16px;
     z-index: 2; }
     .team-member img.small {

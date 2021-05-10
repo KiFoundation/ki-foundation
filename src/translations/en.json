@@ -106,5 +106,7 @@
     "select.title": "Select...",
     "send.email.text": "Send an email",
     "select.job.input": "Choose the section that describes you the best:",
-    "email.sent.success": "Your email has successfully been sent!"
+    "email.sent.success": "Your email has successfully been sent!",
+    "cta.buy.uniswap": "Buy XKI on uniswap",
+    "cta.buy.liquid": "Buy XKI on Liquid"
 }
