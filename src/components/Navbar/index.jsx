@@ -28,10 +28,6 @@ import KiFoundationLogo from '../../assets/ki_foundation/ki_foundation.png';
 import KiFoundationLogoShort from '../../assets/ki_foundation/ki_foundation_mobile.png';
 import england from '../../assets/flags/england.jpg';
 import france from '../../assets/flags/france.jpg';
-// import korea from '../../assets/flags/korea.svg';
-// import china from '../../assets/flags/china.svg';
-// import japan from '../../assets/flags/japan.svg';
-// import russia from '../../assets/flags/russia.svg';
 
 // Styles
 import './style.css';
@@ -40,10 +36,6 @@ import styles from './materialStyle';
 const options = [
   { value: 'en', label: <span id="navbar-link-english"><img src={england} height="10" alt="England"/></span> },
   { value: 'fr', label: <span id="navbar-link-french"><img src={france} height="10" alt="France"/></span> },
-  // { value: 'ko', label: <span id="navbar-link-korean"><img src={korea} alt="Korean"/>Korean</span> },
-  // { value: 'zh', label: <span id="navbar-link-chinese"><img src={china} alt="Chinese"/>Chinese</span> },
-  // { value: 'ja', label: <span id="navbar-link-japanese"><img src={japan} alt="Japanese"/>Japanese</span> },
-  // { value: 'ru', label: <span id="navbar-link-russian"><img src={russia} alt="Russian"/>Russian</span> }
 ];
 
 const customStyles = {
