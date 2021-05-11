@@ -2,7 +2,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { FormattedMessage } from "react-intl";
-import axios from 'axios';
+import axios from "axios";
 // Material
 import { withStyles } from "@material-ui/core/styles";
 
@@ -32,8 +32,7 @@ import uniswap from "../../assets/icons/uniswap.png";
 import paraswap from "../../assets/icons/paraswap.png";
 import liquid from "../../assets/icons/liquid.png";
 import arrowRight from "../../assets/icons/arrow-right.png";
-import {isMobile} from '../../helpers/responsive'
-
+import { isMobile } from "../../helpers/responsive";
 
 const customStyles = {
   content: {
@@ -57,18 +56,18 @@ class Home extends React.Component {
   }
   async fetchPrice() {
     const res = await axios.request({
-      url: 'https://oracle.blockchain.ki/',
-      method: 'get',
+      url: "https://oracle.blockchain.ki/",
+      method: "get",
       headers: {
-          'Content-Type': 'application/json',
-      },
+        "Content-Type": "application/json"
+      }
     });
     if (res.data) {
-      this.setState({price: res.data.result})
+      this.setState({ price: res.data.result });
     }
   }
   componentDidMount() {
-    this.fetchPrice()
+    this.fetchPrice();
   }
   openModal = () => {
     this.setState({ modalIsOpen: true });
@@ -84,12 +83,23 @@ class Home extends React.Component {
     <div className="row" style={{ paddingTop: "1rem" }}>
       <div className="col d-flex justify-content-between align-items-center">
         <div>
-          <Link id="nav-link-logo" to={`/${this.props.locale}`}>
+          <Link
+            id="nav-link-logo"
+            to={`/${this.props.locale}`}
+            style={{ cursor: "pointer" }}
+          >
             <LazyImage height="12" src={KiFoundationLogo} alt="Ki Foundation" />
           </Link>
         </div>
         <div className="d-none d-sm-flex align-items-center">
-          <span style={{fontFamily: 'Roboto, Arial, Helvetica, sans-serif', fontSize: '20px',fontStyle: 'normal', fontWeight: '700'}}>
+          <span
+            style={{
+              fontFamily: "Roboto, Arial, Helvetica, sans-serif",
+              fontSize: "20px",
+              fontStyle: "normal",
+              fontWeight: "700"
+            }}
+          >
             ${this.state.price}
           </span>
           <a
@@ -101,17 +111,23 @@ class Home extends React.Component {
             style={{
               marginLeft: 25,
               marginRight: 20,
-              background: 'linear-gradient(180deg, #B832E3 0%, #DF3B9E 100%), #C4C4C4',
-              boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.25)',
+              background:
+                "linear-gradient(180deg, #B832E3 0%, #DF3B9E 100%), #C4C4C4",
+              boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.25)",
               borderRadius: 5,
-              alignItems: 'center',
-              display: 'flex',
+              alignItems: "center",
+              display: "flex",
               height: 42,
-              color: 'white',
-              fontWeight: '500'
+              color: "white",
+              fontWeight: "500"
             }}
           >
-            <img src={uniswapUnicorn} width={30} height={25} style={{marginRight: 6}} />
+            <img
+              src={uniswapUnicorn}
+              width={30}
+              height={25}
+              style={{ marginRight: 6 }}
+            />
             <FormattedMessage id="cta.buy.uniswap" />
           </a>
           <a
@@ -122,16 +138,22 @@ class Home extends React.Component {
             target="_blank"
             style={{
               height: 42,
-              alignItems: 'center',
-              display: 'flex'
+              alignItems: "center",
+              display: "flex"
             }}
-            
           >
             <FormattedMessage id="cta.buy.liquid" />
           </a>
         </div>
         <div className="d-flex d-sm-none align-items-center">
-          <span style={{fontFamily: 'Roboto, Arial, Helvetica, sans-serif', fontSize: '20px',fontStyle: 'normal', fontWeight: '700'}}>
+          <span
+            style={{
+              fontFamily: "Roboto, Arial, Helvetica, sans-serif",
+              fontSize: "20px",
+              fontStyle: "normal",
+              fontWeight: "700"
+            }}
+          >
             ${this.state.price}
           </span>
         </div>
@@ -219,15 +241,19 @@ class Home extends React.Component {
 
   renderBuyXKI = () => (
     <>
-    <div className="row justify-content-center mt-5">
-      <h2 style={{
-        fontFamily: 'Roboto',
-        fontsize: '28px',
-        fontStyle: 'normal',
-        fontWeight: '700',
-        lineHeight: '33px',
-        letterSpacing: '0em',
-      }}>Buy $XKI on</h2>
+      <div className="row justify-content-center mt-5">
+        <h2
+          style={{
+            fontFamily: "Roboto",
+            fontsize: "28px",
+            fontStyle: "normal",
+            fontWeight: "700",
+            lineHeight: "33px",
+            letterSpacing: "0em"
+          }}
+        >
+          Buy $XKI on
+        </h2>
       </div>
       <div className="row justify-content-center mt-2 mt-lg-0 flex-column flex-sm-row align-items-center">
         <a
@@ -237,16 +263,19 @@ class Home extends React.Component {
           href="https://www.liquid.com/"
           target="_blank"
           style={{
-            width: '11.5rem',
-            height: isMobile ? '3.5rem' : '4rem',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            display: 'flex',
-            background: 'linear-gradient(180deg, #0D41E1 0%, #00238D 100%)'
+            width: "11.5rem",
+            height: isMobile ? "3.5rem" : "4rem",
+            alignItems: "center",
+            justifyContent: "space-between",
+            display: "flex",
+            background: "linear-gradient(180deg, #0D41E1 0%, #00238D 100%)"
           }}
         >
           <div />
-          <img src={liquid} style={{width: '7rem', height: '2rem', objectFit: 'contain' }} />
+          <img
+            src={liquid}
+            style={{ width: "7rem", height: "2rem", objectFit: "contain" }}
+          />
           <img src={arrowRight} width={20} height={20} />
         </a>
         <a
@@ -256,16 +285,19 @@ class Home extends React.Component {
           href="https://www.liquid.com/"
           target="_blank"
           style={{
-            width: '11.5rem',
-            height: isMobile ? '3.5rem' : '4rem',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            display: 'flex',
-            background: 'linear-gradient(180deg, #BA33E0 0%, #D639AF 100%)',
+            width: "11.5rem",
+            height: isMobile ? "3.5rem" : "4rem",
+            alignItems: "center",
+            justifyContent: "space-between",
+            display: "flex",
+            background: "linear-gradient(180deg, #BA33E0 0%, #D639AF 100%)"
           }}
         >
           <div />
-          <img src={uniswap} style={{width: '8rem', height: '3rem', objectFit: 'contain' }}  />
+          <img
+            src={uniswap}
+            style={{ width: "8rem", height: "3rem", objectFit: "contain" }}
+          />
           <img src={arrowRight} width={20} height={20} />
         </a>
         <a
@@ -275,21 +307,24 @@ class Home extends React.Component {
           href="https://www.liquid.com/"
           target="_blank"
           style={{
-            width: '11.5rem',
-            height: isMobile ? '3.5rem' : '4rem',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            display: 'flex',
-            background: 'linear-gradient(180deg, #0D41E1 0%, #00238D 100%)'
+            width: "11.5rem",
+            height: isMobile ? "3.5rem" : "4rem",
+            alignItems: "center",
+            justifyContent: "space-between",
+            display: "flex",
+            background: "linear-gradient(180deg, #0D41E1 0%, #00238D 100%)"
           }}
         >
           <div />
-          <img src={paraswap} style={{width: '8rem', height: '3rem', objectFit: 'contain' }}  />
+          <img
+            src={paraswap}
+            style={{ width: "8rem", height: "3rem", objectFit: "contain" }}
+          />
           <img src={arrowRight} width={20} height={20} />
         </a>
       </div>
     </>
-  )
+  );
 
   renderPartners = () => (
     <>
