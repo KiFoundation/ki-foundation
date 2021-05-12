@@ -443,8 +443,23 @@ class Team extends Component {
                 <img src={linkedin} alt="linkedin" />
               </LazyLoad>
             </a>
+            <a
+              id="home-team-twitter-allan"
+              href="https://twitter.com/AllanFloury"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="first"
+            >
+              <LazyLoad
+                className="d-contents"
+                offsetVertical={1100}
+                height={32}
+              >
+                <img src={twitter} alt="twitter" />
+              </LazyLoad>
+            </a>
             <span className="team-name">Allan Floury</span>
-            <span className="team-job">Product Lead & UX Designer</span>
+            <span className="team-job">Lead Product & UX Designer</span>
           </div>
         </div>
         <br />

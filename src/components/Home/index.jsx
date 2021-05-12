@@ -119,7 +119,8 @@ class Home extends React.Component {
               display: "flex",
               height: 42,
               color: "white",
-              fontWeight: "500"
+              fontWeight: "500",
+              fontSize: 16
             }}
           >
             <img
@@ -139,7 +140,8 @@ class Home extends React.Component {
             style={{
               height: 42,
               alignItems: "center",
-              display: "flex"
+              display: "flex",
+              fontSize: 16
             }}
           >
             <FormattedMessage id="cta.buy.liquid" />
@@ -245,7 +247,7 @@ class Home extends React.Component {
         <h2
           style={{
             fontFamily: "Roboto",
-            fontsize: "28px",
+            fontSize: "28px",
             fontStyle: "normal",
             fontWeight: "700",
             lineHeight: "33px",
@@ -290,7 +292,8 @@ class Home extends React.Component {
             alignItems: "center",
             justifyContent: "space-between",
             display: "flex",
-            background: "linear-gradient(180deg, #BA33E0 0%, #D639AF 100%)"
+            background:
+              "linear-gradient(180deg, #B832E3 0%, #DF3B9E 100%), #C4C4C4"
           }}
         >
           <div />
