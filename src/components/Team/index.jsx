@@ -3,11 +3,11 @@ import React, { Component } from "react";
 import LazyLoad from "react-lazy-load";
 import { FormattedMessage } from "react-intl";
 import LazyImage from "../CustomComponent/LazyImage";
+import { Link } from "react-router-dom";
 
 // Material
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
-import { Link } from "@material-ui/core";
 
 // Images
 import KiFoundationLogo from "../../assets/ki_foundation/ki_foundation.png";
@@ -85,11 +85,7 @@ class Team extends Component {
     <div className="row" style={{ paddingTop: "1rem" }}>
       <div className="col d-flex justify-content-between align-items-center">
         <div>
-          <Link
-            id="nav-link-logo"
-            to={`/${this.props.locale}`}
-            style={{ cursor: "pointer" }}
-          >
+          <Link to={`/${this.props.locale}`} style={{ cursor: "pointer" }}>
             <LazyImage height="12" src={KiFoundationLogo} alt="Ki Foundation" />
           </Link>
         </div>

@@ -55,7 +55,7 @@ const App = ({ onLanguageChange, locale }) => {
     <Router>
       <ScrollToTop>
         <div className="App scrollspy" id="home">
-          {/* <Navbar onLanguageChange={onLanguageChange} locale={locale}/> */}
+          {/* <Navbar onLanguageChange={onLanguageChange} locale={locale} /> */}
           <Switch>
             <Route
               exact
