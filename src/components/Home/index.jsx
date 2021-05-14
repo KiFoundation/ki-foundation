@@ -106,7 +106,7 @@ class Home extends React.Component {
             id="footer-link-whitepaper"
             className={this.props.classes.link + " btn btn-mwidth"}
             rel="noopener noreferrer"
-            href="https://app.uniswap.org/#/swap"
+            href="https://medium.com/ki-foundation/brace-yourselves-for-xki-coming-to-you-on-liquid-and-your-favorite-dex-uniswap-b2877c56a9a6"
             target="_blank"
             style={{
               marginLeft: 25,
@@ -135,7 +135,7 @@ class Home extends React.Component {
             id="footer-link-whitepaper"
             className={this.props.classes.link + " btn btn-primary btn-mwidth"}
             rel="noopener noreferrer"
-            href="https://www.liquid.com/"
+            href="https://www.liquid.com/sign-up/?affiliate=Jp0cYyKl855611"
             target="_blank"
             style={{
               height: 42,
@@ -170,24 +170,19 @@ class Home extends React.Component {
           <h2
             style={{ lineHeight: "3rem", fontWeight: 700, fontSize: "1.8rem" }}
           >
-            Creating a <u style={{ textDecorationColor: "#043bea" }}>stron</u>g
-            and <u style={{ textDecorationColor: "#043bea" }}>fair</u>
-            <br />
-            ecosystem of{" "}
-            <mark
+            Bridging the <u style={{ textDecorationColor: "#043bea" }}>gap</u> between<br />
+            <u style={{ textDecorationColor: "#043bea" }}>CeFi</u>&nbsp;
+            and <u style={{ textDecorationColor: "#043bea" }}>DeFi</u>
+            <span
               style={{
-                padding: "0 5px",
-                backgroundColor: "#043bea",
-                color: "white"
+                color: "#043bea"
               }}
             >
-              value
-            </mark>
+              .
+            </span>
           </h2>
           <p style={{ padding: "1rem 0", fontFamily: "Roboto", fontSize: 15 }}>
-            Deploying a new currency with a sustainable business model.
-            <br />
-            For a better world. Block by block.
+            Deploying a new currency with sustainable business models.
           </p>
           <div className="row" style={{ marginTop: "2rem" }}>
             <div className="col">
@@ -262,7 +257,7 @@ class Home extends React.Component {
           id="footer-link-whitepaper"
           className={this.props.classes.link + " btn btn-mwidth mt-1 mt-sm-0"}
           rel="noopener noreferrer"
-          href="https://www.liquid.com/"
+          href="https://www.liquid.com/sign-up/?affiliate=Jp0cYyKl855611"
           target="_blank"
           style={{
             width: "11.5rem",
@@ -284,7 +279,7 @@ class Home extends React.Component {
           id="footer-link-whitepaper"
           className={this.props.classes.link + " btn btn-mwidth my-4 mx-sm-4"}
           rel="noopener noreferrer"
-          href="https://www.liquid.com/"
+          href="https://medium.com/ki-foundation/brace-yourselves-for-xki-coming-to-you-on-liquid-and-your-favorite-dex-uniswap-b2877c56a9a6"
           target="_blank"
           style={{
             width: "11.5rem",
@@ -307,7 +302,7 @@ class Home extends React.Component {
           id="footer-link-whitepaper"
           className={this.props.classes.link + " btn btn-mwidth"}
           rel="noopener noreferrer"
-          href="https://www.liquid.com/"
+          href="https://medium.com/ki-foundation/brace-yourselves-for-xki-coming-to-you-on-liquid-and-your-favorite-dex-uniswap-b2877c56a9a6"
           target="_blank"
           style={{
             width: "11.5rem",
