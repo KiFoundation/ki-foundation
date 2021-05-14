@@ -198,10 +198,10 @@ class Contact extends React.Component {
             return <div className="text-center mb-4"><a id="contact-link-telegram" rel="noopener noreferrer" className={classes.mailTo} target="_blank" href="https://t.me/KiFoundation"><Button className={classes.button}><img src={TelegramLogo} alt="telegram logo" height="20" className="mr-1 contact-telegram-icon"/>Join our Telegram</Button></a></div>;
         } else {
             return (
-                <div className="text-center pt-2 mb-4">
+                <div className="text-center pt-2 mb-4 ">
                       <FormattedMessage id="send.email.text">
                         {placeholder=>
-                            <input value={placeholder} type="submit" className={classes.button} />
+                            <button type="submit" className={classes.button + ' btn btn-primary'}>{placeholder}</button>
                         }
                     </FormattedMessage>
                 </div>

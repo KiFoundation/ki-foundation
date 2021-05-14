@@ -106,5 +106,7 @@
     "select.title": "Sélectionnez...",
     "send.email.text": "Envoyer un email",
     "select.job.input": "Sélectionnez la section qui vous correspond le mieux :",
-    "email.sent.success": "Votre email a été envoyé avec succès !"
+    "email.sent.success": "Votre email a été envoyé avec succès !",
+    "cta.buy.uniswap": "Acheter sur uniswap",
+    "cta.buy.liquid": "Acheter sur Liquid"
 }
