@@ -171,7 +171,7 @@ class Home extends React.Component {
             style={{ lineHeight: "3rem", fontWeight: 700, fontSize: "1.8rem" }}
           >
             Bridging the <u style={{ textDecorationColor: "#043bea" }}>gap</u> between<br />
-            <u style={{ textDecorationColor: "#043bea" }}>CeFi</u>&nbsp;
+            <u style={{ textDecorationColor: "#043bea" }}>CeFi</u>{" "}
             and <u style={{ textDecorationColor: "#043bea" }}>DeFi</u>
             <span
               style={{

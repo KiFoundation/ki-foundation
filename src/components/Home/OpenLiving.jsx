@@ -13,15 +13,14 @@ export default function OpenLiving() {
                 alignItems: 'center',
             }}>
                 <a rel="noopener noreferrer" href="http://klub.ki/" target="_blank" >
-                    <img src={logo} alt="Klub Logo" style={{paddingLeft: '1.4rem', height: 30}} />
+                    <img src={logo} alt="Klub Logo" style={{ paddingLeft: '1.4rem', height: 30 }} />
                 </a>
             </header>
-            <p style={{fontFamily: 'Avenir', fontSize: 15, textAlign: 'justify', letterSpacing: 1}}>
-                Klub is the financial and lifestyle companion for the achievers and builders aiming to grow their wealth
-                and mindset.
+            <p style={{ fontFamily: 'Avenir', fontSize: 15, textAlign: 'justify', letterSpacing: 1 }}>
+                Klub is a private investment platform helping high-earning individuals to spend, store and grow their capital.
             </p>
-            <p style={{fontFamily: 'Avenir', fontSize: 15, textAlign: 'justify', letterSpacing: 1}}>
-                Klub bases its reward system on the Ki token asset as a backbone.
+            <p style={{ fontFamily: 'Avenir', fontSize: 15, textAlign: 'justify', letterSpacing: 1 }}>
+                Klub bases its entire reward and staking system on the XKI asset as a backbone.
             </p>
         </div>
     );
