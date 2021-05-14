@@ -104,7 +104,7 @@ class Team extends Component {
             id="footer-link-whitepaper"
             className={this.props.classes.link + " btn btn-mwidth"}
             rel="noopener noreferrer"
-            href="https://app.uniswap.org/#/swap"
+            href="https://medium.com/ki-foundation/brace-yourselves-for-xki-coming-to-you-on-liquid-and-your-favorite-dex-uniswap-b2877c56a9a6"
             target="_blank"
             style={{
               marginLeft: 25,
@@ -117,7 +117,8 @@ class Team extends Component {
               display: "flex",
               height: 42,
               color: "white",
-              fontWeight: "500"
+              fontWeight: "500",
+              fontSize: 16
             }}
           >
             <img
@@ -132,12 +133,13 @@ class Team extends Component {
             id="footer-link-whitepaper"
             className={this.props.classes.link + " btn btn-primary btn-mwidth"}
             rel="noopener noreferrer"
-            href="https://www.liquid.com/"
+            href="https://www.liquid.com/sign-up/?affiliate=Jp0cYyKl855611"
             target="_blank"
             style={{
               height: 42,
               alignItems: "center",
-              display: "flex"
+              display: "flex",
+              fontSize: 16
             }}
           >
             <FormattedMessage id="cta.buy.liquid" />
