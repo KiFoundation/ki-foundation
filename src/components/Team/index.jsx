@@ -103,8 +103,12 @@ class Team extends Component {
           <a
             id="footer-link-whitepaper"
             className={this.props.classes.link + " btn btn-mwidth"}
-            rel="noopener noreferrer"
-            href="https://medium.com/ki-foundation/brace-yourselves-for-xki-coming-to-you-on-liquid-and-your-favorite-dex-uniswap-b2877c56a9a6"
+            onClick={() =>
+              window.open(
+                "https://app.uniswap.org/#/swap?inputCurrency=0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48&outputCurrency=0x4f6103BAd230295baCF30f914FDa7D4273B7F585&use=V2"
+              )
+            }
+            href=""
             target="_blank"
             style={{
               marginLeft: 25,
@@ -132,8 +136,10 @@ class Team extends Component {
           <a
             id="footer-link-whitepaper"
             className={this.props.classes.link + " btn btn-primary btn-mwidth"}
-            rel="noopener noreferrer"
-            href="https://www.liquid.com/sign-up/?affiliate=Jp0cYyKl855611"
+            onClick={() =>
+              window.open("https://app.liquid.com/exchange/XKIUSDC")
+            }
+            href=""
             target="_blank"
             style={{
               height: 42,
