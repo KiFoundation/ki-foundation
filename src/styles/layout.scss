@@ -1,0 +1,33 @@
+.layout-content-wrapper {
+    padding-top: $header-height-xs;
+
+    @include md {
+        padding-top: $header-height-md;
+    }
+}
+
+.grain {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+
+    &::before {
+        background-image: url('../assets/ui/kinoise.png');
+        position: absolute;
+        content: '';
+        height: 300%;
+        width: 300%;
+        left: -100%;
+        top: -100%;
+        z-index: 1;
+        opacity: 0.3;
+        animation-name: grain;
+        animation-iteration-count: infinite;
+        animation-duration: 0.5s;
+        animation-timing-function: steps(20);
+    }
+}

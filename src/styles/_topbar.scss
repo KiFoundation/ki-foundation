@@ -1,0 +1,33 @@
+.navbar {
+    background: transparent;
+    height: $header-height-xs;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 10;
+    width: 100%;
+
+    @include md {
+        width: 100%;
+        height: $header-height-md;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 3rem;
+    }
+
+    .navbar-nav .nav-link {
+        color: white;
+        margin-left: 0rem;
+
+        @include sm {
+            margin-left: 2rem;
+        }
+
+        &:hover {
+            color: white;
+        }
+        &.active {
+            color: white;
+        }
+    }
+}

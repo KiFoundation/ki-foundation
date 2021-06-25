@@ -1,0 +1,33 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.home {
+    ::-moz-selection {
+        /* Code for Firefox */
+        color: $background;
+        background: $color-blue;
+    }
+
+    ::selection {
+        color: $background;
+        background: $color-blue;
+    }
+
+    .home-content-wrapper {
+        margin-top: 8rem;
+
+        @include md {
+            margin-top: 0rem;
+        }
+
+        .our-partners {
+            margin: 0 auto;
+            margin-top: 60px;
+
+            @include sm {
+                margin-top: 0;
+                margin-right: 8%;
+            }
+        }
+    }
+}

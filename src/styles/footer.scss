@@ -1,0 +1,9 @@
+.footer {
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+    @include sm {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+        max-width: 1200px;
+    }
+}
