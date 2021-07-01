@@ -62,6 +62,12 @@ export const customTheme = {
             fontFamily: 'body',
             color: 'text',
         },
+        subheadMobile: {
+            fontSize: [3],
+            fontWeight: 'subhead',
+            fontFamily: 'body',
+            color: 'text',
+        },
         capture: {
             color: 'primary',
             fontFamily: 'body',

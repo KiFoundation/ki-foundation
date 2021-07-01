@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Text } from 'theme-ui'
 import { Flex, Box, Image } from 'rebass'
 import { Container } from 'react-bootstrap'
@@ -6,6 +6,7 @@ import OurBrands from '@views/Ecosystem/OurBrands'
 import OurInvestors from '@shared/OurInvestors'
 import OurPartners from '@shared/OurPartners'
 import Footer from '@shared/Layout/Footer'
+import * as d3 from 'd3'
 
 import circlesMd from '@assets/ui/ecosystem-header-md.svg'
 import circlesXs from '@assets/ui/ecosystem-header-xs.svg'
@@ -17,6 +18,21 @@ import './ecosystem.scss'
 interface TeamProps {}
 
 const Team: React.FC<TeamProps> = ({}) => {
+    useEffect(() => {
+        let currentFrame = 0
+        const totalFrames = 60
+        let handle = 0
+        d3.xml(circlesMd).then((xml) => {
+            const importedNode = document.importNode(xml.documentElement, true)
+            const circlesGroup = importedNode.querySelector('#circles')
+            const circles = circlesGroup.querySelectorAll('circle')
+            // const filter = importedNode.querySelector('#filter')
+
+            const containerNode: any = d3.select('#checkerboard').node()
+            containerNode.appendChild(importedNode)
+        })
+    }, [])
+
     return (
         <Flex className="ecosystem" alignItems="center" flexDirection="column">
             <Box
@@ -39,48 +55,47 @@ const Team: React.FC<TeamProps> = ({}) => {
                     zIndex: 2,
                 }}
             >
-                <Image src={circlesMd} />
+                {/* <Image src={circlesMd} /> */}
+                <Flex id="checkerboard" style={{ width: '100%' }} />
             </Box>
-            <Flex flexDirection="column" style={{ position: 'relative', zIndex: 10 }}>
-                <Flex justifyContent="center" mt={5}>
-                    <Text as="h1" variant="h1" style={{ textAlign: 'center' }}>
-                        Ecosystem
+            <Flex justifyContent="center" mt={5}>
+                <Text as="h1" variant="h1" style={{ textAlign: 'center' }}>
+                    Ecosystem
+                </Text>
+            </Flex>
+            <Container style={{ maxWidth: 1200, marginTop: '7%' }}>
+                {/* OUR BRANDS BLOCK */}
+                <OurBrands />
+
+                {/* TRANSITION LINE */}
+                <Flex
+                    justifyContent="center"
+                    alignItems="center"
+                    flex={1}
+                    marginTop={40}
+                    style={{ position: 'relative' }}
+                >
+                    <Image src={unionPink} className="d-none d-md-block" />
+                </Flex>
+
+                <Flex justifyContent="center" mt={5} mb={5}>
+                    <Text as="h2" variant="h1" style={{ textAlign: 'center' }}>
+                        We invest and <br />
+                        collaborate
                     </Text>
                 </Flex>
-                <Container style={{ maxWidth: 1200, marginTop: '7%' }}>
-                    {/* OUR BRANDS BLOCK */}
-                    <OurBrands />
 
-                    {/* TRANSITION LINE */}
-                    <Flex
-                        justifyContent="center"
-                        alignItems="center"
-                        flex={1}
-                        marginTop={40}
-                        style={{ position: 'relative' }}
-                    >
-                        <Image src={unionPink} className="d-none d-md-block" />
-                    </Flex>
+                {/* INVESTORS BLOCK */}
+                <OurInvestors displayBgGrid={false} />
 
-                    <Flex justifyContent="center" mt={5} mb={5}>
-                        <Text as="h2" variant="h1" style={{ textAlign: 'center' }}>
-                            We invest and <br />
-                            collaborate
-                        </Text>
-                    </Flex>
+                {/* TRANSITION LINE */}
+                <Flex justifyContent="center" alignItems="center" flex={1} style={{ position: 'relative' }}>
+                    <Image src={lineBlueToPink} className="d-none d-md-block" />
+                </Flex>
 
-                    {/* INVESTORS BLOCK */}
-                    <OurInvestors displayBgGrid={false} />
-
-                    {/* TRANSITION LINE */}
-                    <Flex justifyContent="center" alignItems="center" flex={1} style={{ position: 'relative' }}>
-                        <Image src={lineBlueToPink} className="d-none d-md-block" />
-                    </Flex>
-
-                    {/* PARTNERS BLOCK */}
-                    <OurPartners displayBgGrid={false} mt={5} />
-                </Container>
-            </Flex>
+                {/* PARTNERS BLOCK */}
+                <OurPartners displayBgGrid={false} mt={5} />
+            </Container>
             <Footer variant="pink" marginTop={80} />
         </Flex>
     )

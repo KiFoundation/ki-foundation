@@ -35,7 +35,7 @@ export const team: Team[] = [
     {
         image: martin,
         name: 'Martin Rosenbaum',
-        job: 'Chief Customers & Investors relations',
+        job: 'Chief Investment Officer',
     },
     {
         image: michael,

@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Box, BoxProps, Image, Flex } from 'rebass'
 import Slider, { Settings } from 'react-slick'
 import { Text, useThemeUI } from 'theme-ui'
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react'
+
+// Import Swiper styles
+import 'swiper/swiper.scss'
 
 import forbes from '@assets/logos/forbes-white.svg'
 import { hexToRgb } from '@helpers/color'
@@ -25,9 +31,9 @@ const TalkAboutUsCard: React.FC<TalkAboutUsCardProps> = ({
             paddingTop={15}
             paddingX={25}
             paddingBottom={35}
+            className="neon-border-blue"
             style={{
-                border: '1px solid #0CF6FC',
-                boxSizing: 'border-box',
+                margin: '0 0.5rem',
             }}
         >
             {typeof articleBrand === 'string' ? <Text>{articleBrand}</Text> : articleBrand}
@@ -58,10 +64,35 @@ const TalkAboutUs: React.FC<TalkAboutUsProps> = ({ ...boxProps }) => {
     console.log(backgroundRGB)
 
     const sliderSettings: Settings = {
+        dots: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
         arrows: false,
         autoplay: true,
         centerMode: true,
-        dots: false,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                },
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                },
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+        ],
     }
     return (
         <Box
@@ -75,43 +106,19 @@ const TalkAboutUs: React.FC<TalkAboutUsProps> = ({ ...boxProps }) => {
             <Flex justifyContent="center">
                 <Text variant="h2">They talk about us</Text>
             </Flex>
-            {/* <Slider {...sliderSettings}> */}
-            <Box
-                marginTop={70}
-                sx={{
-                    width: '100%',
-                    display: 'grid',
-                    gridGap: '1rem',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(310px, 1fr))',
-                    margin: '0 auto',
-                }}
-            >
-                <TalkAboutUsCard
-                    articleBrand={<Image src={forbes} width={125} />}
-                    articleTitle={'Ki foundation lève 8,3 Millions'}
-                    articleSubtitle={
-                        'Le projet en question, c’est Klub. Derrière ce nom, se cache une plateforme d’investissement'
-                    }
-                    link="https://google.com"
-                />
-                <TalkAboutUsCard
-                    articleBrand={<Image src={forbes} width={125} />}
-                    articleTitle={'Ki foundation lève 8,3 Millions'}
-                    articleSubtitle={
-                        'Le projet en question, c’est Klub. Derrière ce nom, se cache une plateforme d’investissement'
-                    }
-                    link="https://google.com"
-                />
-                <TalkAboutUsCard
-                    articleBrand={<Image src={forbes} width={125} />}
-                    articleTitle={'Ki foundation lève 8,3 Millions'}
-                    articleSubtitle={
-                        'Le projet en question, c’est Klub. Derrière ce nom, se cache une plateforme d’investissement'
-                    }
-                    link="https://google.com"
-                />
-            </Box>
-            {/* </Slider> */}
+            <Slider {...sliderSettings}>
+                {[...new Array(10)].map((i) => (
+                    <TalkAboutUsCard
+                        key={`slide-${i}`}
+                        articleBrand={<Image src={forbes} width={125} />}
+                        articleTitle={'Ki foundation lève 8,3 Millions'}
+                        articleSubtitle={
+                            'Le projet en question, c’est Klub. Derrière ce nom, se cache une plateforme d’investissement'
+                        }
+                        link="https://google.com"
+                    />
+                ))}
+            </Slider>
         </Box>
     )
 }

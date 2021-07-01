@@ -42,7 +42,7 @@ const OurMission: React.FC<OurMissionProps> = ({ style, ...boxProps }) => {
             <Box
                 style={{
                     position: 'relative',
-                    zIndex: 10,
+                    zIndex: 9,
                     bottom: '6rem',
                 }}
             >

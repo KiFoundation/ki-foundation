@@ -54,7 +54,7 @@ const Media: React.FC<MediaProps> = ({}) => {
                 }}
             />
             <Flex mt={5}>
-                <Text as="h1" variant="h1" style={{ textAlign: 'center' }}>
+                <Text as="h1" variant="h1" style={{ textAlign: 'center' }} sx={{ marginBottom: [4, 0] }}>
                     A growing <br />
                     ecosystem of value
                 </Text>
@@ -129,17 +129,23 @@ const Media: React.FC<MediaProps> = ({}) => {
                     <Image src={lineBlue} className="d-none d-md-block" />
                 </Flex>
 
-                <Flex justifyContent="center" mt={2} flexDirection="column">
+                <Flex
+                    justifyContent="center"
+                    flexDirection="column"
+                    sx={{
+                        marginTop: [5, 0],
+                    }}
+                >
                     <Text as="h2" variant="h2" style={{ textAlign: 'center' }}>
                         Exchanges decentralized
                     </Text>
-                    <Flex
-                        mt={4}
+                    <Box
                         sx={{
                             display: 'grid',
                             gridGap: '1rem',
                             gridTemplateColumns: 'repeat(auto-fit, minmax(375px, 1fr))',
                             margin: '0 auto',
+                            marginTop: [4],
                         }}
                     >
                         {exchanges
@@ -148,20 +154,26 @@ const Media: React.FC<MediaProps> = ({}) => {
                                 <CardExchange key={ex.title} exchange={ex} variant="blue" />
                             ))}
                         <CardExchange key="decentralized-coming-soon" variant="blue" isComingSoon />
-                    </Flex>
+                    </Box>
                 </Flex>
 
-                <Flex justifyContent="center" marginTop={100} flexDirection="column">
+                <Flex
+                    justifyContent="center"
+                    sx={{
+                        marginTop: [5],
+                    }}
+                    flexDirection="column"
+                >
                     <Text as="h2" variant="h2" style={{ textAlign: 'center' }}>
                         Exchanges centralized
                     </Text>
-                    <Flex
-                        mt={4}
+                    <Box
                         sx={{
                             display: 'grid',
                             gridGap: '1rem',
                             gridTemplateColumns: 'repeat(auto-fit, minmax(375px, 1fr))',
                             margin: '0 auto',
+                            marginTop: [4],
                         }}
                     >
                         {exchanges
@@ -170,7 +182,7 @@ const Media: React.FC<MediaProps> = ({}) => {
                                 <CardExchange key={ex.title} exchange={ex} variant="pink" />
                             ))}
                         <CardExchange key="centralized-coming-soon" variant="pink" isComingSoon />
-                    </Flex>
+                    </Box>
                 </Flex>
             </Container>
             <Footer variant="blue" marginTop={80} />

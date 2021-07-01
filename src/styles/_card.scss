@@ -4,6 +4,7 @@
     min-height: 300px;
     width: 100%;
     position: relative;
+    z-index: 2;
 
     & > div {
         position: relative;
@@ -35,6 +36,7 @@
     min-height: 300px;
     width: 100%;
     position: relative;
+    z-index: 2;
 
     & > div {
         position: relative;
@@ -62,10 +64,22 @@
 .card-buy {
     border: 1px solid rgba($color-blue, 1);
     box-shadow: 0 0 2px rgba($color-blue, 1), inset 0 0 3px rgba($color-blue, 1);
-    width: 100%;
+    width: calc(100%);
+    justify-content: center;
+    align-items: center;
 
     @include md {
         width: 460px;
+    }
+
+    .recharts-responsive-container {
+        width: 70px;
+        height: 45px;
+
+        @include md {
+            width: 110px;
+            height: 70px;
+        }
     }
 }
 

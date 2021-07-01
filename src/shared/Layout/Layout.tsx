@@ -9,16 +9,7 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
     return (
-        <Box
-            style={{
-                flex: 1,
-                flexDirection: 'column',
-                height: '100vh',
-                width: '100vw',
-                background: '#07071A',
-                position: 'relative',
-            }}
-        >
+        <>
             <Box className="grain" />
             <Box
                 className="layout-wrapper"
@@ -30,7 +21,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                     {children}
                 </Box>
             </Box>
-        </Box>
+        </>
     )
 }
 

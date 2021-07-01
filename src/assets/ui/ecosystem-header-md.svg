@@ -1,7 +1,11 @@
 <svg width="1440" height="1172" viewBox="0 0 1440 1172" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+<g id="circles">
 <circle cx="725.096" cy="428.722" r="586.859" transform="rotate(165 725.096 428.722)" stroke="url(#paint0_linear)" stroke-width="1.58396"/>
 <circle cx="725.097" cy="428.723" r="480.733" transform="rotate(147.083 725.097 428.723)" stroke="url(#paint1_linear)" stroke-width="1.58396"/>
 <circle cx="725.096" cy="428.723" r="365.104" transform="rotate(165 725.096 428.723)" stroke="url(#paint2_linear)" stroke-width="1.58396"/>
+</g>
+
 <g filter="url(#filter0_f)">
 <circle cx="725.096" cy="428.723" r="586.859" transform="rotate(165 725.096 428.723)" stroke="url(#paint3_linear)" stroke-width="1.58396"/>
 <circle cx="725.097" cy="428.723" r="480.733" transform="rotate(147.914 725.097 428.723)" stroke="url(#paint4_linear)" stroke-width="1.58396"/>

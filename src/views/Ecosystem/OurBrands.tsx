@@ -18,6 +18,7 @@ const OurBrands: React.FC<OurBrandsProps> = ({ ...flexProps }) => {
                 gridGap: '1rem',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
                 maxWidth: 960,
+                margin: '0 auto',
             }}
         >
             <Card color="pink" flexDirection="column" alignItems="center">

@@ -13,6 +13,12 @@
         background: $color-blue;
     }
 
+    #checkerboard-xl {
+        path {
+            fill: none;
+        }
+    }
+
     .home-content-wrapper {
         margin-top: 8rem;
 
@@ -27,6 +33,49 @@
             @include sm {
                 margin-top: 0;
                 margin-right: 8%;
+            }
+        }
+    }
+
+    .slick-slider {
+        margin-top: 5rem;
+
+        &::before {
+            position: absolute;
+            content: '';
+            height: 100%;
+            z-index: 8;
+            width: 7%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(to right, rgba(#101018, 1), rgba(#101018, 0) 90%);
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            height: 100%;
+            background: linear-gradient(to left, rgba(#101018, 1), rgba(#101018, 0) 90%);
+            z-index: 8;
+            width: 7%;
+            top: 0;
+            right: 0;
+        }
+
+        .slick-dots {
+            bottom: -3rem;
+            li {
+                width: 12px;
+                height: 12px;
+                border: 1px solid #0cf6fc;
+
+                &.slick-active {
+                    background: #0cf6fc;
+                }
+
+                button::before {
+                    content: '';
+                }
             }
         }
     }

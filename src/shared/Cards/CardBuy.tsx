@@ -23,7 +23,7 @@ const CardBuy: React.FC<CardBuyProps> = ({ data, ...boxProps }) => {
     const handleClickBuy = () => {}
 
     return (
-        <Flex className="card-buy" padding={20} {...boxProps}>
+        <Flex className="card-buy" sx={{ padding: [3, 4] }} {...boxProps}>
             <Flex flex={1} justifyContent="space-between" alignItems="center" flexDirection="row">
                 <Flex className="chart" style={{ position: 'relative', zIndex: 10 }}>
                     {data ? (
