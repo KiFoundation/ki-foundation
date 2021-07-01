@@ -1,0 +1,40 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "sourceMap": true,
+        "typeRoots": ["node_modules/@types/", "src/@types"],
+        "moduleResolution": "node",
+        "module": "esnext",
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "noUnusedLocals": false,
+        "noUnusedParameters": false,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "experimentalDecorators": true,
+        "noImplicitAny": true,
+        "forceConsistentCasingInFileNames": false,
+        "resolveJsonModule": true,
+        "declaration": false,
+        "watch": true,
+        "jsx": "react",
+        "removeComments": false,
+        "baseUrl": ".",
+        "paths": {
+            "@assets/*": ["src/assets/*"],
+            "@shared/*": ["src/shared/*"],
+            "@views/*": ["src/views/*"],
+            "@services/*": ["src/services/*"],
+            "@trans/*": ["src/translations/*"],
+            "@protos/*": ["src/protos/dist/*"],
+            "@helpers/*": ["src/helpers/*"],
+            "@hooks/*": ["src/hooks/*"],
+            "@store/*": ["src/store/*"],
+            "@styles/*": ["src/styles/*"]
+        }
+    },
+    "compileOnSave": true,
+    "include": ["src/**/*"],
+    "exclude": [".vscode", "node_modules", "dist", "scripts"],
+    "lib": ["es6", "dom"]
+}

@@ -1,0 +1,28 @@
+<svg width="668" height="327" viewBox="0 0 668 327" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+    <defs>
+        <filter id="filter0_f" x="0" y="0" width="683.999" height="403" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feGaussianBlur stdDeviation="1" result="effect1_foregroundBlur"/>
+        </filter>
+        <linearGradient id="paint0_linear" x1="0" x2="0" y1="0" y2="1" >
+            <stop offset="0%" stop-color="#EB117B" stop-opacity="0"/>
+            <stop offset="55%" stop-color="#EB117B"/>
+            <stop offset="75%" stop-color="#EB117B" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="paint1_linear" x1="-3.01937e+09" y1="486.611" x2="-3.01937e+09" y2="971.679" gradientUnits="userSpaceOnUse">
+            <stop offset="0.135281" stop-color="#EB117B" stop-opacity="0"/>
+            <stop offset="0.135381" stop-color="#EB117B" stop-opacity="0"/>
+            <stop offset="0.49998" stop-color="#EB117B"/>
+            <stop offset="0.802075" stop-color="#EB117B" stop-opacity="0"/>
+        </linearGradient>
+    </defs>
+
+    <path  fill="url(#paint0_linear)" opacity="0.6" fill-rule="evenodd" clip-rule="evenodd"  d="M667.999 5.2737e-06L667.999 126L667.999 126.5L667.499 126.5L334.5 126.5L334.5 387L334.499 387L333.499 387L333.499 199L333.498 199L333.498 126.5L0.500022 126.5L2.2118e-05 126.5L2.20524e-05 126L5.52949e-06 0.000136714L1.00001 0.000136582L1.00002 125.5L333.498 125.5L333.498 124L333.499 0.500151L334.499 0.500151L334.498 124L334.498 125.5L666.999 125.5L666.999 5.44854e-06L667.999 5.2737e-06Z" />
+    <g filter="url(#filter0_f)">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M675.999 7.99988L675.999 134L675.999 134.5L675.499 134.5L342.5 134.5L342.5 395L342.499 395L341.499 395L341.499 207L341.498 207L341.498 134.5L8.50002 134.5L8.00002 134.5L8.00002 134L8.00001 8.00001L9.00001 8.00001L9.00002 133.5L341.498 133.5L341.498 132L341.499 8.50003L342.499 8.50003L342.498 132L342.498 133.5L674.999 133.5L674.999 7.99988L675.999 7.99988Z" fill="url(#paint1_linear)"/>
+    </g>
+
+</svg>
+

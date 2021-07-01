@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'ChakraPetch';
+    src: url('../assets/fonts/chakra-petch/ChakraPetch-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'ChakraPetch';
+    src: url('../assets/fonts/chakra-petch/ChakraPetch-Italic.ttf');
+    font-style: italic;
+}
+@font-face {
+    font-family: 'ChakraPetch';
+    src: url('../assets/fonts/chakra-petch/ChakraPetch-Bold.ttf');
+    font-weight: 900;
+}
+@font-face {
+    font-family: 'ChakraPetch';
+    src: url('../assets/fonts/chakra-petch/ChakraPetch-BoldItalic.ttf');
+    font-weight: 900;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'ChakraPetch';
+    src: url('../assets/fonts/chakra-petch/ChakraPetch-Light.ttf');
+    font-weight: 100;
+}
+@font-face {
+    font-family: 'ChakraPetch';
+    src: url('../assets/fonts/chakra-petch/ChakraPetch-LightItalic.ttf');
+    font-weight: 100;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'ChakraPetch';
+    src: url('../assets/fonts/chakra-petch/ChakraPetch-Medium.ttf');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'ChakraPetch';
+    src: url('../assets/fonts/chakra-petch/ChakraPetch-MediumItalic.ttf');
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'ChakraPetch';
+    src: url('../assets/fonts/chakra-petch/ChakraPetch-Medium.ttf');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'ChakraPetch';
+    src: url('../assets/fonts/chakra-petch/ChakraPetch-MediumItalic.ttf');
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'ChakraPetch';
+    src: url('../assets/fonts/chakra-petch/ChakraPetch-SemiBold.ttf');
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'ChakraPetch';
+    src: url('../assets/fonts/chakra-petch/ChakraPetch-SemiBoldItalic.ttf');
+    font-weight: 600;
+    font-style: italic;
+}
+
+a {
+    color: white;
+
+    &:hover {
+        color: white;
+        text-decoration: none;
+    }
+}

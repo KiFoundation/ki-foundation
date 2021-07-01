@@ -1,0 +1,35 @@
+.neon-border-blue {
+    border: 1px solid rgba($color-blue, 0.5);
+    box-shadow: 0 0 2px rgba($color-blue, 0.5), inset 0 0 3px rgba($color-blue, 0.5);
+
+    &.full-opacity {
+        border: 1px solid rgba($color-blue, 1);
+        box-shadow: 0 0 2px rgba($color-blue, 1), inset 0 0 3px rgba($color-blue, 1);
+    }
+
+    &.with-hover {
+        &:hover {
+            border: 1px solid rgba($color-blue, 1);
+            box-shadow: 0 0 3px rgba($color-blue, 1), 0 0 3px rgba($color-blue, 1),
+                inset 0 0 3px rgba($color-blue, 1);
+        }
+    }
+}
+
+.neon-border-pink {
+    border: 1px solid rgba($color-pink, 0.5);
+    box-shadow: 0 0 2px rgba($color-pink, 0.5), inset 0 0 3px rgba($color-pink, 0.5);
+
+    &.full-opacity {
+        border: 1px solid rgba($color-pink, 1);
+        box-shadow: 0 0 2px rgba($color-pink, 1), inset 0 0 3px rgba($color-pink, 1);
+    }
+
+    &.with-hover {
+        &:hover {
+            border: 1px solid rgba($color-pink, 1);
+            box-shadow: 0 0 3px rgba($color-pink, 1), 0 0 3px rgba($color-pink, 1),
+                inset 0 0 3px rgba($color-pink, 1);
+        }
+    }
+}

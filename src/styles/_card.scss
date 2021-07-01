@@ -1,0 +1,127 @@
+.card-blue {
+    border: 1px solid rgba($color-blue, 0.5);
+    box-shadow: 0 0 2px rgba($color-blue, 0.5), inset 0 0 3px rgba($color-blue, 0.5);
+    min-height: 300px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+
+    & > div {
+        position: relative;
+        z-index: 2;
+    }
+
+    &:hover {
+        border: 1px solid rgba($color-blue, 1);
+        box-shadow: 0 0 3px rgba($color-blue, 1), 0 0 3px rgba($color-blue, 1), inset 0 0 3px rgba($color-blue, 1);
+
+        &::before {
+            top: 0;
+            left: 0;
+            content: '';
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            position: absolute;
+            background: rgba(12, 246, 252, 0.1);
+            opacity: 0.6;
+        }
+    }
+}
+
+.card-pink {
+    border: 1px solid rgba($color-pink, 0.5);
+    box-shadow: 0 0 2px rgba($color-pink, 0.5), inset 0 0 3px rgba($color-pink, 0.5);
+    background: rgba($background, 0.9);
+    min-height: 300px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+
+    & > div {
+        position: relative;
+        z-index: 2;
+    }
+
+    &:hover {
+        border: 1px solid rgba($color-pink, 1);
+        box-shadow: 0 0 3px rgba($color-pink, 1), 0 0 3px rgba($color-pink, 1), inset 0 0 3px rgba($color-pink, 1);
+
+        &::before {
+            top: 0;
+            left: 0;
+            content: '';
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            position: absolute;
+            background: rgba(12, 246, 252, 0.1);
+            opacity: 0.6;
+        }
+    }
+}
+
+.card-buy {
+    border: 1px solid rgba($color-blue, 1);
+    box-shadow: 0 0 2px rgba($color-blue, 1), inset 0 0 3px rgba($color-blue, 1);
+    width: calc(100%);
+    justify-content: center;
+    align-items: center;
+
+    @include md {
+        width: 460px;
+    }
+
+    .recharts-responsive-container {
+        width: 70px;
+        height: 45px;
+
+        @include md {
+            width: 110px;
+            height: 70px;
+        }
+    }
+}
+
+.card-team {
+    & > img {
+        width: '100%';
+        height: '100%';
+        border: 1px solid rgba($color-blue, 1);
+        box-shadow: 0 0 2px rgba($color-blue, 1), inset 0 0 3px rgba($color-blue, 1);
+
+        @include md {
+            width: 274px;
+            height: 290px;
+        }
+    }
+}
+
+.card-exchange {
+    width: '100%';
+    height: 105px;
+
+    &.card-exchange-blue {
+        border: 1px solid rgba($color-blue, 0.5);
+        box-shadow: 0 0 2px rgba($color-blue, 0.5), inset 0 0 3px rgba($color-blue, 0.5);
+
+        &.coming-soon {
+            border-color: rgba($color-blue, 0.2);
+            box-shadow: 0 0 2px rgba($color-blue, 0.2), inset 0 0 3px rgba($color-blue, 0.2);
+        }
+    }
+
+    &.card-exchange-pink {
+        border: 1px solid rgba($color-pink, 0.5);
+        box-shadow: 0 0 2px rgba($color-pink, 0.5), inset 0 0 3px rgba($color-pink, 0.5);
+
+        &.coming-soon {
+            border-color: rgba($color-pink, 0.2);
+            box-shadow: 0 0 2px rgba($color-pink, 0.2), inset 0 0 3px rgba($color-pink, 0.2);
+        }
+    }
+
+    @include md {
+        width: 375px;
+    }
+}

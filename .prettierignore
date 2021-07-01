@@ -1,0 +1,4 @@
+*.md
+src/app/translations/en
+src/app/translations/fr
+*.yml

@@ -1,0 +1,15 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.ecosystem {
+    ::-moz-selection {
+        /* Code for Firefox */
+        color: $background;
+        background: $color-pink;
+    }
+
+    ::selection {
+        color: $background;
+        background: $color-pink;
+    }
+}
