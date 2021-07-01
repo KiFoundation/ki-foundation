@@ -14,7 +14,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <Box
                 className="layout-wrapper"
                 flexDirection="column"
-                style={{ position: 'relative', zIndex: 10, backgroundImage: `url(${noise})` }}
+                style={{ position: 'relative', zIndex: 10, background: `center / cover url(${noise})` }}
             >
                 <TopBar />
                 <Box className="layout-content-wrapper" flexDirection="column">
