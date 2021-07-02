@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Text } from 'theme-ui'
 import { Flex, Box, Image } from 'rebass'
-import { Container } from 'react-bootstrap'
+import { Col, Container, Row } from 'react-bootstrap'
 import { ResponsiveContainer, AreaChart, Area } from 'recharts'
 import Footer from '@shared/Layout/Footer'
 import axios from 'axios'
@@ -60,7 +60,7 @@ const Media: React.FC<MediaProps> = ({}) => {
                 </Text>
             </Flex>
             <Container style={{ maxWidth: 1200, marginTop: '7%' }}>
-                <Flex className="chart" style={{ position: 'relative', zIndex: 10 }}>
+                <Flex className="chart">
                     <Box style={{ position: 'absolute' }}>
                         <Text variant="body" sx={{ fontSize: 5 }}>
                             $1,54
@@ -129,61 +129,55 @@ const Media: React.FC<MediaProps> = ({}) => {
                     <Image src={lineBlue} className="d-none d-md-block" />
                 </Flex>
 
-                <Flex
-                    justifyContent="center"
-                    flexDirection="column"
+                <Box
                     sx={{
-                        marginTop: [5, 0],
+                        marginTop: [5],
+                        maxWidth: 1200,
                     }}
                 >
                     <Text as="h2" variant="h2" style={{ textAlign: 'center' }}>
                         Exchanges decentralized
                     </Text>
-                    <Box
-                        sx={{
-                            display: 'grid',
-                            gridGap: '1rem',
-                            gridTemplateColumns: 'repeat(auto-fit, minmax(375px, 1fr))',
-                            margin: '0 auto',
-                            marginTop: [4],
-                        }}
-                    >
-                        {exchanges
-                            .filter((ex) => ex.type === ExchangeType.DECENTRELIZED)
-                            .map((ex) => (
-                                <CardExchange key={ex.title} exchange={ex} variant="blue" />
-                            ))}
-                        <CardExchange key="decentralized-coming-soon" variant="blue" isComingSoon />
+                    <Box sx={{ marginTop: [4, 5] }}>
+                        <Row className="justify-content-center align-items-center">
+                            {exchanges
+                                .filter((ex) => ex.type === ExchangeType.DECENTRELIZED)
+                                .map((ex) => (
+                                    <Col xs={12} md={4} className="mb-3">
+                                        <CardExchange key={ex.title} exchange={ex} variant="blue" />
+                                    </Col>
+                                ))}
+                            <Col xs={12} md={4} className="mb-3">
+                                <CardExchange key="decentralized-coming-soon" variant="blue" isComingSoon />
+                            </Col>
+                        </Row>
                     </Box>
-                </Flex>
+                </Box>
 
-                <Flex
-                    justifyContent="center"
+                <Box
                     sx={{
                         marginTop: [5],
+                        maxWidth: 1200,
                     }}
-                    flexDirection="column"
                 >
                     <Text as="h2" variant="h2" style={{ textAlign: 'center' }}>
                         Exchanges centralized
                     </Text>
-                    <Box
-                        sx={{
-                            display: 'grid',
-                            gridGap: '1rem',
-                            gridTemplateColumns: 'repeat(auto-fit, minmax(375px, 1fr))',
-                            margin: '0 auto',
-                            marginTop: [4],
-                        }}
-                    >
-                        {exchanges
-                            .filter((ex) => ex.type === ExchangeType.CENTRELIZED)
-                            .map((ex) => (
-                                <CardExchange key={ex.title} exchange={ex} variant="pink" />
-                            ))}
-                        <CardExchange key="centralized-coming-soon" variant="pink" isComingSoon />
+                    <Box sx={{ marginTop: [4, 5] }}>
+                        <Row className="justify-content-center align-items-center">
+                            {exchanges
+                                .filter((ex) => ex.type === ExchangeType.CENTRELIZED)
+                                .map((ex) => (
+                                    <Col xs={12} md={4} className="mb-3">
+                                        <CardExchange key={ex.title} exchange={ex} variant="pink" />
+                                    </Col>
+                                ))}
+                            <Col xs={12} md={4} className="mb-3">
+                                <CardExchange key="centralized-coming-soon" variant="pink" isComingSoon />
+                            </Col>
+                        </Row>
                     </Box>
-                </Flex>
+                </Box>
             </Container>
             <Footer variant="blue" marginTop={80} />
         </Flex>

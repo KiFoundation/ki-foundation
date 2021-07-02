@@ -92,18 +92,7 @@ const OurPartners: React.FC<OurPartnersProps> = ({ displayBgGrid = true, ...flex
                     <PartnerCard icon={liris} />
                     <PartnerCard icon={sifu} />
                 </Box>
-                <Flex
-                    justifyContent="center"
-                    alignItems="center"
-                    style={{
-                        background: 'linear-gradient(90.04deg, #EA1078 -70.41%, rgba(234, 16, 120, 0) 102.42%)',
-                        border: '1px solid #EA1078',
-                        backdropFilter: 'blur(23px)',
-                        borderTop: 0,
-                    }}
-                    paddingX={20}
-                    paddingY={10}
-                >
+                <Flex className="footer" justifyContent="center" alignItems="center" paddingX={20} paddingY={10}>
                     <Text variant="capture" color="secondary">
                         SEE MORE
                     </Text>

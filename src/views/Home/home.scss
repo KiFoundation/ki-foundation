@@ -25,16 +25,6 @@
         @include md {
             margin-top: 0rem;
         }
-
-        .our-partners {
-            margin: 0 auto;
-            margin-top: 60px;
-
-            @include sm {
-                margin-top: 0;
-                margin-right: 8%;
-            }
-        }
     }
 
     .slick-slider {
@@ -76,6 +66,59 @@
                 button::before {
                     content: '';
                 }
+            }
+        }
+    }
+}
+
+.our-partners,
+.grid-pink {
+    margin: 0 auto;
+    margin-top: 60px;
+
+    @include sm {
+        margin-top: 0;
+        margin-right: 8%;
+    }
+
+    .footer {
+        border: 1px solid #ea1078;
+        backdrop-filter: blur(23px);
+        border-top: 0;
+        background: linear-gradient(90.04deg, #ea1078 -70.41%, rgba(234, 16, 120, 0) 102.42%);
+
+        span {
+            font-weight: 600;
+        }
+
+        &:hover {
+            cursor: pointer;
+            background: linear-gradient(90.04deg, #ea1078 6.45%, rgba(234, 16, 120, 0) 148.5%);
+
+            span {
+                color: white;
+            }
+        }
+    }
+}
+.our-investors,
+.grid-blue {
+    .footer {
+        background: linear-gradient(90.04deg, #06edf7 -70.41%, rgba(6, 237, 247, 0) 102.42%);
+        border: 1px solid rgba(12, 246, 252, 0.5);
+        backdrop-filter: blur(23px);
+        border-top: 0;
+
+        span {
+            font-weight: 600;
+        }
+
+        &:hover {
+            cursor: pointer;
+            background: linear-gradient(91.04deg, #06edf7 6.45%, rgba(6, 237, 247, 0) 148.5%);
+
+            span {
+                color: white;
             }
         }
     }

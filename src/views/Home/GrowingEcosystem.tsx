@@ -19,7 +19,7 @@ const GrowingEcosystem: React.FC<GrowingEcosystemProps> = ({ data, ...flexProps 
     return (
         <>
             <Flex
-                className="d-none d-md-flex"
+                className="d-none d-md-flex grid-blue"
                 flexDirection="column"
                 maxWidth={980}
                 style={{ margin: '0 auto', marginTop: 50 }}
@@ -110,11 +110,12 @@ const GrowingEcosystem: React.FC<GrowingEcosystemProps> = ({ data, ...flexProps 
                     </Flex>
                 </Flex>
                 <Flex
+                    className="footer"
                     width="100%"
                     alignItems="center"
                     justifyContent="center"
                     style={{
-                        background: 'linear-gradient(90.14deg, #06EDF7 -26.27%, rgba(16, 21, 51, 0) 105.32%)',
+                        // background: 'linear-gradient(90.14deg, #06EDF7 -26.27%, rgba(16, 21, 51, 0) 105.32%)',
                         border: '1px solid rgba(12, 246, 252, 0.5)',
                         borderTop: 0,
                     }}
@@ -129,7 +130,7 @@ const GrowingEcosystem: React.FC<GrowingEcosystemProps> = ({ data, ...flexProps 
                 flexDirection="column"
                 style={{ width: '100%', marginTop: 40 }}
             >
-                <CardBuy data={data} />
+                <CardBuy data={data} fullWidth />
                 <Flex
                     className="neon-border-blue full-opacity"
                     flexDirection="column"
