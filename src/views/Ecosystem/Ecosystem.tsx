@@ -22,7 +22,7 @@ const Team: React.FC<TeamProps> = ({}) => {
         let currentFrame = 0
         const totalFrames = 60
         let handle = 0
-        d3.xml(circlesMd).then((xml) => {
+        /*  d3.xml(circlesMd).then((xml) => {
             const importedNode = document.importNode(xml.documentElement, true)
             const circlesGroup = importedNode.querySelector('#circles')
             const circles = circlesGroup.querySelectorAll('circle')
@@ -30,7 +30,7 @@ const Team: React.FC<TeamProps> = ({}) => {
 
             const containerNode: any = d3.select('#checkerboard').node()
             containerNode.appendChild(importedNode)
-        })
+        }) */
     }, [])
 
     return (
@@ -51,14 +51,16 @@ const Team: React.FC<TeamProps> = ({}) => {
                 style={{
                     position: 'absolute',
                     top: 0,
-                    left: 0,
+                    left: '50%',
+                    transform: 'translate(-50%, 0)',
                     zIndex: 2,
+                    width: '100%',
                 }}
             >
-                {/* <Image src={circlesMd} /> */}
-                <Flex id="checkerboard" style={{ width: '100%' }} />
+                <Image className="d-none d-md-block" src={circlesMd} />
+                <Image className="d-block d-md-none" src={circlesXs} width="100%" />
             </Box>
-            <Flex justifyContent="center" mt={5}>
+            <Flex justifyContent="center" mt={5} style={{ position: 'relative', zIndex: 10 }}>
                 <Text as="h1" variant="h1" style={{ textAlign: 'center' }}>
                     Ecosystem
                 </Text>

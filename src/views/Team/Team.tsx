@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text } from 'theme-ui'
 import { Flex, Box } from 'rebass'
-import { Container } from 'react-bootstrap'
+import { Col, Container, Row } from 'react-bootstrap'
 import Footer from '@shared/Layout/Footer'
 import CardTeam from '@shared/Cards/CardTeam'
 
@@ -31,21 +31,15 @@ const Team: React.FC<TeamProps> = ({}) => {
                 </Text>
             </Flex>
             <Container style={{ maxWidth: 1200, marginTop: '7%' }}>
-                <Box
-                    sx={{
-                        display: 'grid',
-                        gridGap: '1rem',
-                        rowGap: '2.5rem',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(275px, 1fr))',
-                        margin: '0 auto',
-                    }}
-                >
+                <Row>
                     {team.map((t) => (
-                        <CardTeam key={t.name} {...t} />
+                        <Col xs={12} md={3} key={t.name} style={{ marginBottom: '3rem' }}>
+                            <CardTeam {...t} />
+                        </Col>
                     ))}
-                </Box>
+                </Row>
             </Container>
-            <Footer variant="blue" marginTop={80} />
+            <Footer variant="blue" marginTop={'15%'} />
         </Flex>
     )
 }

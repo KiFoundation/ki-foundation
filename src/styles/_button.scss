@@ -1,0 +1,16 @@
+button {
+    &.primary {
+        background: $color-blue;
+        border: 1px solid $color-blue;
+        transition: all 200ms ease;
+
+        &:hover {
+            background: transparent;
+            border: 1px solid $color-blue;
+
+            span {
+                color: $color-blue;
+            }
+        }
+    }
+}

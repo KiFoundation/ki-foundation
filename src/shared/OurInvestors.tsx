@@ -47,7 +47,7 @@ interface OurInvestorsProps extends FlexProps {
 
 const OurInvestors: React.FC<OurInvestorsProps> = ({ displayBgGrid = true, ...flexProps }) => {
     return (
-        <Flex justifyContent="center" alignItems="center" flex={1} style={{ position: 'relative' }} {...flexProps}>
+        <Flex alignItems="center" flex={1} style={{ position: 'relative' }} {...flexProps}>
             {displayBgGrid ? (
                 <Box
                     style={{
@@ -60,7 +60,7 @@ const OurInvestors: React.FC<OurInvestorsProps> = ({ displayBgGrid = true, ...fl
                     <Image src={checkerboard2d} />
                 </Box>
             ) : null}
-            <Container className="px-0" style={{ position: 'relative', zIndex: 10, maxWidth: 780 }}>
+            <Container className="our-investors px-0" style={{ position: 'relative', zIndex: 10, maxWidth: 780 }}>
                 <Flex
                     justifyContent="space-between"
                     alignItems="center"
@@ -92,17 +92,7 @@ const OurInvestors: React.FC<OurInvestorsProps> = ({ displayBgGrid = true, ...fl
                     <InvestorCard icon={liris} />
                     <InvestorCard icon={sifu} />
                 </Box>
-                <Flex
-                    justifyContent="center"
-                    alignItems="center"
-                    style={{
-                        background: 'linear-gradient(90.14deg, #06EDF7 -26.27%, rgba(16, 21, 51, 0) 105.32%)',
-                        border: '1px solid rgba(12, 246, 252, 0.5)',
-                        borderTop: 0,
-                    }}
-                    paddingX={20}
-                    paddingY={10}
-                >
+                <Flex className="footer" justifyContent="center" alignItems="center" paddingX={20} paddingY={10}>
                     <Text variant="capture">SEE MORE</Text>
                 </Flex>
             </Container>

@@ -28,16 +28,17 @@ $translateX: 0;
     .navbar-nav .nav-link {
         color: white;
         margin-left: 0rem;
+        transition: color 280ms ease;
 
         @include sm {
             margin-left: 2rem;
         }
 
         &:hover {
-            color: white;
+            color: $color-blue;
         }
         &.active {
-            color: white;
+            color: $color-blue;
         }
     }
 

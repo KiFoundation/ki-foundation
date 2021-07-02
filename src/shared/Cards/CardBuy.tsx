@@ -5,9 +5,10 @@ import { ResponsiveContainer, AreaChart, Area } from 'recharts'
 
 interface CardBuyProps extends BoxProps {
     data: any
+    fullWidth?: boolean
 }
 
-const CardBuy: React.FC<CardBuyProps> = ({ data, ...boxProps }) => {
+const CardBuy: React.FC<CardBuyProps> = ({ data, fullWidth = false, ...boxProps }) => {
     const [chartColor, setChartColor] = useState(null)
 
     useEffect(() => {
@@ -23,7 +24,7 @@ const CardBuy: React.FC<CardBuyProps> = ({ data, ...boxProps }) => {
     const handleClickBuy = () => {}
 
     return (
-        <Flex className="card-buy" sx={{ padding: [3, 4] }} {...boxProps}>
+        <Flex className={`card-buy ${fullWidth ? 'full-width' : ''}`} sx={{ padding: [3, 4] }} {...boxProps}>
             <Flex flex={1} justifyContent="space-between" alignItems="center" flexDirection="row">
                 <Flex className="chart" style={{ position: 'relative', zIndex: 10 }}>
                     {data ? (
@@ -46,7 +47,7 @@ const CardBuy: React.FC<CardBuyProps> = ({ data, ...boxProps }) => {
                     </Text>
                 </Flex>
                 <Flex>
-                    <Button onClick={handleClickBuy}>
+                    <Button className="primary" onClick={handleClickBuy}>
                         <Text variant="body" sx={{ fontWeight: 600 }} color="black">
                             Buy
                         </Text>
