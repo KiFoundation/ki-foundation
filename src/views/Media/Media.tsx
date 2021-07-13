@@ -6,8 +6,9 @@ import { ResponsiveContainer, AreaChart, Area } from 'recharts'
 import Footer from '@shared/Layout/Footer'
 import axios from 'axios'
 
-import checkerboard from '@assets/ui/checkerboard-md.svg'
+import checkerboard from '@assets/ui/test2.png'
 import lineBlue from '@assets/ui/line-blue.svg'
+import gradientXL from '@assets/ui/gradient-xl-blue.png'
 
 import { exchanges, ExchangeType } from '@views/Media/data'
 import './media.scss'
@@ -21,7 +22,7 @@ const Media: React.FC<MediaProps> = ({}) => {
 
     useEffect(() => {
         axios
-            .get('https://min-api.cryptocompare.com/data/histoday?fsym=BTC&tsym=USD&limit=50&aggregate=3&e=Kraken')
+            .get('https://min-api.cryptocompare.com/data/histoday?fsym=BTC&tsym=USD&limit=10&aggregate=3&e=Kraken')
             .then((res) => {
                 setData(res.data['Data'])
             })
@@ -45,73 +46,60 @@ const Media: React.FC<MediaProps> = ({}) => {
             <Box
                 style={{
                     position: 'absolute',
-                    width: ' 50vw',
-                    height: '150vh',
-                    left: '23vw',
-                    top: '-150vh',
-                    background: 'rgba(0, 180, 168, 0.4)',
-                    filter: 'blur(670px)',
+                    width: ' 100%',
+                    height: '100%',
+                    left: '0%',
+                    top: '-60%',
+                    background: `center / cover no-repeat url(${gradientXL})`,
                 }}
             />
             <Flex mt={5}>
-                <Text as="h1" variant="h1" style={{ textAlign: 'center' }} sx={{ marginBottom: [4, 0] }}>
+                <Text
+                    as="h1"
+                    variant="h1"
+                    style={{ textAlign: 'center' }}
+                    sx={{ marginBottom: [4, 0], paddingX: '0.5rem' }}
+                >
                     A growing <br />
                     ecosystem of value
                 </Text>
             </Flex>
             <Container style={{ maxWidth: 1200, marginTop: '7%' }}>
-                <Flex className="chart">
+                <Flex className="chart animate__animated animate__fadeIn animate__delay-1s">
                     <Box style={{ position: 'absolute' }}>
                         <Text variant="body" sx={{ fontSize: 5 }}>
                             $1,54
                         </Text>
                     </Box>
                     {data ? (
-                        <ResponsiveContainer>
-                            <AreaChart data={data}>
-                                <defs>
-                                    <linearGradient id="color" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="0%" stopColor={chartColor} stopOpacity={0.6} />
-                                        <stop offset="65%" stopColor={chartColor} stopOpacity={0} />
-                                    </linearGradient>
-                                </defs>
-                                <Area dataKey="close" stroke={chartColor} strokeWidth={2} fill="url(#color)" />
-                            </AreaChart>
-                        </ResponsiveContainer>
+                        <Box mt={5} width="100%" height="100%">
+                            <ResponsiveContainer>
+                                <AreaChart data={data}>
+                                    <defs>
+                                        <linearGradient id="color" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stopColor={chartColor} stopOpacity={0.6} />
+                                            <stop offset="65%" stopColor={chartColor} stopOpacity={0} />
+                                        </linearGradient>
+                                    </defs>
+                                    <Area
+                                        isAnimationActive={false}
+                                        dataKey="close"
+                                        stroke={chartColor}
+                                        strokeWidth={2}
+                                        fill="url(#color)"
+                                    />
+                                </AreaChart>
+                            </ResponsiveContainer>
+                        </Box>
                     ) : null}
                 </Flex>
             </Container>
-            <Box style={{ position: 'relative' }}>
-                <Box
-                    style={{
-                        position: 'absolute',
-                        borderRadius: '80%',
-                        width: '150%',
-                        height: '57%',
-                        background: 'rgb(15, 15, 23)',
-                        opacity: 1,
-                        filter: 'blur(20px)',
-                        transform: 'translate(-15%, 0px)',
-                    }}
-                />
+            <Box style={{ position: 'relative', overflow: 'hidden' }}>
                 <Image src={checkerboard} width="100%" />
             </Box>
-            <Container style={{ maxWidth: 1200, marginTop: '4rem', position: 'relative' }}>
-                <Flex style={{ position: 'relative', zIndex: 10 }}>
-                    <Box
-                        style={{
-                            position: 'absolute',
-                            zIndex: 2,
-                            width: '50%',
-                            height: '140%',
-                            left: '50%',
-                            borderRadius: '40%',
-                            transform: 'translate(-50%, 0px)',
-                            top: '-1rem',
-                            background: 'rgba(0, 180, 168, 0.4)',
-                            filter: 'blur(670px)',
-                        }}
-                    />
+            <Container style={{ maxWidth: 1200, marginTop: '4rem' }}>
+                <Flex style={{ zIndex: 10, position: 'relative' }}>
+                    <Box className="ellipse" />
                     <Flex
                         className="buy-module"
                         alignItems="center"
@@ -143,11 +131,11 @@ const Media: React.FC<MediaProps> = ({}) => {
                             {exchanges
                                 .filter((ex) => ex.type === ExchangeType.DECENTRELIZED)
                                 .map((ex) => (
-                                    <Col xs={12} md={4} className="mb-3">
-                                        <CardExchange key={ex.title} exchange={ex} variant="blue" />
+                                    <Col xs={12} sm={12} md={4} key={ex.title} className="mb-3">
+                                        <CardExchange exchange={ex} variant="blue" />
                                     </Col>
                                 ))}
-                            <Col xs={12} md={4} className="mb-3">
+                            <Col xs={12} sm={12} md={4} className="mb-3">
                                 <CardExchange key="decentralized-coming-soon" variant="blue" isComingSoon />
                             </Col>
                         </Row>
@@ -168,11 +156,11 @@ const Media: React.FC<MediaProps> = ({}) => {
                             {exchanges
                                 .filter((ex) => ex.type === ExchangeType.CENTRELIZED)
                                 .map((ex) => (
-                                    <Col xs={12} md={4} className="mb-3">
-                                        <CardExchange key={ex.title} exchange={ex} variant="pink" />
+                                    <Col xs={12} sm={12} md={4} key={ex.title} className="mb-3">
+                                        <CardExchange exchange={ex} variant="pink" />
                                     </Col>
                                 ))}
-                            <Col xs={12} md={4} className="mb-3">
+                            <Col xs={12} sm={12} md={4} className="mb-3">
                                 <CardExchange key="centralized-coming-soon" variant="pink" isComingSoon />
                             </Col>
                         </Row>

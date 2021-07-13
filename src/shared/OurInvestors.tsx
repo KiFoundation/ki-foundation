@@ -21,8 +21,10 @@ const InvestorCard: React.FC<InvestorCardProps> = ({ icon }) => {
     const { theme } = useThemeUI()
     const primaryRGB = hexToRgb(String(theme.rawColors.primary))
     return (
-        <Box
+        <Flex
             minHeight={220}
+            justifyContent="center"
+            alignItems="center"
             sx={{
                 position: 'relative',
                 background: 'black',
@@ -34,10 +36,8 @@ const InvestorCard: React.FC<InvestorCardProps> = ({ icon }) => {
                 },
             }}
         >
-            <Flex flex={1} justifyContent="center" alignItems="center" height="100%" flexDirection="column">
-                <Image src={icon} />
-            </Flex>
-        </Box>
+            <Image src={icon} />
+        </Flex>
     )
 }
 

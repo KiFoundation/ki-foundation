@@ -38,18 +38,6 @@ const Team: React.FC<TeamProps> = ({}) => {
             <Box
                 style={{
                     position: 'absolute',
-                    width: ' 50vw',
-                    height: '150vh',
-                    left: '23vw',
-                    top: '-150vh',
-                    background: 'rgba(234, 16, 120, 0.4)',
-                    filter: 'blur(670px)',
-                    zIndex: 1,
-                }}
-            />
-            <Box
-                style={{
-                    position: 'absolute',
                     top: 0,
                     left: '50%',
                     transform: 'translate(-50%, 0)',

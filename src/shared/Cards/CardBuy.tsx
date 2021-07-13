@@ -36,7 +36,12 @@ const CardBuy: React.FC<CardBuyProps> = ({ data, fullWidth = false, ...boxProps 
                                         <stop offset="75%" stopColor={chartColor} stopOpacity={0.05} />
                                     </linearGradient>
                                 </defs>
-                                <Area dataKey="close" stroke={chartColor} fill="url(#color)" />
+                                <Area
+                                    isAnimationActive={false}
+                                    dataKey="close"
+                                    stroke={chartColor}
+                                    fill="url(#color)"
+                                />
                             </AreaChart>
                         </ResponsiveContainer>
                     ) : null}

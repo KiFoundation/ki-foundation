@@ -2,7 +2,6 @@ import React from 'react'
 import { Flex, Image, FlexProps, Box } from 'rebass'
 import { Text } from 'theme-ui'
 import CardBuy from '@shared/Cards/CardBuy'
-import Card from '@shared/Cards/Card'
 
 import reload from '@assets/icons/reload.svg'
 import locked from '@assets/icons/locked.svg'
