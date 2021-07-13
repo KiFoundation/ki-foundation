@@ -69,17 +69,28 @@
             }
         }
     }
+
+    .our-partners,
+    .grid-pink {
+        margin: 0 auto;
+        margin-top: 60px;
+
+        @include sm {
+            margin-top: 0;
+            margin-right: 8%;
+        }
+    }
 }
 
 .our-partners,
 .grid-pink {
-    margin: 0 auto;
+    /* margin: 0 auto;
     margin-top: 60px;
 
     @include sm {
         margin-top: 0;
         margin-right: 8%;
-    }
+    } */
 
     .footer {
         border: 1px solid #ea1078;
@@ -122,4 +133,7 @@
             }
         }
     }
+}
+
+.ellipse {
 }

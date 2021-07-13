@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { Text } from 'theme-ui'
 import { Flex, Box, Image } from 'rebass'
 import { Container } from 'react-bootstrap'
-import { useSpring, animated, config } from 'react-spring'
 import axios from 'axios'
 import * as d3 from 'd3'
 
@@ -23,6 +22,7 @@ import GrowingEcosystem from '@views/Home/GrowingEcosystem'
 import TalkAboutUs from '@views/Home/TalkAboutUs'
 import Footer from '@shared/Layout/Footer'
 import CardBuy from '@shared/Cards/CardBuy'
+import gradientXL from '@assets/ui/gradient-xl-blue.png'
 
 import './home.scss'
 
@@ -109,31 +109,16 @@ const Home: React.FC<HomeProps> = ({}) => {
         })
     }, [])
 
-    const fadeFromTopToBottom = useSpring({
-        opacity: data ? 1 : 0,
-        transform: `translate3d(-50%,${data ? '0' : '-70'}px,0)`,
-        delay: 1000,
-        config: config.slow,
-    })
-
-    const fadeFromBottomToTop = useSpring({
-        opacity: data ? 1 : 0,
-        transform: `translate3d(0%,${data ? '-80' : '70'}px, 0)`,
-        delay: 1000,
-        config: config.slow,
-    })
-
     return (
         <Flex className="home" flexDirection="column">
             <Box
                 style={{
                     position: 'absolute',
-                    width: ' 50vw',
-                    height: '150vh',
-                    left: '23vw',
-                    top: '-150vh',
-                    background: 'rgba(0, 180, 168, 0.4)',
-                    filter: 'blur(670px)',
+                    width: ' 100%',
+                    height: '100%',
+                    left: '0%',
+                    top: '0%',
+                    background: `50% -35% / contain no-repeat url(${gradientXL})`,
                 }}
             />
             <Flex justifyContent="center" mt={5}>
@@ -144,21 +129,21 @@ const Home: React.FC<HomeProps> = ({}) => {
                 </Text>
             </Flex>
             <Flex style={{ position: 'relative', paddingTop: '7rem' }}>
-                <animated.div
+                <div
+                    className="animate__animated animate__fadeInDown animate__delay-2s"
                     style={{
                         position: 'absolute',
-                        left: '50%',
                         top: '9%',
                         zIndex: 4,
                         width: '100%',
-                        ...fadeFromTopToBottom,
                     }}
                 >
                     <CardBuy data={data} style={{ margin: '0 auto' }} />
-                </animated.div>
+                </div>
                 <Flex className="d-none d-md-flex w-100">
-                    <animated.div
-                        style={{ position: 'absolute', width: '100%', height: '100%', ...fadeFromBottomToTop }}
+                    <div
+                        className="animate__animated animate__fadeInDown animate__delay-2s"
+                        style={{ position: 'absolute', width: '100%', height: '100%' }}
                     >
                         <Box
                             style={{
@@ -166,10 +151,10 @@ const Home: React.FC<HomeProps> = ({}) => {
                                 zIndex: 4,
                                 background: `center / contain no-repeat url(${shadow})`,
                                 transform: 'translate(-50%, 0)',
-                                left: '50%',
-                                top: '27%',
                                 width: '100%',
                                 height: '9%',
+                                left: '50%',
+                                top: '20%',
                             }}
                         />
                         <Box
@@ -179,13 +164,14 @@ const Home: React.FC<HomeProps> = ({}) => {
                                 background: `center / contain no-repeat url(${ellipse})`,
                                 transform: 'translate(-50%, 0)',
                                 width: '100%',
-                                height: '23%',
+                                height: '21%',
                                 left: '50%',
-                                top: '21%',
+                                top: '15%',
                             }}
                         />
-                    </animated.div>
+                    </div>
                     <Flex id="checkerboard" style={{ width: '100%' }} />
+                    {/* <Image src={checkerboard} /> */}
                 </Flex>
                 <Flex className="d-flex d-md-none mt-3">
                     <Image src={checkerboardMd} />

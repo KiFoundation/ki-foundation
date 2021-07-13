@@ -105,9 +105,7 @@
             height: 100%;
             z-index: 1;
             position: absolute;
-            background: linear-gradient(360deg, #06edf7 0%, rgba(6, 237, 247, 0) 46.72%);
-            mix-blend-mode: hard-light;
-            opacity: 1;
+            background: linear-gradient(360deg, rgba(#06edf7, 0.5) 0%, rgba(6, 237, 247, 0) 46.72%);
         }
         &::after {
             top: 0;
@@ -119,7 +117,6 @@
             position: absolute;
             background-color: rgba(0, 127, 133, 0.72);
             mix-blend-mode: hard-light;
-            opacity: 1;
         }
     }
 }

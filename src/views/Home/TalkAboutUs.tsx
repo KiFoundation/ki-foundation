@@ -3,12 +3,6 @@ import { Box, BoxProps, Image, Flex } from 'rebass'
 import Slider, { Settings } from 'react-slick'
 import { Text, useThemeUI } from 'theme-ui'
 
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react'
-
-// Import Swiper styles
-import 'swiper/swiper.scss'
-
 import forbes from '@assets/logos/forbes-white.svg'
 import { hexToRgb } from '@helpers/color'
 

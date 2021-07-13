@@ -4,6 +4,7 @@ import { Flex, Box } from 'rebass'
 import { Col, Container, Row } from 'react-bootstrap'
 import Footer from '@shared/Layout/Footer'
 import CardTeam from '@shared/Cards/CardTeam'
+import gradientXL from '@assets/ui/gradient-xl-blue.png'
 
 import { team } from '@views/Team/data'
 
@@ -17,12 +18,11 @@ const Team: React.FC<TeamProps> = ({}) => {
             <Box
                 style={{
                     position: 'absolute',
-                    width: ' 50vw',
-                    height: '150vh',
-                    left: '23vw',
-                    top: '-150vh',
-                    background: 'rgba(0, 180, 168, 0.4)',
-                    filter: 'blur(670px)',
+                    width: ' 100%',
+                    height: '100%',
+                    left: '0%',
+                    top: '-60%',
+                    background: `center / cover no-repeat url(${gradientXL})`,
                 }}
             />
             <Flex mt={5}>

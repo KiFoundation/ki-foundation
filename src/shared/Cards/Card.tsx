@@ -8,11 +8,11 @@ interface CardProps extends BoxProps {
 
 const Card: React.FC<CardProps> = ({ children, color, ...boxProps }) => {
     return (
-        <Box className={`card-${color}`} paddingX={20} paddingY={['40px', '50px', '60px']} {...boxProps}>
+        <Flex className={`card-${color}`} paddingX={20} paddingY={['40px', '50px', '60px']} {...boxProps}>
             <Flex flex={1} justifyContent="space-between" alignItems="center" height="100%" flexDirection="column">
                 {children}
             </Flex>
-        </Box>
+        </Flex>
     )
 }
 export default Card

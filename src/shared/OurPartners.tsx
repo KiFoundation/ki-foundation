@@ -21,8 +21,10 @@ const PartnerCard: React.FC<PartnerCardProps> = ({ icon }) => {
     const { theme } = useThemeUI()
     const secRGB = hexToRgb(String(theme.rawColors.secondary))
     return (
-        <Box
+        <Flex
             minHeight={220}
+            justifyContent="center"
+            alignItems="center"
             sx={{
                 position: 'relative',
                 background: 'black',
@@ -34,10 +36,8 @@ const PartnerCard: React.FC<PartnerCardProps> = ({ icon }) => {
                 },
             }}
         >
-            <Flex flex={1} justifyContent="center" alignItems="center" height="100%" flexDirection="column">
-                <Image src={icon} />
-            </Flex>
-        </Box>
+            <Image src={icon} />
+        </Flex>
     )
 }
 

@@ -7,36 +7,24 @@ import arrowRight from '@assets/icons/arrow-right.svg'
 import bridge from '@assets/logos/bridge.svg'
 import klub from '@assets/logos/klub.svg'
 import kichain from '@assets/logos/kichain.svg'
+import gradientXL from '@assets/ui/gradient-xl-blue.png'
 
 interface OurMissionProps extends BoxProps {}
 
 const OurMission: React.FC<OurMissionProps> = ({ style, ...boxProps }) => {
     return (
-        <Box style={{ position: 'relative', ...style }} {...boxProps}>
+        <Box style={{ ...style }} {...boxProps}>
             <Box
                 style={{
                     position: 'absolute',
-                    width: '20%',
-                    height: '20%',
-                    right: '24%%',
-                    left: '40%',
-                    top: 0,
-                    zIndex: 2,
-                    background: 'rgba(0, 180, 168, 0.4)',
-                    filter: 'blur(525.466px)',
-                }}
-            />
-            <Box
-                style={{
-                    position: 'absolute',
-                    width: '20%',
-                    height: '20%',
-                    right: '24%%',
-                    left: '40%',
-                    top: 0,
+                    width: '100%',
+                    height: '100%',
+                    right: '0%%',
+                    left: '0%',
+                    top: '0%',
                     zIndex: 3,
-                    background: 'rgba(56, 95, 171, 0.2)',
-                    filter: 'blur(620px)',
+                    background: `50% 15% / contain no-repeat url(${gradientXL})`,
+                    opacity: 0.6,
                 }}
             />
             <Box
